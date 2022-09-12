@@ -1,0 +1,63 @@
+html .v-application {
+  .v-btn {
+
+    .v-btn__content {
+      font-family: 'Bebas';
+      font-weight: 400;
+      font-size: 1.2em;
+      letter-spacing: 0.02em;
+    }
+
+    &.v-btn--text {
+      &::before {
+        content: none !important;
+      }
+    }
+  }
+
+
+  [class*='text-'] {
+    font-family: 'Bebas', sans-serif !important;
+  }
+
+  [class*='body-'] {
+    font-family: 'Relaway', sans-serif !important;
+    line-height: 1.8;
+  }
+
+  .font-head {
+    font-family: 'Bebas', sans-serif !important;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .--pn {
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .--posr {
+    position: relative;
+  }
+  
+  .--cnt {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  
+    @media (min-width: 960px) {
+      
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+  }
+  
+  .container {
+    
+    @media (max-width: 1264px) {
+      max-width: 1264px !important;
+    }
+    
+  }
+}

@@ -1,0 +1,47 @@
+@import './vuetify';
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('~/assets/fonts/Bebas-Regular.ttf');
+  // font-weight: all;
+}
+
+@font-face {
+  font-family: 'Relaway';
+  src: url('~/assets/fonts/Raleway-Regular.ttf');
+  font-weight: 400;
+}
+
+// COLFAX FONT ---------------------------------------------->
+
+// @font-face {
+//   font-family: 'Colfax';
+//   src: url('~/assets/fonts/Colfax-Regular.otf');
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: 'Colfax';
+//   src: url('~/assets/fonts/Colfax-Medium.otf');
+//   font-weight: 500;
+// }
+
+// @font-face {
+//   font-family: 'Colfax';
+//   src: url('~/assets/fonts/Colfax-Bold.otf');
+//   font-weight: 700;
+// }
+
+// @font-face {
+//   font-family: 'Colfax';
+//   src: url('~/assets/fonts/Colfax-Black.otf');
+//   font-weight: 900;
+// }
+
+// COLFAX FONT <----------------------------------------------
+
+html {
+  background: #14172D;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

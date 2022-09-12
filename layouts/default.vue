@@ -4,16 +4,15 @@
       <Nuxt />
     </v-main>
     <Header></Header>
-    <v-footer app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer></Footer>
   </v-app>
 </template>
 
 <script>
 export default {
   components: {
-    Header: () => import('~/components/common/Header.vue')
+    Header: () => import('~/components/common/Header.vue'),
+    Footer: () => import('~/components/common/Footer.vue')
   },
   data() {
     return {
