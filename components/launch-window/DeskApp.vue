@@ -25,6 +25,7 @@ export default {
   top: 50%;
   right: 50%;
   width: 120%;
+  max-width: 600px;
   transform: translate(50%, -50%);
 
   // @media (max-width: 1264px) {
@@ -59,6 +60,7 @@ export default {
     top: 0;
     background: rgba(#76FFE8, 0.03);
     backdrop-filter: blur(30px);
+    transition: none !important;
 
     &.one {
       transform: perspective(2000px) rotateX(25deg) rotateY(30deg) rotateZ(-15deg) translateZ(-40px);

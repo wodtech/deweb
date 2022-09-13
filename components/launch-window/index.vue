@@ -8,7 +8,7 @@
 
           <!-- <v-responsive width="100%" :aspect-ratio="1"></v-responsive> -->
 
-          <v-responsive width="100%" :aspect-ratio="2"></v-responsive>
+          <v-responsive width="100%" :aspect-ratio="1.5"></v-responsive>
 
         </v-col>
         <v-col sm="11" md="6" cols="11" offset-md="1" offset-sm="1" offset="1" class="py-16 --posr d-flex flex-column justify-center align-start">
@@ -66,6 +66,7 @@ export default {
 
 .launch-window {
   background: #14172D;
+  overflow: hidden;
 }
 
 </style>

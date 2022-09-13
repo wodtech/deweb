@@ -1,11 +1,11 @@
 <template>
   <v-row>
-    <v-col cols="6">
+    <v-col md="6" sm="4" cols="12" class="d-flex flex-column justify-center">
       <v-card color="grey" rounded="xl" width="100%">
         <v-responsive :aspect-ratio="1.5"></v-responsive>
       </v-card>
     </v-col>
-    <v-col offset="1" cols="5" class="d-flex flex-column justify-center">
+    <v-col offset-sm="1" md="5" sm="7" cols="12" offset="0" class="d-flex flex-column justify-center">
       <div class="text-h3 mb-8">
         {{ data.name }}
       </div>
@@ -24,7 +24,7 @@
           play now
         </v-btn>
 
-        <v-btn elevation="0" rounded x-large color="secondary">
+        <v-btn elevation="0" rounded x-large color="black" outlined>
           learn more
         </v-btn>
       </div>

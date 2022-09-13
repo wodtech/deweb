@@ -1,11 +1,11 @@
 <template>
   <v-row>
-    <v-col cols="5" class="d-flex justify-center flex-column">
+    <v-col order="2" order-sm="1" md="5" sm="7" cols="12" class="d-flex justify-center flex-column">
       <div class="text-h3 mb-8">
         {{ data.name }}
       </div>
       <div class="d-flex mb-4">
-        <v-chip small class="mr-2" :key="n" v-for="n in data.tags" color="grey">
+        <v-chip small class="mr-2" :key="n" v-for="n in data.tags" text-color="secondary">
           {{ n }}
         </v-chip>
       </div>
@@ -19,12 +19,12 @@
           play now
         </v-btn>
 
-        <v-btn elevation="0" rounded x-large color="secondary">
+        <v-btn elevation="0" rounded x-large color="black" outlined>
           learn more
         </v-btn>
       </div>
     </v-col>
-    <v-col offset="1" cols="6">
+    <v-col order="1" order-sm="2" offset-sm="1" offset="0" md="6" sm="4" cols="12">
       <v-card color="grey" rounded="xl" width="100%">
         <v-responsive :aspect-ratio="1.5"></v-responsive>
       </v-card>
