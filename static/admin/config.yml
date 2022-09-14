@@ -20,3 +20,20 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  
+  - name: 'games'
+    label: 'Games'
+    folder: 'content/games'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Short description', name: 'short_description', widget: 'string' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Features', name: 'features', widget: 'list' }
+      - { label: 'Icon', name: 'icon', widget: 'image' }
