@@ -2,7 +2,7 @@
   <v-row>
     <v-col order="2" order-sm="1" md="5" sm="7" cols="12" class="d-flex justify-center flex-column">
       <div class="text-h3 mb-8">
-        {{ data.name }}
+        {{ data.title }}
       </div>
       <div class="d-flex mb-4">
         <v-chip small class="mr-2" :key="n" v-for="n in data.tags" text-color="secondary">
@@ -10,9 +10,7 @@
         </v-chip>
       </div>
       <div class="body-1 mb-4">
-        But I must explain to you how all this mistaken idea
-        of denouncing pleasure and praising pain was born
-        and I will give you 
+        {{ data.short_description }}
       </div>
       <div class="d-flex">
         <v-btn elevation="0" class="mr-4" rounded x-large color="primary">

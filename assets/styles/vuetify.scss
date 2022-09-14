@@ -18,6 +18,7 @@ html .v-application {
   .v-chip {
     
     background-color: transparent !important;
+    font-weight: 500;
 
     &::before {
       background-color: currentColor;

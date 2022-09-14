@@ -1,26 +1,20 @@
 <template>
   <div class="games">
     <v-container class="--cnt">
-      <WodGame class="pb-16" :data="games[0]"/>
-      <TdGame :data="games[1]"/>
+      <WodGame class="pb-16" :data="games.find(n => n.title === 'World of Defish')"/>
+      <TdGame :data="games.find(n => n.title === 'Tower Defish')"/>
     </v-container>
   </div>
 </template>
 
 <script>
 export default {
-  data: () => ({
-    games: [
-      {
-        name: 'World of Defish',
-        tags: ['RPG', 'MMO', 'Fantasy'],
-      },
-      {
-        name: 'Tower Defish',
-        tags: ['Tower Defense', 'Strategy', 'Fantasy'],
-      },
-    ],
-  }),
+  // data: () => ({
+  //   games: ,
+  // }),
+  props: {
+    games: {},
+  },
   components: {
     WodGame: () => import('./WodGame.vue'),
     TdGame: () => import('./TdGame.vue'),

@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
     <MainFrame/>
-    <Games/>
+    <Games :games="games"/>
     <LaunchWindow/>
     <Blog/>
     <Subs/>
@@ -10,6 +10,13 @@
 
 <script>
 export default {
+  async asyncData({ $content }) {
+    const games = await $content('games').fetch()
+
+    return {
+      games,
+    }
+  },
   components: {
     MainFrame: () => import('~/components/main-frame'),
     LaunchWindow: () => import('~/components/launch-window'),

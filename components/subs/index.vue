@@ -14,14 +14,19 @@
         <div class="body-2 mb-6">
           Enter your Email to start watching
         </div>
-        <div class="inp">
+        <div class="inp --posr">
           <v-text-field 
             style="width: 300px;"
             rounded
             outlined 
             color="white" 
-            placeholder="Enter your email"
+            label="Enter your email"
+            hide-details=""
           ></v-text-field>
+
+          <v-btn color="primary" class="btn" absolute fab>
+            <v-icon>mdi-arrow-right</v-icon>
+          </v-btn>
         </div>
       </v-card>
     </v-container>
@@ -34,6 +39,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+.inp {
+  .btn {
+    right: -1px;
+    top: -1px;
+    height: calc(100% + 2px);
+  }
+
+  .v-text-field {
+    background: rgba(#fff, 0.1);
+
+    :deep() {
+      label {
+        font-family: 'Relaway';
+      }
+    }
+  }
+}
 
 </style>
