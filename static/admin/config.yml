@@ -30,10 +30,22 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short description', name: 'short_description', widget: 'string' }
       - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Features', name: 'features', widget: 'list' }
       - { label: 'Icon', name: 'icon', widget: 'image' }
+
+  - name: 'arts'
+    label: 'Arts'
+    folder: 'content/arts'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
