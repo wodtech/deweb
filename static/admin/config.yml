@@ -49,3 +49,4 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Game', name: 'game', widget: 'relation', collection: 'games', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }

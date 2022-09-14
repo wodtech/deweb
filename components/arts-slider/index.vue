@@ -28,8 +28,43 @@ export default {
     imgs: {}
   },
   data: () => ({
-    per_page: 12,
-  })
+    
+    // BREAKPOINTS
+    
+  }),
+
+  computed: {
+
+    prePage() {
+
+      const per_page = [
+        {
+          breakpoint: 0,
+          per_page: 2,
+        },
+        {
+          breakpoint: 600,
+          per_page: 4,
+        },
+        {
+          breakpoint: 960,
+          per_page: 12,
+        },
+        {
+          breakpoint: 1264,
+          per_page: 12,
+        },
+        {
+          breakpoint: 1904,
+          per_page: 24,
+        },
+      ]
+      
+      return per_page.find((item) => {
+        return item.breakpoint >= this.$vuetify.breakpoint.width
+      }).per_page;
+    }
+  }
 }
 </script>
 
