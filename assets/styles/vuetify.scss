@@ -15,6 +15,15 @@ html .v-application {
     }
   }
 
+  .v-chip {
+    
+    background-color: transparent !important;
+
+    &::before {
+      background-color: currentColor;
+      opacity: 0.05 !important;
+    }
+  }
 
   [class*='text-'] {
     font-family: 'Bebas', sans-serif !important;

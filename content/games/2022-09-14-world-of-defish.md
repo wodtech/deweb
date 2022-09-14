@@ -1,7 +1,6 @@
 ---
-name: Tower Defish
-subtitle: Tower Defish is a tower defense game where you play as a fish
 title: Tower Defish
+subtitle: Tower Defish is a tower defense game where you play as a fish
 short_description: Tower Defish is a tower defense game where you play as a fish
 description: Tower Defish is a tower defense game where you play as a fish
 tags:
@@ -15,6 +14,3 @@ features:
   - Marketplace
   - $WOD Token
 icon: /img/logo.jpg
----
-
-asd
