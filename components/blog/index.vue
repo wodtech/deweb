@@ -2,7 +2,7 @@
   <div class="blog">
     <v-container class="d-flex flex-column py-16">
       <div class="d-flex py-6">
-        <div class="text-h4">
+        <div class="text-h3">
           latest news
         </div>
         <v-spacer></v-spacer>
@@ -21,7 +21,7 @@
               rounded="xl" 
               min-height="100%"
             >
-              <v-img :src="mainArticle.img"></v-img>
+              <v-img :src="mainArticle.img" class="rounded-xl"></v-img>
               <div class="d-flex flex-column align-start pa-4">
                 <div class="body-1 ml-4 flex-grow-1">
                   {{ mainArticle.short_title }}

@@ -3,20 +3,41 @@
     <div class="blog">
       <v-container class="d-flex flex-column py-16">
         <div class="d-flex py-6">
-          <div class="text-h4">
+          <div class="text-h3">
             more our arts
           </div>
         </div>
-        <v-carousel v-model="model">
-          <v-carousel-item
-            v-for="(color, i) in colors"
-            :key="color"
-          >
-            <v-card rounded="xl">
-              <v-img v-for="n in imgs" :src="n.url"></v-img>
-            </v-card>
-          </v-carousel-item>
-        </v-carousel>
+
+        <div
+          v-for="(section, i) in sections"
+          :key="i + '-' + sections.length"
+          v-if="page === (i + 1)"
+        >
+          <v-row>
+            <v-col
+              v-for="n in section"
+              :key="n.slug"
+              cols="12"
+              sm="6"
+              md="4"
+              xl="2"
+            >
+              <v-card rounded="xl">
+                <v-img :src="n.image" :aspect-ratio="1.5"></v-img>
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
+
+        <div class="d-flex align-self-center pt-10">
+          <v-pagination
+            v-model="page"
+            :length="pages"
+            circle
+            color="primary"
+          ></v-pagination>
+        </div>
+          
       </v-container>
     </div>
   </div>
@@ -25,15 +46,25 @@
 <script>
 export default {
   props: {
-    imgs: {}
+    arts: {}
   },
+
   data: () => ({
-    
-    // BREAKPOINTS
-    
+    page: 1
   }),
 
   computed: {
+
+    sections() {
+
+      const new_array = [];
+
+      for (let i = 0; i < this.arts.length; i += this.prePage) {
+        new_array.push(this.arts.slice(i, i + this.prePage));
+      }
+
+      return new_array;
+    },
 
     prePage() {
 
@@ -63,7 +94,11 @@ export default {
       return per_page.find((item) => {
         return item.breakpoint >= this.$vuetify.breakpoint.width
       }).per_page;
-    }
+    }, 
+
+    pages() {
+      return this.sections.length;
+    },
   }
 }
 </script>

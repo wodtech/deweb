@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background: #F0F0F0 !important;">
     <v-main>
       <Nuxt />
     </v-main>
