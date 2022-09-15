@@ -3,7 +3,6 @@
     <MainFrame/>
     <ScreenshotsVideos/>
     <Games :games="games"/>
-    <Games/>
     <LaunchWindow/>
     <Blog/>
     <Subs/>
