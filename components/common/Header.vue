@@ -14,7 +14,7 @@
           :key="n.title" 
           v-slot="{ hover }"
         >
-          <div class="drop-container mr-10" :class="`num-${i}-drop`">
+          <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
             <v-btn rounded text>
               {{ n.title }}
               <v-icon v-if="hover" right>mdi-menu-down</v-icon>
@@ -29,12 +29,12 @@
           </div>
         </v-hover>
 
-        <v-btn rounded text>
+        <v-btn rounded class="d-md-flex d-none" text>
           for developers
         </v-btn>
       </div>
 
-      <div class="socials d-flex">
+      <div class="socials d-none d-sm-flex">
         <v-btn icon>
           <v-icon>mdi-twitter</v-icon>
         </v-btn>
