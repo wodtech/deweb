@@ -1,6 +1,7 @@
 <template>
   <div class="index-page">
     <MainFrame/>
+    <ScreenshotsVideos/>
     <Games/>
     <LaunchWindow/>
     <Blog/>
@@ -12,6 +13,7 @@
 export default {
   components: {
     MainFrame: () => import('~/components/main-frame'),
+    ScreenshotsVideos: () => import ('~/components/screenshots-videos'),
     LaunchWindow: () => import('~/components/launch-window'),
     Blog: () => import('~/components/blog'),
     Games: () => import('~/components/games'),
