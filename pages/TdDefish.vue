@@ -2,10 +2,8 @@
   <div class="index-page">
     <MainFrame/>
     <ScreenshotsVideos/>
-    <Games :games="games"/>
-    <LaunchWindow/>
     <Blog/>
-    <Subs/>
+    <FollowUs/>
   </div>
 </template>
 
@@ -14,10 +12,8 @@ export default {
   components: {
     MainFrame: () => import('~/components/main-frame'),
     ScreenshotsVideos: () => import ('~/components/screenshots-videos'),
-    LaunchWindow: () => import('~/components/launch-window'),
     Blog: () => import('~/components/blog'),
-    Games: () => import('~/components/games'),
-    Subs: () => import('~/components/subs'),
+    FollowUs: () => import('~/components/follow-us')
   },
   async asyncData({ $content }) {
     const games = await $content('games').fetch()

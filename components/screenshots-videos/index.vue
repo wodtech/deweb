@@ -299,7 +299,4 @@ export default {
       object-fit: cover;
     }
 }
-.card-title {
-
-}
 </style>

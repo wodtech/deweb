@@ -11,6 +11,11 @@ import ArtsHeader from '~/components/arts-header/index.vue';
 import ArtsSlider from '~/components/arts-slider/index.vue';
 import GameCards from '~/components/game-cards/index.vue';
 export default {
+  components: {
+    ArtsHeader,
+    ArtsSlider,
+    GameCards
+},
   async asyncData({ $content }) {
     const arts = await $content('arts').fetch()
     const games = await $content('games').fetch()
@@ -20,10 +25,5 @@ export default {
       games,
     }
   },
-  components: {
-    ArtsHeader,
-    ArtsSlider,
-    GameCards
-},
 }
 </script>
