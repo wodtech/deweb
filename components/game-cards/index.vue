@@ -1,15 +1,17 @@
 <template>
   <div class="game-cards">
-    <v-container class="d-flex py-16">
+    <v-container class="py-16">
       <v-row>
         <v-col v-for="n in games" :key="n.slug" cols="12" md="6">
-          <v-card elevation="10" rounded="xl">
+          <v-card elevation="10" width="100%" rounded="xl">
             <v-img
               src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
               :alt="n.title"
+              width="100%"
+              class="rounded-xl"
             ></v-img>
-            <div class="d-flex align-center">
-              <v-card rounded="xl">
+            <div class="d-flex align-center pa-6">
+              <v-card class="mr-5" rounded="xl">
                 <v-img :src="n.icon"></v-img>
               </v-card>
               <div class="d-flex flex-column">

@@ -1,19 +1,19 @@
 <template>
-  <div class="arts-header d-flex flex-column --posr">
+  <v-card dark elevation="0" tile class="arts-header d-flex flex-column --posr pt-16">
     <img class="bg" src="~/assets/images/arts-back.jpg" alt="">
-    <v-container>
+    <v-container class="--posr">
       <div class="d-flex flex-column">
-        <div class="text-h3">
+        <div class="text-h1 pb-6">
           game arts
         </div>
-        <div class="body-1">
+        <div class="body-1" style="max-width: 500px;">
           Our game arts are the heart, bones and brain
           of the visual elements you see while playing our games. Without our visual game artists, the game
           would be just an ideas in a designer's head. 
         </div>
       </div>
     </v-container>
-  </div>
+  </v-card>
 </template>
 
 <script>
