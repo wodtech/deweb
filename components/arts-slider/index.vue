@@ -91,9 +91,11 @@ export default {
         },
       ]
       
-      return per_page.find((item) => {
+      const result = per_page.find((item) => {
         return item.breakpoint >= this.$vuetify.breakpoint.width
-      }).per_page;
+      });
+
+      return (result || per_page[per_page.length - 1]).per_page;
     }, 
 
     pages() {

@@ -1,8 +1,8 @@
 <template>
   <div class="index-page">
     <MainFrame/>
-    <ScreenshotsVideos/>
     <Games :games="games"/>
+    <ArtsStripe/>
     <LaunchWindow/>
     <Blog/>
     <Subs/>
@@ -10,14 +10,16 @@
 </template>
 
 <script>
+import ArtsStripe from '~/components/arts-stripe';
 export default {
   components: {
-    MainFrame: () => import('~/components/main-frame'),
-    ScreenshotsVideos: () => import ('~/components/screenshots-videos'),
-    LaunchWindow: () => import('~/components/launch-window'),
-    Blog: () => import('~/components/blog'),
-    Games: () => import('~/components/games'),
-    Subs: () => import('~/components/subs'),
+    MainFrame: () => import("~/components/main-frame"),
+    ScreenshotsVideos: () => import("~/components/screenshots-videos"),
+    LaunchWindow: () => import("~/components/launch-window"),
+    Blog: () => import("~/components/blog"),
+    Games: () => import("~/components/games"),
+    Subs: () => import("~/components/subs"),
+    ArtsStripe,
   },
   async asyncData({ $content }) {
     const games = await $content('games').fetch()
