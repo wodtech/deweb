@@ -56,7 +56,7 @@
                 height="100%"
                 :class="i ? 'mt-6' : ''"
               >
-                <v-img class="rounded-xl" style="flex: 0 0 50%" :src="card.img"></v-img>
+                <v-img aspect-ratio="1" class="rounded-xl" style="flex: 0 0 50%" :src="card.img"></v-img>
                 <div class="d-flex flex-column align-start pa-4">
                   <div class="body-1 ml-4 flex-grow-1">
                     {{card.article}}

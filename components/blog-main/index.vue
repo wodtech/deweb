@@ -134,7 +134,7 @@ export default {
   }
 }
 .blog {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   background-color: rgba(1, 2, 4, 1);
 }
