@@ -210,6 +210,7 @@ export default {
       ],
       flickityOptions: {
         initialIndex: 2,
+        groupCells: '29%',
         contain: true,
         freeScroll: true,
         wrapAround: true,
@@ -263,23 +264,23 @@ export default {
       }
     }
   }
-  .carousel-cell {
-    width: 30%;  
-    margin-right: 15px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-  }
-  
 </style>
 <style lang="scss" scoped>
-.slide-element {
-  width: 380px;
-  height: 214px;
-  margin-right: 20px;
-  img {
-    border-radius: 30px;
-  }
+:deep(.carousel-cell) {
+    display: flex;
+    justify-content: center;
+    width: 29%;
+    height: 214px;
+    margin: 0px 25px;
+    .slide-element {
+      display: flex;
+    img {
+      height: 100%; 
+      width: 100%; 
+      object-fit: cover;
+      border-radius: 30px;
+    }
+}
 }
 .screenshots-frame {
   width: 100%;
