@@ -49,7 +49,7 @@
             </v-card>
           </v-hover>
         </v-col>
-        <v-col style="max-width: 500" cols="5">
+        <v-col cols="5">
           <v-hover v-slot="{ hover }">
             <v-card 
               :elevation="hover ? 10 : 20"
@@ -80,11 +80,13 @@
                 <v-icon>mdi-linkedin</v-icon>
               </v-btn>
             </div>
-            <div class="d-flex flex-grow-1">
-              <v-btn v-for="btn in secondCard.btns" :key="btn.id" large class="large-button font-weight-light rounded-pill mr-2">
-                {{btn.text}}
-              </v-btn>
-            </div>
+            <v-row class="d-flex">
+              <v-col v-for="btn in secondCard.btns" :key="btn.id" class="d-flex" cols>
+                <v-btn large class="large-button font-weight-light rounded-pill mr-2">
+                  {{btn.text}}
+                </v-btn>
+              </v-col>
+            </v-row>
             </v-card>
           </v-hover>
           <v-hover v-slot="{ hover }">
@@ -92,7 +94,7 @@
               :elevation="hover ? 5 : 20"
               rounded="xl"
               outlined
-              height="460"
+              min-height="500px"
               width="100%"
               style="transition: box-shadow 0.3s ease-in-out;"
               class="d-flex flex-column flex-grow-1 mt-6 pa-14" 
