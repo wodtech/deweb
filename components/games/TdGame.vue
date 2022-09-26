@@ -24,7 +24,7 @@
     </v-col>
     <v-col order="1" order-sm="2" offset-sm="1" offset="0" md="6" sm="4" cols="12">
       <v-card color="grey" rounded="xl" width="100%">
-        <v-responsive :aspect-ratio="1.5"></v-responsive>
+        <v-img :src="require('~/assets/images/td-preview.jpg')" :aspect-ratio="1.5"></v-img>
       </v-card>
     </v-col>
   </v-row>

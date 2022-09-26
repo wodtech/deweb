@@ -1,78 +1,69 @@
 <template>
-  <div class="main-frame d-flex">
-    <v-container class="d-flex align-end main-container pb-15">
-      <v-row class="d-flex bottom-wrapper">
-        <v-col class="d-flex align-center " cols="6">
-          <div class="d-flex badge">
-            <img :src="smallBadge" alt="small img">
+  <v-card dark elevation="0" tile class="main-frame d-flex">
+    <div class="img-container">
+      <img src="~/assets/images/main-bg.jpg" class="bg-img" alt="main background">
+    </div>
+    <v-container class="py-16 --posr">
+      <v-row style="height: 100%;">
+        <v-col cols="12" sm="8" md="6" class="d-flex flex-column align-start justify-center">
+          <div class="mb-4 titles">
+            <div class="text-h1 mb-4">
+              web3 gaming
+            </div>
+            <div class="main text-h1">
+              studio
+            </div>
           </div>
-          <div class="d-flex flex-column ml-5 pa-1">
-            <span class="text-big text-h5 white--text">{{ textBig }}</span>
-            <span class="caption white--text sub-text">{{ textSmall }}</span>
+          <div class="body-1 mb-14">
+            Building a new gaming experience in a world of chances. Entertain yourself in a gaming economy that you deserve.
           </div>
-        </v-col>
-        <v-col class="d-flex align-center justify-end" cols="6">
-          <v-btn x-large class="large-button font-weight-light rounded-pill" >PLAY NOW</v-btn>
+
+          <v-btn width="170" rounded x-large color="primary">
+            play now
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
-    <div class="img-container">
-      <img :src="bgImg" class="bg-img" alt="main background">
-    </div>
-  </div>
+  </v-card>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      bgImg: require("~/assets/images/bg-img.png"),
-      smallBadge: require("~/assets/images/main-logo.png"),
-      textBig: 'world of defish',
-      textSmall: 'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish'
-    }
-  }
+  
 }
 </script>
 
 <style lang="scss" scoped>
 
 .main-frame {
-  height: 80vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
-  .main-container {
-    z-index: 1;
-    .bottom-wrapper {
-      .badge {
-        width: 92px;
-        height: 92px;
-        border-radius: 20px;
-      }
-      img {
-        object-fit: contain;
-        pointer-events: none;
-      }
-    }
-    .sub-text {
-      opacity: 0.7;
-      max-width: 240px;
-    }
-    .large-button {
-      width: 166px;
-      color: white;
-      background-color: rgba(233, 68, 133, 1);
-    }
-  }
+  
   .img-container {
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 0;
     .bg-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  .main-title {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+  }
+
+  .titles {
+    .main {
+      font-size: 9rem !important;
+      line-height: 9rem;
+    }
+    .sub {
+
     }
   }
   

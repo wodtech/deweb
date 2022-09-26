@@ -1,19 +1,19 @@
 <template>
   <div class="blog">
     <v-container class="d-flex flex-column py-16">
-      <div class="d-flex py-6">
+      <div class="d-flex align-center py-6">
         <div class="text-h3">
           latest news
         </div>
         <v-spacer></v-spacer>
-        <v-btn rounded text>
+        <v-btn color="primary" rounded text>
           read all
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
       </div>
 
       <v-row>
-        <v-col cols="5">
+        <v-col cols="12" md="5">
           <v-hover v-slot="{ hover }">
             <v-card 
               :elevation="hover ? 5 : 20" 
@@ -34,7 +34,7 @@
             </v-card>
           </v-hover>
         </v-col>
-        <v-col cols="7" class="d-flex flex-column">
+        <v-col cols="12" md="7" class="d-flex flex-column">
 
           <v-hover v-slot="{ hover }" v-for="(n, i) in otherArticles" :key="n.title">
             <v-card 

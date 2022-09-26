@@ -2,7 +2,7 @@
   <v-row>
     <v-col md="6" sm="4" cols="12" class="d-flex flex-column justify-center">
       <v-card color="grey" rounded="xl" width="100%">
-        <v-responsive :aspect-ratio="1.5"></v-responsive>
+        <v-img :src="require('~/assets/images/wod-preview.jpg')" :aspect-ratio="1.5"></v-img>
       </v-card>
     </v-col>
     <v-col offset-sm="1" md="5" sm="7" cols="12" offset="0" class="d-flex flex-column justify-center">
