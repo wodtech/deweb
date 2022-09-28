@@ -138,8 +138,10 @@ export default {
   width: 100%;
   background-color: rgba(1, 2, 4, 1);
 }
-.carousel-cell {
-  width: 100%;
-
+.date {
+  font-family: 'Relaway';
+  color: rgba(255, 255, 255, 1);
+  opacity: 0.5;
+  
 }
 </style>
