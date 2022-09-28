@@ -3,12 +3,18 @@
     <v-container>
       <v-tabs
         v-model="tab"
+        transition="fade-transition"
+        hide-slider
+        background-color="transparent"
       >
         <v-tab
           v-for="item in items"
           :key="item.tab"
+          active-class="tab-active"
         >
-        {{ item.tab }}
+        <v-btn x-large class="font-weight-light rounded-pill tab-btn">
+          {{ item.tab }}
+        </v-btn>
         </v-tab>
       </v-tabs>
       <div class="filter-wrapper pa-4">
@@ -16,24 +22,26 @@
           {{item.name}}
         </v-btn>
       </div>
-      <v-tabs-items v-model="tab">
+      <v-tabs-items  v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
           v-for="(item) in items"
           :key="item.tab"
+          transition="fade-transition"
+          reverse-transition="fade-transition"
         >
-        <div class="cards-wrapper">
+        <div class="cards-wrapper pa-4">
           <div v-for="(card, index) in item.content" :key="card.id" :class="gridCards(index)" >
             <v-hover v-if="index === 0" v-slot="{ hover }">
               <v-card 
-                :elevation="hover ? 5 : 20" 
+                :elevation="hover ? 5 : 10" 
                 style="transition: box-shadow 0.3s ease-in-out;" 
                 rounded="xl"
                 class="d-flex flex-column"
                 height="100%"
                 width="100%"
               >
-                <v-img height="50%" :src="card.img" class="rounded-xl"></v-img>
-                <div class="d-flex flex-column align-start pa-4">
+                <v-img max-height="55%" :src="card.img" class="rounded-xl"></v-img>
+                <div class="d-flex flex-column flex-grow-1 align-start pa-4">
                   <div class="text-h4 ml-4 flex-grow-1">
                     {{card.article}}
                   </div>
@@ -49,21 +57,22 @@
             </v-hover>
             <v-hover v-else v-slot="{ hover }" >
               <v-card 
-                :elevation="hover ? 5 : 20"
+                :elevation="hover ? 5 : 10"
                 rounded="xl" 
                 style="transition: box-shadow 0.3s ease-in-out;"
-                class="d-flex"
+                class="d-flex flex-column flex-md-row"
                 height="100%"
+                width="100%"
                 :class="i ? 'mt-6' : ''"
               >
-                <v-img aspect-ratio="1" class="rounded-xl" style="flex: 0 0 50%" :src="card.img"></v-img>
-                <div class="d-flex flex-column align-start pa-4">
-                  <div class="body-1 ml-4 flex-grow-1">
+                <v-img aspect-ratio="1" class="rounded-xl" max-width="40%" cover style="flex: 0 0 40%" :src="card.img"></v-img>
+                <div class="d-flex flex-grow-1  flex-column align-start pa-4">
+                  <span class="body-1 ml-4 flex-grow-1">
                     {{card.article}}
-                  </div>
-                  <div class="body-1 ml-4 flex-grow-1">
+                  </span>
+                  <span class="body-1 ml-4 flex-grow-1">
                     {{ card.desc }}
-                  </div>
+                  </span>
                   <v-btn :href="card.link" rounded text class="mt-3">
                     read now
                     <v-icon right>mdi-arrow-right</v-icon>
@@ -227,12 +236,14 @@ export default {
         return 'small-card'
       }
     }
+
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .cards-wrapper {
+  background-color: #F0F0F0 !important;
   display: grid;
   max-width: 100%;
   grid-template-columns: 1fr 1fr;
@@ -248,7 +259,6 @@ export default {
   grid-row: 1 / 3;
 }
 .small-card {
-  max-width: 400px;
   @media (min-width: 1264px) {
     max-width: 100%;
   }
@@ -256,5 +266,22 @@ export default {
     max-width: 100%;
   }
 }
-
+.tab-btn {
+  background-color: rgba(220, 220, 220, 1) !important;
+  color: rgba(0, 0, 0, 0.2);
+}
+:v-deep(.v-tab) {
+  &:hover::before {
+    opacity: 0 !important;
+  }
+}
+.tab-active {
+  &::before {
+    opacity: 0 !important;
+  }
+  .v-btn {
+    color: white !important;
+    background-color: rgba(233, 68, 133, 1) !important;
+  }
+}
 </style>
