@@ -1,7 +1,7 @@
 <template>
   <v-card dark elevation="0" tile class="arts-header d-flex flex-column --posr pt-16">
     <img class="bg" src="~/assets/images/arts-back.jpg" alt="">
-    <v-container class="--posr">
+    <v-container class="--posr d-flex flex-column justify-center" style="height: 100%;">
       <div class="d-flex flex-column">
         <div class="text-h1 pb-6">
           game arts
@@ -12,6 +12,7 @@
           would be just an ideas in a designer's head. 
         </div>
       </div>
+      <v-sheet height="40%" color="transparent"></v-sheet>
     </v-container>
   </v-card>
 </template>

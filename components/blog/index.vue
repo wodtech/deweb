@@ -6,7 +6,7 @@
           latest news
         </div>
         <v-spacer></v-spacer>
-        <v-btn color="primary" rounded text>
+        <v-btn to="/blog" nuxt color="primary" rounded text>
           read all
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>

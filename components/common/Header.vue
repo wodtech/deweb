@@ -15,7 +15,7 @@
           v-slot="{ hover }"
         >
           <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
-            <v-btn rounded text>
+            <v-btn rounded text :to="n.href" :nuxt="n.is_nuxt">
               {{ n.title }}
               <v-icon v-if="hover" right>mdi-menu-down</v-icon>
               <v-icon v-else right>mdi-menu-up</v-icon>
@@ -69,11 +69,13 @@ export default {
         links: [
           {
             title: 'world of defish',
-            href: '#',
+            href: '/game-wod',
+            is_nuxt: true,
           },
           {
             title: 'tower defish',
-            href: '#',
+            href: '/game-td',
+            is_nuxt: true,
           },
         ],
       },
@@ -83,10 +85,12 @@ export default {
           {
             title: 'launcher',
             href: '#',
+            is_nuxt: true,
           },
           {
             title: 'connect',
             href: '#',
+            is_nuxt: true,
           },
         ],
       },
@@ -96,10 +100,12 @@ export default {
           {
             title: 'team',
             href: '#',
+            is_nuxt: true,
           },
           {
             title: 'careers',
             href: '#',
+            is_nuxt: true,
           },
         ],
       },

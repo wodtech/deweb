@@ -5,7 +5,7 @@
     </div>
     <v-container class="py-16 --posr">
       <v-row style="height: 100%;">
-        <v-col cols="12" sm="8" md="6" class="d-flex flex-column align-start justify-center">
+        <v-col cols="12" sm="8" md="7" lg="6" class="d-flex flex-column align-start justify-center">
           <div class="mb-4 titles">
             <div class="text-h1 mb-4">
               web3 gaming
