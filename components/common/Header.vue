@@ -5,13 +5,13 @@
 
     <v-container class="py-4 d-flex align-center --posr">
       <img class="logo" src="~/assets/images/full-logo.png" alt=""></img>
-      
+
       <div class="menu-btns d-flex flex-grow-1 px-10">
-        
-        <v-hover 
-          @input="onHoverChange($event, i)" 
-          v-for="(n, i) in menu" 
-          :key="n.title" 
+
+        <v-hover
+          @input="onHoverChange($event, i)"
+          v-for="(n, i) in menu"
+          :key="n.title"
           v-slot="{ hover }"
         >
           <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
@@ -29,7 +29,7 @@
           </div>
         </v-hover>
 
-        <v-btn rounded class="d-md-flex d-none" text>
+        <v-btn to="for-developers" nuxt rounded class="d-md-flex d-none" text>
           for developers
         </v-btn>
       </div>
@@ -99,7 +99,7 @@ export default {
           },
           {
             title: 'careers',
-            href: '#',
+            href: '/blog',
           },
         ],
       },
@@ -133,7 +133,7 @@ export default {
             console.log(y);
 
             target.style.opacity = 0;
-            
+
             Anime({
               targets: this.$refs.back,
               height: y,
@@ -165,7 +165,7 @@ export default {
           }).finished.then(() => {
             target.classList.remove('hovered');
           })
-          
+
           Anime({
             targets: this.$refs.back,
             duration: 300,
@@ -220,7 +220,7 @@ export default {
   .menu-btns {
 
     .v-btn {
-      
+
     }
   }
 
