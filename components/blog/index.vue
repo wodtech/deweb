@@ -36,7 +36,7 @@
         </v-col>
         <v-col cols="12" md="7" class="d-flex flex-column">
 
-          <v-hover v-slot="{ hover }" v-for="(n, i) in otherArticles" :key="n.title">
+          <v-hover v-for="(n, i) in otherArticles" v-slot="{ hover }" :key="n.title">
             <v-card 
               :elevation="hover ? 5 : 20"
               rounded="xl" 

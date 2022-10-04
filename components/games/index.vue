@@ -9,15 +9,15 @@
 
 <script>
 export default {
+  components: {
+    WodGame: () => import('./WodGame.vue'),
+    TdGame: () => import('./TdGame.vue'),
+  },
   // data: () => ({
   //   games: ,
   // }),
   props: {
     games: {},
-  },
-  components: {
-    WodGame: () => import('./WodGame.vue'),
-    TdGame: () => import('./TdGame.vue'),
   },
 }
 </script>

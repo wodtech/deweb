@@ -20,7 +20,7 @@
                   contain
                   :src="slide.img"
                   ></v-img> -->
-                  <div class="img-wrapper d-flex">
+                  <div class="img-wrapper d-flex justify-center">
                     <img class="d-flex " :src="slide.img" alt="">
                   </div>
                 </v-col>

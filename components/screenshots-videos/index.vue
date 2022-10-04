@@ -14,7 +14,7 @@
       <v-card height="500" color="transparent" elevation="0" class="d-flex flex-column py-16 --posr">
         <no-ssr>
           <Flickity ref="flickity" :options="flickityOptions">
-            <div v-for="el in cells" :key="el.slug" class="carousel-cell">
+            <div v-for="el in cells" :key="el.id" class="carousel-cell">
               <div class="slide-element">
                 <img :src="el.img" alt="">
               </div>

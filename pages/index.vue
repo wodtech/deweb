@@ -4,6 +4,7 @@
     <Games :games="games"/>
     <ArtsStripe/>
     <LaunchWindow/>
+    <PlayerTalk/>
     <Blog/>
     <Subs/>
   </div>
@@ -14,9 +15,9 @@ import ArtsStripe from '~/components/arts-stripe';
 export default {
   components: {
     MainFrame: () => import("~/components/main-frame"),
-    ScreenshotsVideos: () => import("~/components/screenshots-videos"),
     LaunchWindow: () => import("~/components/launch-window"),
     Blog: () => import("~/components/blog"),
+    PlayerTalk: () => import("~/components/player-talk"),
     Games: () => import("~/components/games"),
     Subs: () => import("~/components/subs"),
     ArtsStripe,
