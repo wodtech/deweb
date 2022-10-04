@@ -57,9 +57,14 @@ export default {
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {
-    
-  },
 
+  },
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true
+    }
+  },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/styles/variables.scss'],

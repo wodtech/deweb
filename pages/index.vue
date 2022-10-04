@@ -2,7 +2,7 @@
   <div class="index-page">
     <MainFrame/>
     <Games :games="games"/>
-    <ArtsStripe/>
+    <ArtsStripe :arts="arts"/>
     <LaunchWindow/>
     <PlayerTalk/>
     <Blog/>
@@ -24,9 +24,11 @@ export default {
   },
   async asyncData({ $content }) {
     const games = await $content('games').fetch()
+    const arts = await $content('arts').fetch()
 
     return {
       games,
+      arts
     }
   },
 }

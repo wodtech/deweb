@@ -16,10 +16,27 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Short Description', name: 'shot_description', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
+      - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
+      - { label: 'Description', name: 'description', widget: 'text' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+
+  - name: 'blogTabs'
+    label: 'Blog tabs'
+    folder: 'content/blogTabs'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: "Post types", name: "post_types",allow_add: false, widget: "list", default: [ 'updates', 'events', 'tutorials'] }
+
   - name: 'games'
     label: 'Game'
     folder: 'content/games'
@@ -49,3 +66,18 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Game', name: 'game', widget: 'relation', collection: 'games', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
+
+  - name: 'careers'
+    label: 'Careers'
+    folder: 'content/careers'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Project name', name: 'project_name', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Office', name: 'office', widget: 'string' }
+      - { label: 'Remote', name: 'remote', widget: 'string' }
