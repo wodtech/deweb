@@ -26,7 +26,8 @@ collections:
           options: [ 'updates', 'events', 'tutorials' ]
       }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Content', name: 'content', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
 
   - name: 'games'
     label: 'Game'
