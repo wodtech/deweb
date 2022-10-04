@@ -1,5 +1,5 @@
 <template>
-  <v-row :class="['dev-info d-flex', contentReverse ? 'flex-row-reverse' : 'flex-row' ]" >
+  <v-row :class="['dev-info d-flex pa-8', contentReverse ? 'flex-row-reverse' : 'flex-row' ]" >
     <v-col md="6" sm="4" cols="12" class="d-flex flex-column justify-center">
       <v-card color="grey" rounded="xl" width="100%">
         <v-img :src="require('~/assets/images/wod-preview.jpg')" :aspect-ratio="1.5"></v-img>
