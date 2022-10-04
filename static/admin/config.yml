@@ -79,8 +79,8 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Project name', name: 'project_name', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Office', name: 'office', widget: 'string' }
-      - { label: 'Remote', name: 'remote', widget: 'string' }
+      - { label: 'Office', name: 'office', widget: 'list' }
+      - { label: 'Remote', name: 'remote', widget: 'list' }
       - { label: 'group', name: 'group', widget: 'relation', collection: 'careerGroups', search_fields: [ 'title' ], value_field: 'title', display_fields: [ 'title' ] }
 
   - name: 'careerGroups'
