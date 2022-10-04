@@ -27,7 +27,7 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 office:
   - Odessa
 remote:
-  - Ukreaine
+  - Ukraine
   - Poland
 group: Marketing
 ---
