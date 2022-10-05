@@ -18,7 +18,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Short Description', name: 'shot_description', widget: 'string' }
-      - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
       - { label: 'Tab', name: 'tab', widget: 'relation', collection: 'blogTabs', search_fields: ['title'], value_field: 'title', display_fields: ['title'] }
       - { label: "Post type", name: "post_type", widget: "select", options: [ 'updates', 'events', 'tutorials']}
@@ -77,10 +76,10 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Project name', name: 'project_name', widget: 'string' }
+      - { label: 'Project name', name: 'project_name', widget: 'string', required: false }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Office', name: 'office', widget: 'list' }
-      - { label: 'Remote', name: 'remote', widget: 'list' }
+      - { label: 'Office', name: 'office', widget: 'list', required: false }
+      - { label: 'Remote', name: 'remote', widget: 'list', required: false }
       - { label: 'group', name: 'group', widget: 'relation', collection: 'careerGroups', search_fields: [ 'title' ], value_field: 'title', display_fields: [ 'title' ] }
 
   - name: 'careerGroups'
