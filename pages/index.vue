@@ -20,6 +20,8 @@ export default {
     PlayerTalk: () => import("~/components/player-talk"),
     Games: () => import("~/components/games"),
     Subs: () => import("~/components/subs"),
+    Careers: () => import("~/components/subs"),
+    CareersContent: () => import("~/components/careers/careers-content"),
     ArtsStripe,
   },
   async asyncData({ $content }) {
