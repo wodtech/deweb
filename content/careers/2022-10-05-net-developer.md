@@ -28,7 +28,6 @@ office:
   - Kyiv
   - Csernyivci
   - Odesa
-remote:
-  - Ukraine
+remote: []
 group: development & QA
 ---
