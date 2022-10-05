@@ -4,7 +4,7 @@ date: 2022-10-05T14:08:40.578Z
 shot_description: We created a New world with fishes and something that we and
   something that we created a New world with fishes and something
 image: /img/logo.jpg
-tab: tower defish
+tab: world of defish
 post_type: updates
 link: "#"
 description: "We created a New world with fishes and something that we and
