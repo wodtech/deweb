@@ -7,19 +7,12 @@
 
 <script>
 export default {
-  
-}
-</script>
-
-<script>
-export default {
   components: {
     BlogMain: () => import('~/components/blog-main'),
     Updates: () => import('~/components/updates'),
   },
   async asyncData({ $content }) {
-    const blog = await $content('blog').fetch()
-    const blogTabs = await $content('blogTabs').fetch()
+    const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'post_type']).fetch()
     return {
       blog, blogTabs
     }
