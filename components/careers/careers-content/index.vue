@@ -8,35 +8,42 @@
           <div
             class="group"
             :key="group.slug"
-            v-for="group in careersGroups">
-            <div class="group-title text-h4">{{ group.title }}</div>
-            <CareerInfoCard
-              @click="chosenCard=card"
-              :key="card.slug"
-              :card="card"
-              class="my-2"
-              v-for="card in filterByGroup(group.title)" />
+            v-for="(group, i) in (careersGroups)">
+            <div v-if="i%2!==0">
+              <div class="group-title text-h4">
+                <div v-html="getColoredTitle(group.title)"></div>
+              </div>
+              <CareerInfoCard
+                @click="chosenCard=card"
+                :key="card.slug"
+                :card="card"
+                class="my-2"
+                v-for="card in filterByGroup(group.title)" />
+            </div>
+
           </div>
         </v-col>
         <v-col>
           <div
             class="group"
             :key="group.slug"
-            v-for="group in careersGroups">
-            <div class="group-title text-h4">
-             <div v-html="getColoredTitle(getColoredTitle(group.title))"></div>
+            v-for="(group, i) in careersGroups">
+            <div v-if="i%2===0">
+              <div class="group-title text-h4">
+                <div v-html="getColoredTitle(group.title)"></div>
+              </div>
+              <CareerInfoCard
+                @click="chosenCard=card"
+                :key="card.slug"
+                :card="card"
+                class="my-2"
+                v-for="card in filterByGroup(group.title)" />
             </div>
-            <CareerInfoCard
-              @click="chosenCard=card"
-              :key="card.slug"
-              :card="card"
-              class="my-2"
-              v-for="card in filterByGroup(group.title)" />
           </div>
         </v-col>
       </v-row>
     </div>
-    <div class="career-card-content">
+    <div class="career-card-content mt-16">
       <CareerInfoContent :content="chosenCard" />
     </div>
     </v-container>

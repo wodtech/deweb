@@ -13,8 +13,10 @@
     </div>
   </div>
   <div class="w-30">
-    <div v-if="card.office">Office: <span class="link-color">{{card.office.join(', ')}}</span></div>
-    <div v-if="card.remote">Remote: <span class="link-color">{{card.remote.join(', ')}}</span></div>
+    <div v-if="card.office && card.office.length">
+      Office: <span class="link-color">{{card.office.join(', ')}}</span></div>
+    <div v-if="card.remote && card.remote.length">
+      Remote: <span class="link-color">{{card.remote.join(', ')}}</span></div>
   </div>
 </div>
 </template>
@@ -29,6 +31,7 @@ export default {
 
 <style scoped lang="scss">
 .career-info-card {
+  cursor: pointer;
   background: #FFFFFF;
   border-radius: 20px;
 }

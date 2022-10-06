@@ -35,6 +35,9 @@
 
 <script>
 export default {
+  props: {
+    data: {}
+  },
   data() {
     return {
       slides: [
@@ -77,7 +80,7 @@ export default {
   next() {
     this.$refs.flickity.next();
   },
-  
+
   previous() {
     this.$refs.flickity.previous();
   },
@@ -142,6 +145,6 @@ export default {
   font-family: 'Relaway';
   color: rgba(255, 255, 255, 1);
   opacity: 0.5;
-  
+
 }
 </style>
