@@ -8,29 +8,29 @@
         background-color="transparent"
       >
         <v-tab
-          v-for="item in items"
-          :key="item.tab"
+          v-for="item in blogTabs"
+          :key="item.title"
           active-class="tab-active"
         >
         <v-btn x-large class="font-weight-light rounded-pill tab-btn">
-          {{ item.tab }}
+          {{ item.title }}
         </v-btn>
         </v-tab>
       </v-tabs>
       <div class="filter-wrapper pa-4">
-        <v-btn  v-for="item in filters" :key="item.name" text>
+        <v-btn  v-for="item in blogTabs.post_types" :key="item.name" text>
           {{item.name}}
         </v-btn>
       </div>
       <v-tabs-items  v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
-          v-for="(item) in items"
+          v-for="(item) in blogsByTab"
           :key="item.tab"
           transition="fade-transition"
           reverse-transition="fade-transition"
         >
         <div class="cards-wrapper pa-4">
-          <div v-for="(card, index) in item.content" :key="card.id" :class="gridCards(index)" >
+          <div v-for="(card, index) in blog" :key="card.slug" :class="gridCards(index)" >
             <v-hover v-if="index === 0" v-slot="{ hover }">
               <v-card 
                 :elevation="hover ? 5 : 10" 
@@ -40,13 +40,13 @@
                 height="100%"
                 width="100%"
               >
-                <v-img max-height="55%" :src="card.img" class="rounded-xl"></v-img>
+                <v-img max-height="55%" :src="card.image" class="rounded-xl"></v-img>
                 <div class="d-flex flex-column flex-grow-1 align-start pa-4">
                   <div class="text-h4 ml-4 flex-grow-1">
-                    {{card.article}}
+                    {{card.title}}
                   </div>
                   <div class="body-1 ml-4 flex-grow-1">
-                    {{ card.desc }}
+                    {{ card.description }}
                   </div>
                   <v-btn :href="card.link" rounded text class="mt-3 flex-grow-1">
                     read now
@@ -65,13 +65,13 @@
                 width="100%"
                 :class="i ? 'mt-6' : ''"
               >
-                <v-img aspect-ratio="1" class="rounded-xl" max-width="40%" cover style="flex: 0 0 40%" :src="card.img"></v-img>
+                <v-img aspect-ratio="1" class="rounded-xl" max-width="40%" cover style="flex: 0 0 40%" :src="card.image"></v-img>
                 <div class="d-flex flex-grow-1  flex-column align-start pa-4">
                   <span class="body-1 ml-4 flex-grow-1">
-                    {{card.article}}
+                    {{card.title}}
                   </span>
                   <span class="body-1 ml-4 flex-grow-1">
-                    {{ card.desc }}
+                    {{ card.description }}
                   </span>
                   <v-btn :href="card.link" rounded text class="mt-3">
                     read now
@@ -86,59 +86,14 @@
       </v-tabs-items>
     </v-container>
   </div>
-  <!-- <v-row class="cards-wrapper">
-            <v-col v-for="(card, index) in item.content" :key="card.id" offset="0"  cols="6">
-              <v-hover v-if="index === 0" v-slot="{ hover }">
-                <v-card 
-                  :elevation="hover ? 5 : 20" 
-                  style="transition: box-shadow 0.3s ease-in-out;" 
-                  rounded="xl" 
-                  min-height="100%"
-                >
-                  <v-img :src="card.img" class="rounded-xl"></v-img>
-                  <div class="d-flex flex-column align-start pa-4">
-                    <div>
-                      {{card.title}}
-                    </div>
-                    <div class="body-1 ml-4 flex-grow-1">
-                      {{ card.desc }}
-                    </div>
-                    <v-btn :href="card.link" rounded text class="mt-3">
-                      read now
-                      <v-icon right>mdi-arrow-right</v-icon>
-                    </v-btn>
-                  </div>
-                </v-card>
-              </v-hover>
-              <v-hover v-else v-slot="{ hover }" >
-                <v-card 
-                  :elevation="hover ? 5 : 20"
-                  rounded="xl" 
-                  style="transition: box-shadow 0.3s ease-in-out;"
-                  class="d-flex" 
-                  :class="i ? 'mt-6' : ''"
-                >
-                  <v-img width="40%" class="rounded-xl" :src="card.img"></v-img>
-                  <div class="d-flex flex-column align-start pa-4">
-                    <div>
-                      {{card.title}}
-                    </div>
-                    <div class="body-1 ml-4 flex-grow-1">
-                      {{ card.desc }}
-                    </div>
-                    <v-btn :href="card.link" rounded text class="mt-3">
-                      read now
-                      <v-icon right>mdi-arrow-right</v-icon>
-                    </v-btn>
-                  </div>
-                </v-card>
-              </v-hover>
-            </v-col>
-          </v-row> -->
 </template>
 
 <script>
 export default {
+  props: {
+    blog: {},
+    blogTabs: {}
+  },
   data() {
     return {
       tab: null,
@@ -153,6 +108,7 @@ export default {
           name: 'tutorials'
         },
       ],
+      
       items: [
         {
           tab: 'world of defish',
@@ -226,6 +182,14 @@ export default {
           ]
         },
       ]
+    }
+  },
+  computed: {
+    blogsByTab() {
+      return this.blog.filter(el => el.tab === this.chosenTab)
+    },
+    chosenTab() {
+      return this.blogTabs[this.tab].title
     }
   },
   methods: {

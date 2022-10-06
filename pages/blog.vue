@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <BlogMain/>
-    <Updates/>
+    <Updates :blog-tabs="blogTabs" :blog="blog" />
   </div>
 </template>
 
@@ -19,9 +19,9 @@ export default {
   },
   async asyncData({ $content }) {
     const blog = await $content('blog').fetch()
-
+    const blogTabs = await $content('blogTabs').fetch()
     return {
-      blog,
+      blog, blogTabs
     }
   },
 }
