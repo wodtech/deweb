@@ -22,12 +22,13 @@
           </Flickity>
         </no-ssr>
       </v-card>
-      <v-row class="cards-wrapper d-flex">
-        <v-col class="d-flex align-center" cols="7">
+      <v-row class="cards-wrapper d-flex flex-wrap">
+        <v-col class="d-flex align-center flex-wrap" min-width="460px" lg="7" xl="7" sm="12" md="12">
           <v-hover v-slot="{ hover }">
-            <v-card 
-              :elevation="hover ? 5 : 20" 
-              style="transition: box-shadow 0.3s ease-in-out;" 
+            <v-card
+              min-width="460px"
+              :elevation="hover ? 5 : 20"
+              style="transition: box-shadow 0.3s ease-in-out;"
               rounded="xl"
               outlined
               height="100%"
@@ -49,15 +50,15 @@
             </v-card>
           </v-hover>
         </v-col>
-        <v-col cols="5">
+        <v-col class="d-flex flex-wrap" min-width="460px" lg="5" xl="5" sm="12" md="12">
           <v-hover v-slot="{ hover }">
-            <v-card 
+            <v-card
               :elevation="hover ? 10 : 20"
               rounded="xl"
               outlined
               width="100%"
               style="transition: box-shadow 0.3s ease-in-out;"
-              class="d-flex flex-column flex-grow-1 pa-14" 
+              class="d-flex flex-column flex-grow-1 pa-14"
             >
             <span class="text-h3 mb-4">{{secondCard.titleTop}}</span>
             <div class="d-flex flex-grow-1">
@@ -90,14 +91,14 @@
             </v-card>
           </v-hover>
           <v-hover v-slot="{ hover }">
-            <v-card 
+            <v-card
               :elevation="hover ? 5 : 20"
               rounded="xl"
               outlined
               min-height="500px"
               width="100%"
               style="transition: box-shadow 0.3s ease-in-out;"
-              class="d-flex flex-column flex-grow-1 mt-6 pa-14" 
+              class="d-flex flex-column flex-grow-1 mt-6 pa-14"
             >
             <span class="text-h3 mb-4">{{thirdCard.titleTop}}</span>
             <div class="d-flex flex-column flex-grow-1">
@@ -106,7 +107,7 @@
                 <a href class="d-flex flex-grow-1 subtitle-2" :style="pinkClass(el.isPink)">{{el.desc}}</a>
               </div>
             </div>
-            
+
             </v-card>
           </v-hover>
         </v-col>
@@ -121,7 +122,7 @@
 <script>
 export default {
   components: {
-    
+
   },
   data() {
     return {
@@ -146,7 +147,7 @@ export default {
           id: 2,
           link: "",
           text: "Buy $WOD"
-        }, 
+        },
         {
           id: 3,
           link: "",
@@ -223,7 +224,7 @@ export default {
     next() {
       this.$refs.flickity.next();
     },
-    
+
     previous() {
       this.$refs.flickity.previous();
     },
@@ -234,7 +235,7 @@ export default {
     return 'color: black'
   }
   },
-  
+
 }
 </script>
 
@@ -258,7 +259,7 @@ export default {
         width: 35px;
         height: 35px;
         border: 2px solid rgba(232, 69, 133, 1);
-        left: 50%; top: 50%; 
+        left: 50%; top: 50%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
       }
@@ -275,8 +276,8 @@ export default {
     .slide-element {
       display: flex;
     img {
-      height: 100%; 
-      width: 100%; 
+      height: 100%;
+      width: 100%;
       object-fit: cover;
       border-radius: 30px;
     }
@@ -288,11 +289,17 @@ export default {
     height: 100%;
   }
 }
+.cards-wrapper {
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .img-container {
     width: 100%;
     height: 100%;
-    left: 50%; 
-    top: 50%; 
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: -5;

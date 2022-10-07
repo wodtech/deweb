@@ -1,8 +1,11 @@
 <template>
   <div class="main-frame d-flex">
+    <div class="img-container">
+      <img :src="bgImg" class="bg-img" alt="main background">
+    </div>
     <v-container class="d-flex align-end main-container pb-15">
       <v-row class="d-flex bottom-wrapper">
-        <v-col class="d-flex align-center " cols="6">
+        <v-col style="z-index: 1" class="d-flex align-center " cols="6">
           <div class="d-flex badge">
             <img :src="smallBadge" alt="small img">
           </div>
@@ -16,9 +19,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <div class="img-container">
-      <img :src="bgImg" class="bg-img" alt="main background">
-    </div>
   </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
   width: 100%;
   position: relative;
   .main-container {
-    z-index: 1;
+
     .bottom-wrapper {
       .badge {
         width: 92px;
@@ -75,7 +75,7 @@ export default {
       object-fit: cover;
     }
   }
-  
+
 }
 
 </style>
