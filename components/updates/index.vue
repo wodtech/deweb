@@ -32,9 +32,9 @@
         <div class="cards-wrapper pa-4">
           <div v-for="(card, index) in blog" :key="card.slug" :class="gridCards(index)" >
             <v-hover v-if="index === 0" v-slot="{ hover }">
-              <v-card 
-                :elevation="hover ? 5 : 10" 
-                style="transition: box-shadow 0.3s ease-in-out;" 
+              <v-card
+                :elevation="hover ? 5 : 10"
+                style="transition: box-shadow 0.3s ease-in-out;"
                 rounded="xl"
                 class="d-flex flex-column"
                 height="100%"
@@ -56,9 +56,9 @@
               </v-card>
             </v-hover>
             <v-hover v-else v-slot="{ hover }" >
-              <v-card 
+              <v-card
                 :elevation="hover ? 5 : 10"
-                rounded="xl" 
+                rounded="xl"
                 style="transition: box-shadow 0.3s ease-in-out;"
                 class="d-flex flex-column flex-md-row"
                 height="100%"
@@ -108,7 +108,7 @@ export default {
           name: 'tutorials'
         },
       ],
-      
+
       items: [
         {
           tab: 'world of defish',
