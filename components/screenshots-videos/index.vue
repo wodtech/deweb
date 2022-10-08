@@ -23,17 +23,16 @@
         </no-ssr>
       </v-card>
       <v-row class="cards-wrapper d-flex flex-wrap">
-        <v-col class="d-flex align-center flex-wrap" min-width="460px" lg="7" xl="7" sm="12" md="12">
+        <v-col class="d-flex align-center flex-wrap" min-width="300px" lg="7" xl="7" sm="12" md="12">
           <v-hover v-slot="{ hover }">
             <v-card
-              min-width="460px"
               :elevation="hover ? 5 : 20"
               style="transition: box-shadow 0.3s ease-in-out;"
               rounded="xl"
               outlined
               height="100%"
               max-width="100%"
-              class="pa-14 d-flex justify-space-between flex-column"
+              class="pa-xl-14 pa-lg-14 pa-md-7 pa-4 d-flex justify-space-between flex-column"
             >
               <div class="top-text d-flex flex-column">
                 <span class="text-h3 mb-4">{{firstCard.titleTop}}</span>
@@ -50,7 +49,7 @@
             </v-card>
           </v-hover>
         </v-col>
-        <v-col class="d-flex flex-wrap" min-width="460px" lg="5" xl="5" sm="12" md="12">
+        <v-col class="d-flex flex-wrap" min-width="300px" lg="5" xl="5" sm="12" md="12">
           <v-hover v-slot="{ hover }">
             <v-card
               :elevation="hover ? 10 : 20"
@@ -58,7 +57,7 @@
               outlined
               width="100%"
               style="transition: box-shadow 0.3s ease-in-out;"
-              class="d-flex flex-column flex-grow-1 pa-14"
+              class="d-flex flex-column flex-grow-1 pa-xl-14 pa-lg-14 pa-md-7 pa-4"
             >
             <span class="text-h3 mb-4">{{secondCard.titleTop}}</span>
             <div class="d-flex flex-grow-1">
@@ -98,7 +97,7 @@
               min-height="500px"
               width="100%"
               style="transition: box-shadow 0.3s ease-in-out;"
-              class="d-flex flex-column flex-grow-1 mt-6 pa-14"
+              class="d-flex flex-column flex-grow-1 mt-6 pa-xl-14 pa-lg-14 pa-md-7 pa-4"
             >
             <span class="text-h3 mb-4">{{thirdCard.titleTop}}</span>
             <div class="d-flex flex-column flex-grow-1">

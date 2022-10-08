@@ -1,18 +1,23 @@
 <template>
   <div class="index-page">
-    <MainFrame/>
-    <CareersContent
-      :careers="careers"
-      :careers-groups="careerGroups"
-    />
+    <MainFrame />
+    <v-container class="--cnt">
+      <CareersContent :careers="careers" :careers-groups="careerGroups" />
+      <AboutUs />
+      <Team />
+      <OurEvents />
+    </v-container>
   </div>
 </template>
 
 <script>
 export default {
   components: {
-    MainFrame: () => import("~/components/careers/main-frame"),
-    CareersContent: () => import("~/components/careers/careers-content")
+    MainFrame: () => import('~/components/careers/main-frame'),
+    CareersContent: () => import('~/components/careers/careers-content'),
+    AboutUs: () => import('~/components/careers/about-us'),
+    Team: () => import('~/components/careers/team'),
+    OurEvents: () => import('~/components/careers/our-events'),
   },
   async asyncData({ $content }) {
     const careers = await $content('careers').fetch()
@@ -20,8 +25,15 @@ export default {
 
     return {
       careers,
-      careerGroups
+      careerGroups,
     }
   },
 }
 </script>
+<style scoped lang="scss">
+.index-page {
+  width: 100%;
+  background-color: #f0f0f0;
+  position: relative;
+}
+</style>
