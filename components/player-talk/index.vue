@@ -3,21 +3,21 @@
     <div class="d-flex align-center justify-center">
       <span class="text-h3">OUR PLAYER TALK</span>
     </div>
-    <v-container>
-      <v-card color="transparent" elevation="0" class="d-flex flex-column py-16 --posr">
-        <no-ssr>
-          <!-- <Flickity ref="flickity" :options="flickityOptions">
-            <div v-for="el in cells" :key="el.slug" class="carousel-cell">
-              <div class="slide-element">
-                <img :src="el.img" alt="">
-              </div>
+    <v-card color="transparent" elevation="0" class="d-flex flex-column py-16 --posr">
+      <no-ssr>
+        <!-- <Flickity ref="flickity" :options="flickityOptions">
+          <div v-for="el in cells" :key="el.slug" class="carousel-cell">
+            <div class="slide-element">
+              <img :src="el.img" alt="">
             </div>
-          </Flickity> -->
-          <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
-            <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell">
+          </div>
+        </Flickity> -->
+        <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
+          <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-10">
+            <v-container>
               <v-row class="slider-wrapper-inner">
                 <v-col md="4" sm="6" cols="12" v-for="el in chunk" :key="el.id">
-                  <div class="d-flex flex-column pa-12 card border-gradient-purple rounded-xl">
+                  <v-card elevation="10" class="d-flex flex-column pa-12 card border-gradient-purple" rounded="xl">
                     <div class="d-flex">
                       <div class="d-flex flex-column">
                         <v-avatar
@@ -43,14 +43,14 @@
                     <div class="d-flex flex-grow-1 body-2 font-weight-light">
                       {{el.review}}
                     </div>
-                  </div>
+                  </v-card>
                 </v-col>
               </v-row>
-            </div>
-          </Flickity>
-        </no-ssr>
-      </v-card>
-    </v-container>
+            </v-container>
+          </div>
+        </Flickity>
+      </no-ssr>
+    </v-card>
   </div>
 </template>
 
