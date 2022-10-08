@@ -14,7 +14,7 @@
         <path d="M0.268685 186.73C-0.490779 43.0282 193.357 -69.7743 333.264 52.7738C108.552 -61.203 -38.4298 212.98 110.69 305.034C275.433 406.733 378.788 178.363 262.772 130.464C153.17 99.0821 145.524 222.729 189.124 219.133C217.202 216.818 211.663 182.01 205.918 168.015C246.655 150.597 263.957 178.108 267.516 194.041L286.42 188.967C277.777 296.668 198.433 302.427 159.841 291.843L158.694 310.39C33.1417 240.326 83.4588 144.137 124.311 104.801L118.902 92.0667C228.35 -14.3173 357.055 88.947 371.991 168.027C377.495 165.875 389.182 162.603 391.901 166.737C423.325 460.263 1.8302 482.191 0.268685 186.73Z" fill="#D9D9D9" fill-opacity="0.1"/>
       </svg>
       <v-row style="z-index: 2" class="content-w">
-        <v-col class="game-block d-flex align-center justify-end flex-column" cols="4">
+        <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div style="z-index: 2">
             <img  :src="firstImg" alt="">
           </div>
@@ -22,7 +22,7 @@
             <span>{{btnTextFirst.text}}</span>
           </v-btn>
         </v-col>
-        <v-col class="game-block d-flex align-center justify-end flex-column" cols="4">
+        <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div>
             <img :src="secondImg" alt="">
           </div>
@@ -30,7 +30,7 @@
             <span>{{btnTextSecond.text}}</span>
           </v-btn>
         </v-col>
-        <v-col class="d-flex justify-center align-center flex-column" cols="4">
+        <v-col class="d-flex justify-center align-center flex-column" md="4" sm="12">
           <v-row class="d-flex flex-column">
             <v-col class="d-flex align-end" cols>
               <span  class="text-h4 white--text">{{text}}</span>

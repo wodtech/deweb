@@ -26,6 +26,25 @@
         </v-container>
       </no-ssr>
     </v-card>
+    <div class="grid-container w-70">
+      <div class="left-block">
+        <img class="r1-c1 w-100" src="~/assets/images/careers/r1-col1.png" alt="">
+        <img class="r1-c2 w-100" src="~/assets/images/careers/r1-col2.png" alt="">
+      </div>
+      <div class="center-block">
+        <img class="r2-c2 w-100" src="~/assets/images/careers/r2-col2.png" alt="">
+         <img class="r2-c11 w-100" src="~/assets/images/careers/r2-col11.png" alt="">
+        <img class="r2-c12 w-100" src="~/assets/images/careers/r2-col12.png" alt="">
+       </div>
+
+
+    <div class="right-block">
+      <img class="r3-c1" src="~/assets/images/careers/r3-col1.png" alt="">
+      <img class="r3-c2" src="~/assets/images/careers/r3-col2.png" alt="">
+      <img class="r3-c3" src="~/assets/images/careers/r3-col3.png" alt="">
+
+    </div>
+    </div>
   </div>
 </template>
 
@@ -40,7 +59,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.grid-container {
+  max-width: 600px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 27% 45% 27% ;
 
+  img{
+
+  }
+  .left-block{
+
+  }
+  .right-block {
+
+  }
+  .center-block {
+    grid-column: 3 / 2;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    .r2-c11 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .r2-c12 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    .r2-c2 {
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+  }
+
+
+}
 .main-frame {
   padding-top: 120px;
   min-height: 100vh;

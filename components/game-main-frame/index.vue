@@ -5,7 +5,7 @@
     </div>
     <v-container class="d-flex align-end main-container pb-15">
       <v-row class="d-flex bottom-wrapper">
-        <v-col style="z-index: 1" class="d-flex align-center " cols="6">
+        <v-col style="z-index: 1" class="d-flex align-center col-el" md="8" sm="12">
           <div class="d-flex badge">
             <img :src="smallBadge" alt="small img">
           </div>
@@ -14,7 +14,7 @@
             <span class="caption white--text sub-text">{{ textSmall }}</span>
           </div>
         </v-col>
-        <v-col class="d-flex align-center justify-end" cols="6">
+        <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
           <v-btn x-large class="large-button font-weight-light rounded-pill" >PLAY NOW</v-btn>
         </v-col>
       </v-row>
@@ -44,6 +44,12 @@ export default {
   .main-container {
 
     .bottom-wrapper {
+      @media screen and (max-width: 960px) {
+        flex-direction: column;
+        .col-el {
+          justify-content: center!important;
+        }
+      }
       .badge {
         width: 92px;
         height: 92px;
