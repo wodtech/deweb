@@ -107,7 +107,6 @@ export default {
   computed: {
 
     cardsPerChunk() {
-      console.log(this.$vuetify.breakpoint.name);
       switch (this.$vuetify.breakpoint.name) {
         case 'xs': return 1
         case 'sm': return 2
