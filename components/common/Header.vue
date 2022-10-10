@@ -29,7 +29,7 @@
           </div>
         </v-hover>
 
-        <v-btn to="for-developers" nuxt rounded class="d-md-flex d-none" text>
+        <v-btn to="/for-developers" nuxt rounded class="d-md-flex d-none" text>
           for developers
         </v-btn>
       </div>
