@@ -1,5 +1,5 @@
 <template>
-  <div class="main-frame">
+  <div class="careers-content">
     <v-container >
     <div class="title text-h3">JOIN US</div>
     <div class="career-group-cards">
@@ -83,8 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.main-frame {
-  min-height: 100vh;
+.careers-content {
   width: 100%;
   background-color: #F0F0F0;
   position: relative;

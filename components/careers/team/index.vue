@@ -13,7 +13,7 @@
     <v-row class="d-flex team-b">
       <v-col class="team-imgs" md="6" cols="12">
         <img class="w-100" src="~/assets/images/careers/team1.png" alt="">
-        <img class="w-100" src="~/assets/images/careers/team3.png" alt="">
+        <img  class="w-100" src="~/assets/images/careers/team3.png" alt="">
         <img class="team-card w-100" src="~/assets/images/careers/team2.png" alt="">
 
       </v-col>

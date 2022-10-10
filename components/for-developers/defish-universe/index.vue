@@ -1,8 +1,9 @@
 <template>
   <div class="defish-universe">
-    <v-container class="--cnt">
+    <v-container class="--cnt d-flex flex-column align-center">
       <div class="text-h3 white--text text-center">{{content.title}}</div>
       <div class="body-1 description white--text text-center">{{content.description}}</div>
+      <img class="w-70 mt-10" src="~/assets/images/for-developers/defish-universe.png" >
     </v-container>
   </div>
 </template>
