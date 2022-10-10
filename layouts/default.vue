@@ -1,9 +1,21 @@
 <template>
   <v-app style="background: #F0F0F0 !important;">
+
     <v-main>
       <Nuxt />
     </v-main>
-    <Header></Header>
+    <Sidebar
+      v-model="drawer"
+      mobile-breakpoint="0"
+      absolute
+      bottom
+      temporary
+      @disable-drawer="drawer=false"
+    />
+    <Header>
+      <v-app-bar-nav-icon class="show-mobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    </Header>
+
     <Footer></Footer>
   </v-app>
 </template>
@@ -12,7 +24,8 @@
 export default {
   components: {
     Header: () => import('~/components/common/Header.vue'),
-    Footer: () => import('~/components/common/Footer.vue')
+    Footer: () => import('~/components/common/Footer.vue'),
+    Sidebar: () => import('~/components/common/Sidebar')
   },
   data() {
     return {
@@ -39,3 +52,12 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+.show-mobile {
+  display: none;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+</style>
