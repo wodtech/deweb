@@ -13,13 +13,6 @@
                   <v-btn x-large class="font-weight-light rounded-pill large-button">read more</v-btn>
                 </v-col>
                 <v-col class="d-flex align-center justify-center">
-                  <!-- <v-img
-                  lazy-src="https://picsum.photos/id/11/10/6"
-                  max-height="520"
-                  max-width="350"
-                  contain
-                  :src="slide.img"
-                  ></v-img> -->
                   <div class="img-wrapper d-flex justify-center">
                     <img class="d-flex " :src="slide.img" alt="">
                   </div>
