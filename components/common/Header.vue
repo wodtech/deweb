@@ -29,7 +29,7 @@
           </div>
         </v-hover>
 
-        <v-btn to="for-developers" nuxt rounded class="d-md-flex d-none" text>
+        <v-btn to="/for-developers" nuxt rounded class="d-md-flex d-none" text>
           for developers
         </v-btn>
       </div>
@@ -55,7 +55,9 @@
           <v-icon>mdi-linkedin</v-icon>
         </v-btn>
       </div>
+      <slot></slot>
     </v-container>
+
   </v-card>
 </template>
 
@@ -99,13 +101,13 @@ export default {
         links: [
           {
             title: 'team',
-            href: '#',
+            href: '/careers',
             is_nuxt: true,
           },
           {
             title: 'careers',
             is_nuxt: true,
-            href: '/blog',
+            href: '/careers',
           },
         ],
       },

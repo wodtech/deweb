@@ -1,6 +1,6 @@
 <template>
-  <div class="main-frame">
-    <v-container class="--cnt">
+  <div class="careers-content">
+    <v-container >
     <div class="title text-h3">JOIN US</div>
     <div class="career-group-cards">
       <v-row>
@@ -9,7 +9,7 @@
             class="group"
             :key="group.slug"
             v-for="(group, i) in (careersGroups)">
-            <div v-if="i%2!==0">
+            <div v-if="i%2===0">
               <div class="group-title text-h4">
                 <div v-html="getColoredTitle(group.title)"></div>
               </div>
@@ -28,7 +28,7 @@
             class="group"
             :key="group.slug"
             v-for="(group, i) in careersGroups">
-            <div v-if="i%2===0">
+            <div v-if="i%2!==0">
               <div class="group-title text-h4">
                 <div v-html="getColoredTitle(group.title)"></div>
               </div>
@@ -43,20 +43,18 @@
         </v-col>
       </v-row>
     </div>
-    <div class="career-card-content mt-16">
-      <CareerInfoContent :content="chosenCard" />
-    </div>
+<!--    <div class="career-card-content mt-16">-->
+<!--      <CareerInfoContent :content="chosenCard" />-->
+<!--    </div>-->
     </v-container>
    </div>
 </template>
 
 <script>
 import CareerInfoCard from "~/components/careers/careers-content/CareerInfoCard";
-import CareerInfoContent from "~/components/careers/careers-content/CareerInfoContent";
 export default {
   components: {
     CareerInfoCard,
-    CareerInfoContent
   },
   props: {
     careers: {},
@@ -85,8 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.main-frame {
-  min-height: 100vh;
+.careers-content {
   width: 100%;
   background-color: #F0F0F0;
   position: relative;
