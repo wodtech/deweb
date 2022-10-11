@@ -1,15 +1,21 @@
 <template>
-  <div class="games">
+  <div class="games --posr">
+<!--    <div class="bg-container">-->
+<!--      <img class="bg" src="~/assets/images/for-developers/fishes-bg.png" alt="">-->
+<!--    </div>-->
     <v-container class="--cnt">
+
       <div class="articles-wrapper pb-16">
         <DevInfo
           v-for="(article, i) in articles"
+          style="z-index: 2"
           :key="i"
           :content-reverse="i%2!==0"
           class="mt-9"
           :data="article"
         />
       </div>
+
     </v-container>
   </div>
 </template>
@@ -46,6 +52,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.games {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url("~/assets/images/for-developers/fishes-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 </style>

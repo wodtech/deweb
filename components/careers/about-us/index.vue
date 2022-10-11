@@ -2,9 +2,9 @@
   <div class="about-us">
 
     <div class="title text-h3">ABOUT US</div>
-    <div class="description mt-10">
+    <div class="mt-10 description">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus. Fringilla urna porttitor rhoncus dolor purus non enim praesent elementum. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Viverra justo nec ultrices dui sapien eget mi proin. Vivamus arcu felis bibendum ut. Amet volutpat consequat mauris nunc congue. Dictum non consectetur a erat nam at lectus urna duis. Donec et odio pellentesque diam volutpat commodo. Vitae et leo duis ut diam quam. Placerat duis ultricies lacus sed turpis tincidunt. Feugiat in ante metus dictum at tempor. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Pharetra pharetra massa massa ultricies mi. Aliquam nulla facilisi cras fermentum odio eu. Ipsum consequat nisl vel pretium. Posuere ac ut consequat semper viverra nam libero justo.
-
+      <br/><br/>
       Placerat in egestas erat imperdiet sed. Ut enim blandit volutpat maecenas volutpat blandit. Sem nulla pharetra diam sit amet nisl. Vulputate eu scelerisque felis imperdiet proin. Congue mauris rhoncus aenean vel. Vestibulum morbi blandit cursus risus at ultrices. Fusce ut placerat orci nulla pellentesque dignissim enim. Porttitor leo a diam sollicitudin tempor id eu nisl. Elit scelerisque mauris pellentesque pulvinar. Purus semper eget duis at tellus. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Feugiat scelerisque varius morbi enim. Sed lectus vestibulum mattis ullamcorper. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim.
     </div>
       <img class="mt-16" width="100%" src="~/assets/images/careers/about-us.png" alt="">
@@ -29,6 +29,11 @@ export default {
   width: 100%;
   background-color: #F0F0F0;
   position: relative;
+  .description {
+    font-style: normal;
+    font-size: 20px;
+    line-height: 28px;
+  }
 }
 
 </style>

@@ -10,17 +10,19 @@
               width="100%"
               class="rounded-xl"
             ></v-img>
-            <div class="d-flex align-center pa-6">
-              <v-card class="mr-5" rounded="xl">
-                <v-img :src="n.icon"></v-img>
-              </v-card>
-              <div class="d-flex flex-column">
-                <div class="text-h5">
-                  {{ n.title }}
-                </div>
-                <div class="body-2">
-                  {{ n.subtitle }}
-                </div>
+            <div class="card-content d-flex align-center justify-center pa-6">
+              <div class="d-flex align-center">
+                <v-card width="100px" class="mr-5" rounded="xl">
+                  <v-img :src="n.icon"></v-img>
+                </v-card>
+                <div class="d-flex flex-column">
+                  <div class="text-h5">
+                    {{ n.title }}
+                  </div>
+                  <div class="body-2">
+                    {{ n.subtitle }}
+                  </div>
+              </div>
               </div>
               <v-spacer></v-spacer>
               <v-btn color="primary" x-large rounded>
@@ -42,6 +44,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.card-content {
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}
 </style>

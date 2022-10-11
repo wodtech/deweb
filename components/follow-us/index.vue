@@ -1,6 +1,6 @@
 <template>
 <div class="follow-us">
-  <v-container  class="py-16">
+  <v-container class="py-16">
     <v-card
     outlined
     class="pa-16 card-follow"
