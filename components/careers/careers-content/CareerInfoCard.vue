@@ -14,9 +14,9 @@
   </div>
   <div class="w-30">
     <div v-if="card.office && card.office.length">
-      Office: <span class="link-color">{{card.office.join(', ')}}</span></div>
+      <span>Office:</span> <span class="link-color">{{card.office.join(', ')}}</span></div>
     <div v-if="card.remote && card.remote.length">
-      Remote: <span class="link-color">{{card.remote.join(', ')}}</span></div>
+      <span>Remote:</span> <span class="link-color">{{card.remote.join(', ')}}</span></div>
   </div>
   </nuxt-link>
 </template>
@@ -31,6 +31,7 @@ export default {
 
 <style scoped lang="scss">
 .career-info-card {
+  color: black;
   cursor: pointer;
   background: #FFFFFF;
   border-radius: 20px;

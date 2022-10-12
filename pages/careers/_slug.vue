@@ -32,6 +32,7 @@
   border-radius: 30px;
   @media screen and (max-width: 960px) {
     margin: 106px 25px 56px 25px;
+    padding: 25px 25px;
   }
 }
 </style>
