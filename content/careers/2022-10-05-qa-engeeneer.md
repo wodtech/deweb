@@ -26,4 +26,12 @@ description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 remote:
   - Ukraine
 group: development & QA
+required_skills:
+  - QA(2 years)
+  - Smoke testing
+  - Blackbox
+not_necessary_skills:
+  - Automation
+  - writing scripts
+  - jest
 ---
