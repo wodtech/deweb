@@ -29,4 +29,17 @@ office:
 remote:
   - Ukraine
 group: development & QA
+required_skills:
+  - QA(3 years)
+  - Jira
+  - Confluence
+  - Bitbucket
+  - Pr
+  - Management
+  - Javascript
+  - HTML
+  - CSS
+not_necessary_skills:
+  - Communication
+  - 2 monitors
 ---
