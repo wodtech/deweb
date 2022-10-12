@@ -30,4 +30,12 @@ office:
   - Odesa
 remote: []
 group: development & QA
+required_skills:
+  - .net
+  - dotNet
+  - .NeT
+  - dotnet
+  - something
+not_necessary_skills:
+  - .net
 ---
