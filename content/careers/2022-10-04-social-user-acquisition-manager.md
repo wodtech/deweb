@@ -30,4 +30,22 @@ remote:
   - Ukraine
   - Poland
 group: Marketing
+required_skills:
+  - Vue.js
+  - Native javascript
+  - Node.js
+  - OpenGl
+  - C++
+  - C#
+  - Goo
+  - React.js
+  - Angular
+  - Python
+  - Mongo
+  - Sql
+  - Scratch
+not_necessary_skills:
+  - Qa
+  - soft skills
+  - English-native speaker
 ---
