@@ -1,7 +1,7 @@
 <template>
   <div class="games --posr">
 <!--    <div class="bg-container">-->
-<!--      <img class="bg" src="~/assets/images/for-developers/fishes-bg.png" alt="">-->
+<!--      <img class="bg" src="~/assets/images/careers/fishes-bg.png" alt="">-->
 <!--    </div>-->
     <v-container class="--cnt">
 

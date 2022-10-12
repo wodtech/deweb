@@ -14,7 +14,6 @@
                 <div v-html="getColoredTitle(group.title)"></div>
               </div>
               <CareerInfoCard
-                @click="chosenCard=card"
                 :key="card.slug"
                 :card="card"
                 class="my-2"
@@ -33,7 +32,6 @@
                 <div v-html="getColoredTitle(group.title)"></div>
               </div>
               <CareerInfoCard
-                @click="chosenCard=card"
                 :key="card.slug"
                 :card="card"
                 class="my-2"
