@@ -2,7 +2,7 @@
   <v-app style="background: #F0F0F0 !important;">
 
     <v-main>
-      <Nuxt />
+      <Nuxt/>
     </v-main>
     <Sidebar
       v-model="drawer"
@@ -12,7 +12,7 @@
       temporary
       @disable-drawer="drawer=false"
     />
-    <Header>
+    <Header :bg="headerBg" >
       <v-app-bar-nav-icon class="show-mobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </Header>
 
@@ -50,6 +50,11 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  computed: {
+    headerBg() {
+      return this.$route.path.includes('careers/') ? '#090F1B' : '#00000000'
+    }
+  }
 }
 </script>
 

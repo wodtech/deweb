@@ -1,5 +1,5 @@
 <template>
-  <v-card color="transparent" dark elevation="0" class="header d-flex">
+  <v-card :color="bg ? bg : 'transparent'" dark elevation="0" class="header d-flex">
 
     <div class="back" ref="back"></div>
 
@@ -113,7 +113,11 @@ export default {
       },
     ]
   }),
-
+  props: {
+    bg: {
+      default: ''
+    }
+  },
   methods: {
 
     getHeight(target) {

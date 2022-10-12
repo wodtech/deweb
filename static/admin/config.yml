@@ -81,6 +81,8 @@ collections:
       - { label: 'Office', name: 'office', widget: 'list', required: false }
       - { label: 'Remote', name: 'remote', widget: 'list', required: false }
       - { label: 'group', name: 'group', widget: 'relation', collection: 'careerGroups', search_fields: [ 'title' ], value_field: 'title', display_fields: [ 'title' ] }
+      - { label: 'Required', name: 'required_skills', widget: 'list', required: false }
+      - { label: 'Be a plus', name: 'not_necessary_skills', widget: 'list', required: false }
 
   - name: 'careerGroups'
     label: 'Career groups'
