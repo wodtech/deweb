@@ -12,9 +12,8 @@ export default {
     Updates: () => import('~/components/updates'),
   },
   async asyncData({ $content }) {
-    const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'post_type']).fetch()
+    const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'slug', 'post_type']).fetch()
     const blogTabs = await $content('blogTabs').fetch()
-
     return {
       blog, blogTabs
     }

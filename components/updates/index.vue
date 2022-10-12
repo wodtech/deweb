@@ -19,18 +19,18 @@
       </v-tabs>
       <div class="filter-wrapper pa-4">
         <v-btn  v-for="item in blogTabs.post_types" :key="item.name" text>
-          {{item.name}}
+          {{ item.name }}
         </v-btn>
       </div>
-      <v-tabs-items  v-model="tab" style="background-color: #F0F0F0 !important;">
+      <v-tabs-items v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
-          v-for="(item) in blogsByTab"
+          v-for="(item) in blog"
           :key="item.tab"
           transition="fade-transition"
           reverse-transition="fade-transition"
         >
         <div class="cards-wrapper pa-4">
-          <div v-for="(card, index) in blog" :key="card.slug" :class="gridCards(index)" >
+          <div v-for="(card, index) in blogsByTab" :key="card.slug" :class="gridCards(index)" >
             <v-hover v-if="index === 0" v-slot="{ hover }">
               <v-card
                 :elevation="hover ? 5 : 10"
@@ -43,43 +43,19 @@
                 <v-img max-height="55%" :src="card.image" class="rounded-xl"></v-img>
                 <div class="d-flex flex-column flex-grow-1 align-start pa-4">
                   <div class="text-h4 ml-4 flex-grow-1">
-                    {{card.title}}
+                    {{ card.title }}
                   </div>
                   <div class="body-1 ml-4 flex-grow-1">
-                    {{ card.description }}
+                    {{ card.shot_description }}
                   </div>
-                  <v-btn :href="card.link" rounded text class="mt-3 flex-grow-1">
+                  <v-btn  :to="{ name: 'blog-slug', params: {slug: card.slug} }" rounded text class="mt-3 flex-grow-1" nuxt>
                     read now
                     <v-icon right>mdi-arrow-right</v-icon>
                   </v-btn>
                 </div>
               </v-card>
             </v-hover>
-            <v-hover v-else v-slot="{ hover }" >
-              <v-card
-                :elevation="hover ? 5 : 10"
-                rounded="xl"
-                style="transition: box-shadow 0.3s ease-in-out;"
-                class="d-flex flex-column flex-md-row"
-                height="100%"
-                width="100%"
-                :class="i ? 'mt-6' : ''"
-              >
-                <v-img aspect-ratio="1" class="rounded-xl" max-width="40%" cover style="flex: 0 0 40%" :src="card.image"></v-img>
-                <div class="d-flex flex-grow-1  flex-column align-start pa-4">
-                  <span class="body-1 ml-4 flex-grow-1">
-                    {{card.title}}
-                  </span>
-                  <span class="body-1 ml-4 flex-grow-1">
-                    {{ card.description }}
-                  </span>
-                  <v-btn :href="card.link" rounded text class="mt-3">
-                    read now
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                </div>
-              </v-card>
-            </v-hover>
+            <SmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card.slug" :image="card.image" />
           </div>
         </div>
         </v-tab-item>
@@ -90,13 +66,16 @@
 
 <script>
 export default {
+  components: {
+    SmallCard: () => import('./SmallCard.vue'),
+  },
   props: {
     blog: {},
     blogTabs: {}
   },
   data() {
     return {
-      tab: null,
+      tab: 0,
       filters: [
         {
           name: 'updates'
@@ -108,80 +87,6 @@ export default {
           name: 'tutorials'
         },
       ],
-
-      items: [
-        {
-          tab: 'world of defish',
-          content: [
-            {
-              id: 1,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            },
-            {
-              id: 2,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            },
-            {
-              id: 3,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            },
-            {
-              id: 4,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            },
-            {
-              id: 5,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            },
-            {
-              id: 6,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            }
-          ]
-        },
-        {
-          tab: 'tower defish',
-          content: [
-            {
-              id: 1,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            }
-          ]
-        },
-        {
-          tab: 'company news',
-          content: [
-            {
-              id: 1,
-              img: "https://picsum.photos/600/400",
-              article: 'HOW TO START?',
-              desc: 'We created a New world with fishes and something that we and something that we created a New world with fishes and something',
-              btnLink: '#'
-            }
-          ]
-        },
-      ]
     }
   },
   computed: {
