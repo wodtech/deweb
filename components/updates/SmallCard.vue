@@ -1,8 +1,8 @@
 <template>
   <v-hover v-slot="{ hover }" >
-    <v-card 
+    <v-card
       :elevation="hover ? 5 : 10"
-      rounded="xl" 
+      rounded="xl"
       style="transition: box-shadow 0.3s ease-in-out;"
       class="d-flex flex-column flex-md-row"
       height="100%"
@@ -13,7 +13,7 @@
         <span class="body-1 ml-4 flex-grow-1">
           {{title}}
         </span>
-        <span class="body-1 ml-4 flex-grow-1">
+        <span style="max-height:130px;overflow: auto" class="body-1 ml-4 flex-grow-1">
           {{ shortDescription }}
         </span>
         <v-btn :to="{ name: 'blog-slug', params: {slug: slug} }" rounded text class="mt-3" nuxt>

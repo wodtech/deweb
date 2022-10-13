@@ -1,0 +1,122 @@
+<template>
+  <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex">
+    <v-container class="py-16 --posr">
+      <div class="bg-container">
+        <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
+      </div>
+      <v-row class="--posr">
+        <v-col cols="12" class="--posr d-flex align-center flex-column flex-md-row">
+          <div class="launcher-card d-flex align-end">
+            <div class="img-w">
+              <img class="app" src="~/assets/images/desktop.png"/>
+            </div>
+            <v-responsive width="100%" :aspect-ratio="1.5"></v-responsive>
+          </div>
+          <div>
+            <div class="launcher-info rounded-xl py-13 pr-9 --posr d-flex flex-column justify-center align-end">
+              <div style="max-width: 400px">
+                <div class="text-h3">ALL GAMES. <br/> ONE PLACE</div>
+                <div class="descr mt-3 body-2">
+                  Defish Launcher is a player's space in a desctop app, where all games are tied up to one Defish ecosystem by Defish Connect mechanism.
+                </div>
+              </div>
+            </div>
+          </div>
+        </v-col>
+
+      </v-row>
+    </v-container>
+  </v-card>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.bg-container {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+
+  .bg {
+    max-width: 700px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: unset !important;
+  background: rgba(#1C212F, 1);
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  svg {
+    transform: translate(10%, -40%);
+  }
+}
+
+.launch-window {
+  overflow: hidden;
+  position: relative;
+}
+
+.fish-bg {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  top: 0;
+  right: 0;
+}
+.launcher-card {
+  position: relative;
+  width: 50%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.launcher-info{
+  background: white;
+  padding-left: 120px;
+  @media screen and (max-width: 960px) {
+    padding-left: 44px
+  }
+}
+.img-w {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 120%;
+  max-width: 652px;
+  transform: translate(25%, -50%);
+
+  @media (max-width: 960px) {
+    width: 100%;
+    left: 0;
+    transform: translate(0, -50%) translateX(5%) translateY(-10%);
+  }
+  .app {
+    transform: perspective(2000px) rotateX(25deg) rotateY(30deg) rotateZ(-15deg);
+    width: 100%;
+  }
+}
+</style>

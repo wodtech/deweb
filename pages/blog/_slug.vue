@@ -14,18 +14,18 @@
         </v-btn>
       </div>
       <v-row class="d-flex">
-        <v-col v-for="card in nextBlogs" :key="card.slug"  cols="6">
-          <SmallCard 
-          :title="card.title" 
-          :short-description="card.shot_description" 
-          :slug="card.slug" 
+        <v-col v-for="card in nextBlogs" :key="card.slug"  md="6" cols="12">
+          <SmallCard
+          :title="card.title"
+          :short-description="card.shot_description"
+          :slug="card.slug"
           :image="card.image" />
         </v-col>
       </v-row>
-      
+
     </v-container>
   </div>
-  
+
 </template>
 
 <script>
@@ -41,7 +41,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   },
   methods: {
@@ -80,5 +80,5 @@ export default {
       border-radius: 30px;
     }
   }
-  
+
 </style>

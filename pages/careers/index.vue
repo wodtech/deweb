@@ -1,5 +1,5 @@
 <template>
-  <div class="index-page">
+  <div class="index-page"  >
     <MainFrame />
     <v-container style="padding-top: 145px" class="--cnt">
       <CareersContent :careers="careers" :careers-groups="careerGroups" />

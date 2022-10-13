@@ -4,7 +4,13 @@
     <div class="back" ref="back"></div>
 
     <v-container class="py-4 d-flex align-center --posr">
-      <img class="logo" src="~/assets/images/full-logo.png" alt=""></img>
+      <nuxt-link
+        tag="img"
+        class="logo"
+        :src="require('~/assets/images/full-logo.png')"
+        to="/">
+      </nuxt-link>
+
 
       <div class="menu-btns d-flex flex-grow-1 px-10">
 
@@ -90,7 +96,7 @@ export default {
         links: [
           {
             title: 'launcher',
-            href: '#',
+            href: '/defish-launcher',
             is_nuxt: true,
           },
           {
@@ -229,6 +235,7 @@ export default {
   }
 
   .logo {
+    cursor: pointer;
     height: 100%;
     width: auto;
   }

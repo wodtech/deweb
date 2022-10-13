@@ -1,5 +1,8 @@
 <template>
-  <div class="blog">
+  <div class="blog --posr">
+    <div class="img-container">
+      <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
+    </div>
     <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
       <no-ssr class="d-flex flex-grow-1 justify-center">
         <Flickity ref="flickity" class="flickity-container"  :options="flickityOptions">
@@ -106,6 +109,17 @@ export default {
     object-fit: cover;
   }
 }
+.img-container {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 :deep(.flickity-page-dots) {
   bottom: 30px !important;
 }
@@ -131,6 +145,10 @@ export default {
 }
 .blog {
   height: 100vh;
+  min-height: 1000px;
+  @media screen and (max-width: 960px){
+    height: 1000px;
+  }
   width: 100%;
   background-color: rgba(1, 2, 4, 1);
 }

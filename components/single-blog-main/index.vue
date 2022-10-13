@@ -1,13 +1,16 @@
 <template>
   <div class="single-blog d-flex flex-column align-center justify-center">
-    <v-container class="d-flex align-center justify-center">
-      <v-row class="d-flex flex-column justify-center flex-md-row">
-        <v-col class="d-flex flex-column justify-center align-center" cols="6">
-          <div style="max-width: 500px" class="d-flex flex-column">
+    <div class="img-container">
+      <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
+    </div>
+    <v-container style="z-index: 2" class="d-flex align-center justify-center">
+      <v-row class="d-flex justify-center flex-md-row flex-column-reverse ">
+        <v-col class="d-flex flex-column justify-center align-center" md="6" cols="12">
+          <div style="max-width: 500px" class="d-flex flex-column align-center align-md-start">
             <div class="d-flex mb-9 title text-h3  white--text">{{blog.title}}</div>
-            <div class="desc mb-9 subtitle-2 font-weight-light white--text">{{blog.description}}</div>
-            <div class="date mb-9  white--text">{{parseDate(blog.date)}}</div>
-            <div class="d-flex mb-9">
+            <div class="desc mb-md-9 mb-2 subtitle-2 font-weight-light white--text">{{blog.description}}</div>
+            <div class="date mb-md-9 mb-2  white--text">{{parseDate(blog.date)}}</div>
+            <div class="d-flex mb-md-9 mb-2">
                 <v-btn icon>
                   <v-icon color="primary">mdi-twitter</v-icon>
                 </v-btn>
@@ -22,13 +25,14 @@
             <v-btn x-large class="font-weight-light rounded-pill large-button">read more</v-btn>
           </div>
         </v-col>
-        <v-col class="d-flex align-center justify-center" cols="6">
+        <v-col class="d-flex align-center justify-center" md="6" cols="12">
           <div class="img-wrapper d-flex justify-center">
             <img class="d-flex " :src="blog.image"  alt="">
           </div>
         </v-col>
       </v-row>
     </v-container>
+
   </div>
 </template>
 
@@ -39,7 +43,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   },
   methods: {
@@ -59,7 +63,19 @@ export default {
 .single-blog {
   height: 100vh;
   width: 100%;
+  position: relative;
   background-color: rgba(1, 2, 4, 1);
+}
+.img-container {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .date {
   font-family: 'Relaway';
@@ -92,6 +108,6 @@ export default {
       font-weight: bold;
       font-size: 28px;
     }
-    
+
   }
 </style>

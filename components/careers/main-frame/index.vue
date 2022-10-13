@@ -92,7 +92,6 @@ export default {
 
 }
 .main-frame {
-
   height: 50vh;
   width: 100%;
   background: black;
