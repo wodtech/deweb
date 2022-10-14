@@ -19,20 +19,34 @@
             <v-col style="height: 250px;overflow: visible" class="d-flex align-start justify-center">
               <div class="grid-container w-100">
                 <div class="left-block">
-                  <img class="r1-c1 w-100" src="~/assets/images/careers/r1-col1.png" alt="">
-                  <img class="r1-c2 w-100" src="~/assets/images/careers/r1-col2.png" alt="">
+                  <div class="r1-c1">
+                    <v-img aspect-ratio="1" max-width="100%" cover class="h-100 w-100 rounded-lg " :src="row1.coll1"></v-img>
+                  </div>
+                  <div class="r1-c2">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row1.coll2"></v-img>
+                  </div>
                 </div>
                 <div class="center-block">
-                  <img class="r2-c2 w-100" src="~/assets/images/careers/r2-col2.png" alt="">
-                  <img class="r2-c11 w-100" src="~/assets/images/careers/r2-col11.png" alt="">
-                  <img class="r2-c12 w-100" src="~/assets/images/careers/r2-col12.png" alt="">
+                  <div class="r2-c2">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row2.coll2"></v-img>
+                  </div>
+                  <div class="r2-c11">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row2.coll11"></v-img>
+                  </div>
+                  <div class="r2-c12">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row2.coll12"></v-img>
+                  </div>
                 </div>
-
                 <div class="right-block">
-                  <img class="r3-c1" src="~/assets/images/careers/r3-col1.png" alt="">
-                  <img class="r3-c2" src="~/assets/images/careers/r3-col2.png" alt="">
-                  <img class="r3-c3" src="~/assets/images/careers/r3-col3.png" alt="">
-
+                  <div class="r3-c1">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll1"></v-img>
+                  </div>
+                  <div class="r3-c2">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll2"></v-img>
+                  </div>
+                  <div class="r3-c3">
+                    <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll3"></v-img>
+                  </div>
                 </div>
               </div>
             </v-col>
@@ -48,7 +62,20 @@
 export default {
   data() {
     return {
-      imgSrc: require("~/assets/images/test-img.png")
+      row1: {
+        coll1: require('~/assets/images/careers/r1-col1.png'),
+        coll2: require('~/assets/images/careers/r1-col2.png')
+      },
+      row2: {
+        coll2: require('~/assets/images/careers/r2-col2.png'),
+        coll11: require('~/assets/images/careers/r2-col11.png'),
+        coll12: require('~/assets/images/careers/r2-col12.png'),
+      },
+      row3: {
+        coll1: require('~/assets/images/careers/r3-col1.png'),
+        coll2: require('~/assets/images/careers/r3-col2.png'),
+        coll3: require('~/assets/images/careers/r3-col3.png')
+      },
     }
   }
 }
@@ -56,16 +83,20 @@ export default {
 
 <style lang="scss" scoped>
 .grid-container {
-  max-width: 600px;
+  z-index: 1;
+  max-width: 595px;
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 27% 45% 27% ;
-
+  grid-template-columns: 25% 40% 28%;
+  @media screen and (max-width: 1265px) {
+    max-width: 540px;
+  }
   img{
-
+    object-fit: contain;
   }
   .left-block{
-
+    display: grid;
+    grid-template-rows: 2fr 1fr;
   }
   .right-block {
 
@@ -96,6 +127,13 @@ export default {
   width: 100%;
   background: black;
   position: relative;
+  min-height: 500px;
+  @media screen and (max-width: 1265px) {
+    min-height: 700px;
+  }
+  @media screen and (max-width: 960px) {
+    min-height: 700px;
+  }
   .main-title {
     font-size: 70px;
     line-height: 104.13%;

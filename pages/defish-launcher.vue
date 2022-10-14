@@ -1,10 +1,11 @@
 <template>
   <div class="index-page">
     <MainFrame/>
-    <LaunchWindow />
-    <InfoArticles />
-    <ChatSection />
-    <Arts :arts="arts" />
+    <LaunchWindow/>
+    <InfoArticles/>
+    <ChatSection/>
+    <DefishSection/>
+    <Arts :arts="arts"/>
     <FollowUs/>
   </div>
 </template>
@@ -16,6 +17,7 @@ export default {
     LaunchWindow: () => import("~/components/defish-launcher/launch-window"),
     InfoArticles: () => import("~/components/defish-launcher/info-articles"),
     ChatSection: () => import("~/components/defish-launcher/chat-section"),
+    DefishSection: () => import("~/components/defish-launcher/defish-section"),
     Arts: () => import("~/components/arts-stripe"),
     FollowUs: () => import('~/components/follow-us'),
   },
