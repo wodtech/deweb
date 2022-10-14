@@ -19,10 +19,10 @@
             <v-col style="height: 250px;overflow: visible" class="d-flex align-start justify-center">
               <div class="grid-container w-100">
                 <div class="left-block">
-                  <div class="r1-c1">
+                  <div class="r1-c1" style="margin-bottom: 6px">
                     <v-img aspect-ratio="1" max-width="100%" cover class="h-100 w-100 rounded-lg " :src="row1.coll1"></v-img>
                   </div>
-                  <div class="r1-c2">
+                  <div class="r1-c2" style="margin-top: 4px">
                     <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row1.coll2"></v-img>
                   </div>
                 </div>
@@ -38,13 +38,13 @@
                   </div>
                 </div>
                 <div class="right-block">
-                  <div class="r3-c1">
+                  <div class="r3-c1" style="margin-bottom: 5px;">
                     <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll1"></v-img>
                   </div>
-                  <div class="r3-c2">
+                  <div class="r3-c2" style="margin-bottom: 5px;">
                     <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll2"></v-img>
                   </div>
-                  <div class="r3-c3">
+                  <div class="r3-c3" >
                     <v-img aspect-ratio="1"  max-width="100%" cover  class="h-100 w-100 rounded-lg" :src="row3.coll3"></v-img>
                   </div>
                 </div>
@@ -86,8 +86,8 @@ export default {
   z-index: 1;
   max-width: 595px;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 25% 40% 28%;
+  grid-gap: 12px;
+  grid-template-columns: 25% 40% 25%;
   @media screen and (max-width: 1265px) {
     max-width: 540px;
   }
@@ -99,13 +99,17 @@ export default {
     grid-template-rows: 2fr 1fr;
   }
   .right-block {
-
+    display: grid;
+    grid-gap: 5px;
+    grid-template-rows: 1fr 1fr 1fr;
+    .r3-c3{
+      max-height: 153px;
+    }
   }
   .center-block {
-    grid-column: 3 / 2;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
     .r2-c11 {
       grid-column: 1;
       grid-row: 2;
