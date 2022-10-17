@@ -6,7 +6,7 @@
     <LaunchWindow/>
     <PlayerTalk/>
     <Blog/>
-    <Subs/>
+    <FollowUs/>
   </div>
 </template>
 
@@ -19,9 +19,9 @@ export default {
     Blog: () => import("~/components/blog"),
     PlayerTalk: () => import("~/components/player-talk"),
     Games: () => import("~/components/games"),
-    Subs: () => import("~/components/subs"),
     Careers: () => import("~/components/subs"),
     CareersContent: () => import("~/components/careers/careers-content"),
+    FollowUs: () => import("~/components/follow-us"),
     ArtsStripe,
   },
   async asyncData({ $content }) {

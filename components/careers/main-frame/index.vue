@@ -16,7 +16,7 @@
                   Be a part of new gaming history - this whats drive us the most.
               </div>
             </v-col>
-            <v-col style="height: 250px;overflow: visible" class="d-flex align-start justify-center">
+            <v-col style="height: 250px;overflow: visible" class="grid-wrap-block d-flex align-start">
               <div class="grid-container w-100">
                 <div class="left-block">
                   <div class="r1-c1" style="margin-bottom: 6px">
@@ -88,6 +88,7 @@ export default {
   display: grid;
   grid-gap: 12px;
   grid-template-columns: 25% 40% 25%;
+  justify-content: end;
   @media screen and (max-width: 1265px) {
     max-width: 540px;
   }
@@ -125,6 +126,12 @@ export default {
   }
 
 
+}
+.grid-wrap-block {
+  justify-content: end;
+  @media screen and (max-width: 1265px) {
+    justify-content: center;
+  }
 }
 .main-frame {
   height: 50vh;

@@ -10,7 +10,7 @@
       height="100%"
       color="transparent"
       elevation="0"
-      class="d-flex flex-column align-center justify-center py-16 --posr"
+      class="d-flex flex-column align-center justify-center py-16 --posr w-100"
     >
       <no-ssr class="d-flex flex-grow-1 justify-center">
         <v-container class="d-flex align-center justify-center">

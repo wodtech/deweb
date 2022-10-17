@@ -10,13 +10,13 @@
   </div>
   <div class="mt-5">
     <div class="content-title font-weight-bold">DESCRIPTION</div>
-    <div class="content subtitle-2">
+    <div class="content subtitle-2 mt-2">
       {{career.description}}
     </div>
   </div>
   <div class="mt-7">
     <div class="link-color content-title font-weight-bold">REQUIRMENTS:</div>
-    <div class="important">
+    <div class="important mt-2">
       <div class="body-2 font-weight-bold">Important</div>
       <ul>
         <li class="body-2" :key="skill" v-for="skill  in career.required_skills">{{skill}}</li>

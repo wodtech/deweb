@@ -1,7 +1,7 @@
 <template>
   <div class="careers-content">
-    <v-container >
-    <div class="title text-h3">JOIN US</div>
+    <div >
+    <div class="title text-h2 mb-8">JOIN US</div>
     <div class="career-group-cards">
       <v-row>
         <v-col>
@@ -16,7 +16,7 @@
               <CareerInfoCard
                 :key="card.slug"
                 :card="card"
-                class="my-2"
+                class="career-card"
                 v-for="card in filterByGroup(group.title)" />
             </div>
 
@@ -34,7 +34,7 @@
               <CareerInfoCard
                 :key="card.slug"
                 :card="card"
-                class="my-2"
+                class="career-card"
                 v-for="card in filterByGroup(group.title)" />
             </div>
           </div>
@@ -44,7 +44,7 @@
 <!--    <div class="career-card-content mt-16">-->
 <!--      <CareerInfoContent :content="chosenCard" />-->
 <!--    </div>-->
-    </v-container>
+    </div>
    </div>
 </template>
 
@@ -85,6 +85,12 @@ export default {
   width: 100%;
   background-color: #F0F0F0;
   position: relative;
+  .group-title {
+    margin-bottom: 32px;
+  }
+  .career-card {
+    margin: 20px 0;
+  }
 }
 
 </style>

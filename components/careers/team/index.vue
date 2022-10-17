@@ -3,7 +3,7 @@
     <v-row>
       <v-col md="6" cols="12" class="d-flex flex-column align-start justify-center">
         <img src="~/assets/images/careers/quotes.svg">
-        <div class="text-h4">Success doesn't come to you…you go to it.</div>
+        <div class="text-h4">Success doesn't come <br/> to you…you go to it.</div>
         <div class="caption">By Marva Collins...</div>
       </v-col>
       <v-col md="6" cols="12">
@@ -20,7 +20,7 @@
 
       </v-col>
       <v-col md="6" cols="12" class="d-flex flex-column team-about">
-        <div class="text-h3">TEAM</div>
+        <div class="text-h2">TEAM</div>
         <div class="mt-10 description" style="max-width: 518px">
           Placerat in egestas erat imperdiet sed. Ut enim blandit volutpat maecenas volutpat blandit. Sem nulla pharetra diam sit amet nisl. Vulputate eu scelerisque felis imperdiet proin. Congue mauris rhoncus aenean vel. Vestibulum morbi blandit cursus risus at ultrices.
           <br/><br/>

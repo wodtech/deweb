@@ -1,6 +1,6 @@
 <template>
   <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex">
-    <v-container class="py-16 --posr">
+    <v-container style="padding:120px 0 " class=" --posr">
       <div class="bg-container">
         <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
       </div>
@@ -95,7 +95,7 @@ export default {
 }
 .launcher-info{
   background: white;
-  padding-left: 120px;
+  padding-left: 140px;
   @media screen and (max-width: 960px) {
     padding-left: 44px
   }
@@ -106,10 +106,12 @@ export default {
   top: 50%;
   right: 5%;
   width: 120%;
-  max-width: 652px;
+  max-width: 752px;
+  min-width: 650px;
   transform: translate(25%, -50%);
 
   @media (max-width: 960px) {
+    min-width:0;
     width: 100%;
     left: 0;
     transform: translate(0, -50%) translateX(5%) translateY(-10%);

@@ -8,9 +8,9 @@
       <div class="text-h2 mb-6">
         OUR ARTS
       </div>
-      <div class="body-1 text-center" style="max-width: 500px">
+      <div class="body-1 text-center" style="max-width: 585px">
         But I must explain to you how all this mistaken idea of denouncing pleasure
-        and praising pain was born and I will give you 
+        and praising pain was born and I will give you
       </div>
     </div>
 

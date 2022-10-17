@@ -1,6 +1,6 @@
 <template>
   <div class="our-events">
-    <div class="text-h3 text-center">OUR EVENTS</div>
+    <div class="text-h2 text-center">OUR EVENTS</div>
     <v-row class="mt-8">
         <v-col>
           <img class="w-100" src="~/assets/images/careers/our-events/1.png" alt="">

@@ -9,7 +9,7 @@
         <div class="body-1" style="max-width: 500px;">
           Our game arts are the heart, bones and brain
           of the visual elements you see while playing our games. Without our visual game artists, the game
-          would be just an ideas in a designer's head. 
+          would be just an ideas in a designer's head.
         </div>
       </div>
       <v-sheet height="40%" color="transparent"></v-sheet>

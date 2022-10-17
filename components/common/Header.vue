@@ -23,19 +23,20 @@
           <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
             <v-btn rounded text :to="n.href" :nuxt="n.is_nuxt">
               {{ n.title }}
-              <v-icon v-if="hover" right>mdi-menu-down</v-icon>
-              <v-icon v-else right>mdi-menu-up</v-icon>
+              <svg :class="['arrow ml-1',{ rotate: hover }]" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.65017L4.00007 5.5L8 1.65017L6.75113 0.5L4.00007 3.14778L1.24887 0.5L0 1.65017Z" fill="white"/>
+              </svg>
             </v-btn>
 
             <div
               class="drop-down d-flex flex-column align-center pt-5"
             >
-              <a v-for="z in n.links" class="lnk body-1 mb-2" :href="z.href">{{ z.title }}</a>
+              <a v-for="z in n.links" class="lnk body-1 mb-2 hover-el"  :href="z.href">{{ z.title }}</a>
             </div>
           </div>
         </v-hover>
 
-        <v-btn to="/for-developers" nuxt rounded class="d-md-flex d-none" text>
+        <v-btn to="/for-developers" nuxt rounded class="d-md-flex d-none hover-el" text>
           for developers
         </v-btn>
       </div>
@@ -133,7 +134,7 @@ export default {
     getHeight(target) {
 
       const bb = target.getBoundingClientRect();
-      const y = target.offsetTop + bb.height + (4 * 5);
+      const y = target.offsetTop + bb.height + (4 * 5) + 15;
 
       return y
     },
@@ -212,9 +213,29 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-
+  .hover-el{
+    &:hover{
+      color: #76FFE8;
+    }
+  }
   .drop-container {
     position: relative;
+    .v-btn {
+      transition: color 0.3s ease-in-out;
+    }
+    svg {
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+      .v-btn {
+        color: #76FFE8;
+      }
+      svg {
+        path {
+          fill: #76FFE8;
+        }
+      }
+    }
 
     .drop-down {
       position: absolute;
@@ -226,11 +247,17 @@ export default {
       .lnk {
         color: #fff;
         font-family: 'Bebas' !important;
+        &:hover {
+          color: #76FFE8;
+        }
       }
 
       &:not(.hovered) {
         display: none !important;
       }
+    }
+    .rotate {
+      transform: rotate(-180deg);
     }
   }
 
@@ -240,12 +267,6 @@ export default {
     width: auto;
   }
 
-  .menu-btns {
-
-    .v-btn {
-
-    }
-  }
 
   .socials {
     .v-btn {
