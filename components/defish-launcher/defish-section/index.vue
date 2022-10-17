@@ -1,13 +1,11 @@
 <template>
   <div style="background: #192438" class="w-100 --posr">
-    <v-container style="z-index: 0;" class="py-16 --posr d-flex flex-column align-center">
-<!--      <div class="bg-container">-->
-<!--        <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>-->
-<!--      </div>-->
-      <v-card color="transparent" class="w-70 card d-flex flex-column --posr" elevation="10"   rounded="xl" style="height: 400px" >
+    <div style="z-index: 0;" class="py-16 --posr d-flex flex-column align-center">
+      <img class="fishes-top" src="~/assets/images/defish-launcher/fishes.png" alt="">
+      <v-card color="transparent" class="w-70 card d-flex flex-column --posr" elevation="10"   rounded="xl" >
         <img style="position: absolute;top:0;left:0" class="w-100 h-100" src="~/assets/images/defish-launcher/border.png" alt="">
         <v-row class="w-100 h-100">
-          <v-col cols="6" class="py-12 pl-16 pr-6 white--text">
+          <v-col cols="12" md="6" class="py-12 pl-16 pr-6 white--text">
             <div class="text-h4">
               LOREM <span class="pink--text">IPSUM</span><br/>
               DOLOR SIT AMET
@@ -20,12 +18,18 @@
               Feel a real Storm of the Seven Seas, hunting for lorem mystical NFT Fish, crafting, compete.
             </div>
           </v-col>
-          <v-col cols="6" class="--posr pa-10">
+          <v-col cols="12" md="6" class="--posr pa-10 d-flex justify-center">
             <v-img class="w-100" :src="tdImage" alt="td-preview"></v-img>
           </v-col>
         </v-row>
       </v-card>
-    </v-container>
+      <div class="w-100">
+        <div class="bg-container">
+<!--          <img  class="bg w-70" src="~/assets/images/defish-launcher/defish-circle.png" alt="">-->
+        </div>
+        <img style="opacity: 0"  class="bg w-100" src="~/assets/images/defish-launcher/defish-circle.png" alt="">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -33,50 +37,38 @@
 export default {
   data() {
     return {
-      tdImage: require('~/assets/images/td-preview.jpg')
+      tdImage: require('~/assets/images/td-preview.jpg'),
     }
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .bg-container {
   position: absolute;
   z-index: 1;
   height: 100%;
   width: 100%;
-
   overflow: hidden;
+  background-image: url("~/assets/images/defish-launcher/defish-circle.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   .bg {
-    max-width: 700px;
     width: 100%;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -60px;
+    right: 10%;
   }
 }
 .card {
-  // max-width: 500px;
   height: 100%;
   position: relative;
   background-clip: padding-box;
-  //background-image: url("~/assets/images/defish-launcher/border.png");
-  //background-repeat: no-repeat;
-  //background-size: contain;
-  //&:before {
-  //  content: "";
-  //  position: absolute;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  left: 0;
-  //  z-index: -1;
-  //  margin: -2px; /* same as border width */
-  //  border-radius: inherit; /* inherit container box's radius */
-  //  background: linear-gradient(to left, rgba(255, 226, 238, 0.01), rgba(244, 50, 127, 1));
-  //}
 }
-
+.fishes-top{
+  position: absolute;
+  top: -20px;
+  right: 30%;
+}
 .launch-window {
   overflow: hidden;
   position: relative;
