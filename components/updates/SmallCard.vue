@@ -9,14 +9,19 @@
       width="100%"
     >
       <v-img aspect-ratio="1" class="rounded-xl" max-width="40%" cover style="flex: 0 0 40%" :src="image"></v-img>
-      <div class="d-flex flex-grow-1  flex-column align-start pa-4">
-        <span class="body-1 ml-4 flex-grow-1">
+      <div class="d-flex flex-column align-start pa-4">
+        <span class="text-h5 ml-4">
           {{title}}
         </span>
-        <span style="max-height:130px;overflow: auto" class="body-1 ml-4 flex-grow-1">
+        <span style="max-height:130px;overflow: auto" class="body-2 ml-4 mt-1">
           {{ shortDescription }}
         </span>
-        <v-btn :to="{ name: 'blog-slug', params: {slug: slug} }" rounded text class="mt-3" nuxt>
+
+<!--        <v-btn :href="btnTextFirst.link" x-large class="follow-btn font-weight-light rounded-pill">-->
+<!--          <span>{{btnTextFirst.text}}</span>-->
+<!--        </v-btn>-->
+
+        <v-btn :to="{ name: 'blog-slug', params: {slug: slug} }" rounded text class="mt-3 read-btn" nuxt>
           read now
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
@@ -47,3 +52,15 @@ export default {
   },
 }
 </script>
+<style scoped lang="scss">
+.read-btn {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: rgba(233, 68, 133, 1) !important;
+    &:disabled {
+      color: white !important;
+    }
+  }
+}
+</style>

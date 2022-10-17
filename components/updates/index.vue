@@ -9,55 +9,63 @@
       >
         <v-tab
           v-for="item in blogTabs"
-          :key="item.title"
+          :key="item.slug"
           active-class="tab-active"
         >
-        <v-btn x-large class="font-weight-light rounded-pill tab-btn">
-          {{ item.title }}
-        </v-btn>
+          <v-btn x-large class="font-weight-light rounded-pill tab-btn">
+            {{ item.title }}
+          </v-btn>
         </v-tab>
       </v-tabs>
       <div class="filter-wrapper pa-4">
-        <v-btn  v-for="item in blogTabs.post_types" :key="item.name" text>
-          {{ item.name }}
+        <v-btn
+          :class="['type-filter', filterType === item ? 'chosen' : '']"
+          v-for="item in chosenTab.post_types"
+          :key="item"
+          text
+          @click="filterType = item"
+        >
+          {{ item }}
         </v-btn>
       </div>
       <v-tabs-items v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
           v-for="(item) in blog"
-          :key="item.tab"
+          :key="item.slug"
           transition="fade-transition"
           reverse-transition="fade-transition"
         >
-        <div class="cards-wrapper pa-4">
-          <div v-for="(card, index) in blogsByTab" :key="card.slug" :class="gridCards(index)" >
-            <v-hover v-if="index === 0" v-slot="{ hover }">
-              <v-card
-                :elevation="hover ? 5 : 10"
-                style="transition: box-shadow 0.3s ease-in-out;"
-                rounded="xl"
-                class="d-flex flex-column"
-                height="100%"
-                width="100%"
-              >
-                <v-img max-height="55%" :src="card.image" class="rounded-xl"></v-img>
-                <div class="d-flex flex-column flex-grow-1 align-start pa-4">
-                  <div class="text-h4 ml-4 flex-grow-1">
-                    {{ card.title }}
+          <div class="cards-wrapper pa-4">
+            <div v-for="(card, index) in blogsByTab" :key="card.slug" :class="gridCards(index)" >
+              <v-hover v-if="index === 0" v-slot="{ hover }">
+                <v-card
+                  :elevation="hover ? 5 : 10"
+                  style="transition: box-shadow 0.3s ease-in-out;"
+                  rounded="xl"
+                  class="d-flex flex-column"
+                  height="100%"
+                  width="100%"
+                >
+                  <v-img max-height="55%" :src="card.image" class="rounded-xl"></v-img>
+                  <div class="d-flex flex-column flex-grow-1 align-start justify-space-between pa-4">
+                    <div>
+                      <div class="text-h4 ml-4">
+                        {{ card.title }}
+                      </div>
+                      <div class="body-1 ml-4">
+                        {{ card.shot_description }}
+                      </div>
+                    </div>
+                    <v-btn  :to="{ name: 'blog-slug', params: {slug: card.slug} }" rounded text class="mt-3 read-btn" nuxt>
+                      read now
+                      <v-icon right>mdi-arrow-right</v-icon>
+                    </v-btn>
                   </div>
-                  <div class="body-1 ml-4 flex-grow-1">
-                    {{ card.shot_description }}
-                  </div>
-                  <v-btn  :to="{ name: 'blog-slug', params: {slug: card.slug} }" rounded text class="mt-3 flex-grow-1" nuxt>
-                    read now
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                </div>
-              </v-card>
-            </v-hover>
-            <SmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card.slug" :image="card.image" />
+                </v-card>
+              </v-hover>
+              <SmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card.slug" :image="card.image" />
+            </div>
           </div>
-        </div>
         </v-tab-item>
       </v-tabs-items>
     </v-container>
@@ -76,6 +84,7 @@ export default {
   data() {
     return {
       tab: 0,
+      filterType: null,
       filters: [
         {
           name: 'updates'
@@ -91,10 +100,11 @@ export default {
   },
   computed: {
     blogsByTab() {
-      return this.blog.filter(el => el.tab === this.chosenTab)
+      const blogs = this.blog.filter(el => el.tab === this.chosenTab.title)
+      return this.filterType ? blogs.filter(el => el.post_type === this.filterType) : blogs
     },
     chosenTab() {
-      return this.blogTabs[this.tab].title
+      return this.blogTabs[this.tab]
     }
   },
   methods: {
@@ -120,6 +130,21 @@ export default {
   grid-gap: 50px;
   @media (max-width: 960px) {
     grid-template-columns: 1fr;
+  }
+}
+.read-btn {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: rgba(233, 68, 133, 1) !important;
+    &:disabled {
+      color: white !important;
+    }
+  }
+}
+.type-filter {
+  &.chosen {
+    color: #E94485;
   }
 }
 .big-card {

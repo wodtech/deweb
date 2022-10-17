@@ -14,9 +14,9 @@
         </Flickity> -->
         <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
           <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-10">
-            <v-container>
-              <v-row class="slider-wrapper-inner">
-                <v-col md="4" sm="6" cols="12" v-for="el in chunk" :key="el.id">
+            <div class="slider-container">
+              <v-row class="slider-wrapper-inner d-flex justify-center">
+                <v-col style="max-width: 500px" md="6" sm="6" cols="12" lg="4" v-for="el in chunk" :key="el.id">
                   <v-card elevation="10" class="d-flex flex-column pa-12 card border-gradient-purple" rounded="xl">
                     <div class="d-flex">
                       <div class="d-flex flex-column">
@@ -32,7 +32,7 @@
                           />
                         </v-avatar>
                         <div class="mb-2 text-h6">{{el.name}}</div>
-                        <div class="mb-2 subtitle-2 font-weight-bold pink--text">{{el.game}}</div>
+                        <div class="mb-2 body-2 font-weight-bold pink--text">{{el.game}}</div>
                       </div>
                       <div class="commas d-flex flex-grow-1 justify-end">
                         <svg width="76" height="69" viewBox="0 0 76 69" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,13 +40,13 @@
                         </svg>
                       </div>
                     </div>
-                    <div class="d-flex flex-grow-1 body-2 font-weight-light">
+                    <div class="desc d-flex flex-grow-1 font-weight-light">
                       {{el.review}}
                     </div>
                   </v-card>
                 </v-col>
               </v-row>
-            </v-container>
+            </div>
           </div>
         </Flickity>
       </no-ssr>
@@ -125,12 +125,12 @@ export default {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs': return 1
         case 'sm': return 2
-        case 'md': return 3
+        case 'md': return 2
         case 'lg': return 3
         case 'xl': return 3
       }
     },
-    
+
     // separate cards by breakpoints
     chunks() {
       return chunk(this.cards, this.cardsPerChunk)
@@ -140,6 +140,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.slider-container {
+  padding: 0 150px;
+  @media screen and (max-width: 960px) {
+    padding: 0 25px;
+  }
+}
 .card {
   // max-width: 500px;
   height: 100%;
@@ -147,6 +153,11 @@ export default {
 	background: #fff;
   background-clip: padding-box;
 	border: solid 2px transparent;
+  .desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 23px;
+  }
   &:before {
 		content: "";
 		position: absolute;
