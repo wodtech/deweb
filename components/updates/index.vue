@@ -149,8 +149,12 @@ export default {
 }
 .big-card {
   // max-width: 575px;
+  max-height: 550px;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
+  @media screen and (max-width: 960px) {
+    grid-row: 1;
+  }
 }
 .small-card {
   @media (min-width: 1264px) {

@@ -5,7 +5,7 @@
     <ArtsStripe :arts="arts"/>
     <LaunchWindow/>
     <PlayerTalk/>
-    <Blog/>
+    <Blog :data="blogs "/>
     <FollowUs/>
   </div>
 </template>
@@ -27,10 +27,12 @@ export default {
   async asyncData({ $content }) {
     const games = await $content('games').fetch()
     const arts = await $content('arts').fetch()
+    const blogs = await $content('blog').only(['title', 'shot_description', 'image', 'slug']).limit(3).fetch()
 
     return {
       games,
-      arts
+      arts,
+      blogs
     }
   },
 }
