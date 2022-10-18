@@ -23,11 +23,12 @@
           </v-col>
         </v-row>
       </v-card>
-      <div class="w-100">
-        <div class="bg-container">
-<!--          <img  class="bg w-70" src="~/assets/images/defish-launcher/defish-circle.png" alt="">-->
-        </div>
-        <img style="opacity: 0"  class="bg w-100" src="~/assets/images/defish-launcher/defish-circle.png" alt="">
+      <div class="w-100 img-wrap" style="max-width: 1600px;margin: 0 auto">
+<!--        <div class="bg-container">-->
+<!--&lt;!&ndash;          <img  class="bg w-70" src="~/assets/images/defish-launcher/defish-circle.png" alt="">&ndash;&gt;-->
+<!--        </div>-->
+        <v-img max-width="1600px"  min-width="900px" style="margin-left: -220px;margin-top: -120px" :src="connect" contain></v-img>
+<!--        <img style="opacity: 0"  class="bg w-100"  >-->
       </div>
     </div>
   </div>
@@ -38,6 +39,7 @@ export default {
   data() {
     return {
       tdImage: require('~/assets/images/td-preview.jpg'),
+      connect: require('~/assets/images/defish-launcher/defish-circle.png')
     }
   }
 }
@@ -56,7 +58,28 @@ export default {
     width: 100%;
     position: absolute;
     top: -60px;
-    right: 10%;
+    right: 5%;
+    @media screen and (min-width: 1920px){
+      max-width: 1400px;
+    }
+    @media screen and (min-width: 650px){
+      right: 0;
+    }
+  }
+}
+.img-wrap {
+  max-height: 1000px;
+  @media screen and (max-width: 1920px) {
+    max-height: 900px;
+  }
+  @media screen and (max-width: 1260px) {
+    max-height: 800px;
+  }
+  @media screen and (max-width: 960px) {
+    max-height: 650px;
+  }
+  @media screen and (min-width: 650px){
+    max-height: 550px;
   }
 }
 .card {

@@ -173,7 +173,7 @@ export default {
   }
   @media (max-width: 960px) {
     max-width: 100%;
-    min-height: 460px;
+    max-height: 500px;
   }
 }
 .tab-btn {
