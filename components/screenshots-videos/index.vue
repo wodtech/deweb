@@ -36,12 +36,19 @@
         </Flickity>
       </no-ssr>
     </v-card>
+    <v-container>
+      <GameInfoCards class="mt-16"/>
+    </v-container>
   </div>
 </template>
 
 <script>
 import { chunk } from 'lodash'
+import GameInfoCards from "~/components/game-info-cards";
 export default {
+  components: {
+    GameInfoCards
+  },
   data() {
     return {
       cards: [
@@ -115,7 +122,7 @@ export default {
         case 'xl': return 3
       }
     },
-    
+
     // separate cards by breakpoints
     chunks() {
       return chunk(this.cards, this.cardsPerChunk)

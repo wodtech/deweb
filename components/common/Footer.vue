@@ -120,7 +120,6 @@ export default {
   }
   .socials {
     .v-btn{
-
       &:hover {
         color: #000000;
         svg{
