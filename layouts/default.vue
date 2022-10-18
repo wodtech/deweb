@@ -52,7 +52,7 @@ export default {
   },
   computed: {
     headerBg() {
-      return this.$route.path.includes('careers/') ? '#090F1B' : '#00000000'
+      return this.$route.path.match(/careers\/\w+/) ? '#090F1B' : '#00000000'
     }
   }
 }

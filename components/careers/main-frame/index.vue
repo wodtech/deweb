@@ -83,7 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 .grid-container {
-  z-index: 1;
+  z-index: 0;
   max-width: 595px;
   display: grid;
   grid-gap: 12px;

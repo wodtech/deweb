@@ -8,7 +8,7 @@
         <v-col md="6" cols="12" class="--posr d-flex align-end justify-md-end justify-center">
           <img style="max-width: 600px" class="w-100 chat-img" src="~/assets/images/defish-launcher/chat.png" alt="">
         </v-col>
-        <v-col md="6" cols="12" class="--posr d-flex align-center flex-column flex-md-row">
+        <v-col md="6" cols="12" class="--posr d-flex align-center flex-column justify-center flex-md-row">
           <div style="max-width: 425px">
             <div class="text-h3 text-uppercase">Chat with worldwide <br/> players</div>
             <div class="descr mt-3 body-2">
