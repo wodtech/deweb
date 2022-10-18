@@ -46,7 +46,7 @@
                   height="100%"
                   width="100%"
                 >
-                  <v-img max-height="55%" :src="card.image" class="rounded-xl"></v-img>
+                  <v-img :src="card.image" class="rounded-xl main-img"></v-img>
                   <div class="d-flex flex-column flex-grow-1 align-start justify-space-between pa-4">
                     <div>
                       <div class="text-h4 ml-4">
@@ -129,6 +129,10 @@ export default {
   grid-auto-rows: 1fr;
   grid-gap: 50px;
   @media (max-width: 960px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
     grid-template-columns: 1fr;
   }
 }
@@ -152,16 +156,24 @@ export default {
   max-height: 550px;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
+  .main-img{
+    height: 50%;
+  }
   @media screen and (max-width: 960px) {
+    .main-img{
+      height: 280px;
+    }
     grid-row: 1;
   }
 }
 .small-card {
+  max-height: 250px;
   @media (min-width: 1264px) {
     max-width: 100%;
   }
   @media (max-width: 960px) {
     max-width: 100%;
+    min-height: 460px;
   }
 }
 .tab-btn {
