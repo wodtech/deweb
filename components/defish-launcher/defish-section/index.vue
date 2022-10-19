@@ -27,7 +27,7 @@
 <!--        <div class="bg-container">-->
 <!--&lt;!&ndash;          <img  class="bg w-70" src="~/assets/images/defish-launcher/defish-circle.png" alt="">&ndash;&gt;-->
 <!--        </div>-->
-        <v-img max-width="1600px"  min-width="900px" style="margin-left: -220px;margin-top: -120px" :src="connect" contain></v-img>
+        <v-img max-width="1354px"  :src="connect" contain></v-img>
 <!--        <img style="opacity: 0"  class="bg w-100"  >-->
       </div>
     </div>
@@ -69,17 +69,9 @@ export default {
 }
 .img-wrap {
   max-height: 1000px;
-  @media screen and (max-width: 1920px) {
-    max-height: 900px;
-  }
-  @media screen and (max-width: 1260px) {
-    max-height: 800px;
-  }
-  @media screen and (max-width: 960px) {
-    max-height: 650px;
-  }
-  @media screen and (min-width: 650px){
-    max-height: 550px;
+  transform: translateX(-3%);
+  @media screen and (max-width: 1460px) {
+    transform: translateX(-10%);
   }
 }
 .card {
