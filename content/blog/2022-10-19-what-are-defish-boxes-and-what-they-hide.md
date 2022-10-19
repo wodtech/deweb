@@ -2,8 +2,7 @@
 title: What are Defish Boxes and what they hide
 date: 2022-10-19T11:42:26.152Z
 shot_description: The opening of Defish Box sales means everything for the
-  players of World of Defish. Everyone, including our team, is eagerly waiting
-  for this event.
+  players of World of Defish
 image: /img/2-linec-center-2x.png
 tab: world of defish
 post_type: events
