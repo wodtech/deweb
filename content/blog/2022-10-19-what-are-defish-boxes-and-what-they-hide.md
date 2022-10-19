@@ -22,6 +22,10 @@ Each box consists of 4 random items. Randomness is confirmed by the integration 
 
 It is important to understand that Defish Boxes are very popular and sold within a few hours of the beginning of the sale, so players cannot buy them at any time. This is only possible with a release of the new collection.
 
+
+
+
+
 **The next collection of Defish Boxes will be available for purchase on September 29.**
 
 Each collection differs not only visually, filling and price, but also the characteristics of the items. 
