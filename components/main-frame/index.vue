@@ -46,6 +46,30 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
+    #myVideo{
+      min-width: 1920px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      overflow: hidden;
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      width: 60%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 37%, rgba(16,18,43,0.9475140397956058) 50%, rgba(13,14,42,0.8018557764902836) 62%, rgba(20,23,45,0) 97%);
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        background: rgb(2,0,36);
+      }
+    }
     .bg-img {
       width: 100%;
       height: 100%;

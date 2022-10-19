@@ -52,7 +52,7 @@
                       <div class="text-h4 ml-4">
                         {{ card.title }}
                       </div>
-                      <div class="body-1 ml-4">
+                      <div style="max-height: 130px;overflow: auto" class="body-1 ml-4">
                         {{ card.shot_description }}
                       </div>
                     </div>
@@ -165,6 +165,7 @@ export default {
     height: 50%;
   }
   @media screen and (max-width: 960px) {
+    width: 100%;
     .main-img{
       height: 280px;
     }

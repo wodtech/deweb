@@ -3,8 +3,8 @@
     <div class="img-container">
       <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
     </div>
-    <v-container style="z-index: 2" class="d-flex align-center justify-center">
-      <v-row class="d-flex justify-center flex-md-row flex-column-reverse ">
+    <v-container style="z-index: 0" class="d-flex align-center justify-center">
+      <v-row style="max-height: 600px;" class="d-flex justify-center flex-md-row flex-column-reverse ">
         <v-col class="d-flex flex-column justify-center align-center" md="6" cols="12">
           <div style="max-width: 500px" class="d-flex flex-column align-center align-md-start">
             <div class="d-flex mb-9 title text-h3  white--text">{{blog.title}}</div>
@@ -25,7 +25,7 @@
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-center" md="6" cols="12">
-          <div class="img-wrapper d-flex justify-center">
+          <div style="max-height: 600px;" class="img-wrapper d-flex justify-center">
             <img class="d-flex " :src="blog.image"  alt="">
           </div>
         </v-col>

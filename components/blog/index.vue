@@ -21,9 +21,9 @@
               rounded="xl"
               min-height="100%"
             >
-              <v-img style="max-height: 320px" :src="mainArticle.image" class="rounded-xl"></v-img>
+              <v-img style="max-height: 310px" :src="mainArticle.image" class="rounded-xl"></v-img>
               <div class="d-flex flex-column align-start justify-space-between pa-4 content-wrap">
-                <div style="font-weight: 600" class="body-1 ml-4 flex-grow-1">
+                <div style="font-weight: 600;overflow: auto" class="body-1 ml-4 flex-grow-1">
                   {{ mainArticle.title }}
                 </div>
                 <v-btn :to="{ name: 'blog-slug', params: {slug: mainArticle.slug} }" rounded text class="mt-3 read-btn">
