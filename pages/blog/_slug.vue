@@ -67,7 +67,7 @@ export default {
       margin-bottom: 32px;
     }
     p {
-      font-family: 'Raleway';
+      font-family: 'Relaway';
       font-style: normal;
       font-weight: 500;
       font-size: 20px;
@@ -78,6 +78,10 @@ export default {
       height: 340px;
       object-fit: cover;
       border-radius: 30px;
+      @media screen and (max-width: 600px){
+        width: 100%;
+        height: unset;
+      }
     }
   }
 

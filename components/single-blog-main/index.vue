@@ -9,20 +9,19 @@
           <div style="max-width: 500px" class="d-flex flex-column align-center align-md-start">
             <div class="d-flex mb-9 title text-h3  white--text">{{blog.title}}</div>
             <div class="desc mb-md-9 mb-2 subtitle-2 font-weight-light white--text">{{blog.description}}</div>
-            <div class="date mb-md-9 mb-2  white--text">{{parseDate(blog.date)}}</div>
-            <div class="d-flex mb-md-9 mb-2">
+            <div class="date mb-md-9 mb-2 caption font-weight-light white--text">{{parseDate(blog.date)}}</div>
+            <div class="socials d-flex align-center mb-md-9 mb-2">
+              <span class="white--text share-t pr-2">SHARE: </span>
                 <v-btn icon>
-                  <v-icon color="primary">mdi-twitter</v-icon>
+                  <v-icon >mdi-twitter</v-icon>
                 </v-btn>
                 <v-btn icon>
-                  <v-icon color="primary">mdi-facebook</v-icon>
+                  <v-icon >mdi-facebook</v-icon>
                 </v-btn>
-
                 <v-btn icon>
-                  <v-icon color="primary">mdi-telegram</v-icon>
+                  <v-icon >mdi-linkedin</v-icon>
                 </v-btn>
             </div>
-            <v-btn x-large class="font-weight-light rounded-pill large-button">read more</v-btn>
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-center" md="6" cols="12">
@@ -49,10 +48,13 @@ export default {
   methods: {
     parseDate(date) {
       const newDate = new Date(date)
-      const day = newDate.getDay()
-      const month = newDate.getMonth() + 1; // getMonth() returns month from 0 to 11
+      const day = this.formatDateValue(newDate.getDay())
+      const month = this.formatDateValue(newDate.getMonth() + 1);
       const year = newDate.getFullYear();
       return `${day}.${month}.${year}`
+    },
+    formatDateValue(val) {
+      return  val < 0 ? '00' : val > 9 ? val : '0' + val;
     }
   }
 
@@ -65,6 +67,11 @@ export default {
   width: 100%;
   position: relative;
   background-color: rgba(1, 2, 4, 1);
+  .share-t{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 .img-container {
   z-index: 0;
@@ -81,6 +88,14 @@ export default {
   font-family: 'Relaway';
   color: rgba(255, 255, 255, 1);
   opacity: 0.5;
+}
+.socials {
+  .v-btn {
+    color: #6B6F71;
+    &:hover{
+      color: #E94485;
+    }
+  }
 }
 .img-wrapper {
   width: 100%;
@@ -108,6 +123,5 @@ export default {
       font-weight: bold;
       font-size: 28px;
     }
-
   }
 </style>

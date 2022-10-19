@@ -10,10 +10,10 @@
 <script>
 export default {
   mounted() {
-    
+
   },
   destroyed() {
-    
+
   }
 }
 </script>
@@ -39,7 +39,10 @@ export default {
     min-width: 500px;
     transform: translate(50%, -50%) translateX(5%) translateY(-10%);
   }
-
+  @media (max-width: 500px) {
+    width: 100%;
+    min-width: unset;
+  }
   .meduza {
     position: absolute;
     right: 0;
@@ -67,6 +70,8 @@ export default {
     }
 
     &.two {
+      left: 0;
+      top: 10px;
       transform: perspective(2000px) rotateX(25deg) rotateY(30deg) rotateZ(-15deg) translateZ(-80px);
       background: rgba(#76FFE8, 0.01);
     }
