@@ -30,7 +30,7 @@
       </div>
       <v-tabs-items v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
-          v-for="(item) in blog"
+          v-for="(item) in blogTabs"
           :key="item.slug"
           transition="fade-transition"
           reverse-transition="fade-transition"

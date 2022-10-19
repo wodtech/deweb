@@ -1,5 +1,5 @@
 <template>
-  <div class="index-page">
+  <div class="devs-page">
     <MainFrame/>
     <InfoArticles />
     <DefishUniverse />

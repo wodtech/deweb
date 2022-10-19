@@ -1,5 +1,5 @@
 <template>
-  <div class="index-page">
+  <div class="td-page">
     <GameMainFrame/>
     <ScreenshotsVideos/>
     <Blog :data="blogs" />

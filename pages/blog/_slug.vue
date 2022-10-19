@@ -3,26 +3,27 @@
     <SingleBlogMain :blog="blog" />
     <v-container class="d-flex flex-column py-16">
       <nuxt-content :document="blog"/>
-      <div class="d-flex align-center py-6">
-        <div class="text-h3">
-          related posts
+      <template v-if="nextBlogs.length">
+        <div class="d-flex align-center py-6">
+          <div class="text-h3">
+            related posts
+          </div>
+          <v-spacer></v-spacer>
+          <v-btn to="/blog" nuxt color="primary" rounded text>
+            read all
+            <v-icon right>mdi-arrow-right</v-icon>
+          </v-btn>
         </div>
-        <v-spacer></v-spacer>
-        <v-btn to="/blog" nuxt color="primary" rounded text>
-          read all
-          <v-icon right>mdi-arrow-right</v-icon>
-        </v-btn>
-      </div>
-      <v-row class="d-flex">
-        <v-col v-for="card in nextBlogs" :key="card.slug"  md="6" cols="12">
-          <SmallCard
-          :title="card.title"
-          :short-description="card.shot_description"
-          :slug="card.slug"
-          :image="card.image" />
-        </v-col>
-      </v-row>
-
+        <v-row class="d-flex">
+          <v-col v-for="card in nextBlogs" :key="card.slug"  md="6" cols="12">
+            <SmallCard
+              :title="card.title"
+              :short-description="card.shot_description"
+              :slug="card.slug"
+              :image="card.image" />
+          </v-col>
+        </v-row>
+      </template>
     </v-container>
   </div>
 

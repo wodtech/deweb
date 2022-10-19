@@ -1,5 +1,5 @@
 <template>
-  <div class="index-page"  >
+  <div class="careers-page"  >
     <MainFrame />
     <v-container style="padding-top: 145px" class="--cnt">
       <CareersContent :careers="careers" :careers-groups="careerGroups" />
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-.index-page {
+.careers-page {
   width: 100%;
   background-color: #f0f0f0;
   position: relative;
