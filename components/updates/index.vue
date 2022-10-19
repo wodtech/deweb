@@ -35,7 +35,7 @@
           transition="fade-transition"
           reverse-transition="fade-transition"
         >
-          <div class="cards-wrapper pa-4">
+          <div v-if="blogsByTab.length"  style="min-height: 50vh" class="cards-wrapper pa-4">
             <div v-for="(card, index) in blogsByTab" :key="card.slug" :class="gridCards(index)" >
               <v-hover v-if="index === 0" v-slot="{ hover }">
                 <v-card
@@ -66,6 +66,9 @@
               <SmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card.slug" :image="card.image" />
             </div>
           </div>
+          <div style="height: 50vh" v-else>
+            <EmptyData class="pt-5" />
+          </div>
         </v-tab-item>
       </v-tabs-items>
     </v-container>
@@ -73,9 +76,11 @@
 </template>
 
 <script>
+import EmptyData from "~/components/common/EmptyData";
 export default {
   components: {
     SmallCard: () => import('./SmallCard.vue'),
+    EmptyData
   },
   props: {
     blog: {},

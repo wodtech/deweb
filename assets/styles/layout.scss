@@ -81,3 +81,28 @@ body {
 .link-color{
   color: #E94485;
 }
+.flickity-page-dots {
+  .dot {
+    bottom: -22px;
+    width: 9px;
+    height: 9px;
+    opacity: 1;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    background-color: rgba(232, 69, 133, 0.5);
+  }
+  .dot.is-selected {
+    background-color: rgba(232, 69, 133, 1);
+    &::after {
+      content: "";
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      border: 2px solid rgba(232, 69, 133, 1);
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+  }
+}
