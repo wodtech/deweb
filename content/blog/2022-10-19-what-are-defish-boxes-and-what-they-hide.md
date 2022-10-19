@@ -16,6 +16,8 @@ description: The opening of Defish Box sales means everything for the players of
 
 Defish Boxes are loot boxes with limited amount of equipment. Each box collection is unique and unrepeatable, with an exclusive gear. It is the only way to get items for fishing, besides buying on the Marketplace from other players and crafting.
 
+![shoto](/img/сундук_3.png "Title")
+
 Each box consists of 4 random items. Randomness is confirmed by the integration of World of Defish with Chainlink as we use Chainlink Verifiable Random Function (VRF). Thus, players have strong assurances that random drops from fishing and rewards from Defish Boxes are provably fair. 
 
 It is important to understand that Defish Boxes are very popular and sold within a few hours of the beginning of the sale, so players cannot buy them at any time. This is only possible with a release of the new collection.
