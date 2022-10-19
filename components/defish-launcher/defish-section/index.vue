@@ -24,11 +24,7 @@
         </v-row>
       </v-card>
       <div class="w-100 img-wrap" style="max-width: 1600px;margin: 0 auto">
-<!--        <div class="bg-container">-->
-<!--&lt;!&ndash;          <img  class="bg w-70" src="~/assets/images/defish-launcher/defish-circle.png" alt="">&ndash;&gt;-->
-<!--        </div>-->
-        <v-img max-width="1354px"  :src="connect" contain></v-img>
-<!--        <img style="opacity: 0"  class="bg w-100"  >-->
+        <v-img max-width="1354px" style="z-index: 1;"  :src="connect" contain></v-img>
       </div>
     </div>
   </div>
@@ -39,7 +35,7 @@ export default {
   data() {
     return {
       tdImage: require('~/assets/images/td-preview.jpg'),
-      connect: require('~/assets/images/defish-launcher/defish-circle.png')
+      connect: require('~/assets/images/defish-launcher/defish-circle-r.png')
     }
   }
 }
