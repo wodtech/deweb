@@ -63,10 +63,13 @@ export default {
 
 <style lang="scss" scoped>
 .single-blog {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   position: relative;
   background-color: rgba(1, 2, 4, 1);
+  @media screen and (max-width: 960px) {
+    height: 100vh;
+  }
   .share-t{
     font-weight: 400;
     font-size: 16px;

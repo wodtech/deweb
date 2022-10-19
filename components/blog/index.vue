@@ -21,7 +21,7 @@
               rounded="xl"
               min-height="100%"
             >
-              <v-img style="max-height: 260px" :src="mainArticle.image" class="rounded-xl"></v-img>
+              <v-img style="max-height: 320px" :src="mainArticle.image" class="rounded-xl"></v-img>
               <div class="d-flex flex-column align-start justify-space-between pa-4 content-wrap">
                 <div style="font-weight: 600" class="body-1 ml-4 flex-grow-1">
                   {{ mainArticle.title }}
@@ -94,7 +94,7 @@ export default {
   }
 }
 .content-wrap {
-  height: 255px;
+  height: 200px;
   @media screen and (max-width: 960px) {
     height: unset;
   }

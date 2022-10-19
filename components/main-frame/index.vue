@@ -1,7 +1,9 @@
 <template>
   <v-card dark elevation="0" tile class="main-frame d-flex">
     <div class="img-container">
-      <img src="~/assets/images/main-bg.jpg" class="bg-img" alt="main background">
+      <video autoplay muted loop class="w-100" id="myVideo">
+        <source src="~/assets/video/main.mp4" class="bg-img" type="video/mp4">
+      </video>
     </div>
     <v-container class="py-16 --posr">
       <v-row style="height: 100%;">
@@ -29,7 +31,7 @@
 
 <script>
 export default {
-  
+
 }
 </script>
 
@@ -39,7 +41,7 @@ export default {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  
+  overflow: hidden;
   .img-container {
     width: 100%;
     height: 100%;
@@ -66,7 +68,7 @@ export default {
 
     }
   }
-  
+
 }
 
 </style>

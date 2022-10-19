@@ -60,6 +60,7 @@ export default {
 <style lang="scss" >
   .nuxt-content {
     h1 {
+      font-family: 'Bebas';
       text-transform: uppercase;
       color: #E94485;
       font-style: normal;
