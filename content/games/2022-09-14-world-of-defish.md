@@ -1,8 +1,10 @@
 ---
 title: Tower Defish
+short_description: Blockchain gaming has never been  that exciting and realistic.
 subtitle: Tower Defish is a tower defense game where you play as a fish
-short_description: Tower Defish is a tower defense game where you play as a fish
-description: Tower Defish is a tower defense game where you play as a fish
+description: Enter the fray, erecting majestic Towers within your empire. Don't
+  let the waves crush them. Experience the symbiosis of classic mobile 3D gaming
+  and blockchain in the TD genre.
 tags:
   - Cross-Platform
   - Downloads
@@ -14,3 +16,4 @@ features:
   - Marketplace
   - $WOD Token
 icon: /img/logo.jpg
+---
