@@ -1,24 +1,32 @@
 ---
-title: "Meet Harbor mechanics in World of Defish "
+title: Off-chain mechanics guide
 date: 2022-07-06T10:54:13.932Z
-shot_description: With the Harbor you can move your catch from off-chain to blockchain.
+shot_description: "In order to play smoothly, you need to know a few things about off-chain. "
 image: /img/1_ulfe83tsolg6tj-30ivwgg-2x.png
 tab: world of defish
 post_type: updates
-description: >-
-  What’s this game mechanics about?
-
-  With the Harbor you can move your catch from off-chain to blockchain. Namely: fish, materials and WOD. The Harbor works in the same way as the Defish Portal, but It’s intended for other items.
+description: In order to play smoothly, you need to know a few things about
+  off-chain. In this article we will tell you about the transferred mechanics on
+  the off-chain, the mechanics that function on the blockchain and what you
+  should pay attention to.
 ---
 <!--StartFragment-->
 
-## **What’s this game mechanics about?**
+First, your items will be divided for off-chain and blockchain operation. As you know, fishing session moved to off-chain. This means that you can start a fishing session only with those items that you have transferred to off-chain using the Defish Portal.
+
+# **D﻿efish Portal**
+
+Items left on the blockchain ***cannot*** be used during fishing.
+
+In addition, you can upgrade items that are on off-chain. But this action ***so far*** requires gas fee payment.
+
+Also, you can transfer items from off-chain to blockchain and vice versa. At any time and without restrictions.
+
+Fish, materials, and WOD you’ve caught will be on the minting blockchain. How fish and materials catching will take place, we will tell in the following posts.
+
+# **H﻿arbour**
 
 With the Harbor you can move your catch from off-chain to blockchain. Namely: fish, materials and WOD. The Harbor works in the same way as the Defish Portal, but It’s intended for other items.
-
-## **Why didn’t we combine the Harbor with the Defish Portal?**
-
-This is due to technical costs. You will need to conduct separate transactions for different types of items: for materials, fish and WOD. In the future, we will combine this into one transaction.
 
 ## **Pay attention!**
 
