@@ -28,19 +28,18 @@ export default {
         {
           title: 'authenticate in web3 easly',
           description: 'Web3 Token is an open-source package to authenticate users in a hybrid Apps using signed messages.',
-          img: require("~/assets/images/test-img.png"),
+          img: require("~/assets/images/for-developers/auth.png"),
           links: {
-            linked: '#',
-            medium: '#'
+            github: 'https://github.com/bytesbay/web3-token',
+            medium: 'https://worldofdefish.com/defishboxes/'
           }
         },
         {
           title: 'extend your dapp with backend',
           description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockpain.',
-          img: require("~/assets/images/test-img.png"),
+          img: require("~/assets/images/for-developers/chain.png"),
           links: {
-            linked: '#',
-            medium: '#'
+            github: 'https://github.com/bytesbay/chain-syncer',
           }
         },
       ]

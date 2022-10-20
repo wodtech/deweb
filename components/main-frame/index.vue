@@ -60,12 +60,12 @@ export default {
     &:before{
       position: absolute;
       content: '';
-      width: 60%;
+      width: 88%;
       height: 100%;
       top: 0;
       left: 0;
       background: rgb(20,23,45);
-      background: linear-gradient(68deg, #14172d 51%, rgba(20, 23, 45, 0.9307073171) 53%, rgba(20, 23, 45, 0.667401995) 59%, rgba(20, 23, 45, 0) 73%);
+      background: linear-gradient(68deg, #14172d 27%, rgba(20, 23, 45, 0.9307073171) 41%, rgba(20, 23, 45, 0.667401995) 53%, rgba(20, 23, 45, 0) 76%);
       @media screen and (max-width: 600px) {
         width: 100%;
         background: rgb(2,0,36);

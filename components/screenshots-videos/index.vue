@@ -3,10 +3,10 @@
     <v-container class="py-0">
       <div class="d-flex py-3 align-center">
         <div class="text-h3 my-0">
-          screenshots and videos
+          screenshots
         </div>
         <v-spacer></v-spacer>
-        <v-btn class="pink--text" rounded text>
+        <v-btn  v-if="title === 'wod'" href="https://worldofdefish.com/" target="_blank" class="pink--text" rounded text>
           see more
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
@@ -43,47 +43,13 @@ export default {
     GameInfoCards
   },
   props: {
-    game:{}
+    game:{},
+    cards: {},
+    title: {}
   },
   data() {
     return {
-      cards: [
-        {
-          id: 1,
-          img: require('~/assets/images/player1.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        },
-        {
-          id: 2,
-          img: require('~/assets/images/player2.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        },
-        {
-          id: 3,
-          img: require('~/assets/images/player3.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        },
-        {
-          id: 4,
-          img: require('~/assets/images/player2.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        },
-        {
-          id: 5,
-          img: require('~/assets/images/player3.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        }
-      ],
+
       flickityOptions: {
         // initialIndex: 1,
         // freeScroll: true,

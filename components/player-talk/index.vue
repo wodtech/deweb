@@ -5,13 +5,6 @@
     </div>
     <v-card color="transparent" elevation="0" class="d-flex flex-column py-16 --posr">
       <no-ssr>
-        <!-- <Flickity ref="flickity" :options="flickityOptions">
-          <div v-for="el in cells" :key="el.slug" class="carousel-cell">
-            <div class="slide-element">
-              <img :src="el.img" alt="">
-            </div>
-          </div>
-        </Flickity> -->
         <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
           <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-10">
             <div class="slider-container">
@@ -63,38 +56,24 @@ export default {
         {
           id: 1,
           img: require('~/assets/images/player1.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
+          name: "Steel",
+          game: "World of Defish",
+          review: "WOD is a superb gaming experience that is unique and very addictive. The Ukrainian team behind it, have been very hands on, always pushing forward despite all hardships facing Ukraine, Crypto and P2E games in general.",
         },
         {
           id: 2,
           img: require('~/assets/images/player2.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
+          name: "@crypto_kaptan",
+          game: "World of Defish",
+          review: "I am a Seedify investor and i have invested World of Defish on both public and private sales rounds. After a while I noticed Spintop Gamepedia article that says game is playable and here I am for about 8 months.",
         },
         {
           id: 3,
           img: require('~/assets/images/player3.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
+          name: "@Vikingkrat",
+          game: "World of Defish",
+          review: "Defish is the first NFT game i have played and invested in. I have over the last 9 month gain Friendships and lot of happy moments. I love all about the game and looking forward to the develop of both this game and other games. Least but not last.",
         },
-        {
-          id: 4,
-          img: require('~/assets/images/player2.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        },
-        {
-          id: 5,
-          img: require('~/assets/images/player3.png'),
-          name: "jhon jhons",
-          game: "World De Fish",
-          review: "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. ",
-        }
       ],
       flickityOptions: {
         // initialIndex: 1,

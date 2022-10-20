@@ -62,7 +62,7 @@
           </div>
           <div class="d-flex flex-wrap w-100">
             <div v-for="btn in secondCard.btns" :key="btn.id" class="d-flex pt-6" >
-              <v-btn max-width="100px" large class="large-button caption font-weight-light rounded-pill mr-2">
+              <v-btn target="_blank" :href="btn.link" max-width="100px" large class="large-button caption font-weight-light rounded-pill mr-2">
                 {{btn.text}}
               </v-btn>
             </div>
@@ -128,22 +128,22 @@ export default {
         btns: [
           {
             id: 1,
-            link: "",
+            link: "https://world-of-defish.gitbook.io/world-of-defish/",
             text: "Whitepaper"
           },
           {
             id: 2,
-            link: "",
+            link: "https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6",
             text: "Buy $WOD"
           },
           {
             id: 3,
-            link: "",
+            link: "https://marketplace.worldofdefish.com/",
             text: "Marketplace"
           },
           {
             id: 4,
-            link: "",
+            link: "https://worldofdefish.com/defishboxes/",
             text: "Defish Box"
           }
         ],

@@ -15,7 +15,7 @@
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
-          <v-btn x-large class="large-button font-weight-light rounded-pill" >PLAY NOW</v-btn>
+          <v-btn href="https://worldofdefish.com/" target="_blank" x-large class="large-button font-weight-light rounded-pill" >PLAY NOW</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -29,8 +29,8 @@ export default {
   },
   data() {
     return {
-      bgImgTd: require("~/assets/images/bg-img.png"),
-      bgImgD: require("~/assets/images/defish_bg.png"),
+      bgImgTd: require("~/assets/images/td-bg.png"),
+      bgImgD: require("~/assets/images/defish-bg.png"),
       smallBadge: require("~/assets/images/main-logo.png"),
       textBig: 'world of defish',
       textSmall: 'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish'
