@@ -13,12 +13,12 @@
         >
           <div class="top-text d-flex flex-column">
             <span class="text-h3 mb-4">{{firstCard.titleTop}}</span>
-            <span class="first-top-desc body-1">{{firstCard.descTop}}</span>
+            <span class="first-top-desc body-1">{{game.description}}</span>
           </div>
           <div class="bottom-text d-flex flex-column justify-end">
             <span class="first-bottom-title text-h3 mb-4">{{firstCard.titleBottom}}</span>
             <v-row class="d-flex">
-              <v-col v-for="text in firstCard.descBottom" :key="text" cols="6">
+              <v-col v-for="text in game.features" :key="text" cols="12">
                 <span class="list-el">{{ text }}</span>
               </v-col>
             </v-row>
@@ -96,6 +96,9 @@
 <script>
 export default {
   name: "index",
+  props: {
+    game:{}
+  },
   methods: {
     pinkClass(isPink) {
       if (isPink) {
@@ -117,7 +120,6 @@ export default {
         descTop: "Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish, crafting, compete and filling your pocket with $WOD doubloons. Welcometo World of Defish, play-to earn gaming universe running on BSC.",
         titleBottom: "core features:",
         descBottom: [
-          "Ranking System", "Guilds System", "Crafting Mechanism", "Marketplace", "NFT", "$WOD Token",
           "Ranking System", "Guilds System", "Crafting Mechanism", "Marketplace", "NFT", "$WOD Token"
         ]
       },

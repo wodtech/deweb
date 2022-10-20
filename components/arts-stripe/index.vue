@@ -9,8 +9,8 @@
         OUR ARTS
       </div>
       <div class="body-1 text-center" style="max-width: 585px">
-        But I must explain to you how all this mistaken idea of denouncing pleasure
-        and praising pain was born and I will give you
+        We are creatorts of art who draw our own new reality. <br/>
+        Find your inner voice and essence in our mystical NFT cards.
       </div>
     </div>
 

@@ -30,7 +30,7 @@
       </no-ssr>
     </v-card>
     <v-container>
-      <GameInfoCards class="mt-16"/>
+      <GameInfoCards :game="game" class="mt-16"/>
     </v-container>
   </div>
 </template>
@@ -41,6 +41,9 @@ import GameInfoCards from "~/components/game-info-cards";
 export default {
   components: {
     GameInfoCards
+  },
+  props: {
+    game:{}
   },
   data() {
     return {

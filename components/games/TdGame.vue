@@ -10,10 +10,18 @@
         </v-chip>
       </div>
       <div class="body-1 mb-4">
-        {{ data.description }}
+        {{ data.short_description }}
       </div>
       <div class="d-flex">
-        <v-btn elevation="0" rounded x-large color="black" outlined>
+        <v-btn
+          to="/game-td"
+          nuxt
+          style="background: white;min-width: 160px"
+          text
+          elevation="0"
+          rounded
+          x-large
+          color="black" >
           SOON
         </v-btn>
       </div>

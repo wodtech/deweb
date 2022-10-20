@@ -1,7 +1,7 @@
 <template>
   <div class="wod-page">
-    <GameMainFrame/>
-    <ScreenshotsVideos/>
+    <GameMainFrame :game="game[0]" />
+    <ScreenshotsVideos :game="game[0]" />
     <Blog :data="blogs" />
     <FollowUs/>
   </div>
@@ -16,11 +16,11 @@ export default {
     FollowUs: () => import('~/components/follow-us')
   },
   async asyncData({ $content }) {
-    const games = await $content('games').fetch()
+    const game = await $content('games').where({title: 'World of Defish'}).fetch()
     const blogs = await $content('blog').only(['title', 'shot_description', 'image', 'slug']).limit(3).fetch()
 
     return {
-      games,
+      game,
       blogs
     }
   },

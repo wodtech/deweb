@@ -10,8 +10,8 @@
             <img :src="smallBadge" alt="small img">
           </div>
           <div class="d-flex flex-column ml-5 pa-1">
-            <span class="text-big text-h5 white--text">{{ textBig }}</span>
-            <span class="caption white--text sub-text">{{ textSmall }}</span>
+            <span class="text-big text-h5 white--text">{{ game.title }}</span>
+            <span class="caption white--text sub-text">{{ game.subtitle }}</span>
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
@@ -24,6 +24,9 @@
 
 <script>
 export default {
+  props: {
+    game: {}
+  },
   data() {
     return {
       bgImg: require("~/assets/images/bg-img.png"),

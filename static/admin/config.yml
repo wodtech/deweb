@@ -52,6 +52,9 @@ collections:
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Features', name: 'features', widget: 'list' }
       - { label: 'Icon', name: 'icon', widget: 'image' }
+      - { label: 'Preview image', name: 'preview_image', widget: 'image' }
+      - { label: 'Bg image', name: 'bg_image', widget: 'image' }
+
 
   - name: 'arts'
     label: 'Art'
