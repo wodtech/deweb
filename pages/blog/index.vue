@@ -14,7 +14,7 @@ export default {
   async asyncData({ $content }) {
     const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'slug', 'post_type']).fetch()
     const blogTabs = await $content('blogTabs').fetch()
-    let blogTabsSorted = blogTabs[0].title === 'tower of defish' ? blogTabs.reversed() : blogTabs
+    let blogTabsSorted = blogTabs[0].title === 'Tower of Defish' ? blogTabs.reversed() : blogTabs
 
     return {
       blog, blogTabsSorted
