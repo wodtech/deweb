@@ -14,13 +14,6 @@
     </v-container>
     <v-card color="transparent" elevation="0" class="d-flex flex-column --posr">
       <no-ssr>
-        <!-- <Flickity ref="flickity" :options="flickityOptions">
-          <div v-for="el in cells" :key="el.slug" class="carousel-cell">
-            <div class="slide-element">
-              <img :src="el.img" alt="">
-            </div>
-          </div>
-        </Flickity> -->
         <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
           <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-5">
             <v-container>
