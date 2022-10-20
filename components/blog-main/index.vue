@@ -5,15 +5,12 @@
     </div>
     <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
       <no-ssr class="d-flex flex-grow-1 justify-center">
-        <Flickity ref="flickity" class="flickity-container"  :options="flickityOptions">
-          <div v-for="slide in slides" :key="slide.id" class="d-flex carousel-cell">
+           <div>
             <v-container class="d-flex align-center justify-center">
               <v-row class="d-flex flex-column flex-lg-row">
                 <v-col class="d-flex flex-column justify-center">
                   <div class="d-flex mb-9 title text-h3  white--text">{{slide.title}}</div>
                   <div class="desc mb-9 subtitle-2 font-weight-light white--text">{{slide.desc}}</div>
-                  <div class="date mb-9  white--text">{{slide.date}}</div>
-                  <v-btn x-large class="font-weight-light rounded-pill large-button">read more</v-btn>
                 </v-col>
                 <v-col class="d-flex align-center justify-center">
                   <div class="img-wrapper d-flex justify-center">
@@ -23,8 +20,7 @@
               </v-row>
             </v-container>
           </div>
-        </Flickity>
-      </no-ssr>
+       </no-ssr>
     </v-card>
   </div>
 </template>
@@ -36,32 +32,14 @@ export default {
   },
   data() {
     return {
-      slides: [
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/blog-main.png")
-        },
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/blog-main.png")
-        },
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/blog-main.png")
-        }
-      ],
+      slide:{
+        id: 1,
+        title: "Binances commitmentto compliance and user...",
+        desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
+        date: "16.03.2022",
+        btnLink: "#",
+        img: require("~/assets/images/blog-main.png")
+      },
       flickityOptions: {
         initialIndex: 2,
         contain: true,

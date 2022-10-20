@@ -15,13 +15,9 @@
         </v-chip>
       </div>
       <div class="body-1 mb-4">
-        {{ data.short_description }}
+        {{ data.description }}
       </div>
       <div class="d-flex">
-        <v-btn elevation="0" class="mr-4" rounded x-large color="primary">
-          play now
-        </v-btn>
-
         <v-btn elevation="0" rounded x-large color="black" outlined>
           learn more
         </v-btn>

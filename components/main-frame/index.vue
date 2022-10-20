@@ -17,11 +17,12 @@
             </div>
           </div>
           <div class="body-1 mb-14">
-            Building a new gaming experience in a world of chances. Entertain yourself in a gaming economy that you deserve.
+            Building a new generation of Metaverse for those who looking for quality economy and entertainment. <br/>
+            As you deserve.
           </div>
 
           <v-btn width="170" rounded x-large color="primary">
-            play now
+            EXPLORE NOW
           </v-btn>
         </v-col>
       </v-row>

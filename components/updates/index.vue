@@ -23,7 +23,7 @@
           v-for="item in chosenTab.post_types"
           :key="item"
           text
-          @click="filterType = item"
+          @click="setFilter(item)"
         >
           {{ item }}
         </v-btn>
@@ -119,8 +119,15 @@ export default {
       } else {
         return 'small-card'
       }
-    }
+    },
+    setFilter (item) {
+      if (this.filterType === item) {
+        this.filterType = null
+      } else {
+        this.filterType = item
+      }
 
+    }
   },
 }
 </script>
@@ -139,6 +146,11 @@ export default {
     flex-direction: column;
     justify-content: start;
     grid-template-columns: 1fr;
+  }
+}
+.v-tab{
+  &:before{
+    display: none!important;
   }
 }
 .read-btn {
