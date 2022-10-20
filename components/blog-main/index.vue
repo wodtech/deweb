@@ -17,7 +17,7 @@
                 </v-col>
                 <v-col class="d-flex align-center justify-center">
                   <div class="img-wrapper d-flex justify-center">
-                    <img class="d-flex " :src="slide.img" alt="">
+                    <img class="d-flex rounded-lg" :src="slide.img" alt="">
                   </div>
                 </v-col>
               </v-row>
@@ -43,7 +43,7 @@ export default {
           desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
           date: "16.03.2022",
           btnLink: "#",
-          img: require("~/assets/images/test-img.png")
+          img: require("~/assets/images/blog-main.png")
         },
         {
           id: 1,
@@ -51,7 +51,7 @@ export default {
           desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
           date: "16.03.2022",
           btnLink: "#",
-          img: require("~/assets/images/test-img.png")
+          img: require("~/assets/images/blog-main.png")
         },
         {
           id: 1,
@@ -59,7 +59,7 @@ export default {
           desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
           date: "16.03.2022",
           btnLink: "#",
-          img: require("~/assets/images/test-img.png")
+          img: require("~/assets/images/blog-main.png")
         }
       ],
       flickityOptions: {
