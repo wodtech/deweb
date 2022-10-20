@@ -15,5 +15,6 @@ features:
   - Crafting Mechanism
   - Marketplace
   - $WOD Token
+  - NFT
 icon: /img/logo.jpg
 ---
