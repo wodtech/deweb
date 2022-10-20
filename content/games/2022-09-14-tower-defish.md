@@ -22,4 +22,6 @@ features:
   - $WOD Token
   - NFT
 icon: /img/logo.jpg
+preview_image: /img/defish_map.png
+bg_image: /img/defish_bg.png
 ---
