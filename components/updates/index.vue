@@ -163,6 +163,13 @@ export default {
   grid-row: 1 / 3;
   .main-img{
     height: 50%;
+    &.v-image {
+    &::v-deep {
+      .v-responsive__content {
+        position: absolute!important;
+      }
+    }
+    }
   }
   @media screen and (max-width: 960px) {
     width: 100%;
