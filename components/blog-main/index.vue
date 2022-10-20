@@ -34,8 +34,8 @@ export default {
     return {
       slide:{
         id: 1,
-        title: "Binances commitmentto compliance and user...",
-        desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
+        title: "What is World of Defish?",
+        desc: "World of Defish is an opportunity to plunge into an alternate reality. Here you can try on any roles: feel like the best fisherman of the Seven Seas, become a big landowner, pirate, or just be part of a big friendly family. As World of Defish is people. We are a team. ",
         date: "16.03.2022",
         btnLink: "#",
         img: require("~/assets/images/blog-main.png")

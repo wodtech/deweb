@@ -3,10 +3,13 @@
 
     <div class="title text-h2">ABOUT US</div>
     <div class="mt-10 description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Commodo viverra maecenas accumsan lacus. Fringilla urna porttitor rhoncus dolor purus non enim praesent elementum. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Viverra justo nec ultrices dui sapien eget mi proin. Vivamus arcu felis bibendum ut. Amet volutpat consequat mauris nunc congue. Dictum non consectetur a erat nam at lectus urna duis. Donec et odio pellentesque diam volutpat commodo. Vitae et leo duis ut diam quam. Placerat duis ultricies lacus sed turpis tincidunt. Feugiat in ante metus dictum at tempor. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Pharetra pharetra massa massa ultricies mi. Aliquam nulla facilisi cras fermentum odio eu. Ipsum consequat nisl vel pretium. Posuere ac ut consequat semper viverra nam libero justo.
+      Defish is a story about young and bright, ambitious and purposeful people with fire in their hearts, united by a common desire to create.
       <br/><br/>
-      Placerat in egestas erat imperdiet sed. Ut enim blandit volutpat maecenas volutpat blandit. Sem nulla pharetra diam sit amet nisl. Vulputate eu scelerisque felis imperdiet proin. Congue mauris rhoncus aenean vel. Vestibulum morbi blandit cursus risus at ultrices. Fusce ut placerat orci nulla pellentesque dignissim enim. Porttitor leo a diam sollicitudin tempor id eu nisl. Elit scelerisque mauris pellentesque pulvinar. Purus semper eget duis at tellus. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Feugiat scelerisque varius morbi enim. Sed lectus vestibulum mattis ullamcorper. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim.
-    </div>
+      To us, Defish is a world in which everything is possible.  We use the most advanced web3 technologies to make others believe it too.
+      Seeing the huge potential in the rapidly developing GameFi sector, we began to create history. Since then, Defish has dynamic, technological and exciting evolving way. Code by code, we built our game universe in order to combine traditional and classic gaming. And we did it.
+      <br/><br/>
+      It's not about us to stop. We are entering the global gaming market with our unique vision.  Right now Defish is conquering the world, join us.
+     </div>
       <img class="mt-16" width="100%" src="~/assets/images/careers/about-us.png" alt="">
 
    </div>

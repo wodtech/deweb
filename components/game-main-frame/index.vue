@@ -29,10 +29,16 @@ export default {
   },
   data() {
     return {
-      bgImg: require("~/assets/images/bg-img.png"),
+      bgImgTd: require("~/assets/images/bg-img.png"),
+      bgImgD: require("~/assets/images/defish_bg.png"),
       smallBadge: require("~/assets/images/main-logo.png"),
       textBig: 'world of defish',
       textSmall: 'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish'
+    }
+  },
+  computed: {
+    bgImg() {
+      return this.game.title === 'World of Defish' ? this.bgImgD : this.bgImgTd
     }
   }
 }

@@ -5,17 +5,15 @@
       <v-card color="transparent" class="w-70 card d-flex flex-column --posr" elevation="10"   rounded="xl" >
         <img style="position: absolute;top:0;left:0" class="w-100 h-100" src="~/assets/images/defish-launcher/border.png" alt="">
         <v-row class="w-100 h-100">
-          <v-col cols="12" md="6" class="py-12 pl-16 pr-6 white--text">
+          <v-col cols="12" md="6" class="py-12 pl-16 pr-6 white--text d-flex flex-column  justify-center">
             <div class="text-h4">
-              LOREM <span class="pink--text">IPSUM</span><br/>
-              DOLOR SIT AMET
+              DEFISH <span class="pink--text">CONNECT</span><br/>
+              TECHNOLOGY
             </div>
-            <div class="body-2">
-              Feel a real Storm of the Seven Seas, hunting for lorem mystical NFT Fish, crafting,
-              compete and filling your pocket with $WOD doubloons.
-              Welcome to World of Defish, play-to earn gaming universe running on BSC.
+            <div class="body-2 mt-3">
+              The Backbone of our technology where everything is happening behind the scene, automatically and smoothly. Defish Connect links up all games of our metauniverse together. This allows you to accumulate overall game progress, NFT inventory, rewards and receive bonuses.
               <br/><br/>
-              Feel a real Storm of the Seven Seas, hunting for lorem mystical NFT Fish, crafting, compete.
+              Earn once - use anywhere.
             </div>
           </v-col>
           <v-col cols="12" md="6" class="--posr pa-10 d-flex justify-center">

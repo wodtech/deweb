@@ -8,9 +8,9 @@
               The best gaming experience
             </div>
             <div class="description body-2 mt-3">
-              Enjoy our high-end-graphics and art works. Run several games to level up faster. Do your best sessions, defend you tower, all in one place.
+              Through truly special cross-gaming platforms players will open the door to the world of unlimited GameFi capabilities.
               <br/><br/>
-              Get notifications and updated content. Be the first to know about new games as they come live.
+              By taking all the best of classic gaming, we integrate it into Web3 to create a new phenomenon of Metagame.
             </div>
           </div>
         </v-col>

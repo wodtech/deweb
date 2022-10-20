@@ -22,10 +22,10 @@
       <v-col md="6" cols="12" class="d-flex flex-column team-about">
         <div class="text-h2">TEAM</div>
         <div class="mt-10 description" style="max-width: 518px">
-          Placerat in egestas erat imperdiet sed. Ut enim blandit volutpat maecenas volutpat blandit. Sem nulla pharetra diam sit amet nisl. Vulputate eu scelerisque felis imperdiet proin. Congue mauris rhoncus aenean vel. Vestibulum morbi blandit cursus risus at ultrices.
+          Who can create a truly quality product and move technological progress forward? We are sure that these are the people who are in love with the work they do. This is the principle we follow within the Defish team. Each of us has gone from a self-taught nerd to a professional with a capital letter. As true fans of games, we have a deep understanding of the needs of players and their desires. So, we joined together to give the best gaming experience using blockchain technologies.
           <br/><br/>
-          Fusce ut placerat orci nulla pellentesque dignissim enim. Porttitor leo a diam sollicitudin tempor id eu nisl. Elit scelerisque mauris pellentesque pulvinar. Purus semper eget duis at tellus. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum. Feugiat scelerisque varius morbi enim. Sed lectus vestibulum mattis ullamcorper. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim.
-        </div>
+          There is no other way but to win. For this we constantly strengthen and increase our team with new talents.
+         </div>
       </v-col>
     </v-row>
   </div>

@@ -12,7 +12,9 @@
           <div style="max-width: 425px">
             <div class="text-h3 text-uppercase">Chat with worldwide <br/> players</div>
             <div class="descr mt-3 body-2">
-              Defish Launcher is a player's space in a desctop app, where all games are tied up to one Defish ecosystem by Defish Connect mechanism.
+              With DeFish Launcher players are able to communicate with each other in between games, exchange achievements, progress and items.
+              <br/><br/>
+              Create your gaming group and be a part of our worldwide player comminity!
             </div>
           </div>
         </v-col>
