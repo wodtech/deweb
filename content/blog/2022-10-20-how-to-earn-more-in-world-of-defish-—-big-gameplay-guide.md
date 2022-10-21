@@ -22,6 +22,8 @@ Competition in the zone is calculated by a formula that takes into account sever
 * The strength of its equipment
 * Time spent at the session
 
+
+
 WOD multiplier size — increases your profit in the zone by multiplying WOD rate in the zone and your multiplayer. It’s also an indicator of your power.
 
 ***What does it mean?***
@@ -80,6 +82,8 @@ What do you need experience for?
 * To open more zones for simultaneous fishing
 * To improve your character
 * To improve equipment
+
+
 
 *By the way, more information about what level you need to open new fishing zones, etc. You can find on the page created by our community: <https://wod.wiki/index.php/Main_Page>*
 

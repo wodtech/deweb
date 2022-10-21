@@ -33,12 +33,10 @@ From the table, we know that in Tier 3, the chance of dropping material — 85%,
 
 ***Note!*** Durability (efficiency) of the equipment does not affect the drop chance.
 
-***Pay attention!*** Your catch calculation happens every two hours during your fishing session. Thus, **in one 24-hour session you can catch a maximum of 12 NFTs** if you’re very lucky**.**
+***Pay attention!*** Your catch calculation happens every two hours during your fishing session. Thus, **in one 24-hour session you can catch a maximum of 12 NFTs** if you’re very lucky.
 
 Specially for spoiler lovers: the next article will be devoted to the bonus for collecting a full set of equipment from the same collection.
 
 The sea is calling for you, Captain;)
-
-
 
 <!--EndFragment-->
