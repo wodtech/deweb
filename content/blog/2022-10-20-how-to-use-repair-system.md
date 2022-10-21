@@ -1,5 +1,5 @@
 ---
-title: How to use Repair System?
+title: How to use Repair System
 date: 2022-04-15T12:24:34.743Z
 shot_description: Fill your pockets with $WOD — they will be the biggest asset in your fishing.
 image: /img/1_sd2skwwqrqiyvkaet_kqmw-2x.png
@@ -42,6 +42,8 @@ You’ll have a choice between three tools of each rarity: for example — 25%, 
 2. You are offered a choice of available tools that is suitable for your item;
 3. Choose the tool;
 4. And fix;
+
+
 
 And that is it — as easy as ABC! Now you’re completely ready to dive into Defish World.
 
