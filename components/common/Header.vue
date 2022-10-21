@@ -1,5 +1,5 @@
 <template>
-  <v-card :color="bg ? bg : 'transparent'" dark elevation="0" class="header d-flex">
+  <v-card id="headerId" :color="bg ? bg : 'transparent'" dark elevation="0" class="header d-flex">
 
     <div class="back" ref="back"></div>
 
@@ -133,8 +133,22 @@ export default {
       default: ''
     }
   },
-  methods: {
+  mounted () {
+    window.addEventListener('scroll', this.handleSCroll);
 
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleSCroll);
+  },
+  methods: {
+    handleSCroll (event) {
+      let header = document.getElementById("headerId");
+      if (window.scrollY > 20 && !header.className.includes('dark-bg')) {
+        header.classList.add('dark-bg');
+      } else if (window.scrollY < 20) {
+        header.classList.remove('dark-bg');
+      }
+    },
     getHeight(target) {
 
       const bb = target.getBoundingClientRect();
@@ -210,13 +224,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .header {
   height: 80px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+
+
+  &:before {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    content: '';
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, #14172D 26.28%, rgba(20, 23, 45, 0) 118.51%);
+  }
+  &.dark-bg{
+    &:before {
+      height: 100%;
+    }
+  }
+
   .hover-el{
     &:hover{
       color: #76FFE8;

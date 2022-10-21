@@ -58,6 +58,15 @@ export default {
   .main-title {
     font-size: 70px;
     line-height: 104.13%;
+    @media screen and (max-width: 650px) {
+      padding-top: 200px;
+    }
+    @media screen and (max-width: 480px) {
+      padding-top: 150px;
+    }
+    @media screen and (max-width: 400px) {
+      padding-top: 100px;
+    }
   }
   .main-left {
     .description {
@@ -82,6 +91,9 @@ export default {
   height: 70%;
   @media screen and (max-width: 960px) {
     width: 100%;
+  }
+  @media screen and (max-width: 600px) {
+    top: 0;
   }
   position: absolute;
   .bg-img {
