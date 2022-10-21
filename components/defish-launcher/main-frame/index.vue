@@ -4,7 +4,7 @@
 
     </div>
     <div style="max-width: 1550px;" class="img-contain">
-      <img  class="w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
+      <img class="w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
     </div>
     <v-card
       height="100%"
@@ -85,6 +85,11 @@ export default {
   }
   @media screen and (max-width: 600px) {
     right: -30%;
+  }
+  img{
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
   .bg-img {
     width: 100%;
