@@ -84,7 +84,7 @@ And this is only 1 item! Your set-up consists of a minimum of 5 items.
 
 Now let’s take a loot at rarity of items. In general, the rarer an item, the better its stats. Often the rarest items are sharpened for a strong improvement in one of the characteristics. There are 6 rarities: common, uncommon, rare, epic, legendary and artifact
 
-Every self-respecting Captain must master the art of crafting as an alternative way to obtain equipment. 
+Every self-respecting Captain must master the art of crafting as an alternative way to obtain equipment.
 
 # Crafting
 
