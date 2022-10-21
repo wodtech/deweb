@@ -5,7 +5,7 @@ shot_description: "How does World of Defish differ from hundreds of other play t
 image: /img/photo_2022-05-27_19-07-10.jpg
 tab: world of defish
 post_type: tutorials
-description: >+
+description: >
   How does World of Defish differ from hundreds of other play to earn games? We
   could list our virtues all day long, but instead, we will tell you about
   something special. About the important role of off-chain.
@@ -24,6 +24,8 @@ In fact teleportation sounds and works very simply. All you need to do is follow
 2. Confirm the transfer;
 3. Pay gas fee once for this migration;
 
+
+
 But why would you leave items on the blockchain?
 
 The reason is that at the moment, we have moved to off-chain the most “voracious on gas fee” functionality — Fishing session and Repairing.
@@ -41,7 +43,5 @@ Why didn’t we combine the Harbor with the Defish Portal?
 This is due to technical costs. You will need to conduct separate transactions for different types of items: for materials, fish and WOD. In the future, we will combine this into one transaction.
 
 Pay attention! To use fish as bait you need: move it to the blockchain, return to the off-chain again and then start fishing with a bait.
-
-
 
 <!--EndFragment-->
