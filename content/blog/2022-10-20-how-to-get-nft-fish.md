@@ -14,8 +14,6 @@ description: >
 
 # NFT FISH
 
-
-
 One of the most important and main things in fishing, it’s actually fish. By what fish you caught, fishermans will judge how good and lucky you are. In World of Defish, in addition to this, the fish also benefits.
 
 Each area of the map is allocated with a certain amount of NFT fish. By using the map, players can:
@@ -23,6 +21,8 @@ Each area of the map is allocated with a certain amount of NFT fish. By using th
 * Previewing what fish live in the area
 * Inspecting the average quality and rarity of the fish
 * Knowing the number of players in the area
+
+
 
 Usually, the rarest and highest quality NFTs live in central waters, which can only be reached using fishing boats.
 
@@ -47,8 +47,6 @@ The quality of the fish is indicated on a scale from 1 to 10, where 10 is the hi
 * Selling your NFT fish on the marketplace.
 * Using the fish you get as bait. Fishing with bait is more efficient and gives an increased chance of getting better quality and rarity loot. After using the fish as bait, it is removed from the inventory.
 * Stake your NFT fish and get the maximum APR percentage. Send your catch to the best chefs in World of Defish and get income from the dishes they cook.
-
-more about staking - here
 
 ## About NFT collection
 
@@ -79,7 +77,5 @@ Each zone has its own price, it is dynamic (the price can change). The price of 
 ## Zones supply
 
 A total of 10,000 NFT zones will exist in the World of De Fish. They differ in size, NFT fish and WOD production.
-
-
 
 <!--EndFragment-->
