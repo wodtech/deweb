@@ -16,7 +16,7 @@
         <v-container class="d-flex align-center justify-center">
           <v-row class="d-flex flex-column flex-lg-row">
             <v-col class="d-flex flex-column justify-center ">
-              <div class="main-title d-flex mb-sm-9 mb-16 text-uppercase  white--text">
+              <div class="main-title d-flex  mb-9 mt-sm-3  mt-16  text-uppercase  white--text">
                 for developers <br/> with open-source
               </div>
               <div class="desc mb-9 mt-sm-6 subtitle-2 font-weight-light white--text">

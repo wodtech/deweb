@@ -16,7 +16,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="6" class="--posr pa-10 d-flex justify-center">
-            <v-img class="w-100" :src="tdImage" alt="td-preview"></v-img>
+            <v-img class="w-100 td-img" :src="tdImage" alt="td-preview"></v-img>
           </v-col>
         </v-row>
       </v-card>
@@ -58,6 +58,11 @@ export default {
     @media screen and (min-width: 650px){
       right: 0;
     }
+  }
+}
+.td-img{
+  @media screen and (max-width: 600px) {
+    margin-left: 13px;
   }
 }
 .img-wrap {
