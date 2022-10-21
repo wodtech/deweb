@@ -76,9 +76,11 @@ html .v-application {
 
   .container {
     max-width: 73%!important;
+    @media (max-width: 1600px) {
+      max-width: 85%!important;
+    }
     @media (max-width: 1264px) {
       max-width: 1040px !important;
     }
-
   }
 }

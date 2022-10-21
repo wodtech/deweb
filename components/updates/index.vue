@@ -5,6 +5,7 @@
         v-model="tab"
         transition="fade-transition"
         hide-slider
+        class="d-flex flex-sm-row flex-column flex-wrap v-tabs-el"
         background-color="transparent"
       >
         <v-tab
@@ -133,6 +134,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//.container-blog {
+//  margin: 0 auto;
+//  max-width: 73%!important;
+//  @media screen and (max-width:1800px) {
+//    max-width: 95% !important;
+//  }
+//}
+.v-tabs-el {
+  &::v-deep {
+    .v-tabs-bar__content {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    div.v-tabs-bar {
+      height: auto;
+    }
+  }
+}
+
+
 .cards-wrapper {
   background-color: #F0F0F0 !important;
   display: grid;
@@ -170,7 +191,7 @@ export default {
 }
 .big-card {
   // max-width: 575px;
-  max-height: 550px;
+  max-height: 575px;
   grid-column: 1 / 2;
   grid-row: 1 / 3;
   .main-img{
@@ -192,18 +213,38 @@ export default {
   }
 }
 .small-card {
-  max-height: 250px;
+  max-height: 270px;
   @media (min-width: 1264px) {
     max-width: 100%;
   }
   @media (max-width: 960px) {
+    width: 100%;
     max-width: 100%;
-    max-height: 500px;
+    max-height: unset;
+    .v-image {
+      width: 100%;
+      height: 400px;
+      &::v-deep {
+        .v-responsive__content {
+          position: absolute!important;
+        }
+      }
+    }
+
+  }
+
+  &.v-image {
+    &::v-deep {
+      .v-responsive__content {
+        position: absolute!important;
+      }
+    }
   }
 }
 .tab-btn {
   background-color: rgba(220, 220, 220, 1) !important;
   color: rgba(0, 0, 0, 0.2);
+  margin: 5px 0;
 }
 :v-deep(.v-tab) {
   &:hover::before {

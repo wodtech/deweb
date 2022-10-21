@@ -12,9 +12,9 @@
             </div>
             <v-responsive width="100%" :aspect-ratio="1.5"></v-responsive>
           </div>
-          <div>
-            <div class="launcher-info rounded-xl py-13 pr-9 --posr d-flex flex-column justify-center align-end">
-              <div style="max-width: 400px">
+          <div class="launcher-info-wrapper">
+            <div class="launcher-info rounded-xl  rounded py-13 pr-sm-9 pr-3 --posr d-flex flex-column justify-center align-sm-end align-center">
+              <div class="launch-content">
                 <div class="text-h3">ALL GAMES. <br/> ONE PLACE</div>
                 <div class="descr mt-3 body-2">
                   Defish Launcher is a player's space in a desctop app, where all games are tied up to one Defish ecosystem by Defish Connect mechanism.
@@ -56,6 +56,12 @@ export default {
     right: 0;
   }
 }
+.launch-content {
+  max-width: 440px;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+}
 .card {
   position: absolute;
   top: 0;
@@ -93,13 +99,23 @@ export default {
     width: 100%;
   }
 }
-.launcher-info{
-  background: white;
-  padding-left: 140px;
-  @media screen and (max-width: 960px) {
-    padding-left: 44px
+.launcher-info-wrapper {
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
+  .launcher-info{
+    background: white;
+    padding-left: 140px;
+    @media screen and (max-width: 960px) {
+      padding-left: 44px
+    }
+    @media screen and (max-width: 600px) {
+      padding-left: 12px;
+      width: 100%;
+    }
   }
 }
+
 .img-w {
   z-index: 1;
   position: absolute;
@@ -115,6 +131,9 @@ export default {
     width: 100%;
     left: 0;
     transform: translate(0, -50%) translateX(5%) translateY(-10%);
+  }
+  @media screen and (max-width: 600px){
+    transform: translate(0, -50%) translateX(3%) translateY(-10%);
   }
   .app {
     transform: perspective(2000px) rotateX(25deg) rotateY(30deg) rotateZ(-15deg);

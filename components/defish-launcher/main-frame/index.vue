@@ -16,7 +16,7 @@
       <no-ssr class="d-flex flex-grow-1 justify-center">
         <v-container class="d-flex align-center justify-center">
           <v-row class="d-flex flex-column flex-lg-row">
-            <v-col  md="6" cols="12" class="d-flex flex-column justify-center align-md-start align-center ">
+            <v-col  md="6" cols="12" class="d-flex flex-column justify-center align-start  ">
               <div class="main-title d-flex mb-9 text-uppercase  white--text">
                 DEFISH <br/> LAUNCHER
               </div>
@@ -56,7 +56,7 @@ export default {
   position: relative;
   overflow: hidden;
   .main-title {
-    font-size: 70px;
+    font-size: 95px;
     line-height: 104.13%;
   }
   .main-left {
@@ -81,11 +81,13 @@ export default {
   width: 100%;
   position: absolute;
   @media screen and (max-width: 960px) {
-    width: 100%;
+    width: 1475px;
+  }
+  @media screen and (max-width: 600px) {
+    right: -30%;
   }
   .bg-img {
     width: 100%;
-
     height: 100%;
     object-fit: cover;
   }

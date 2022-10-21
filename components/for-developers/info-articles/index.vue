@@ -1,5 +1,5 @@
 <template>
-  <div class="games --posr">
+  <div class="dev-posts --posr">
 <!--    <div class="bg-container">-->
 <!--      <img class="bg" src="~/assets/images/careers/fishes-bg.png" alt="">-->
 <!--    </div>-->
@@ -11,7 +11,7 @@
           style="z-index: 2"
           :key="i"
           :content-reverse="i%2!==0"
-          class="mt-9"
+          class="mt-9 mx-1"
           :data="article"
         />
       </div>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.games {
+.dev-posts {
   width: 100%;
   height: 100%;
   position: relative;

@@ -11,7 +11,7 @@
           max-width="100%"
           class="pa-sm-14 pa-6 d-flex justify-space-between flex-column"
         >
-          <div class="top-text d-flex flex-column">
+          <div class="top-text d-flex flex-column pb-4">
             <span class="text-h3 mb-4">{{firstCard.titleTop}}</span>
             <span class="first-top-desc body-1">{{game.description}}</span>
           </div>

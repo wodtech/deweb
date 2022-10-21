@@ -4,7 +4,7 @@
       <img class="bg" src="~/assets/images/fish-bg-launcher.png" alt="">
     </v-container>
 
-    <div class="d-flex flex-column align-center pb-16">
+    <div class="d-flex flex-column align-center pb-16 px-3">
       <div class="text-h2 mb-6">
         OUR ARTS
       </div>

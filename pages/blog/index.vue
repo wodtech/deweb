@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <BlogMain/>
-    <Updates :blog-tabs="blogTabsSorted" :blog="blog" />
+    <Updates :blog-tabs="blogTabs" :blog="blog" />
   </div>
 </template>
 
@@ -14,10 +14,10 @@ export default {
   async asyncData({ $content }) {
     const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'slug', 'post_type']).fetch()
     const blogTabs = await $content('blogTabs').fetch()
-    let blogTabsSorted = blogTabs[0].title === 'Tower Defish' ? blogTabs.reversed() : blogTabs
+
 
     return {
-      blog, blogTabsSorted
+      blog, blogTabs
     }
   },
 }

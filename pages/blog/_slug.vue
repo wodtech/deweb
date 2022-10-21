@@ -65,8 +65,8 @@ export default {
       color: #E94485;
       font-style: normal;
       font-size: 48px;
-      line-height: 30px !important;
-      margin-bottom: 32px;
+      line-height: 50px !important;
+      margin-bottom: 20px;
     }
     p {
       font-family: 'Relaway';

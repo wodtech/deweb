@@ -3,7 +3,7 @@
     <v-container class="--cnt d-flex flex-column align-center">
       <div class="text-h3 white--text text-center">{{content.title}}</div>
       <div class="body-1 description white--text text-center">{{content.description}}</div>
-      <img class="w-70 mt-10" src="~/assets/images/for-developers/defish-universe.png" >
+      <img class="mt-10 defish-img" src="~/assets/images/for-developers/defish-universe.png" >
     </v-container>
   </div>
 </template>
@@ -28,6 +28,12 @@ export default {
   background-color: #192539;
   .description {
     opacity: 0.7;
+  }
+  .defish-img {
+    width: 70%;
+    @media screen and (max-width: 600px){
+      width: 100%;
+    }
   }
 }
 </style>

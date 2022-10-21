@@ -4,13 +4,13 @@
       :elevation="hover ? 5 : 10"
       rounded="xl"
       style="transition: box-shadow 0.3s ease-in-out"
-      class="d-flex flex-column flex-md-row"
+      class="d-flex flex-column flex-md-row blog-card"
       height="100%"
       width="100%"
     >
       <v-img
         aspect-ratio="1"
-        class="rounded-xl"
+        class="rounded-xl card-img"
         max-width="40%"
         cover
         style="flex: 0 0 40%"
@@ -22,7 +22,7 @@
             {{ title }}
           </span>
           <span
-            style="max-height: 130px; overflow: auto"
+            style="max-height: 100px; overflow: auto"
             class="body-2 ml-4 mt-1"
           >
             {{ shortDescription }}
@@ -66,6 +66,24 @@ export default {
 }
 </script>
 <style scoped lang="scss">
+.blog-card{
+
+  .card-img{
+    @media (max-width: 960px) {
+      max-width: 100% !important;
+      width: 100%;
+      max-height: 200px;
+      &.v-image {
+        &::v-deep {
+          .v-responsive__content {
+            position: absolute!important;
+          }
+        }
+      }
+
+    }
+  }
+}
 .read-btn {
   transition: all 0.2s ease-in-out;
   &:hover {
