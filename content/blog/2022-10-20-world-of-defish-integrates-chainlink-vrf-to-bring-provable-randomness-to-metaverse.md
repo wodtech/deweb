@@ -1,6 +1,5 @@
 ---
-title: World of Defish Integrates Chainlink VRF to Bring Provable Randomness to
-  Metaverse
+title: World of Defish Integrates Chainlink
 date: 2022-03-10T13:26:56.449Z
 shot_description: One more strong handshake with our partners Chainlink.
 image: /img/1_c3edvma3bko_oshyhg6tgg.png
