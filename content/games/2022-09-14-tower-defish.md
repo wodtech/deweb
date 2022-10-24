@@ -1,4 +1,6 @@
 ---
+bg_image: /img/defish_bg.png
+preview_image: /img/defish_map.png
 title: World of Defish
 short_description: Feel a real Storm of the Seven Seas, hunting for mystical NFT
   Fish, crafting, competing and filling your pocket with $WOD doubloons. Welcome
@@ -22,6 +24,5 @@ features:
   - $WOD Token
   - NFT
 icon: /img/logo.jpg
-preview_image: /img/defish_map.png
-bg_image: /img/defish_bg.png
+bg: /img/defish-bg.png
 ---
