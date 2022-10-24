@@ -7,7 +7,7 @@
       <v-row class="d-flex bottom-wrapper">
         <v-col style="z-index: 1" class="d-flex align-center col-el" md="8" sm="12">
           <div class="d-flex badge">
-            <img :src="game.icon" alt="small img">
+            <img class="rounded-xl" :src="game.icon" alt="small img">
           </div>
           <div class="d-flex flex-column ml-5 pa-1">
             <span class="text-big text-h5 white--text">{{ game.title }}</span>
