@@ -26,7 +26,7 @@
               </div>
               <v-spacer></v-spacer>
               <v-btn
-                to="/game-td"
+                :to="n.title === 'World of Defish' ? '/game-wod' : '/game-td'"
                 nuxt
                 color="primary"
                 x-large

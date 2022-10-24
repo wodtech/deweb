@@ -1,6 +1,6 @@
 <template>
   <div class="wod-page">
-    <GameMainFrame :game="game[0]" />
+    <GameMainFrame active-link="https://worldofdefish.com/" :game="game[0]" />
     <ScreenshotsVideos title="wod" :cards="cards" :game="game[0]" />
     <Blog :data="blogs" />
     <FollowUs/>

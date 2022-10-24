@@ -1,6 +1,6 @@
 <template>
   <div class="td-page">
-    <GameMainFrame :game="game[0]" />
+    <GameMainFrame  :game="game[0]" />
     <ScreenshotsVideos title="td" :cards="cards" :game="game[0]"/>
     <Blog :data="blogs" />
     <FollowUs/>

@@ -7,7 +7,7 @@
       <v-row class="d-flex bottom-wrapper">
         <v-col style="z-index: 1" class="d-flex align-center col-el" md="8" sm="12">
           <div class="d-flex badge">
-            <img :src="smallBadge" alt="small img">
+            <img :src="game.icon" alt="small img">
           </div>
           <div class="d-flex flex-column ml-5 pa-1">
             <span class="text-big text-h5 white--text">{{ game.title }}</span>
@@ -15,7 +15,15 @@
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
-          <v-btn href="https://worldofdefish.com/" target="_blank" x-large class="play-btn font-weight-light rounded-pill" >PLAY NOW</v-btn>
+          <v-btn
+            :href="activeLink ? activeLink : '#'"
+            target="_blank"
+            x-large
+            :style="activeLink ? '' : 'pointer-events:none;opacity:0.7'"
+            class="play-btn font-weight-light rounded-pill"
+          >
+            {{activeLink ? 'PLAY NOW' : 'SOON'}}
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -25,7 +33,10 @@
 <script>
 export default {
   props: {
-    game: {}
+    game: {},
+    activeLink: {
+      default: null
+    }
   },
   data() {
     return {
