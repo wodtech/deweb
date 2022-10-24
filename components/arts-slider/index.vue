@@ -9,13 +9,10 @@
         </div>
 
         <div
-          v-for="(section, i) in sections"
-          :key="i + '-' + sections.length"
-          v-if="page === (i + 1)"
         >
           <v-row>
             <v-col
-              v-for="n in section"
+              v-for="n in sections"
               :key="n.slug"
               cols="12"
               sm="6"
@@ -30,14 +27,16 @@
         </div>
 
         <div class="d-flex align-self-center pt-10">
-          <v-pagination
-            v-model="page"
-            :length="pages"
-            circle
-            color="primary"
-          ></v-pagination>
+          <v-btn
+            v-if="page < pages"
+            @click="showMore"
+            :loading="loading"
+            x-large
+            rounded
+            class="play-btn font-weight-light rounded-pill mr-2" >SHOW MORE</v-btn>
+
         </div>
-          
+
       </v-container>
     </div>
   </div>
@@ -50,20 +49,23 @@ export default {
   },
 
   data: () => ({
-    page: 1
+    page: 1,
+    loading: false
   }),
+  methods: {
+    showMore() {
+      this.loading = true
+      setTimeout(()=>{
+        this.page++
+        this.loading = false
+      },500)
 
+    }
+  },
   computed: {
 
     sections() {
-
-      const new_array = [];
-
-      for (let i = 0; i < this.arts.length; i += this.prePage) {
-        new_array.push(this.arts.slice(i, i + this.prePage));
-      }
-
-      return new_array;
+      return this.arts.slice(0, this.prePage * this.page);
     },
 
     prePage() {
@@ -90,16 +92,16 @@ export default {
           per_page: 24,
         },
       ]
-      
+
       const result = per_page.find((item) => {
         return item.breakpoint >= this.$vuetify.breakpoint.width
       });
 
       return (result || per_page[per_page.length - 1]).per_page;
-    }, 
+    },
 
     pages() {
-      return this.sections.length;
+      return Math.round(this.arts.length / this.prePage);
     },
   }
 }
