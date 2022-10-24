@@ -17,5 +17,5 @@ features:
   - Crafting Mechanism
   - Marketplace
   - $WOD Token
-icon: /img/logo.jpg
+icon: /img/image_2022-09-07_19-34-39.png
 ---
