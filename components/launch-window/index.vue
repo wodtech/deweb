@@ -67,6 +67,13 @@ export default {
 .launch-window {
   // background: #14172D;
   overflow: hidden;
+  padding: 100px 0;
+  @media screen and (max-width: 960px) {
+    padding: 50px 0;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
 }
 
 .fish-bg {

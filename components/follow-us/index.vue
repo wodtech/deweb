@@ -3,19 +3,25 @@
   <v-container class="py-16">
     <v-card
     outlined
-    class="pa-16 card-follow"
+    class="pa-10 card-follow"
     >
-      <svg style="z-index: 0" class="bg-svg left" width="399" height="398" viewBox="0 0 399 398" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M139.827 11.2801C273.501 -41.4664 448.845 98.3754 385.278 273.165C410.145 22.4305 101.345 -15.2861 69.5389 157.048C34.401 347.438 284.699 361.079 287.334 235.591C276.896 122.064 158.873 159.713 178.013 199.052C190.339 224.385 220.778 206.617 231.743 196.194C262.731 227.858 243.353 253.949 229.79 263.036L241.365 278.82C137.844 309.765 103.744 237.891 99.6339 198.086L81.9304 203.733C101.773 61.3305 209.654 73.3998 261.115 97.2348L271.026 87.5811C409.824 151.077 360.176 308.441 291.871 351C295.871 355.351 303.153 365.06 300.284 369.091C38.0599 504.676 -135.015 119.73 139.827 11.2801Z" fill="#D9D9D9" fill-opacity="0.1"/>
+
+
+      <svg style="z-index: 0" class="bg-svg left" width="257" height="304" viewBox="0 0 257 304" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.5" d="M36.8258 -82.7204C102.547 -108.653 178.34 -88.0335 230.861 -39.5957C256.802 -15.6712 216.626 -6.68111 185.221 -22.7758C99.1941 -66.8635 -14.8025 -38.0559 -33.462 63.0479C-68.6 253.437 181.698 267.078 184.333 141.59C173.895 28.0634 55.8718 65.7124 75.0118 105.051C81.3588 118.096 92.5086 119.713 103.329 116.788C119.159 112.51 139.929 111.222 144.119 127.076C148.289 142.853 141.172 155.787 133.173 163.76C129.969 166.954 129.02 172.078 131.696 175.727C134.947 180.159 132.792 186.483 127.447 187.769C38.7479 209.108 5.11026 151.126 -2.19578 112.105C-2.96546 107.994 -7.10927 105.279 -11.0938 106.55C-15.7171 108.025 -20.2737 104.104 -19.4173 99.3278C3.18493 -26.7463 99.6788 -20.7444 151.774 0.479197C155.642 2.05488 160.09 1.30929 163.082 -1.60472C166.061 -4.50665 170.613 -5.26091 174.335 -3.40433C296.048 57.3136 262.155 193.933 202.77 246.546C195.992 252.55 197.692 263.592 197.933 272.644C197.995 274.943 196.129 275.694 194.074 276.726C-66.3476 407.536 -236.893 25.2867 36.8258 -82.7204Z" fill="#D9D9D9" fill-opacity="0.1"/>
       </svg>
 
-      <svg style="z-index: 0" class="bg-svg right d-none d-sm-flex" width="394" height="398" viewBox="0 0 394 398" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.268685 186.73C-0.490779 43.0282 193.357 -69.7743 333.264 52.7738C108.552 -61.203 -38.4298 212.98 110.69 305.034C275.433 406.733 378.788 178.363 262.772 130.464C153.17 99.0821 145.524 222.729 189.124 219.133C217.202 216.818 211.663 182.01 205.918 168.015C246.655 150.597 263.957 178.108 267.516 194.041L286.42 188.967C277.777 296.668 198.433 302.427 159.841 291.843L158.694 310.39C33.1417 240.326 83.4588 144.137 124.311 104.801L118.902 92.0667C228.35 -14.3173 357.055 88.947 371.991 168.027C377.495 165.875 389.182 162.603 391.901 166.737C423.325 460.263 1.8302 482.191 0.268685 186.73Z" fill="#D9D9D9" fill-opacity="0.1"/>
+
+      <svg style="z-index: 0" class="bg-svg right d-none d-sm-flex" width="231" height="230" viewBox="0 0 231 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.5" d="M0.00839603 92.1162C-0.0869856 74.0674 4.53241 56.7674 12.7051 41.1713C29.0847 9.91377 37.0667 53.1204 33.165 88.1932C29.7146 119.209 41.1172 150.14 71.9064 169.147C179.174 235.365 246.471 86.6678 170.93 55.4797C99.5658 35.0465 94.5875 115.556 122.976 113.215C129.999 112.635 133.792 108.934 135.588 104.078C140.337 91.2406 145.018 73.0988 157.92 77.6674C165.315 80.2856 169.901 86.2348 172.322 91.7575C173.505 94.4555 176.392 96.2393 179.237 95.4757C182.694 94.5479 186.024 97.3472 185.544 100.894C177.581 159.76 134.458 166.504 109.053 161.737C106.376 161.235 103.752 163.11 103.583 165.828C103.388 168.982 99.9344 170.823 97.2373 169.177C26.0486 125.732 52.4436 68.5821 77.6083 41.9683C79.4766 39.9924 80.0729 37.1168 79.0097 34.6139C77.9509 32.1215 78.5665 29.1807 80.5709 27.3597C146.121 -32.1946 221.048 20.5889 238.978 69.0374C241.024 74.5667 248.126 76.1388 253.677 78.1264C255.087 78.6313 255.103 79.9407 255.245 81.4314C273.232 270.332 1.02097 283.711 0.00839603 92.1162Z" fill="#D9D9D9" fill-opacity="0.1"/>
       </svg>
+
+
+
       <v-row style="z-index: 2" class="content-w">
         <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div style="z-index: 2">
-            <img  :src="firstImg" alt="">
+            <img style="width: 197px;" :src="firstImg" alt="">
           </div>
           <v-btn :href="btnTextFirst.link" x-large class="follow-btn font-weight-light rounded-pill">
             <span>{{btnTextFirst.text}}</span>
@@ -23,7 +29,7 @@
         </v-col>
         <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div>
-            <img :src="secondImg" alt="">
+            <img style="width: 215px;" :src="secondImg" alt="">
           </div>
           <v-btn :href="btnTextSecond.link" disabled x-large class="follow-btn font-weight-light rounded-pill">
             <span>{{btnTextSecond.text}}</span>
@@ -35,9 +41,9 @@
               <span  class="text-h4 white--text">{{text}}</span>
             </v-col>
             <v-col cols>
-              <div class="d-flex">
+              <div class="d-flex socials">
                 <v-btn target="_blank" :href="social_links.twitter" icon>
-                  <v-icon color="white">mdi-twitter</v-icon>
+                  <v-icon >mdi-twitter</v-icon>
                 </v-btn>
                 <v-btn target="_blank" :href="social_links.medium" icon>
                   <svg style="width: 24px;" width="69" height="41" viewBox="0 0 69 41" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +58,7 @@
                   </svg>
                 </v-btn>
                 <v-btn target="_blank" :href="social_links.linkedin" icon>
-                  <v-icon color="white">mdi-linkedin</v-icon>
+                  <v-icon >mdi-linkedin</v-icon>
                 </v-btn>
               </div>
             </v-col>
@@ -101,7 +107,8 @@ export default {
   }
 }
 .card-follow {
-  background: #161d32 !important;
+  background: rgb(32,54,69) !important;
+  background: linear-gradient(90deg, rgba(32,54,69,1) 24%, rgba(22,29,50,1) 49%, rgba(31,52,68,1) 67%) !important;
   mix-blend-mode: normal;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -139,13 +146,26 @@ export default {
   align-items: center;
   justify-content: space-around;
   .game-block {
-    min-height: 212px;
+    min-height: 183px;
     border-right: 2px solid rgba(217, 217, 217, 0.15)
   }
   @media screen and (max-width: 950px) {
     flex-direction: column;
     .game-block {
       border: none;
+    }
+  }
+}
+.socials {
+  .v-btn{
+    color: white;
+    &:hover {
+      color: #E94485!important;
+      svg{
+        path {
+          fill: #E94485;
+        }
+      }
     }
   }
 }

@@ -41,7 +41,7 @@
         </v-btn>
       </div>
 
-      <div class="socials d-none d-sm-flex">
+      <div class="socials d-none d-md-flex">
         <v-btn target="_blank" :href="social_links.twitter" icon>
           <v-icon>mdi-twitter</v-icon>
         </v-btn>
@@ -230,7 +230,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-
+  z-index: 10;
 
   &:before {
     width: 100%;

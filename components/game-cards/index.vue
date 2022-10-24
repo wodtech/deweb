@@ -19,7 +19,7 @@
                   <div class="text-h5">
                     {{ n.title }}
                   </div>
-                  <div class="body-2">
+                  <div style="max-width: 240px" class="body-2">
                     {{ n.subtitle }}
                   </div>
               </div>
@@ -70,7 +70,7 @@ export default {
   }
 }
 .bg-image{
-  min-height: 500px;
+  height: 500px;
   @media screen and (max-width: 600px) {
     min-height: 200px;
   }

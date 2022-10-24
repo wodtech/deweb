@@ -5,15 +5,14 @@
       <Nuxt/>
     </v-main>
     <Sidebar
-      v-model="drawer"
-      mobile-breakpoint="0"
-      absolute
-      bottom
-      temporary
-      @disable-drawer="drawer=false"
-    />
+      :value="drawer"
+      @close="drawer=false"
+    >
+    </Sidebar>
     <Header :bg="headerBg" >
-      <v-app-bar-nav-icon class="show-mobile" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <div class="show-mobile">
+        <burger class="menu-btn" :value="drawer" @click.stop="drawer = !drawer"></burger>
+      </div>
     </Header>
 
     <Footer></Footer>
@@ -25,7 +24,8 @@ export default {
   components: {
     Header: () => import('~/components/common/Header.vue'),
     Footer: () => import('~/components/common/Footer.vue'),
-    Sidebar: () => import('~/components/common/Sidebar')
+    Burger: () => import('~/components/burger-menu/burger'),
+    Sidebar: () => import('~/components/burger-menu/sidebar')
   },
   data() {
     return {

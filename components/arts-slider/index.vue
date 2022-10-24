@@ -7,11 +7,11 @@
             more our arts
           </div>
         </div>
-
         <div
         >
           <v-row>
             <v-col
+              style="position: relative;"
               v-for="n in sections"
               :key="n.slug"
               cols="12"
@@ -19,8 +19,9 @@
               md="4"
               xl="2"
             >
-              <v-card rounded="xl">
-                <v-img :src="n.image" :aspect-ratio="1.5"></v-img>
+              <v-card class="w-100 card-item d-flex align-center" rounded="xl">
+                <img class="card-img"  :src="n.image">
+                <v-responsive :aspect-ratio="1.5" />
               </v-card>
             </v-col>
           </v-row>
@@ -34,9 +35,7 @@
             x-large
             rounded
             class="play-btn font-weight-light rounded-pill mr-2" >SHOW MORE</v-btn>
-
         </div>
-
       </v-container>
     </div>
   </div>
@@ -107,6 +106,19 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.card-item{
+  background: #06101c;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+  &:hover {
+    transform: scale(2);
+    z-index: 3;
+  }
+}
+.card-img {
+  width: 100%;
+  position: absolute;
+}
 </style>
