@@ -25,7 +25,12 @@
               </div>
               </div>
               <v-spacer></v-spacer>
-              <v-btn color="primary" x-large rounded>
+              <v-btn
+                to="/game-td"
+                nuxt
+                color="primary"
+                x-large
+                rounded>
                 learn more
               </v-btn>
             </div>

@@ -15,7 +15,7 @@
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
-          <v-btn href="https://worldofdefish.com/" target="_blank" x-large class="large-button font-weight-light rounded-pill" >PLAY NOW</v-btn>
+          <v-btn href="https://worldofdefish.com/" target="_blank" x-large class="play-btn font-weight-light rounded-pill" >PLAY NOW</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -72,11 +72,6 @@ export default {
     .sub-text {
       opacity: 0.7;
       max-width: 240px;
-    }
-    .large-button {
-      width: 166px;
-      color: white;
-      background-color: rgba(233, 68, 133, 1);
     }
   }
   .img-container {

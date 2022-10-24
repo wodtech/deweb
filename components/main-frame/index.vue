@@ -21,7 +21,7 @@
             As you deserve.
           </div>
 
-          <v-btn width="170" rounded x-large color="primary">
+          <v-btn width="170" @click="$emit('scrollTo')" rounded x-large color="primary">
             EXPLORE NOW
           </v-btn>
         </v-col>
@@ -32,6 +32,9 @@
 
 <script>
 export default {
+  methods: {
+
+  }
 
 }
 </script>
