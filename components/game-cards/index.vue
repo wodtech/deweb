@@ -5,10 +5,10 @@
         <v-col v-for="n in games" :key="n.slug" cols="12" md="6">
           <v-card elevation="10" width="100%" rounded="xl">
             <v-img
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+              :src="getBgByTitle(n.title)"
               :alt="n.title"
               width="100%"
-              class="rounded-xl"
+              class="rounded-xl bg-image"
             ></v-img>
             <div class="card-content d-flex align-center justify-center pa-6">
               <div class="d-flex align-center">
@@ -46,6 +46,20 @@ export default {
   props: {
     games: {},
   },
+  data() {
+    return {
+      bgImgTd: require("~/assets/images/td-bg.png"),
+      bgImgD: require("~/assets/images/defish-bg.png"),
+    }
+  },
+  methods: {
+    getBgByTitle(title) {
+      return title === 'World of Defish' ? this.bgImgD : this.bgImgTd
+    }
+  },
+  computed: {
+
+  }
 }
 </script>
 
@@ -53,6 +67,12 @@ export default {
 .card-content {
   @media screen and (max-width: 500px) {
     flex-direction: column;
+  }
+}
+.bg-image{
+  min-height: 500px;
+  @media screen and (max-width: 600px) {
+    min-height: 200px;
   }
 }
 </style>
