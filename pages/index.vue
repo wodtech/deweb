@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
-    <MainFrame/>
-    <Games :games="games"/>
+    <MainFrame @scrollTo="scrollDown" />
+    <Games id="gamesID" :games="games"/>
     <ArtsStripe :arts="arts"/>
     <LaunchWindow/>
     <PlayerTalk/>
@@ -23,6 +23,17 @@ export default {
     CareersContent: () => import("~/components/careers/careers-content"),
     FollowUs: () => import("~/components/follow-us"),
     ArtsStripe,
+  },
+  methods: {
+    scrollDown() {
+      const gamesID = document.getElementById('gamesID')
+      const y = gamesID.getBoundingClientRect().top + window.scrollY;
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+
+    }
   },
   async asyncData({ $content }) {
     const games = await $content('games').fetch()

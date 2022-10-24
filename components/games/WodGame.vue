@@ -19,6 +19,12 @@
       </div>
       <div class="d-flex">
         <v-btn
+          href="https://worldofdefish.com/"
+          target="_blank"
+          x-large
+          rounded
+          class="play-btn font-weight-light rounded-pill mr-2" >PLAY NOW</v-btn>
+        <v-btn
           to="/game-wod"
           nuxt
           style="background: white;min-width: 160px"

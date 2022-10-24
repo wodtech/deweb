@@ -17,15 +17,14 @@
     <div class="d-flex flex-column" style="overflow: hidden;">
       <div class="d-flex flex-column slider">
         <div class="top d-flex mb-8">
-          <v-card elevation="10" :key="n" v-for="n in 20" rounded="lg" class="mr-8">
-            <v-img width="200" src="https://picsum.photos/600/400" :aspect-ratio="1">
-
+          <v-card elevation="10" :key="n.slug" v-for="n in randArts.slice(0, 20)" rounded="lg" class="mr-8">
+            <v-img width="200" :src="n.image" :aspect-ratio="1">
             </v-img>
           </v-card>
         </div>
         <div class="bot d-flex" style="transform: translateX(-100px);">
-          <v-card elevation="10" :key="n" v-for="n in 20" rounded="lg" class="mr-8">
-            <v-img width="200" src="https://picsum.photos/600/400" :aspect-ratio="1">
+          <v-card elevation="10" :key="n.slug" v-for="n in randArts.slice(20)" rounded="lg" class="mr-8">
+            <v-img width="200" :src="n.image" :aspect-ratio="1">
 
             </v-img>
           </v-card>
@@ -42,7 +41,32 @@
 
 <script>
 export default {
-
+  props: {
+    arts: {}
+  },
+  data() {
+    return {
+      randArts: []
+    }
+  },
+  created() {
+     this.randArts = this.getRangomArts()
+  },
+  methods: {
+    getRandomInt() {
+      return Math.floor(Math.random() * this.arts.length);
+    },
+    getRangomArts () {
+      let randArr = []
+      while (randArr.length<40) {
+        let art = this.arts[this.getRandomInt(this.arts.length)]
+        if (randArr.every(item=> item.slug !== art.slug)) {
+          randArr.push(art)
+        }
+      }
+      return randArr
+    }
+  }
 }
 </script>
 

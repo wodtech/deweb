@@ -14,6 +14,15 @@
       </div>
       <div class="d-flex">
         <v-btn
+          href="https://worldofdefish.com/"
+          target="_blank"
+          x-large
+          rounded
+          style="pointer-events: none;opacity: 0.7"
+          class="play-btn font-weight-light rounded-pil mr-2"
+        >SOON
+        </v-btn>
+        <v-btn
           to="/game-td"
           nuxt
           style="background: white;min-width: 160px"
@@ -22,7 +31,7 @@
           rounded
           x-large
           color="black" >
-          SOON
+          LEARN MORE
         </v-btn>
       </div>
     </v-col>
@@ -42,6 +51,4 @@ export default {
 }
 </script>
 
-<style>
 
-</style>
