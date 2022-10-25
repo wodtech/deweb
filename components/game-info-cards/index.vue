@@ -42,11 +42,9 @@
               <v-icon size="27px" >mdi-twitter</v-icon>
             </v-btn>
 
-            <v-btn target="_blank" :href="social_links.medium" icon>
-              <svg style="width: 27px;" width="69" height="41" viewBox="0 0 69 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M39.1312 20.732C39.1312 31.8853 30.4832 40.9268 19.8159 40.9268C9.14867 40.9268 0.5 31.8833 0.5 20.732C0.5 9.5808 9.14801 0.536591 19.8159 0.536591C30.4839 0.536591 39.1312 9.57875 39.1312 20.732Z" fill="#999999"/>
-                <path d="M60.3208 20.732C60.3208 31.2305 55.9968 39.7445 50.6628 39.7445C45.3288 39.7445 41.0048 31.2305 41.0048 20.732C41.0048 10.2336 45.3282 1.71959 50.6621 1.71959C55.9961 1.71959 60.3201 10.2309 60.3201 20.732H60.3208Z" fill="#999999"/>
-                <path d="M65.5911 37.7642C67.4673 37.7642 68.9878 30.1361 68.9878 20.732C68.9878 11.3253 67.4666 3.69988 65.5911 3.69988C63.7155 3.69988 62.195 11.326 62.195 20.732C62.195 30.1381 63.7149 37.7642 65.5911 37.7642Z" fill="#999999"/>
+            <v-btn target="_blank" :href="social_links.tg" icon>
+              <svg style="height: 17px" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.8763 0.0946312L0.390353 7.92704C-0.175333 8.23167 -0.10345 8.9698 0.45911 9.19241L3.78134 10.4988L12.7604 3.08231C12.9323 2.93879 13.1761 3.15847 13.0292 3.32543L5.50027 11.9223V14.2803C5.50027 14.9715 6.391 15.2439 6.82854 14.7431L8.81313 12.4789L12.7073 14.0079C13.1511 14.1836 13.6574 13.9229 13.7387 13.4748L15.9889 0.821048C16.0952 0.22937 15.417 -0.198279 14.8763 0.0946312Z" fill="#999999"/>
               </svg>
             </v-btn>
 
@@ -112,7 +110,7 @@ export default {
       social_links: {
         twitter: "https://twitter.com/defishgames",
         discord: "https://discord.com/invite/78EfmhUgNJ",
-        medium: "https://worldofdefish.medium.com/",
+        tg: "https://t.me/worldofdefish",
         linkedin: "https://www.linkedin.com/company/world-of-defish/mycompany/",
       },
       firstCard: {
