@@ -21,7 +21,7 @@
             >
               <v-card class="w-100 card-item d-flex align-center" rounded="xl">
                 <img class="card-img"  :src="n.image">
-                <v-responsive :aspect-ratio="1.5" />
+                <v-responsive :aspect-ratio="1" />
               </v-card>
             </v-col>
           </v-row>

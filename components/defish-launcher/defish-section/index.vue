@@ -16,7 +16,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="6" class="--posr pa-10 d-flex justify-center">
-            <v-img class="w-100 td-img" :src="tdImage" alt="td-preview"></v-img>
+            <v-img class="w-100 td-img rounded-xl" :src="tdImage" alt="td-preview"></v-img>
           </v-col>
         </v-row>
       </v-card>
@@ -81,10 +81,11 @@ export default {
 .card {
   height: 100%;
   position: relative;
-  background-image: radial-gradient(circle at 100% 100%, transparent 21px, #f33282 21px, #f33282 24px, transparent 24px), linear-gradient(to right, #f33282, #505872), radial-gradient(circle at 0% 100%, transparent 21px, #505872 21px, #505872 24px, transparent 24px), linear-gradient(to bottom, #505872, #3c4357), radial-gradient(circle at 0% 0%, transparent 21px, #3c4357 21px, #3c4357 24px, transparent 24px), linear-gradient(to left, #3c4357, #f4327d), radial-gradient(circle at 100% 0%, transparent 21px, #f4327d 21px, #f4327d 24px, transparent 24px), linear-gradient(to top, #f4327d, #f33282);
-  background-size: 24px 24px, calc(100% - 48px) 3px, 24px 24px, 3px calc(100% - 48px);
-  background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
-  background-repeat: no-repeat;
+  box-shadow: none!important;
+  //background-image: radial-gradient(circle at 100% 100%, transparent 21px, #f33282 21px, #f33282 24px, transparent 24px), linear-gradient(to right, #f33282, #505872), radial-gradient(circle at 0% 100%, transparent 21px, #505872 21px, #505872 24px, transparent 24px), linear-gradient(to bottom, #505872, #3c4357), radial-gradient(circle at 0% 0%, transparent 21px, #3c4357 21px, #3c4357 24px, transparent 24px), linear-gradient(to left, #3c4357, #f4327d), radial-gradient(circle at 100% 0%, transparent 21px, #f4327d 21px, #f4327d 24px, transparent 24px), linear-gradient(to top, #f4327d, #f33282);
+  //background-size: 24px 24px, calc(100% - 48px) 3px, 24px 24px, 3px calc(100% - 48px);
+  //background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+  //background-repeat: no-repeat;
 }
 .fishes-top{
   position: absolute;

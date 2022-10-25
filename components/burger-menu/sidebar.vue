@@ -18,8 +18,7 @@
         <div class="sidebar-panel-nav">
           <div
             v-for="(tab, i) in menu"
-            class="drop-container mt-11"
-            :class="[`num-${i}-drop`, { _chosen: chosenTab === tab.title }]"
+            :class="[`drop-container num-${i}-drop`, { _chosen: chosenTab === tab.title, 'mt-11' : i!==0 }]"
           >
             <v-btn
               @click="chosenTab = tab.title"
@@ -225,6 +224,7 @@ export default {
     rgba(23, 42, 51, 1) 49%,
     rgba(15, 23, 34, 1) 91%
   );
+  display: flex;
   position: fixed;
   left: 0;
   top: 0;
@@ -282,10 +282,10 @@ export default {
 }
 .socials {
   .v-btn {
-    color: rgba(#fff, 0.5);
+    color: rgba(#fff, 0.5) !important;
 
     &:hover {
-      color: rgba(#fff, 1);
+      color: rgba(#fff, 1)!important;
       svg {
         path {
           opacity: 1;

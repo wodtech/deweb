@@ -158,7 +158,7 @@ export default {
 }
 .socials {
   .v-btn{
-    color: white;
+    color: white!important;
     &:hover {
       color: #E94485!important;
       svg{

@@ -83,6 +83,7 @@ export default {
 .launch-window {
   overflow: hidden;
   position: relative;
+  min-height: 80vh;
 }
 
 .fish-bg {

@@ -1,11 +1,13 @@
 <template>
   <div  class="main-frame">
+    <img class="w-100 bottom-shadow" src="~/assets/images/defish-launcher/bg-shadow.png" alt="">
     <div style="background: #0B0E29" class="img-container">
 
     </div>
     <div style="max-width: 1550px;" class="img-contain">
-      <img class="w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
+      <img class="bg w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
     </div>
+    <img class="bg2" src="~/assets/images/defish-launcher/main-left.png" alt="main-img">
     <v-card
       height="100%"
       color="transparent"
@@ -55,6 +57,15 @@ export default {
   background: black;
   position: relative;
   overflow: hidden;
+  .bottom-shadow{
+    position: absolute;
+    bottom: 0;
+    height: 200px;
+    z-index: 1;
+    @media screen and (max-width: 600px) {
+      height: 100px;
+    }
+  }
   .main-title {
     font-size: 95px;
     line-height: 104.13%;
@@ -80,21 +91,33 @@ export default {
   right: 0;
   width: 100%;
   position: absolute;
-  @media screen and (max-width: 960px) {
-    width: 1475px;
-  }
   @media screen and (max-width: 600px) {
-    right: -30%;
+    left: -70px;
+    width: 120%;
   }
-  img{
+  .bg {
+    @media screen and (max-width: 960px) {
+      width: 1475px;
+    }
     @media screen and (max-width: 600px) {
-      display: none;
+      right: -30%;
+    }
+    @media screen and (max-width: 600px) {
+      width: 100%;
     }
   }
   .bg-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+.bg2 {
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+  @media screen and (max-width: 600px) {
+    display: none;
   }
 }
 </style>
