@@ -105,12 +105,15 @@ export default {
     }
   },
   computed: {
+    blogTabsFiltered () {
+      return this.blogTabs[0].title === 'world of defish' ? this.blogTabs : this.blogTabs.reverse()
+    },
     blogsByTab() {
       const blogs = this.blog.filter(el => el.tab === this.chosenTab.title)
       return this.filterType ? blogs.filter(el => el.post_type === this.filterType) : blogs
     },
     chosenTab() {
-      return this.blogTabs[this.tab]
+      return this.blogTabsFiltered[this.tab]
     }
   },
   methods: {
