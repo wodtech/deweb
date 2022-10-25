@@ -2,7 +2,7 @@
   <div style="background: #192438" class="w-100 --posr">
     <div style="z-index: 0;" class="py-16 --posr d-flex flex-column align-center">
       <img class="fishes-top" src="~/assets/images/defish-launcher/fishes.png" alt="">
-      <v-card color="transparent" class="w-70 card d-flex flex-column --posr" elevation="10"   rounded="xl" >
+      <v-card color="transparent" class="card d-flex flex-column --posr" elevation="10"   rounded="xl" >
         <v-row class="w-100 h-100">
           <v-col cols="12" md="6" class="py-12 pl-16 pr-6 white--text d-flex flex-column  justify-center">
             <div class="text-h3">
@@ -82,6 +82,10 @@ export default {
   height: 100%;
   position: relative;
   box-shadow: none!important;
+  width: 70%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
   //background-image: radial-gradient(circle at 100% 100%, transparent 21px, #f33282 21px, #f33282 24px, transparent 24px), linear-gradient(to right, #f33282, #505872), radial-gradient(circle at 0% 100%, transparent 21px, #505872 21px, #505872 24px, transparent 24px), linear-gradient(to bottom, #505872, #3c4357), radial-gradient(circle at 0% 0%, transparent 21px, #3c4357 21px, #3c4357 24px, transparent 24px), linear-gradient(to left, #3c4357, #f4327d), radial-gradient(circle at 100% 0%, transparent 21px, #f4327d 21px, #f4327d 24px, transparent 24px), linear-gradient(to top, #f4327d, #f33282);
   //background-size: 24px 24px, calc(100% - 48px) 3px, 24px 24px, 3px calc(100% - 48px);
   //background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
