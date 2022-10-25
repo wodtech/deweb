@@ -88,7 +88,7 @@ export default {
             is_nuxt: true,
           },
           {
-            title: 'tower of defish',
+            title: 'tower defish',
             href: '/game-td',
             is_nuxt: true,
           },
