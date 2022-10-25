@@ -1,6 +1,6 @@
 <template>
   <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex">
-    <v-container style="padding:120px 0 " class=" --posr">
+    <v-container style="padding:120px 0 " class=" --posr d-flex align-center">
       <div class="bg-container">
         <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
       </div>
@@ -29,27 +29,17 @@
   </v-card>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-
-    }
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .bg-container {
   position: absolute;
   z-index: 1;
   height: 100%;
   width: 100%;
-
+  top: 0;
   overflow: hidden;
 
   .bg {
-    max-width: 700px;
+    max-width: 1000px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -83,7 +73,7 @@ export default {
 .launch-window {
   overflow: hidden;
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
 }
 
 .fish-bg {

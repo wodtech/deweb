@@ -5,7 +5,7 @@
       <v-card color="transparent" class="w-70 card d-flex flex-column --posr" elevation="10"   rounded="xl" >
         <v-row class="w-100 h-100">
           <v-col cols="12" md="6" class="py-12 pl-16 pr-6 white--text d-flex flex-column  justify-center">
-            <div class="text-h4">
+            <div class="text-h3">
               DEFISH <span class="pink--text">CONNECT</span><br/>
               TECHNOLOGY
             </div>
