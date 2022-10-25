@@ -99,7 +99,7 @@ export default {
 
 <style lang="scss" scoped>
 .follow-btn {
-  color: white;
+  color: white!important;
   min-width: 166px !important;
   background-color: rgba(233, 68, 133, 1) !important;
   &:disabled {
