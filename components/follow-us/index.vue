@@ -108,9 +108,9 @@ export default {
   background: rgb(32,54,69) !important;
   background: linear-gradient(90deg, rgba(32,54,69,1) 24%, rgba(22,29,50,1) 49%, rgba(31,52,68,1) 67%) !important;
   mix-blend-mode: normal;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .theme--light.v-btn.v-btn--disabled.v-btn--has-bg {
     color: white !important;
