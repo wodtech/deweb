@@ -29,13 +29,12 @@ export default {
   min-height: 80vh;
   &:after {
     content: '';
-    width: 100%;
+    width: 60%;
     height: 100%;
     top: 0;
     z-index: 0;
     position: absolute;
-    background: linear-gradient(68deg, #14172d 27%, rgba(20, 23, 45, 0.9307073171) 41%, rgba(20, 23, 45, 0.667401995) 54%, rgba(20, 23, 45, 0) 63%);
-  }
+    background: linear-gradient(68deg, #14172d 25%, rgba(20, 23, 45, 0.9307073171) 32%, rgba(20, 23, 45, 0.667401995) 51%, rgba(20, 23, 45, 0) 60%);  }
   .bg {
     position: absolute;
     top: 0;
