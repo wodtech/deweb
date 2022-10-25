@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       tdImage: require('~/assets/images/td-preview.jpg'),
-      connect: require('~/assets/images/defish-launcher/defish-circle-r.png')
+      connect: require('~/assets/images/defish-launcher/defish-circles-f.png')
     }
   }
 }

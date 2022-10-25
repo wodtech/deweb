@@ -70,7 +70,7 @@ export default {
   }
 }
 .bg-image{
-  height: 500px;
+  height: 330px;
   @media screen and (max-width: 600px) {
     min-height: 200px;
   }
