@@ -35,28 +35,16 @@ Time to fish, follow the algorithm:[](https://game.worldofdefish.com/)
 * teleport items to off-chain to pay less gas fee
 * choose a zone of the 5th tier
 
-
-
 *Hint! The fewer players in the zone, the bigger your profit. With higher level you open new zones and multiply fishing session*
-
-
 
 * pick your gear and go fishing
 
-
-
 *Notice! you can fish in multiple areas at the same time*
-
-
 
 * come back in time to check the catch
 * repeat
 
-
-
 *Oops! Your gear is broken? It means that the reparing time has come. For that, go to the workhouse. You can fix several items by one transaction. more about the mechanics of the repair system read here* 
-
-
 
 * find yourself a place in the guild, meet new players and compete
 
@@ -72,17 +60,15 @@ The fisherman, who has a zone, runs the whole show. We strongly recommend becomi
 * A nice and important bonus, if another player does not complete a session within 24 hours, you can kick it and pick up his catch
 * In your zone, you can fish without a boat.
 
-
-
 Zones Trailer - [click to watch](https://www.youtube.com/watch?v=Da-LBbmJySs&t=9s&ab_channel=DefishGames)
 
 ### Off-chain and on-chain
 
 You may have noticed that in the World of Defish you have the minimum requirement to pay for the painful gas fee. It is all possible thanks to the offchain in the Harbor and Defish Portal mechanics.
 
-Defish Portal is a mechanic for transferring your items to off-chain(Fishing session and Repairing) via Teleport. Read more about it here -
+Defish Portal is a mechanic for transferring your items to off-chain(Fishing session and Repairing) via Teleport.
 
-In Harbor you can move your catch from off-chain to blockchain. Namely: Fish, Materials and WOD. Read more about it here -
+In Harbor you can move your catch from off-chain to blockchain. Namely: Fish, Materials and WOD. 
 
 ### WOD Fam
 
