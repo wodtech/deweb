@@ -30,7 +30,7 @@
       </no-ssr>
     </v-card>
     <v-container>
-      <GameInfoCards :game="game" class="mt-16"/>
+      <GameInfoCards :links="links" :game="game" class="mt-16"/>
     </v-container>
   </div>
 </template>
@@ -44,6 +44,7 @@ export default {
   },
   props: {
     game:{},
+    links: {},
     cards: {},
     title: {}
   },

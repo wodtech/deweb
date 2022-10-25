@@ -1,7 +1,7 @@
 <template>
   <div class="wod-page">
     <GameMainFrame active-link="https://worldofdefish.com/" :game="game[0]" />
-    <ScreenshotsVideos title="wod" :cards="cards" :game="game[0]" />
+    <ScreenshotsVideos :links="links" title="wod" :cards="cards" :game="game[0]" />
     <Blog :data="blogs" />
     <FollowUs/>
   </div>
@@ -17,6 +17,35 @@ export default {
   },
   data() {
     return {
+      links: {
+        follow: [
+          {
+            id: 1,
+            link: 'https://world-of-defish.gitbook.io/world-of-defish/',
+            text: 'Whitepaper',
+          },
+          {
+            id: 2,
+            link: 'https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6',
+            text: 'Buy $WOD',
+          },
+          {
+            id: 3,
+            link: 'https://marketplace.worldofdefish.com/',
+            text: 'Marketplace',
+          },
+          {
+            id: 4,
+            link: 'https://worldofdefish.com/defishboxes/',
+            text: 'Defish Box',
+          },
+        ],
+        community: [
+          {title: 'Announcements', link: 'https://t.me/DefishANN'},
+          {title: 'Community', link: 'https://t.me/worldofdefish'},
+        ],
+      },
+
       cards: [
         {
           id: 1,

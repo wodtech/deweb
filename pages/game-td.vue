@@ -1,7 +1,7 @@
 <template>
   <div class="td-page">
     <GameMainFrame  :game="game[0]" />
-    <ScreenshotsVideos title="td" :cards="cards" :game="game[0]"/>
+    <ScreenshotsVideos :links="links" title="td" :cards="cards" :game="game[0]"/>
     <Blog :data="blogs" />
     <FollowUs/>
   </div>
@@ -11,6 +11,25 @@
 export default {
   data() {
     return {
+      links: {
+        follow: [
+          {
+            id: 1,
+            disabled: true,
+            link: '#nothing-here',
+            text: 'Whitepaper',
+          },
+          {
+            id: 2,
+            disabled: true,
+            link: '#nothing-here',
+            text: 'Download',
+          },
+        ],
+        community: [
+          {title: 'Announcements', link: 'https://t.me/DefishANN'}
+        ],
+      },
       cards: [
         {
           id: 1,
