@@ -48,7 +48,6 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Short description', name: 'short_description', widget: 'string' }
       - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Features', name: 'features', widget: 'list' }
       - { label: 'Icon', name: 'icon', widget: 'image' }

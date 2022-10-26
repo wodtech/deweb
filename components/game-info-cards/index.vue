@@ -13,7 +13,7 @@
         >
           <div class="top-text d-flex flex-column pb-4">
             <span class="text-h3 mb-4">{{ firstCard.titleTop }}</span>
-            <span class="first-top-desc body-1">{{ game.description }}</span>
+            <span class="first-top-desc body-1" > <nuxt-content :document="game"/></span>
           </div>
           <div class="bottom-text d-flex flex-column justify-end">
             <span class="first-bottom-title text-h3 mb-4">{{
@@ -250,5 +250,16 @@ export default {
 .list-el {
   font-weight: 500;
   font-size: 18px;
+}
+.first-top-desc {
+  .nuxt-content {
+    p {
+      font-family: 'Raleway';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 26px;
+    }
+  }
 }
 </style>
