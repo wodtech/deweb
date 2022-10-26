@@ -23,3 +23,6 @@ features:
   - $WOD Token
 icon: /img/image_2022-09-07_19-34-39.png
 ---
+Rise against the enemy waves and lead your invincible towers in battles. Prove that you are the embodiment of enduring strength in Tower Defish - 3d mobile game connected to Defish ecosystem.
+
+From the very first moment, you are immersed in the life of a brave fisherman, following the path inside a mythical and fantasy world full of danger, unknown creatures and enchanted objects.
