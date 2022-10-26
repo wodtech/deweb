@@ -27,3 +27,4 @@ features:
   - NFT
 icon: /img/logo.jpg
 ---
+World of Defish is a decentralized NFT gaming universe running on BSC. We inspire to give our players a journey to the most beautiful and mysterious places to hunt for collectible NFT fish. It is a futuristic world with endless factions, where players can upgrade their equipment, improve their skills, buy territories, compete with other players, trade on the marketplace.
