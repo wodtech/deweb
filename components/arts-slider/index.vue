@@ -16,7 +16,7 @@
               :key="n.slug"
               cols="12"
               sm="6"
-              md="4"
+              md="2"
               xl="2"
             >
               <v-card class="w-100 card-item d-flex align-center" rounded="xl">
@@ -83,10 +83,6 @@ export default {
           per_page: 12,
         },
         {
-          breakpoint: 1264,
-          per_page: 12,
-        },
-        {
           breakpoint: 1904,
           per_page: 24,
         },
@@ -115,6 +111,9 @@ export default {
   &:hover {
     transform: scale(2);
     z-index: 3;
+    @media screen and (max-width: 960px) {
+      transform: scale(1);
+    }
   }
 }
 .card-img {
