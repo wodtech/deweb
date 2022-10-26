@@ -254,11 +254,11 @@ export default {
 .first-top-desc {
   .nuxt-content {
     p {
-      font-family: 'Raleway';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 26px;
+      font-family: 'Raleway' !important;
+      font-style: normal!important;
+      font-weight: 400!important;
+      font-size: 15px!important;
+      line-height: 26px!important;
     }
   }
 }

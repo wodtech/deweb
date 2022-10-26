@@ -110,7 +110,7 @@ export default {
   mix-blend-mode: normal;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 20px!important;
 }
 .theme--light.v-btn.v-btn--disabled.v-btn--has-bg {
     color: white !important;
