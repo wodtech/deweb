@@ -1,22 +1,17 @@
 <template>
   <div class="dev-posts --posr">
-<!--    <div class="bg-container">-->
-<!--      <img class="bg" src="~/assets/images/careers/fishes-bg.png" alt="">-->
-<!--    </div>-->
-    <v-container class="--cnt">
-
-      <div class="articles-wrapper pb-16">
+      <div class="articles-wrapper">
         <DevInfo
           v-for="(article, i) in articles"
           style="z-index: 2"
+          :bg="article.bg"
           :key="i"
           :content-reverse="i%2!==0"
-          class="mt-9 mx-1"
           :data="article"
-        />
+        >
+          <img style="position: absolute" :src="article.bgFishes" >
+         </DevInfo>
       </div>
-
-    </v-container>
   </div>
 </template>
 
@@ -29,6 +24,8 @@ export default {
           title: 'authenticate in web3 easly',
           description: 'Web3 Token is an open-source package to authenticate users in a hybrid Apps using signed messages.',
           img: require("~/assets/images/for-developers/auth.png"),
+          bg: 'white',
+          bgFishes: require("~/assets/images/for-developers/bg1.png"),
           links: {
             github: 'https://github.com/bytesbay/web3-token',
             medium: 'https://worldofdefish.com/defishboxes/'
@@ -38,6 +35,8 @@ export default {
           title: 'extend your dapp with backend',
           description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockpain.',
           img: require("~/assets/images/for-developers/chain.png"),
+          bgFishes: require("~/assets/images/for-developers/bg2.png"),
+          bg: '#F0F0F0',
           links: {
             github: 'https://github.com/bytesbay/chain-syncer',
           }
@@ -54,10 +53,5 @@ export default {
 <style lang="scss" scoped>
 .dev-posts {
   width: 100%;
-  height: 100%;
-  position: relative;
-  background-image: url("~/assets/images/for-developers/fishes-bg.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 </style>

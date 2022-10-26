@@ -15,12 +15,13 @@
           </div>
         </v-col>
         <v-col class="d-flex align-center justify-end col-el" md="4" sm="12">
+          <slot name="additional-links"></slot>
           <v-btn
             :href="activeLink ? activeLink : '#'"
             target="_blank"
             x-large
             :style="activeLink ? '' : 'pointer-events:none;opacity:0.7'"
-            class="play-btn font-weight-light rounded-pill"
+            class="play-btn font-weight-light rounded-pill ml-7"
           >
             {{activeLink ? 'PLAY NOW' : 'SOON'}}
           </v-btn>
