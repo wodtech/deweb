@@ -5,9 +5,10 @@
 
     </div>
     <div style="max-width: 1550px;" class="img-contain">
-      <img class="bg w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
+      <img class="bg-smol w-100" src="~/assets/images/defish-launcher/main-bg.png" alt="main-img">
     </div>
-    <img class="bg2" src="~/assets/images/defish-launcher/main-left.png" alt="main-img">
+    <img class="bg" src="~/assets/images/defish-launcher/unitBg.png" alt="">
+
     <v-card
       height="100%"
       color="transparent"
@@ -57,6 +58,17 @@ export default {
   background: black;
   position: relative;
   overflow: hidden;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
   .bottom-shadow{
     position: absolute;
     bottom: 0;
@@ -91,17 +103,13 @@ export default {
   right: 0;
   width: 100%;
   position: absolute;
+  display: none;
   @media screen and (max-width: 600px) {
+    display: block;
     left: -70px;
     width: 120%;
   }
-  .bg {
-    @media screen and (max-width: 960px) {
-      width: 1475px;
-    }
-    @media screen and (max-width: 600px) {
-      right: -30%;
-    }
+  .bg-smol {
     @media screen and (max-width: 600px) {
       width: 100%;
     }

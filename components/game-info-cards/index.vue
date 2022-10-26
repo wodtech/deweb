@@ -251,15 +251,4 @@ export default {
   font-weight: 500;
   font-size: 18px;
 }
-.first-top-desc {
-  //.nuxt-content {
-  //  p {
-  //    font-family: 'Raleway' !important;
-  //    font-style: normal!important;
-  //    font-weight: 400!important;
-  //    font-size: 15px!important;
-  //    line-height: 26px!important;
-  //  }
-  //}
-}
 </style>
