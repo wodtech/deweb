@@ -1,25 +1,24 @@
 <template>
   <div class="blog --posr">
     <div class="img-container">
-      <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
+      <img src="~/assets/images/blog.png" class="bg-img" alt="bg">
     </div>
     <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
       <no-ssr class="d-flex flex-grow-1 justify-center">
-           <div>
-            <v-container class="d-flex align-center justify-center">
-              <v-row class="d-flex flex-column flex-lg-row">
-                <v-col class="d-flex flex-column justify-center">
-                  <div class="d-flex mb-9 title text-h3  white--text">{{slide.title}}</div>
-                  <div class="desc mb-9 subtitle-2 font-weight-light white--text">{{slide.desc}}</div>
-                </v-col>
-                <v-col class="d-flex align-center justify-center">
-                  <div class="img-wrapper d-flex justify-center">
-                    <img class="d-flex rounded-lg" :src="slide.img" alt="">
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
+        <v-container class="d-flex align-center justify-center">
+          <v-row class="d-flex flex-column flex-lg-row">
+            <v-col class="d-flex flex-column justify-center">
+              <div class="d-flex mb-2 title text-h1  white--text">BLOG</div>
+              <div class="d-flex mb-2 title text-h4  white--text">WORLD OF DEFISH</div>
+              <div class="desc subtitle-2 font-weight-light white--text">
+                Chain Syncer allows you to sychronize your app with <br/> any ethereum compatible blockpain.
+              </div>
+            </v-col>
+            <v-col class="d-flex align-center justify-center">
+
+            </v-col>
+          </v-row>
+        </v-container>
        </no-ssr>
     </v-card>
   </div>
@@ -32,14 +31,6 @@ export default {
   },
   data() {
     return {
-      slide:{
-        id: 1,
-        title: "What is World of Defish?",
-        desc: "World of Defish is an opportunity to plunge into an alternate reality. Here you can try on any roles: feel like the best fisherman of the Seven Seas, become a big landowner, pirate, or just be part of a big friendly family. As World of Defish is people. We are a team. ",
-        date: "16.03.2022",
-        btnLink: "#",
-        img: require("~/assets/images/blog-main.png")
-      },
       flickityOptions: {
         initialIndex: 2,
         contain: true,
