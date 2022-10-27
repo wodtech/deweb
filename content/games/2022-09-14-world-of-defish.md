@@ -23,6 +23,6 @@ features:
   - $WOD Token
 icon: /img/image_2022-09-07_19-34-39.png
 ---
-Rise against the enemy waves and lead your invisible towers in battle. Show your ingenuity and conquer the waters of Tower Defish - strategic 3d  mobile game connected to Defish ecosystem (based on the legendary Tower Defense game). 
+Rise against the enemy waves and lead your invisible towers in battle. Show your ingenuity and conquer the waters of Tower Defish - strategic 3d  mobile game connected to Defish ecosystem. 
 
 From the first minutes you can immerse in a fantasy world where fish will be your main goal. Talented heroes, unique towers, interesting equipment, as well as abilities that will help you catch fish are awaiting for you. Enjoy the best fishing experience ever!
