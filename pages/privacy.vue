@@ -17,7 +17,7 @@ export default {
     FollowUs: () => import('~/components/follow-us'),
   },
   async asyncData({ $content }) {
-    const privacy = await $content('privacy')
+    const privacy = await $content('content').where({title: 'privacy' }).fetch()
     return { privacy }
   }
 }

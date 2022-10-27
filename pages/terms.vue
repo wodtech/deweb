@@ -17,7 +17,7 @@ export default {
     FollowUs: () => import('~/components/follow-us'),
   },
   async asyncData({ $content }) {
-    const terms = await $content('terms')
+    const terms = await $content('terms').where({title: 'terms' }).fetch()
     return { terms }
   }
 }
