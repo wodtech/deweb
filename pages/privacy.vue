@@ -4,7 +4,7 @@
     <div class="terms-content">
       <div class="title text-h4">PRIVACY POLICY</div>
       <div class="text mt-4">
-        <nuxt-content :document="privacy"/>
+        <nuxt-content :document="privacy[0]"/>
       </div>
     </div>
     <FollowUs/>

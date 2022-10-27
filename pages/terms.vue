@@ -4,7 +4,7 @@
     <div class="terms-content">
       <div class="title text-h4">TERMS OF USE</div>
       <div class="text mt-4">
-        <nuxt-content :document="terms"/>
+        <nuxt-content :document="terms[0]"/>
       </div>
     </div>
     <FollowUs/>
