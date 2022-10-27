@@ -4,7 +4,7 @@
     <div class="terms-content">
       <div class="title text-h4">TERMS OF USE</div>
       <div class="text mt-4">
-        <nuxt-content :document="blog"/>
+        <nuxt-content :document="terms"/>
       </div>
     </div>
     <FollowUs/>
@@ -17,7 +17,7 @@ export default {
     FollowUs: () => import('~/components/follow-us'),
   },
   async asyncData({ $content }) {
-    const terms = await $content('terms').where({title: 'terms' }).fetch()
+    const terms = await $content('content').where({title: 'terms' }).fetch()
     return { terms }
   }
 }
