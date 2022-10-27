@@ -50,7 +50,7 @@
                 <a
                   @click="$emit('close')"
                   v-for="z in tab.links"
-                  class="lnk body-1 mb-2 hover-el"
+                  :class="['lnk body-1 mb-2 hover-el', {_disabled : z.disabled}]"
                   :href="z.href"
                   >{{ z.title }}</a
                 >
@@ -129,9 +129,11 @@
   </div>
 </template>
 <script>
+import DefishLinks from "~/components/common/DefishLinks";
 export default {
   components: {
     Burger: () => import('~/components/burger-menu/burger'),
+    DefishLinks
   },
   props: {
     value: {},
@@ -139,7 +141,7 @@ export default {
   data: () => ({
     chosenTab: '',
     social_links: {
-      twitter: 'https://twitter.com/defishgames',
+      twitter: 'https://twitter.com/WorldOfDefish?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
       discord: 'https://discord.com/invite/78EfmhUgNJ',
       medium: 'https://worldofdefish.medium.com/',
       linkedin: 'https://www.linkedin.com/company/world-of-defish/mycompany/',
@@ -181,6 +183,7 @@ export default {
           {
             title: 'careers',
             href: '/careers',
+            disabled: true,
             is_nuxt: true,
           },
           {

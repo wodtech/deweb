@@ -94,3 +94,15 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+
+  - name: 'content'
+    label: 'Content'
+    folder: 'content/content'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

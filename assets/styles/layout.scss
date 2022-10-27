@@ -81,6 +81,12 @@ body {
 .link-color{
   color: #E94485;
 }
+
+._disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
 .play-btn {
   background-color: rgba(233, 68, 133, 1)!important;
   min-width: 160px!important;

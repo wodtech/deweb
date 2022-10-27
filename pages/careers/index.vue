@@ -1,5 +1,5 @@
 <template>
-  <div class="careers-page"  >
+  <div class="careers-page d-none">
     <MainFrame />
     <v-container style="padding-top: 145px" class="--cnt">
       <CareersContent :careers="careers" :careers-groups="careerGroups" />
@@ -18,6 +18,10 @@ export default {
     AboutUs: () => import('~/components/careers/about-us'),
     Team: () => import('~/components/careers/team'),
     OurEvents: () => import('~/components/careers/our-events'),
+  },
+  beforeCreate() {
+    //hide page
+    this.$router.push('/')
   },
   async asyncData({ $content }) {
     const careers = await $content('careers').fetch()

@@ -2,9 +2,9 @@
   <div class="terms">
     <div class="header"></div>
     <div class="terms-content">
-      <div class="title text-h4">TERMS OF USE</div>
+      <div class="title text-h4">PRIVACY POLICY</div>
       <div class="text mt-4">
-        <nuxt-content :document="blog"/>
+        <nuxt-content :document="privacy"/>
       </div>
     </div>
     <FollowUs/>
@@ -17,8 +17,8 @@ export default {
     FollowUs: () => import('~/components/follow-us'),
   },
   async asyncData({ $content }) {
-    const terms = await $content('terms')
-    return { terms }
+    const privacy = await $content('privacy')
+    return { privacy }
   }
 }
 </script>

@@ -28,7 +28,7 @@ export default {
           bgFishes: require("~/assets/images/for-developers/bg1.png"),
           links: {
             github: 'https://github.com/bytesbay/web3-token',
-            medium: 'https://worldofdefish.com/defishboxes/'
+            medium: ' https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976'
           }
         },
         {
