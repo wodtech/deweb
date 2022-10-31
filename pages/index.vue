@@ -46,5 +46,10 @@ export default {
       blogs
     }
   },
+  metaInfo() {
+    return {
+      title: 'Home',
+    }
+  },
 }
 </script>
