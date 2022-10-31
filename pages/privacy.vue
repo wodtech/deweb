@@ -21,7 +21,7 @@ export default {
     return { privacy }
   },
 
-  metaInfo() {
+  head() {
     return {
       title: 'Privacy',
     }

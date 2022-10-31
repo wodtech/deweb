@@ -92,7 +92,7 @@ export default {
     }
   },
 
-  metaInfo() {
+  head() {
     return {
       title: 'World of Defish',
     }

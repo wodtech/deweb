@@ -46,7 +46,7 @@ export default {
       blogs
     }
   },
-  metaInfo() {
+  head() {
     return {
       title: 'Home',
     }

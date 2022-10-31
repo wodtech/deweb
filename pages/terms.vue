@@ -21,7 +21,7 @@ export default {
     return { terms }
   },
 
-  metaInfo() {
+  head() {
     return {
       title: 'Terms',
     }

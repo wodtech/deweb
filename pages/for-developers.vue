@@ -15,7 +15,7 @@ export default {
     DefishUniverse: () => import('~/components/for-developers/defish-universe'),
     FollowUs: () => import('~/components/follow-us'),
   },
-  metaInfo() {
+  head() {
     return {
       title: 'For developers',
     }
