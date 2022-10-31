@@ -48,7 +48,7 @@ export default {
   },
   head() {
     return {
-      title: 'Home',
+      title: 'Web3 Gaming Studio',
     }
   },
 }
