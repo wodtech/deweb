@@ -1,6 +1,6 @@
 <template>
   <div class="wod-page">
-    <GameMainFrame active-link="https://worldofdefish.com/" :game="game[0]">
+    <GameMainFrame active-link="https://game.worldofdefish.com/" :game="game[0]">
       <template #additional-links>
         <v-btn
           target="_blank"
