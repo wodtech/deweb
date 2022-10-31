@@ -40,6 +40,7 @@
             x-large color="black">
             learn more
           </v-btn>
+          <!-- asd -->
         </div>
       </v-col>
     </v-row>
