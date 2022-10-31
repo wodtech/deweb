@@ -82,13 +82,13 @@ export default {
         },
         {
           id: 4,
-          img: require('~/assets/images/players/4.png'),
           name: "@Steel",
           game: "World of Defish",
           review: "WOD is a superb gaming experience that is unique and very addictive. The Ukrainian team behind it, have been very hands on, always pushing forward despite all hardships facing Ukraine, Crypto and P2E games in general.",
         },
         {
           id: 5,
+          img: require('~/assets/images/players/4.png'),
           name: "@crypto_kaptan",
           game: "World of Defish",
           review: "I am a Seedify investor and i have invested World of Defish on both public and private sales rounds. After a while I noticed Spintop Gamepedia article that says game is playable and here I am for about 8 months.",
@@ -101,9 +101,6 @@ export default {
         },
       ],
       flickityOptions: {
-        // initialIndex: 1,
-        // freeScroll: true,
-        // wrapAround: true,
         pageDots: true,
         prevNextButtons: false,
       },

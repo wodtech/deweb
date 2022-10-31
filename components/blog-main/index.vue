@@ -9,7 +9,7 @@
           <v-row class="d-flex flex-column flex-lg-row">
             <v-col class="d-flex flex-column justify-center">
               <div class="d-flex mb-2 title text-h1  white--text">BLOG</div>
-              <div class="d-flex mb-2 title text-h4  white--text">WORLD OF DEFISH</div>
+              <div class="d-flex mb-2 title text-h4  white--text">DEFISH GAMES</div>
               <div class="desc subtitle-2 font-weight-light white--text">
                 WEB 3 gaming that you deserve.
               </div>
