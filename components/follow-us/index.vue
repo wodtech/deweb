@@ -70,7 +70,7 @@ export default {
       secondImg: require('~/assets/images/tdlogo.svg'),
       btnTextFirst: {
         text: 'play now',
-        link: '#'
+        link: 'https://game.worldofdefish.com'
       },
       btnTextSecond: {
         text: 'coming soon',
