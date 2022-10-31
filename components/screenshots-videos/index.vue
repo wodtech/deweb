@@ -6,7 +6,7 @@
           screenshots
         </div>
         <v-spacer></v-spacer>
-        <v-btn  v-if="title === 'wod'" href="https://worldofdefish.com/" target="_blank" class="pink--text" rounded text>
+        <v-btn  v-if="title === 'wod'" href="https://game.worldofdefish.com/" target="_blank" class="pink--text" rounded text>
           see more
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
