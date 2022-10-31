@@ -4,7 +4,7 @@
     <div class="terms-content">
       <div class="title text-h4">TERMS OF USE</div>
       <div class="text mt-4">
-        {{content}}
+        <nuxt-content :document="terms[0]"/>
       </div>
     </div>
     <FollowUs/>
@@ -12,18 +12,13 @@
 </template>
 
 <script>
-import terms from 'raw-loader!./../static/data/terms.txt'
 export default {
   components: {
     FollowUs: () => import('~/components/follow-us'),
   },
-  data () {
-    return {
-      content: terms
-    }
-  },
-  created() {
-    console.log(terms)
+  async asyncData({ $content }) {
+    const terms = await $content('content').where({title: 'terms' }).fetch()
+    return { terms }
   }
 }
 </script>

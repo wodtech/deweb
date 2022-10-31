@@ -1,5 +1,8 @@
 <template>
-  <div class="games --posr">
+  <div class="games align-center d-flex --posr">
+    <div class="bg-container">
+      <img class="bg" :src="require('~/assets/images/fishes-opacity.png')">
+    </div>
     <v-container class="--cnt">
       <v-row no-gutters>
         <v-col  md="6" cols="12" class="d-flex align-center justify-center">
@@ -15,33 +18,41 @@
           </div>
         </v-col>
         <v-col  md="6" cols="12" style="min-height: 500px" class="d-flex align-center justify-center mt-5 mt-md-0">
-          <iframe
-            class="video-frame"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+          <img class="video-frame" src="~/assets/images/defish-launcher/mock-video.png" alt="">
+<!--          <iframe-->
+<!--            src="https://www.youtube.com/embed/dQw4w9WgXcQ"-->
+<!--            title="YouTube video player"-->
+<!--            frameborder="0"-->
+<!--            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--            allowfullscreen></iframe>-->
         </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-  },
-}
-</script>
-
 <style lang="scss" scoped>
 .games {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: white;
+  .bg-container {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .bg {
+      max-width: 1300px;
+      width: 100%;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+    }
+  }
   .video-frame{
     width: 80%;
     height: 80%;

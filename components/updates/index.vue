@@ -9,7 +9,7 @@
         background-color="transparent"
       >
         <v-tab
-          v-for="item in blogTabs"
+          v-for="item in blogTabsFiltered"
           :key="item.slug"
           active-class="tab-active"
         >
@@ -31,7 +31,7 @@
       </div>
       <v-tabs-items v-model="tab" style="background-color: #F0F0F0 !important;">
         <v-tab-item
-          v-for="(item) in blogTabs"
+          v-for="(item) in blogTabsFiltered"
           :key="item.slug"
           transition="fade-transition"
           reverse-transition="fade-transition"
@@ -105,12 +105,19 @@ export default {
     }
   },
   computed: {
+    blogTabsFiltered () {
+      //make this computed cause array mixed values after every update
+      const wod = this.blogTabs.find(item => item.title === 'world of defish')
+      const td = this.blogTabs.find(item => item.title === 'tower defish')
+      const news = this.blogTabs.find(item => item.title === 'company news')
+      return [wod, td, news]
+    },
     blogsByTab() {
       const blogs = this.blog.filter(el => el.tab === this.chosenTab.title)
       return this.filterType ? blogs.filter(el => el.post_type === this.filterType) : blogs
     },
     chosenTab() {
-      return this.blogTabs[this.tab]
+      return this.blogTabsFiltered[this.tab]
     }
   },
   methods: {

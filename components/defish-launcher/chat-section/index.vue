@@ -1,9 +1,10 @@
 <template>
-  <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex">
-    <v-container class="py-16 --posr">
-      <div class="bg-container">
-        <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
-      </div>
+  <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex align-center --posr">
+    <div class="bg-container">
+      <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
+    </div>
+    <v-container class="py-16 ">
+
       <v-row class="--posr">
         <v-col md="6" cols="12" class="--posr d-flex align-end justify-md-end justify-center">
           <img style="max-width: 600px" class="w-100 chat-img" src="~/assets/images/defish-launcher/chat.png" alt="">
@@ -60,6 +61,7 @@ export default {
 .launch-window {
   overflow: hidden;
   position: relative;
+  min-height: 100vh;
 }
 
 .fish-bg {

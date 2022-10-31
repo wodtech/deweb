@@ -1,5 +1,7 @@
 <template>
-  <nuxt-link :to="{ path: 'careers/'+ card.slug.toLowerCase() }"  v-on="$listeners" class="career-info-card py-5 px-7 d-flex align-center justify-space-between">
+  <nuxt-link
+    :to="{ name: 'careers-slug', params: {slug: card.slug.toLowerCase()} }"
+    v-on="$listeners" class="career-info-card py-5 px-7 d-flex align-center justify-space-between">
   <div class="w-70">
     <div class="title text-h5">
       {{card.title}}

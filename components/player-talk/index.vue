@@ -21,8 +21,13 @@
                         >
                           <img
                             draggable="false"
+                            v-if="el.img"
                             :src="el.img"
                           />
+                          <div
+                            v-else
+                            class="mock-avatar"
+                          ></div>
                         </v-avatar>
                         <div class="mb-2 text-h6">{{el.name}}</div>
                         <div class="mb-2 body-2 font-weight-bold pink--text">{{el.game}}</div>
@@ -55,30 +60,47 @@ export default {
       cards: [
         {
           id: 1,
-          img: require('~/assets/images/player1.png'),
-          name: "Steel",
+          img: require('~/assets/images/players/1.png'),
+          name: "@anyhoo",
+          game: "World of Defish",
+          review: "I have always been looking for a complex game that has what World of Defish offers, a constant pleasure to play a game by choosing the right strategy. WOD changed my perspective of play to earn games."
+         },
+        {
+          id: 2,
+          img: require('~/assets/images/players/2.png'),
+          name: "@azinger",
+          game: "World of Defish",
+          review : "Without a doubt, one of the best current Cryptocurrency games.\n" +
+            "A fishing game with infinite entertainment possibilities, you put it to work and while you earn its currency (WOD), you participate in Events, future competitions, searches, native Staking."
+        },
+        {
+          id: 3,
+          img: require('~/assets/images/players/3.png'),
+          name: "@felipepln",
+          game: "World of Defish",
+          review : "World of Defish is the most beautiful and addicting crypto game ! I am part of the WOD family since the IDO and I just can't stop playing. I keep upgrading my equipment with the farmed WOD and I crafted a lot of cool equipment. I am very excited with the future of the Defish metaverse."
+        },
+        {
+          id: 4,
+          name: "@Steel",
           game: "World of Defish",
           review: "WOD is a superb gaming experience that is unique and very addictive. The Ukrainian team behind it, have been very hands on, always pushing forward despite all hardships facing Ukraine, Crypto and P2E games in general.",
         },
         {
-          id: 2,
-          img: require('~/assets/images/player2.png'),
+          id: 5,
+          img: require('~/assets/images/players/4.png'),
           name: "@crypto_kaptan",
           game: "World of Defish",
           review: "I am a Seedify investor and i have invested World of Defish on both public and private sales rounds. After a while I noticed Spintop Gamepedia article that says game is playable and here I am for about 8 months.",
         },
         {
-          id: 3,
-          img: require('~/assets/images/player3.png'),
+          id: 6,
           name: "@Vikingkrat",
           game: "World of Defish",
           review: "Defish is the first NFT game i have played and invested in. I have over the last 9 month gain Friendships and lot of happy moments. I love all about the game and looking forward to the develop of both this game and other games. Least but not last.",
         },
       ],
       flickityOptions: {
-        // initialIndex: 1,
-        // freeScroll: true,
-        // wrapAround: true,
         pageDots: true,
         prevNextButtons: false,
       },
@@ -124,6 +146,12 @@ export default {
   @media screen and (max-width: 960px) {
     padding: 0 25px;
   }
+}
+.mock-avatar{
+  background: #cecece;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 .card {
   // max-width: 500px;

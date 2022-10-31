@@ -1,9 +1,7 @@
 <template>
   <div class="games">
-    <v-container class="--cnt">
-      <WodGame class="pb-16" :data="games.find(n => n.title === 'World of Defish')"/>
+      <WodGame :data="games.find(n => n.title === 'World of Defish')"/>
       <TdGame :data="games.find(n => n.title === 'Tower Defish')"/>
-    </v-container>
   </div>
 </template>
 

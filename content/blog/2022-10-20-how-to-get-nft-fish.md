@@ -2,7 +2,7 @@
 title: How to get NFT fish?
 date: 2022-10-20T10:35:49.721Z
 shot_description: Since you’re here, we say "hello, newbie".
-image: /img/logo.jpg
+image: /img/photo_2022-02-07_16-27-24.jpg
 tab: world of defish
 post_type: tutorials
 description: >
