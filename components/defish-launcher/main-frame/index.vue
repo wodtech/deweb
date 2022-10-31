@@ -24,7 +24,7 @@
                 DEFISH <br/> LAUNCHER
               </div>
               <div class="desc mb-9 subtitle-2 font-weight-light white--text">
-                The heart of Defish, where all games of our Multiverse are asse.
+                The heart of Defish, where all games of our Multiverse are located.
               </div>
             </v-col>
             <v-col  md="6" cols="12" class="d-flex align-center justify-center">
