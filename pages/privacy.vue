@@ -19,7 +19,13 @@ export default {
   async asyncData({ $content }) {
     const privacy = await $content('content').where({title: 'privacy' }).fetch()
     return { privacy }
-  }
+  },
+
+  metaInfo() {
+    return {
+      title: 'Privacy',
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>

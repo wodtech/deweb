@@ -15,5 +15,10 @@ export default {
     DefishUniverse: () => import('~/components/for-developers/defish-universe'),
     FollowUs: () => import('~/components/follow-us'),
   },
+  metaInfo() {
+    return {
+      title: 'For developers',
+    }
+  },
 }
 </script>

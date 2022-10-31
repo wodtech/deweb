@@ -91,5 +91,11 @@ export default {
       blogs
     }
   },
+
+  metaInfo() {
+    return {
+      title: 'World of Defish',
+    }
+  },
 }
 </script>

@@ -89,6 +89,12 @@ export default {
       blogs
     }
   },
+
+  metaInfo() {
+    return {
+      title: 'Tower Defish',
+    }
+  },
 }
 </script>
 <style>

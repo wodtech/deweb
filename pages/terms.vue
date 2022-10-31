@@ -19,7 +19,13 @@ export default {
   async asyncData({ $content }) {
     const terms = await $content('content').where({title: 'terms' }).fetch()
     return { terms }
-  }
+  },
+
+  metaInfo() {
+    return {
+      title: 'Terms',
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>

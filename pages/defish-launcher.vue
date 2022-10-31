@@ -28,5 +28,12 @@ export default {
       arts
     }
   },
+
+
+  metaInfo() {
+    return {
+      title: 'Defish Launcher',
+    }
+  },
 }
 </script>

@@ -25,5 +25,12 @@ export default {
       games,
     }
   },
+
+
+  metaInfo() {
+    return {
+      title: 'Arts',
+    }
+  },
 }
 </script>

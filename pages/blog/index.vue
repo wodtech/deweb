@@ -20,6 +20,12 @@ export default {
       blog, blogTabs
     }
   },
+
+  metaInfo() {
+    return {
+      title: 'Blog',
+    }
+  },
 }
 </script>
 
