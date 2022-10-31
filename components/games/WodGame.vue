@@ -25,7 +25,7 @@
         </div>
         <div class="d-flex">
           <v-btn
-            href="https://worldofdefish.com/"
+            href="https://game.worldofdefish.com/"
             target="_blank"
             x-large
             rounded
