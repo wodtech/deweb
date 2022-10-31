@@ -21,8 +21,13 @@
                         >
                           <img
                             draggable="false"
+                            v-if="el.img"
                             :src="el.img"
                           />
+                          <div
+                            v-else
+                            class="mock-avatar"
+                          ></div>
                         </v-avatar>
                         <div class="mb-2 text-h6">{{el.name}}</div>
                         <div class="mb-2 body-2 font-weight-bold pink--text">{{el.game}}</div>
@@ -77,21 +82,19 @@ export default {
         },
         {
           id: 4,
-          img: require('~/assets/images/player1.png'),
-          name: "Steel",
+          img: require('~/assets/images/players/4.png'),
+          name: "@Steel",
           game: "World of Defish",
           review: "WOD is a superb gaming experience that is unique and very addictive. The Ukrainian team behind it, have been very hands on, always pushing forward despite all hardships facing Ukraine, Crypto and P2E games in general.",
         },
         {
           id: 5,
-          img: require('~/assets/images/player2.png'),
           name: "@crypto_kaptan",
           game: "World of Defish",
           review: "I am a Seedify investor and i have invested World of Defish on both public and private sales rounds. After a while I noticed Spintop Gamepedia article that says game is playable and here I am for about 8 months.",
         },
         {
           id: 6,
-          img: require('~/assets/images/player3.png'),
           name: "@Vikingkrat",
           game: "World of Defish",
           review: "Defish is the first NFT game i have played and invested in. I have over the last 9 month gain Friendships and lot of happy moments. I love all about the game and looking forward to the develop of both this game and other games. Least but not last.",
@@ -146,6 +149,12 @@ export default {
   @media screen and (max-width: 960px) {
     padding: 0 25px;
   }
+}
+.mock-avatar{
+  background: #cecece;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 .card {
   // max-width: 500px;

@@ -14,7 +14,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Defish Games is a game development company based in UA. We are a team of developers who are passionate about creating games that are fun and easy to play in a Web3 space. By combining creativity, beloved work and professionalism, Defish develops and expands the scope of the GameFi sector.'
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

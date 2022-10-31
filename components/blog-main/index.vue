@@ -11,7 +11,7 @@
               <div class="d-flex mb-2 title text-h1  white--text">BLOG</div>
               <div class="d-flex mb-2 title text-h4  white--text">WORLD OF DEFISH</div>
               <div class="desc subtitle-2 font-weight-light white--text">
-                Chain Syncer allows you to sychronize your app with <br/> any ethereum compatible blockpain.
+                WEB 3 gaming that you deserve.
               </div>
             </v-col>
             <v-col class="d-flex align-center justify-center">

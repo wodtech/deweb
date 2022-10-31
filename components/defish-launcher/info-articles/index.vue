@@ -18,13 +18,13 @@
           </div>
         </v-col>
         <v-col  md="6" cols="12" style="min-height: 500px" class="d-flex align-center justify-center mt-5 mt-md-0">
-          <iframe
-            class="video-frame"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+          <img class="video-frame" src="~/assets/images/defish-launcher/mock-video.png" alt="">
+<!--          <iframe-->
+<!--            src="https://www.youtube.com/embed/dQw4w9WgXcQ"-->
+<!--            title="YouTube video player"-->
+<!--            frameborder="0"-->
+<!--            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--            allowfullscreen></iframe>-->
         </v-col>
       </v-row>
     </v-container>
