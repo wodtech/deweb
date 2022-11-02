@@ -6,7 +6,7 @@
 
     <div class="d-flex flex-column align-center pb-16 px-3">
       <div class="text-h2 mb-6">
-        OUR ARTS
+        OUR ART
       </div>
       <div class="body-1 text-center" style="max-width: 585px">
         We are the artists of our own new reality.  <br/>
