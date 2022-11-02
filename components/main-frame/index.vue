@@ -16,9 +16,9 @@
               studio
             </div>
           </div>
-          <div class="body-1 mb-14">
-            Building a new generation of Metaverse for those who looking for quality economy and entertainment. <br/>
-            As you deserve.
+          <div style="max-width: 680px" class="body-1 mb-14">
+            Building a new generation of Metaverse for those who are looking for quality
+            economics and entertainment. As you deserve.
           </div>
 
           <v-btn width="170" @click="$emit('scrollTo')" rounded x-large color="primary">

@@ -37,7 +37,7 @@
         </v-hover>
 
         <v-btn to="/arts" nuxt rounded class="d-md-flex d-none hover-el" text>
-          Arts
+          Art
         </v-btn>
       </div>
 

@@ -4,12 +4,11 @@
     <v-container class="--posr d-flex flex-column justify-center" style="height: 100%;">
       <div class="d-flex flex-column" style="z-index: 1">
         <div class="text-h1 pb-6">
-          game arts
+          game art
         </div>
         <div class="body-1" style="max-width: 500px;">
-          Our game arts are the heart, bones and brain
-          of the visual elements you see while playing our games. Without our visual game artists, the game
-          would be just an ideas in a designer's head.
+          Our game arts are the heart, bones and brain of the visual elements you see while playing our games.
+          Without our visual game artists, the game would be just an idea in a designer's head.
         </div>
       </div>
       <v-sheet height="40%" color="transparent"></v-sheet>

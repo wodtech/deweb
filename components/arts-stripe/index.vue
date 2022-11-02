@@ -9,7 +9,7 @@
         OUR ARTS
       </div>
       <div class="body-1 text-center" style="max-width: 585px">
-        We are creatorts of art who draw our own new reality. <br/>
+        We are the artists of our own new reality.  <br/>
         Find your inner voice and essence in our mystical NFT cards.
       </div>
     </div>

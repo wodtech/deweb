@@ -33,7 +33,7 @@ export default {
         },
         {
           title: 'extend your dapp with backend',
-          description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockpain.',
+          description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockchain.',
           img: require("~/assets/images/for-developers/chain.png"),
           bgFishes: require("~/assets/images/for-developers/bg2.png"),
           bg: '#F0F0F0',
