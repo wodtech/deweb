@@ -27,6 +27,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/math.js',
+    '~/plugins/web3.client.js',
     { src: '~/plugins/VueFlickity.js', ssr: false }
   ],
 
@@ -35,6 +37,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    ['@nuxtjs/dotenv', { filename: '.env.' + process.env.ENV }],
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
