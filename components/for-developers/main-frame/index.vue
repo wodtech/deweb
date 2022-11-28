@@ -1,32 +1,37 @@
 <template>
-  <div class="main-frame">
-    <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
+  <div  class="main-frame">
+    <div class="img-container">
+      <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
+    </div>
+    <div class="img-contain">
+      <img class="w-100" src="~/assets/images/for-developers/main-img.png" alt="main-img">
+    </div>
+    <v-card
+      height="100%"
+      color="transparent"
+      elevation="0"
+      class="d-flex flex-column align-center justify-center py-16 --posr w-100"
+    >
       <no-ssr class="d-flex flex-grow-1 justify-center">
         <v-container class="d-flex align-center justify-center">
           <v-row class="d-flex flex-column flex-lg-row">
-            <v-col class="d-flex flex-column justify-center">
-              <div class="main-title d-flex mb-9 text-uppercase  white--text">
+            <v-col class="d-flex flex-column justify-center ">
+              <div class="main-title d-flex  mb-9 mt-sm-3  mt-16  text-uppercase  white--text">
                 for developers <br/> with open-source
               </div>
-              <div class="desc mb-9 subtitle-2 font-weight-light white--text">
+              <div class="desc mb-9 mt-sm-6 subtitle-2 font-weight-light white--text">
                 We understand that to make the most legendary games
                 we need to attract as more developers as can be.
                 That’s why we aim to make our infrastructure open-source.
               </div>
             </v-col>
             <v-col class="d-flex align-center justify-center">
-              <v-img
-                lazy-src="https://picsum.photos/id/11/10/6"
-                max-height="100%"
-                max-width="100%"
-                contain
-                :src="imgSrc"
-              ></v-img>
             </v-col>
           </v-row>
         </v-container>
       </no-ssr>
     </v-card>
+
   </div>
 </template>
 
@@ -34,7 +39,7 @@
 export default {
   data() {
     return {
-      imgSrc: require("~/assets/images/test-img.png")
+      imgSrc: require("~/assets/images/test-img.png"),
     }
   }
 }
@@ -43,7 +48,9 @@ export default {
 <style lang="scss" scoped>
 
 .main-frame {
-  padding-top: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   width: 100%;
   background: black;
@@ -51,7 +58,15 @@ export default {
   .main-title {
     font-size: 70px;
     line-height: 104.13%;
-
+    @media screen and (max-width: 650px) {
+      padding-top: 200px;
+    }
+    @media screen and (max-width: 480px) {
+      padding-top: 150px;
+    }
+    @media screen and (max-width: 400px) {
+      padding-top: 100px;
+    }
   }
   .main-left {
     .description {
@@ -59,5 +74,32 @@ export default {
     }
   }
 }
-
+.img-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.img-contain {
+  top: 100px;
+  right: 20px;
+  width: 60%;
+  height: 70%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 600px) {
+    top: 0;
+  }
+  position: absolute;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 </style>

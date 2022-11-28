@@ -19,10 +19,9 @@
               defish launcher
             </div>
             <div class="body-1 mt-6" style="opacity: 0.7">
-              Defish Launcher is a player's space in a desktop app. This is the heart of the Defish Studio, where all the games of our Multitaverse are assembled. All games are tied up to one Defish ecosystem by Defish Connect mechanism.
-            </div>
-            <v-btn disabled x-large rounded class="mt-6">
-              coming soon
+              Defish Launcher is a player's space in a crossplatform desktop app. This is the heart of the Defish Studio, where all the games of our Multiverse are assembled. All games are tied up to one Defish ecosystem by Defish Connect mechanism.            </div>
+            <v-btn nuxt to="/defish-launcher" rounded x-large color="primary" class="mt-6">
+              learn more
             </v-btn>
           </div>
         </v-col>
@@ -39,7 +38,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   }
 }
@@ -68,6 +67,13 @@ export default {
 .launch-window {
   // background: #14172D;
   overflow: hidden;
+  padding: 100px 0;
+  @media screen and (max-width: 960px) {
+    padding: 50px 0;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px 0;
+  }
 }
 
 .fish-bg {

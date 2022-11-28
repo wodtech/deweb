@@ -1,7 +1,9 @@
 <template>
   <v-card dark elevation="0" tile class="main-frame d-flex">
     <div class="img-container">
-      <img src="~/assets/images/main-bg.jpg" class="bg-img" alt="main background">
+      <video autoplay muted loop class="w-100" id="myVideo">
+        <source src="~/assets/video/main.mp4" class="bg-img" type="video/mp4">
+      </video>
     </div>
     <v-container class="py-16 --posr">
       <v-row style="height: 100%;">
@@ -14,12 +16,13 @@
               studio
             </div>
           </div>
-          <div class="body-1 mb-14">
-            Building a new gaming experience in a world of chances. Entertain yourself in a gaming economy that you deserve.
+          <div style="max-width: 680px" class="body-1 mb-14">
+            Building a new generation of Metaverse for those who are looking for quality
+            economics and entertainment. As you deserve.
           </div>
 
-          <v-btn width="170" rounded x-large color="primary">
-            play now
+          <v-btn width="170" @click="$emit('scrollTo')" rounded x-large color="primary">
+            EXPLORE NOW
           </v-btn>
         </v-col>
       </v-row>
@@ -29,7 +32,10 @@
 
 <script>
 export default {
-  
+  methods: {
+
+  }
+
 }
 </script>
 
@@ -39,11 +45,38 @@ export default {
   min-height: 100vh;
   width: 100%;
   position: relative;
-  
+  overflow: hidden;
   .img-container {
     width: 100%;
     height: 100%;
     position: absolute;
+    #myVideo{
+      min-width: 1920px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      width: 88%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgb(20,23,45);
+      background: linear-gradient(68deg, #14172d 27%, rgba(20, 23, 45, 0.9307073171) 41%, rgba(20, 23, 45, 0.667401995) 53%, rgba(20, 23, 45, 0) 76%);
+      @media screen and (max-width: 960px) {
+        background: linear-gradient(68deg, #14172d 27%, rgba(20, 23, 45, 0.9307073171) 41%, rgba(20, 23, 45, 0.667401995) 54%, rgba(20, 23, 45, 0) 63%);
+      }
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        background: rgb(2,0,36);
+      }
+    }
     .bg-img {
       width: 100%;
       height: 100%;
@@ -66,7 +99,7 @@ export default {
 
     }
   }
-  
+
 }
 
 </style>

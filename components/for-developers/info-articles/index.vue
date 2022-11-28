@@ -1,16 +1,17 @@
 <template>
-  <div class="games">
-    <v-container class="--cnt">
-      <div class="articles-wrapper pb-16">
+  <div class="dev-posts --posr">
+      <div class="articles-wrapper">
         <DevInfo
           v-for="(article, i) in articles"
+          style="z-index: 2"
+          :bg="article.bg"
           :key="i"
           :content-reverse="i%2!==0"
-          class="mt-9"
           :data="article"
-        />
+        >
+          <img style="position: absolute" :src="article.bgFishes" >
+         </DevInfo>
       </div>
-    </v-container>
   </div>
 </template>
 
@@ -22,19 +23,22 @@ export default {
         {
           title: 'authenticate in web3 easly',
           description: 'Web3 Token is an open-source package to authenticate users in a hybrid Apps using signed messages.',
-          img: require("~/assets/images/test-img.png"),
+          img: require("~/assets/images/for-developers/auth.png"),
+          bg: 'white',
+          bgFishes: require("~/assets/images/for-developers/bg1.png"),
           links: {
-            linked: '#',
-            medium: '#'
+            github: 'https://github.com/bytesbay/web3-token',
+            medium: ' https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976'
           }
         },
         {
           title: 'extend your dapp with backend',
-          description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockpain.',
-          img: require("~/assets/images/test-img.png"),
+          description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockchain.',
+          img: require("~/assets/images/for-developers/chain.png"),
+          bgFishes: require("~/assets/images/for-developers/bg2.png"),
+          bg: '#F0F0F0',
           links: {
-            linked: '#',
-            medium: '#'
+            github: 'https://github.com/bytesbay/chain-syncer',
           }
         },
       ]
@@ -46,6 +50,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.dev-posts {
+  width: 100%;
+}
 </style>

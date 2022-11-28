@@ -1,11 +1,12 @@
 <template>
   <div class="index-page">
-    <MainFrame/>
-    <Games :games="games"/>
+    <MainFrame @scrollTo="scrollDown" />
+    <Games id="gamesID" :games="games"/>
     <ArtsStripe :arts="arts"/>
     <LaunchWindow/>
-    <Blog/>
-    <Subs/>
+    <PlayerTalk/>
+    <Blog :data="blogs "/>
+    <FollowUs/>
   </div>
 </template>
 
@@ -14,20 +15,40 @@ import ArtsStripe from '~/components/arts-stripe';
 export default {
   components: {
     MainFrame: () => import("~/components/main-frame"),
-    ScreenshotsVideos: () => import("~/components/screenshots-videos"),
     LaunchWindow: () => import("~/components/launch-window"),
     Blog: () => import("~/components/blog"),
+    PlayerTalk: () => import("~/components/player-talk"),
     Games: () => import("~/components/games"),
-    Subs: () => import("~/components/subs"),
+    Careers: () => import("~/components/subs"),
+    CareersContent: () => import("~/components/careers/careers-content"),
+    FollowUs: () => import("~/components/follow-us"),
     ArtsStripe,
+  },
+  methods: {
+    scrollDown() {
+      const gamesID = document.getElementById('gamesID')
+      const y = gamesID.getBoundingClientRect().top + window.scrollY;
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
+
+    }
   },
   async asyncData({ $content }) {
     const games = await $content('games').fetch()
     const arts = await $content('arts').fetch()
+    const blogs = await $content('blog').only(['title', 'shot_description', 'image', 'slug']).limit(3).fetch()
 
     return {
       games,
-      arts
+      arts,
+      blogs
+    }
+  },
+  head() {
+    return {
+      title: 'Web3 Gaming Studio',
     }
   },
 }

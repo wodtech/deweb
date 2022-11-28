@@ -1,68 +1,36 @@
 <template>
-  <div class="blog">
+  <div class="blog --posr">
+    <div class="img-container">
+      <img src="~/assets/images/blog.png" class="bg-img" alt="bg">
+    </div>
     <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
       <no-ssr class="d-flex flex-grow-1 justify-center">
-        <Flickity ref="flickity" class="flickity-container"  :options="flickityOptions">
-          <div v-for="slide in slides" :key="slide.id" class="d-flex carousel-cell">
-            <v-container class="d-flex align-center justify-center">
-              <v-row class="d-flex flex-column flex-lg-row">
-                <v-col class="d-flex flex-column justify-center">
-                  <div class="d-flex mb-9 title text-h3  white--text">{{slide.title}}</div>
-                  <div class="desc mb-9 subtitle-2 font-weight-light white--text">{{slide.desc}}</div>
-                  <div class="date mb-9  white--text">{{slide.date}}</div>
-                  <v-btn x-large class="font-weight-light rounded-pill large-button">read more</v-btn>
-                </v-col>
-                <v-col class="d-flex align-center justify-center">
-                  <!-- <v-img
-                  lazy-src="https://picsum.photos/id/11/10/6"
-                  max-height="520"
-                  max-width="350"
-                  contain
-                  :src="slide.img"
-                  ></v-img> -->
-                  <div class="img-wrapper d-flex">
-                    <img class="d-flex " :src="slide.img" alt="">
-                  </div>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
-        </Flickity>
-      </no-ssr>
+        <v-container class="d-flex align-center justify-center">
+          <v-row class="d-flex flex-column flex-lg-row">
+            <v-col class="d-flex flex-column justify-center">
+              <div class="d-flex mb-2 title text-h1  white--text">BLOG</div>
+              <div class="d-flex mb-2 title text-h4  white--text">DEFISH GAMES</div>
+              <div class="desc subtitle-2 font-weight-light white--text">
+                WEB 3 gaming that you deserve.
+              </div>
+            </v-col>
+            <v-col class="d-flex align-center justify-center">
+
+            </v-col>
+          </v-row>
+        </v-container>
+       </no-ssr>
     </v-card>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    data: {}
+  },
   data() {
     return {
-      slides: [
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/test-img.png")
-        },
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/test-img.png")
-        },
-        {
-          id: 1,
-          title: "Binances commitmentto compliance and user...",
-          desc: "Our game arts are the heart, bones and brain of the visual elements you see while playing our games. Without our visual game artists, the game would be just an ideas in a designer's head. ",
-          date: "16.03.2022",
-          btnLink: "#",
-          img: require("~/assets/images/test-img.png")
-        }
-      ],
       flickityOptions: {
         initialIndex: 2,
         contain: true,
@@ -77,7 +45,7 @@ export default {
   next() {
     this.$refs.flickity.next();
   },
-  
+
   previous() {
     this.$refs.flickity.previous();
   },
@@ -110,6 +78,17 @@ export default {
     object-fit: cover;
   }
 }
+.img-container {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  .bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 :deep(.flickity-page-dots) {
   bottom: 30px !important;
 }
@@ -135,6 +114,10 @@ export default {
 }
 .blog {
   height: 100vh;
+  min-height: 1000px;
+  @media screen and (max-width: 960px){
+    height: 1000px;
+  }
   width: 100%;
   background-color: rgba(1, 2, 4, 1);
 }
@@ -142,6 +125,6 @@ export default {
   font-family: 'Relaway';
   color: rgba(255, 255, 255, 1);
   opacity: 0.5;
-  
+
 }
 </style>

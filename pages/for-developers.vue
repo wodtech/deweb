@@ -1,5 +1,5 @@
 <template>
-  <div class="index-page">
+  <div class="devs-page">
     <MainFrame/>
     <InfoArticles />
     <DefishUniverse />
@@ -14,6 +14,11 @@ export default {
     InfoArticles: () => import("~/components/for-developers/info-articles"),
     DefishUniverse: () => import('~/components/for-developers/defish-universe'),
     FollowUs: () => import('~/components/follow-us'),
+  },
+  head() {
+    return {
+      title: 'For developers',
+    }
   },
 }
 </script>

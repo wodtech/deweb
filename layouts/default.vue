@@ -1,9 +1,20 @@
 <template>
   <v-app style="background: #F0F0F0 !important;">
+
     <v-main>
-      <Nuxt />
+      <Nuxt/>
     </v-main>
-    <Header></Header>
+    <Sidebar
+      :value="drawer"
+      @close="drawer=false"
+    >
+    </Sidebar>
+    <Header :bg="headerBg" >
+      <div class="show-mobile">
+        <burger class="menu-btn" :value="drawer" @click.stop="drawer = !drawer"></burger>
+      </div>
+    </Header>
+
     <Footer></Footer>
   </v-app>
 </template>
@@ -12,7 +23,9 @@
 export default {
   components: {
     Header: () => import('~/components/common/Header.vue'),
-    Footer: () => import('~/components/common/Footer.vue')
+    Footer: () => import('~/components/common/Footer.vue'),
+    Burger: () => import('~/components/burger-menu/burger'),
+    Sidebar: () => import('~/components/burger-menu/sidebar')
   },
   data() {
     return {
@@ -37,5 +50,19 @@ export default {
       title: 'Vuetify.js',
     }
   },
+  computed: {
+    headerBg() {
+      return this.$route.path.match(/careers\/\w+/) ? '#090F1B' : '#00000000'
+    }
+  }
 }
 </script>
+
+<style scoped lang="scss">
+.show-mobile {
+  display: none;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+</style>

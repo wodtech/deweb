@@ -1,10 +1,16 @@
 <template>
-  <v-card color="transparent" dark elevation="0" class="header d-flex">
+  <v-card id="headerId" :color="bg ? bg : 'transparent'" dark elevation="0" class="header d-flex">
 
     <div class="back" ref="back"></div>
 
     <v-container class="py-4 d-flex align-center --posr">
-      <img class="logo" src="~/assets/images/full-logo.png" alt=""></img>
+      <nuxt-link
+        tag="img"
+        class="logo"
+        :src="require('~/assets/images/full-logo.png')"
+        to="/">
+      </nuxt-link>
+
 
       <div class="menu-btns d-flex flex-grow-1 px-10">
 
@@ -17,52 +23,45 @@
           <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
             <v-btn rounded text :to="n.href" :nuxt="n.is_nuxt">
               {{ n.title }}
-              <v-icon v-if="hover" right>mdi-menu-down</v-icon>
-              <v-icon v-else right>mdi-menu-up</v-icon>
+              <svg :class="['arrow ml-1',{ rotate: hover }]" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 1.65017L4.00007 5.5L8 1.65017L6.75113 0.5L4.00007 3.14778L1.24887 0.5L0 1.65017Z" fill="white"/>
+              </svg>
             </v-btn>
 
             <div
               class="drop-down d-flex flex-column align-center pt-5"
             >
-              <a v-for="z in n.links" class="lnk body-1 mb-2" :href="z.href">{{ z.title }}</a>
+              <a v-for="z in n.links" :class="['lnk body-1 mb-2 hover-el', {_disabled : z.disabled}]"  :href="z.href">{{ z.title }}</a>
             </div>
           </div>
         </v-hover>
 
-        <v-btn to="for-developers" nuxt rounded class="d-md-flex d-none" text>
-          for developers
+        <v-btn to="/arts" nuxt rounded class="d-md-flex d-none hover-el" text>
+          Art
         </v-btn>
       </div>
 
-      <div class="socials d-none d-sm-flex">
-        <v-btn icon>
-          <v-icon>mdi-twitter</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-facebook</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-telegram</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-discord</v-icon>
-        </v-btn>
-
-        <v-btn icon>
-          <v-icon>mdi-linkedin</v-icon>
-        </v-btn>
-      </div>
+      <DefishLinks variant="transparent" />
+      <slot></slot>
     </v-container>
+
   </v-card>
 </template>
 
 <script>
 import Anime from 'animejs'
+import DefishLinks from "~/components/common/DefishLinks";
 export default {
+  components: {
+    DefishLinks
+  },
   data: () => ({
+    social_links: {
+      twitter: "https://twitter.com/defishgames",
+      discord: "https://discord.com/invite/78EfmhUgNJ",
+      tg: "https://t.me/worldofdefish",
+      linkedin: "https://www.linkedin.com/company/world-of-defish/mycompany/",
+    },
     menu: [
       {
         title: 'games',
@@ -80,16 +79,16 @@ export default {
         ],
       },
       {
-        title: 'products',
+        title: 'product',
         links: [
           {
             title: 'launcher',
-            href: '#',
+            href: '/defish-launcher',
             is_nuxt: true,
           },
           {
-            title: 'connect',
-            href: '#',
+            title: 'for developers',
+            href: '/for-developers',
             is_nuxt: true,
           },
         ],
@@ -98,12 +97,13 @@ export default {
         title: 'about us',
         links: [
           {
-            title: 'team',
-            href: '#',
+            title: 'careers',
+            href: '/careers',
+            disabled: true,
             is_nuxt: true,
           },
           {
-            title: 'careers',
+            title: 'blog',
             is_nuxt: true,
             href: '/blog',
           },
@@ -111,13 +111,31 @@ export default {
       },
     ]
   }),
+  props: {
+    bg: {
+      default: ''
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleSCroll);
 
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleSCroll);
+  },
   methods: {
-
+    handleSCroll (event) {
+      let header = document.getElementById("headerId");
+      if (window.scrollY > 20 && !header.className.includes('dark-bg')) {
+        header.classList.add('dark-bg');
+      } else if (window.scrollY < 20) {
+        header.classList.remove('dark-bg');
+      }
+    },
     getHeight(target) {
 
       const bb = target.getBoundingClientRect();
-      const y = target.offsetTop + bb.height + (4 * 5);
+      const y = target.offsetTop + bb.height + (4 * 5) + 15;
 
       return y
     },
@@ -189,16 +207,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .header {
   height: 80px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 
+  &:before {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    content: '';
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, #14172D 26.28%, rgba(20, 23, 45, 0) 118.51%);
+  }
+  &.dark-bg{
+    &:before {
+      height: 100%;
+    }
+  }
+
+  .hover-el{
+    &:hover{
+      color: #76FFE8;
+    }
+  }
   .drop-container {
     position: relative;
+    .v-btn {
+      transition: color 0.3s ease-in-out;
+    }
+    svg {
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover{
+      .v-btn {
+        color: #76FFE8;
+      }
+      svg {
+        path {
+          fill: #76FFE8;
+        }
+      }
+    }
 
     .drop-down {
       position: absolute;
@@ -210,35 +263,26 @@ export default {
       .lnk {
         color: #fff;
         font-family: 'Bebas' !important;
+        &:hover {
+          color: #76FFE8;
+        }
       }
-
       &:not(.hovered) {
         display: none !important;
       }
     }
+    .rotate {
+      transform: rotate(-180deg);
+    }
   }
 
   .logo {
+    cursor: pointer;
     height: 100%;
     width: auto;
   }
 
-  .menu-btns {
 
-    .v-btn {
-
-    }
-  }
-
-  .socials {
-    .v-btn {
-      color: rgba(#fff, 0.5);
-
-      &:hover {
-        color: rgba(#fff, 1);
-      }
-    }
-  }
 
   .back {
     position: absolute;

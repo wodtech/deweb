@@ -25,5 +25,12 @@ export default {
       games,
     }
   },
+
+
+  head() {
+    return {
+      title: 'Arts',
+    }
+  },
 }
 </script>

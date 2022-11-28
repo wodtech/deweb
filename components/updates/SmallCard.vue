@@ -1,0 +1,97 @@
+<template>
+  <v-hover v-slot="{ hover }">
+    <v-card
+      :elevation="hover ? 5 : 10"
+      rounded="xl"
+      style="transition: box-shadow 0.3s ease-in-out"
+      class="d-flex flex-column flex-md-row blog-card"
+      height="100%"
+      width="100%"
+    >
+      <v-img
+        aspect-ratio="1"
+        class="rounded-xl card-img"
+        max-width="40%"
+        cover
+        style="flex: 0 0 40%"
+        :src="image"
+      ></v-img>
+      <div class="d-flex flex-column align-start justify-space-between flex-grow-1 pa-4">
+        <div class="d-flex flex-column align-start">
+          <span class="text-h5 ml-4">
+            {{ title }}
+          </span>
+          <span
+            style="max-height: 100px; overflow: auto"
+            class="body-2 ml-4 mt-1"
+          >
+            {{ shortDescription }}
+          </span>
+        </div>
+        <v-btn
+          :to="{ name: 'blog-slug', params: { slug: slug } }"
+          rounded
+          text
+          class="mt-3 read-btn"
+          nuxt
+        >
+          read now
+          <v-icon right>mdi-arrow-right</v-icon>
+        </v-btn>
+      </div>
+    </v-card>
+  </v-hover>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    shortDescription: {
+      type: String,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
+<style scoped lang="scss">
+.blog-card{
+
+  .card-img{
+    @media (max-width: 960px) {
+      max-width: 100% !important;
+      width: 100%;
+      max-height: 200px;
+      &.v-image {
+        &::v-deep {
+          .v-responsive__content {
+            position: absolute!important;
+          }
+        }
+      }
+
+    }
+  }
+}
+.read-btn {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: white;
+    background-color: rgba(233, 68, 133, 1) !important;
+    &:disabled {
+      color: white !important;
+    }
+  }
+}
+</style>
