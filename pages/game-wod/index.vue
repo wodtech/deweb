@@ -3,6 +3,14 @@
     <GameMainFrame active-link="https://game.worldofdefish.com/" :game="game[0]">
       <template #additional-links>
         <v-btn
+          to="/game-wod/defishboxes"
+          max-width="100px"
+          large
+          class="large-button caption font-weight-light rounded-pill mr-2"
+        >
+          Buy Box
+        </v-btn>
+        <v-btn
           target="_blank"
           href="https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6"
           max-width="100px"
@@ -38,16 +46,21 @@ export default {
           },
           {
             id: 2,
+            link: 'https://defish.games/game-wod/defishboxes/',
+            text: 'Buy Box',
+          },
+          {
+            id: 3,
             link: 'https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6',
             text: 'Buy $WOD',
           },
           {
-            id: 3,
+            id: 4,
             link: 'https://marketplace.worldofdefish.com/',
             text: 'Marketplace',
           },
           {
-            id: 4,
+            id: 5,
             link: 'https://worldofdefish.com/defishboxes/',
             text: 'Defish Box',
           },

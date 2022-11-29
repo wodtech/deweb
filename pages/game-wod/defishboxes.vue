@@ -2,7 +2,7 @@
   <div style="background: #0b0e29">
     <v-container
       class="d-flex flex-column justify-center align-center lootbox-items"
-      style="padding-top: 150px"
+      style="padding: 150px 0"
     >
       <span
         class="mb-3 text-h3 text-uppercase white--text"
@@ -188,10 +188,6 @@
       :card_items="lootbox_items"
     />
     <LoginPopup :showed_login="loginPopup" />
-    <div style="position: relative" class="blur_follow mt-12">
-      <FollowScreen />
-      <div class="blurD"></div>
-    </div>
   </div>
 </template>
 
@@ -344,41 +340,7 @@ export default {
     background: #898a952e !important;
   }
 }
-.blur_follow {
-  background: url('~/assets/images/Blur.png') center no-repeat #12142a;
-  background-size: 360%;
-  background-repeat: no-repeat;
-  background-position: 52% 28%;
-  @media (min-width: 1365px) {
-    background: none;
-  }
-}
-.blurD {
-  display: none;
-  @media (min-width: 1365px) {
-    position: absolute;
-    display: block;
 
-    background-image: url('~/assets/images/green-blur.png');
-    background-size: contain;
-    bottom: 2%;
-    width: 55.85vw;
-    height: 51.85vw;
-    position: absolute;
-    right: 72.36vw;
-    transform: translate(90%, 0px);
-    background-size: cover;
-    transform: translate(90%, -168px);
-  }
-
-  @media (min-width: 1680px) {
-    bottom: 4%;
-    transform: translate(90%, 0px);
-  }
-  @media (min-width: 1920px) {
-    bottom: 3%;
-  }
-}
 @media (max-width: 960px) {
   .main-title {
     font-size: 40px;

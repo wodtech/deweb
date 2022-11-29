@@ -1,5 +1,6 @@
 <template>
   <v-dialog
+    dark
     class="d-flex pa-4 align-center justify-center showed"
     @input="close"
     :value="showed"

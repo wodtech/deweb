@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div >
     <v-dialog
+      dark
       class="d-flex align-center justify-center showed lootbox-popup"
       @input="close"
       :value="showed_login"
