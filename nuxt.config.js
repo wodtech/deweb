@@ -17,7 +17,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Defish Games is a game development company based in UA. We are a team of developers who are passionate about creating games that are fun and easy to play in a Web3 space. By combining creativity, beloved work and professionalism, Defish develops and expands the scope of the GameFi sector.'
+        content:
+          'Defish Games is a game development company based in UA. We are a team of developers who are passionate about creating games that are fun and easy to play in a Web3 space. By combining creativity, beloved work and professionalism, Defish develops and expands the scope of the GameFi sector.',
       },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'msapplication-TileColor', content: '#da532c' },
@@ -25,33 +26,87 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'apple-touch-icon', sizes: '57x57', href: '/apple-icon-57x57.png' },
-      { rel: 'apple-touch-icon', sizes: '60x60', href: '/apple-icon-60x60.png' },
-      { rel: 'apple-touch-icon', sizes: '72x72', href: '/apple-icon-72x72.png' },
-      { rel: 'apple-touch-icon', sizes: '76x76', href: '/apple-icon-76x76.png' },
-      { rel: 'apple-touch-icon', sizes: '114x114', href: '/apple-icon-114x114.png' },
-      { rel: 'apple-touch-icon', sizes: '120x120', href: '/apple-icon-120x120.png' },
-      { rel: 'apple-touch-icon', sizes: '144x144', href: '/apple-icon-144x144.png' },
-      { rel: 'apple-touch-icon', sizes: '152x152', href: '/apple-icon-152x152.png' },
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-icon-180x180.png' },
-      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/android-icon-192x192.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/favicon-96x96.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '57x57',
+        href: '/apple-icon-57x57.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '60x60',
+        href: '/apple-icon-60x60.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '72x72',
+        href: '/apple-icon-72x72.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '76x76',
+        href: '/apple-icon-76x76.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '114x114',
+        href: '/apple-icon-114x114.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '120x120',
+        href: '/apple-icon-120x120.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '144x144',
+        href: '/apple-icon-144x144.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '152x152',
+        href: '/apple-icon-152x152.png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-icon-180x180.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '192x192',
+        href: '/android-icon-192x192.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '96x96',
+        href: '/favicon-96x96.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png',
+      },
       { rel: 'manifest', href: '/manifest.json' },
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    '~/assets/styles/layout.scss',
-  ],
+  css: ['~/assets/styles/layout.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/math.js',
     '~/plugins/web3.client.js',
-    { src: '~/plugins/VueFlickity.js', ssr: false }
+    { src: '~/plugins/VueFlickity.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,7 +114,8 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    ['@nuxtjs/dotenv', { filename: '.env.' + process.env.ENV }],
+    ['@nuxtjs/dotenv', { filename: '.env.dev' }],
+    // ['@nuxtjs/dotenv', { filename: '.env.' + process.env.ENV }],
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
@@ -81,21 +137,19 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {
-
-  },
+  content: {},
   vue: {
     config: {
       productionTip: false,
-      devtools: true
-    }
+      devtools: true,
+    },
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/styles/variables.scss'],
     treeShake: true,
     options: {
-      customProperties: true
+      customProperties: true,
     },
     theme: {
       themes: {
