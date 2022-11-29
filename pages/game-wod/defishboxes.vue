@@ -1,7 +1,7 @@
 <template>
   <div style="background: #0b0e29">
     <v-container
-      class="d-flex flex-column justify-center align-center lootbox-items"
+      class="d-flex flex-column justify-center align-center lootbox-items wide"
       style="padding: 150px 0"
     >
       <span
@@ -113,10 +113,10 @@
                         style="color: white !important"
                       >
                         <svg
-                          class="d-flex align-self-end mr-1"
+                          class="d-flex align-self-end mr-1 mt-6"
                           style="transform: translateY(-13px)"
                           width="24"
-                          height="15"
+                          height="16"
                           viewBox="0 0 24 15"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
@@ -298,9 +298,11 @@ export default {
 .rarity-chips {
   justify-content: space-between;
 }
+
 .lootbox-image:hover {
   cursor: pointer;
 }
+
 @media (max-width: 1680px) {
   .rarity-chips {
     justify-content: flex-start;

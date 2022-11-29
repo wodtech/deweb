@@ -138,7 +138,7 @@
                     style="color: white !important"
                   >
                     <svg
-                      class="d-flex align-self-end mr-1"
+                      class="d-flex align-self-end mr-1 mt-6"
                       style="transform: translateY(-13px)"
                       width="24"
                       height="15"
@@ -738,6 +738,10 @@ export default {
   @media (min-width: 1365px) {
     background: none;
   }
+}
+.lootbox-popup-inner {
+  background: linear-gradient(39.79deg, rgba(41, 77, 87, 0.7) 4.57%, rgba(42, 81, 90, 0.32) 89.2%)!important;
+  backdrop-filter: blur(54px) !important;
 }
 @media (max-width: 960px) {
   .lootbox-popup-inner {

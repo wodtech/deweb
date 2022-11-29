@@ -76,6 +76,9 @@ html .v-application {
 
   .container {
     max-width: 73%!important;
+    &.wide {
+      max-width: 85%!important;
+    }
     @media (max-width: 1600px) {
       max-width: 85%!important;
     }
