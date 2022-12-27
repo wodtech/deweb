@@ -3,7 +3,7 @@ title: New Year Celebration Event
 date: 2022-12-27T16:15:41.270Z
 shot_description: The waves are getting bigger and the fishes are gathering for
   the New Year's Eve
-image: /img/photo_2022-12-27_11-16-08.jpg
+image: /img/new-year-celebration-event.jpg
 tab: world of defish
 post_type: events
 description: " "
