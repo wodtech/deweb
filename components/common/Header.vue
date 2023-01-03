@@ -81,11 +81,11 @@ export default {
       {
         title: 'product',
         links: [
-          {
-            title: 'launcher',
-            href: '/defish-launcher',
-            is_nuxt: true,
-          },
+          //{
+          //  title: 'launcher',
+          //  href: '/defish-launcher',
+          //  is_nuxt: true,
+          //},
           {
             title: 'for developers',
             href: '/for-developers',
