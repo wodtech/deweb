@@ -80,10 +80,10 @@ export default {
       {
         title: 'products',
         links: [
-          {
-            title: 'launcher',
-            href: '#',
-          },
+          //{
+          //  title: 'launcher',
+          //  href: '#',
+          //},
           {
             title: 'connect',
             href: '#',
