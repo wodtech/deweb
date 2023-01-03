@@ -3,7 +3,7 @@
     <MainFrame @scrollTo="scrollDown" />
     <Games id="gamesID" :games="games"/>
     <ArtsStripe :arts="arts"/>
-    <LaunchWindow/>
+    <!--<LaunchWindow/>-->
     <PlayerTalk/>
     <Blog :data="blogs "/>
     <FollowUs/>
