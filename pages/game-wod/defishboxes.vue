@@ -5,8 +5,7 @@
       style="padding: 150px 0"
     >
       <span
-        class="mb-3 text-h3 text-uppercase white--text"
-        style="font-family: Druk !important"
+        class="mb-3 text-h2 text-uppercase font-weight-bold white--text"
         >DEFISH BOX IS HERE</span
       >
       <p class="body-1 text-center mt-4 white--text" style="max-width: 600px">
