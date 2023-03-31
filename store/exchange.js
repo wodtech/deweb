@@ -35,9 +35,9 @@ export const actions = {
     }
     if (state.inited) {
       async function loop() {
-        const { data } = await Axios.get(
-          'https://api.pancakeswap.info/api/v2/tokens/0x298632d8ea20d321fab1c9b473df5dbda249b2b6'
-        )
+        // const { data } = await Axios.get(
+        //   'https://api.pancakeswap.info/api/v2/tokens/0x298632d8ea20d321fab1c9b473df5dbda249b2b6'
+        // )
         // state.exchange_rate = data.data.price
         state.exchange_rate = 0.00039;
         await new Promise((resolve) => setTimeout(resolve, 5000))
