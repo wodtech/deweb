@@ -541,7 +541,7 @@ export default {
           this.$store.getters['web3/acc'],
           to,
           this.$toWei(this.single_card.price * this.item_count * 2),
-          100
+          1000
         )
     },
     async waitAllowance(contract, account, to, allowanceNeeded, timesLeft) {
