@@ -534,13 +534,13 @@ export default {
         curr_contract = 'BUSDCoin'
       }
       await $contracts[curr_contract].methods
-        .approve(to, this.$toWei(this.single_card.price * this.item_count * 2))
+        .approve(to, this.$toWei(this.single_card.price * this.item_count))
         .send({ from: this.$store.getters['web3/acc'] }),
         await this.waitAllowance(
           $contracts[curr_contract],
           this.$store.getters['web3/acc'],
           to,
-          this.$toWei(this.single_card.price * this.item_count * 2),
+          this.$toWei(this.single_card.price * this.item_count),
           1000
         )
     },
