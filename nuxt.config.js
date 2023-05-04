@@ -117,7 +117,7 @@ export default {
     ['@nuxtjs/dotenv', { filename: '.env.dev' }],
     // ['@nuxtjs/dotenv', { filename: '.env.' + process.env.ENV }],
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
+    // '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
   ],
