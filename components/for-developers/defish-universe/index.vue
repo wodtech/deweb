@@ -2,7 +2,7 @@
   <div class="defish-universe d-flex align-center --posr">
     <img class="img-l" src="~/assets/images/for-developers/fish-left.png" alt="">
     <img class="img-r" src="~/assets/images/for-developers/fish-right.png" alt="">
-    <v-container class="--cnt d-flex flex-column align-center">
+    <v-container class="--cnt d-flex flex-column align-center text-white">
       <div class="text-h3 white--text text-center">{{content.title}}</div>
       <div class="body-1 description white--text text-center">{{content.description}}</div>
       <img class="mt-10 defish-img" src="~/assets/images/for-developers/defish-universe.png" >

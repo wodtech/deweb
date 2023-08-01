@@ -12,14 +12,14 @@
             <div class="date mb-md-9 mb-2 caption font-weight-light white--text">{{parseDate(blog.date)}}</div>
             <div class="socials d-flex align-center mb-md-9 mb-2">
               <span class="white--text share-t pr-2">SHARE: </span>
-                <v-btn icon>
-                  <v-icon >mdi-twitter</v-icon>
+                <v-btn size="34" variant="text" icon>
+                  <v-icon size="24" >mdi-twitter</v-icon>
                 </v-btn>
-                <v-btn icon>
-                  <v-icon >mdi-facebook</v-icon>
+                <v-btn  size="34" variant="text" icon>
+                  <v-icon size="24" >mdi-facebook</v-icon>
                 </v-btn>
-                <v-btn icon>
-                  <v-icon >mdi-linkedin</v-icon>
+                <v-btn size="34" variant="text" icon>
+                  <v-icon size="24" >mdi-linkedin</v-icon>
                 </v-btn>
             </div>
           </div>

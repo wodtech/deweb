@@ -9,7 +9,7 @@
           <div class="d-flex badge">
             <img class="rounded-xl" :src="game.icon" alt="small img">
           </div>
-          <div class="d-flex flex-column ml-5 pa-1">
+          <div class="d-flex flex-column ml-5 pa-1 text-white">
             <span class="text-big text-h5 white--text">{{ game.title }}</span>
             <span class="caption white--text sub-text">{{ game.subtitle }}</span>
           </div>
@@ -32,6 +32,10 @@
 </template>
 
 <script>
+import tdBg from '~/assets/images/td-bg.png'
+import bgImgD from '~/assets/images/defish-bg.png'
+import smallBadge from '~/assets/images/main-logo.png'
+
 export default {
   props: {
     game: {},
@@ -41,9 +45,9 @@ export default {
   },
   data() {
     return {
-      bgImgTd: require("~/assets/images/td-bg.png"),
-      bgImgD: require("~/assets/images/defish-bg.png"),
-      smallBadge: require("~/assets/images/main-logo.png"),
+      bgImgTd: tdBg,
+      bgImgD: bgImgD,
+      smallBadge: smallBadge,
       textBig: 'world of defish',
       textSmall: 'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish'
     }

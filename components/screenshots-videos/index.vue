@@ -1,12 +1,19 @@
 <template>
   <div class="players d-flex flex-column py-16">
-    <v-container class="py-0">
+    <v-container class="py-0 text-black">
       <div class="d-flex py-3 align-center">
         <div class="text-h3 my-0">
           screenshots
         </div>
         <v-spacer></v-spacer>
-        <v-btn  v-if="title === 'wod'" href="https://game.worldofdefish.com/" target="_blank" class="pink--text" rounded text>
+        <v-btn
+          v-if="title === 'wod'"
+          href="https://game.worldofdefish.com/"
+          target="_blank"
+          class="pink--text"
+          rounded
+          variant="text"
+        >
           see more
           <v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
@@ -14,19 +21,22 @@
     </v-container>
     <v-card color="transparent" elevation="0" class="d-flex flex-column --posr">
       <no-ssr>
-        <Flickity v-if="show_slider" ref="flickity" :options="flickityOptions">
-          <div v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-5">
+        <Carousel :itemsToShow="1" :wrapAround="true">
+          <Slide v-for="(chunk, i) in chunks" :key="i + '-' + cardsPerChunk" class="carousel-cell py-5">
             <v-container>
               <v-row class="slider-wrapper-inner">
                 <v-col md="4" sm="6" cols="12" v-for="el in chunk" :key="el.id">
                   <v-card elevation="10" class="d-flex flex-column" rounded="xl">
-                    <v-img :src="el.img" :aspect-ratio="1.5"></v-img>
+                    <v-img cover :src="el.img" :aspect-ratio="1.5"></v-img>
                   </v-card>
                 </v-col>
               </v-row>
             </v-container>
-          </div>
-        </Flickity>
+          </Slide>
+          <template #addons>
+            <Pagination/>
+          </template>
+        </Carousel>
       </no-ssr>
     </v-card>
     <v-container>
@@ -38,9 +48,14 @@
 <script>
 import { chunk } from 'lodash'
 import GameInfoCards from "~/components/game-info-cards";
+import { Carousel, Slide, Pagination } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 export default {
   components: {
-    GameInfoCards
+    GameInfoCards,
+    Carousel,
+    Slide,
+    Pagination
   },
   props: {
     game:{},
@@ -50,15 +65,6 @@ export default {
   },
   data() {
     return {
-
-      flickityOptions: {
-        // initialIndex: 1,
-        // freeScroll: true,
-        // wrapAround: true,
-        pageDots: true,
-        prevNextButtons: false,
-      },
-
       show_slider: true,
     }
   },
@@ -77,7 +83,7 @@ export default {
   computed: {
 
     cardsPerChunk() {
-      switch (this.$vuetify.breakpoint.name) {
+      switch (this.$vuetify.display.name) {
         case 'xs': return 1
         case 'sm': return 2
         case 'md': return 3

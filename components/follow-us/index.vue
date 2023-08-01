@@ -6,39 +6,39 @@
     class="pa-10 card-follow"
     >
 
-
       <svg style="z-index: 0" class="bg-svg left" width="257" height="304" viewBox="0 0 257 304" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.5" d="M36.8258 -82.7204C102.547 -108.653 178.34 -88.0335 230.861 -39.5957C256.802 -15.6712 216.626 -6.68111 185.221 -22.7758C99.1941 -66.8635 -14.8025 -38.0559 -33.462 63.0479C-68.6 253.437 181.698 267.078 184.333 141.59C173.895 28.0634 55.8718 65.7124 75.0118 105.051C81.3588 118.096 92.5086 119.713 103.329 116.788C119.159 112.51 139.929 111.222 144.119 127.076C148.289 142.853 141.172 155.787 133.173 163.76C129.969 166.954 129.02 172.078 131.696 175.727C134.947 180.159 132.792 186.483 127.447 187.769C38.7479 209.108 5.11026 151.126 -2.19578 112.105C-2.96546 107.994 -7.10927 105.279 -11.0938 106.55C-15.7171 108.025 -20.2737 104.104 -19.4173 99.3278C3.18493 -26.7463 99.6788 -20.7444 151.774 0.479197C155.642 2.05488 160.09 1.30929 163.082 -1.60472C166.061 -4.50665 170.613 -5.26091 174.335 -3.40433C296.048 57.3136 262.155 193.933 202.77 246.546C195.992 252.55 197.692 263.592 197.933 272.644C197.995 274.943 196.129 275.694 194.074 276.726C-66.3476 407.536 -236.893 25.2867 36.8258 -82.7204Z" fill="#D9D9D9" fill-opacity="0.1"/>
       </svg>
-
 
       <svg style="z-index: 0" class="bg-svg right d-none d-sm-flex" width="231" height="230" viewBox="0 0 231 230" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.5" d="M0.00839603 92.1162C-0.0869856 74.0674 4.53241 56.7674 12.7051 41.1713C29.0847 9.91377 37.0667 53.1204 33.165 88.1932C29.7146 119.209 41.1172 150.14 71.9064 169.147C179.174 235.365 246.471 86.6678 170.93 55.4797C99.5658 35.0465 94.5875 115.556 122.976 113.215C129.999 112.635 133.792 108.934 135.588 104.078C140.337 91.2406 145.018 73.0988 157.92 77.6674C165.315 80.2856 169.901 86.2348 172.322 91.7575C173.505 94.4555 176.392 96.2393 179.237 95.4757C182.694 94.5479 186.024 97.3472 185.544 100.894C177.581 159.76 134.458 166.504 109.053 161.737C106.376 161.235 103.752 163.11 103.583 165.828C103.388 168.982 99.9344 170.823 97.2373 169.177C26.0486 125.732 52.4436 68.5821 77.6083 41.9683C79.4766 39.9924 80.0729 37.1168 79.0097 34.6139C77.9509 32.1215 78.5665 29.1807 80.5709 27.3597C146.121 -32.1946 221.048 20.5889 238.978 69.0374C241.024 74.5667 248.126 76.1388 253.677 78.1264C255.087 78.6313 255.103 79.9407 255.245 81.4314C273.232 270.332 1.02097 283.711 0.00839603 92.1162Z" fill="#D9D9D9" fill-opacity="0.1"/>
       </svg>
 
-
-
       <v-row style="z-index: 2" class="content-w">
         <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div style="z-index: 2">
-            <img style="width: 197px;" :src="firstImg" alt="">
+            <img style="width: 197px;" src="~/assets/images/wodlogo.svg" alt="wod-logo">
           </div>
-          <v-btn :href="btnTextFirst.link" x-large class="follow-btn font-weight-light rounded-pill">
+          <v-btn :href="btnTextFirst.link" min-width="166px" color="primary" x-large class="follow-btn font-weight-light rounded-pill">
             <span>{{btnTextFirst.text}}</span>
           </v-btn>
         </v-col>
         <v-col class="game-block d-flex align-center justify-end flex-column" md="4" sm="12">
           <div>
-            <img style="width: 215px;" :src="secondImg" alt="">
+            <img style="width: 215px;" src="~/assets/images/tdlogo.svg" alt="td-logo">
           </div>
-          <v-btn :href="btnTextSecond.link" disabled x-large class="follow-btn font-weight-light rounded-pill">
+          <v-btn
+              :href="btnTextSecond.link"
+              min-width="166px"
+              style="background-color: #475060;pointer-events: none"
+              x-large class="follow-btn font-weight-light rounded-pill text-white">
             <span>{{btnTextSecond.text}}</span>
           </v-btn>
         </v-col>
         <v-col class="d-flex justify-center align-center flex-column" md="4" sm="12">
           <v-row class="d-flex flex-column">
             <v-col class="d-flex align-end" cols>
-              <span  class="text-h4 white--text">{{text}}</span>
+              <span  class="text-h4 text-white">{{text}}</span>
             </v-col>
             <v-col cols>
               <DefishLinks variant="white" />
@@ -65,9 +65,7 @@ export default {
         tg: "https://t.me/worldofdefish",
         linkedin: "https://www.linkedin.com/company/world-of-defish/mycompany/",
       },
-      text: 'follow us  there:',
-      firstImg: require('~/assets/images/wodlogo.svg'),
-      secondImg: require('~/assets/images/tdlogo.svg'),
+      text: 'follow us there:',
       btnTextFirst: {
         text: 'play now',
         link: 'https://game.worldofdefish.com'
@@ -84,11 +82,11 @@ export default {
 
 <style lang="scss" scoped>
 .follow-btn {
-  color: white!important;
-  min-width: 166px !important;
-  background-color: rgba(233, 68, 133, 1) !important;
+  //color: white!important;
+  //min-width: 166px !important;
+  //background-color: rgba(233, 68, 133, 1) !important;
   &:disabled {
-    color: white !important;
+    //color: white !important;
   }
 }
 .card-follow {

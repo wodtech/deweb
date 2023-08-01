@@ -1,24 +1,11 @@
 <template>
   <div class="devs-page">
-    <MainFrame/>
-    <InfoArticles />
-    <DefishUniverse />
+    <ForDevelopersMainFrame/>
+    <ForDevelopersInfoArticles />
+    <ForDevelopersDefishUniverse />
     <FollowUs/>
   </div>
 </template>
+<script setup>
 
-<script>
-export default {
-  components: {
-    MainFrame: () => import("~/components/for-developers/main-frame"),
-    InfoArticles: () => import("~/components/for-developers/info-articles"),
-    DefishUniverse: () => import('~/components/for-developers/defish-universe'),
-    FollowUs: () => import('~/components/follow-us'),
-  },
-  head() {
-    return {
-      title: 'For developers',
-    }
-  },
-}
 </script>

@@ -1,55 +1,64 @@
 <template>
-  <div class="index-page">
-    <MainFrame @scrollTo="scrollDown" />
-    <Games id="gamesID" :games="games"/>
-    <ArtsStripe :arts="arts"/>
-    <!--<LaunchWindow/>-->
-    <PlayerTalk/>
-    <Blog :data="blogs "/>
-    <FollowUs/>
-  </div>
+    <div class="index-page">
+
+      <MainFrame @scrollTo="scrollDown" />
+
+      <Games id="gamesID"/>
+      <ArtsStripe />
+      <!--         <LaunchWindow/>-->
+      <ClientOnly>
+        <PlayerTalk/>
+      </ClientOnly>
+      <Blog :data="blogs "/>
+      <FollowUs/>
+    </div>
 </template>
 
-<script>
+<script setup>
 import ArtsStripe from '~/components/arts-stripe';
-export default {
-  components: {
-    MainFrame: () => import("~/components/main-frame"),
-    LaunchWindow: () => import("~/components/launch-window"),
-    Blog: () => import("~/components/blog"),
-    PlayerTalk: () => import("~/components/player-talk"),
-    Games: () => import("~/components/games"),
-    Careers: () => import("~/components/subs"),
-    CareersContent: () => import("~/components/careers/careers-content"),
-    FollowUs: () => import("~/components/follow-us"),
-    ArtsStripe,
-  },
-  methods: {
-    scrollDown() {
-      const gamesID = document.getElementById('gamesID')
-      const y = gamesID.getBoundingClientRect().top + window.scrollY;
-      window.scroll({
-        top: y,
-        behavior: 'smooth'
-      });
+import {useAsyncData} from "nuxt/app";
 
-    }
-  },
-  async asyncData({ $content }) {
-    const games = await $content('games').fetch()
-    const arts = await $content('arts').fetch()
-    const blogs = await $content('blog').only(['title', 'shot_description', 'image', 'slug']).limit(3).fetch()
+const title = 'Web3 Gaming Studio'
 
-    return {
-      games,
-      arts,
-      blogs
-    }
-  },
-  head() {
-    return {
-      title: 'Web3 Gaming Studio',
-    }
-  },
+const { data: blogs } = await useAsyncData(
+    'blog',
+    () => queryContent('/blog').only(['title', 'shot_description', 'image', '_path']).limit(3).find()
+)
+function scrollDown() {
+  const gamesID = document.getElementById('gamesID')
+  const y = gamesID.getBoundingClientRect().top + window.scrollY;
+  window.scroll({
+    top: y,
+    behavior: 'smooth'
+  });
 }
 </script>
+
+
+
+<!--export default {-->
+<!--  // components: {-->
+<!--  //   MainFrame: () => import("~/components/main-frame"),-->
+<!--  //   LaunchWindow: () => import("~/components/launch-window"),-->
+<!--  //   Blog: () => import("~/components/blog"),-->
+<!--  //   PlayerTalk: () => import("~/components/player-talk"),-->
+<!--  //   Games: () => import("~/components/games"),-->
+<!--  //   Careers: () => import("~/components/subs"),-->
+<!--  //   CareersContent: () => import("~/components/careers/careers-content"),-->
+<!--  //   FollowUs: () => import("~/components/follow-us"),-->
+<!--  //   ArtsStripe,-->
+<!--  // },-->
+<!--  methods: {-->
+<!--    scrollDown() {-->
+<!--      const gamesID = document.getElementById('gamesID')-->
+<!--      const y = gamesID.getBoundingClientRect().top + window.scrollY;-->
+<!--      window.scroll({-->
+<!--        top: y,-->
+<!--        behavior: 'smooth'-->
+<!--      });-->
+
+<!--    }-->
+<!--  },-->
+
+<!--}-->
+<!--</script>-->

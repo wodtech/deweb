@@ -1,5 +1,5 @@
 <template>
-  <v-card dark elevation="0" tile class="arts-header d-flex flex-column justify-center --posr pt-16">
+  <v-card dark elevation="0" tile class="arts-header d-flex flex-column justify-center --posr pt-16 text-white">
     <img class="bg" src="~/assets/images/arts.png" alt="">
     <v-container class="--posr d-flex flex-column justify-center" style="height: 100%;">
       <div class="d-flex flex-column" style="z-index: 1">
@@ -15,12 +15,6 @@
     </v-container>
   </v-card>
 </template>
-
-<script>
-export default {
-
-}
-</script>
 
 <style lang="scss" scoped>
 

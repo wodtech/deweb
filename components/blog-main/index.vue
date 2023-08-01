@@ -4,7 +4,7 @@
       <img src="~/assets/images/blog.png" class="bg-img" alt="bg">
     </div>
     <v-card height="100%" color="transparent" elevation="0" class="d-flex flex-column align-center justify-center py-16 --posr">
-      <no-ssr class="d-flex flex-grow-1 justify-center">
+      <no-ssr class="d-flex flex-grow-1 justify-center w-100 text-white">
         <v-container class="d-flex align-center justify-center">
           <v-row class="d-flex flex-column flex-lg-row">
             <v-col class="d-flex flex-column justify-center">

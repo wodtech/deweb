@@ -1,5 +1,5 @@
 <template>
-  <div  class="main-frame">
+  <div  class="main-frame text-white">
     <div class="img-container">
       <img src="~/assets/images/blurred-bg.png" class="bg-img" alt="bg">
     </div>
@@ -13,7 +13,7 @@
       class="d-flex flex-column align-center justify-center py-16 --posr w-100"
     >
       <no-ssr class="d-flex flex-grow-1 justify-center">
-        <v-container class="d-flex align-center justify-center">
+        <v-container style="max-width: 100%!important;" class="d-flex align-center justify-center">
           <v-row class="d-flex flex-column flex-lg-row">
             <v-col class="d-flex flex-column justify-center ">
               <div class="main-title d-flex  mb-9 mt-sm-3  mt-16  text-uppercase  white--text">
@@ -35,14 +35,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      imgSrc: require("~/assets/images/test-img.png"),
-    }
-  }
-}
+<script setup>
+
 </script>
 
 <style lang="scss" scoped>

@@ -6,31 +6,17 @@
   </div>
 </template>
 
-<script>
-import ArtsHeader from '~/components/arts-header/index.vue';
-import ArtsSlider from '~/components/arts-slider/index.vue';
-import GameCards from '~/components/game-cards/index.vue';
-export default {
-  components: {
-    ArtsHeader,
-    ArtsSlider,
-    GameCards
-},
-  async asyncData({ $content }) {
-    const arts = await $content('arts').fetch()
-    const games = await $content('games').fetch()
+<script setup>
 
-    return {
-      arts,
-      games,
-    }
-  },
+ import {useAsyncData} from "nuxt/app";
 
+ const { data: arts } = await useAsyncData(
+     'arts',
+     () => queryContent('/arts').find()
+ )
+ const { data: games } = await useAsyncData(
+     'games',
+     () => queryContent('/games').find()
+ )
 
-  head() {
-    return {
-      title: 'Arts',
-    }
-  },
-}
 </script>

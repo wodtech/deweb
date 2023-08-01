@@ -1,6 +1,6 @@
 <template>
   <div class="td-page">
-    <GameMainFrame  :game="game[0]">
+    <GameMainFrame  :game="game">
       <template #additional-links>
         <v-btn class="app-icon mr-4"  icon>
           <v-icon color="#D2C7C7" size="27px">mdi-apple</v-icon>
@@ -17,85 +17,75 @@
         </v-btn>
       </template>
     </GameMainFrame>
-    <ScreenshotsVideos :links="links" title="td" :cards="cards" :game="game[0]"/>
+    <ScreenshotsVideos :links="links" title="td" :cards="cards" :game="game"/>
     <Blog :data="blogs" />
     <FollowUs/>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      links: {
-        follow: [
-          {
-            id: 1,
-            disabled: true,
-            link: '#nothing-here',
-            text: 'Whitepaper',
-          },
-          {
-            id: 2,
-            disabled: true,
-            link: '#nothing-here',
-            text: 'Download',
-          },
-        ],
-        community: [
-          {title: 'Announcements', link: 'https://t.me/DefishANN'}
-        ],
-      },
-      cards: [
+<script setup>
+import  screen1 from '~/assets/images/td-screenshots/1.png'
+import screen2 from '~/assets/images/td-screenshots/2.png'
+import screen3 from '~/assets/images/td-screenshots/3.png'
+import screen4 from '~/assets/images/td-screenshots/4.png'
+import screen5 from '~/assets/images/td-screenshots/5.png'
+import screen6 from '~/assets/images/td-screenshots/6.png'
+
+const links = {
+      follow: [
         {
           id: 1,
-          img: require('~/assets/images/td-screenshots/1.png'),
+          disabled: true,
+          link: '#nothing-here',
+          text: 'Whitepaper',
         },
         {
           id: 2,
-          img: require('~/assets/images/td-screenshots/2.png'),
+          disabled: true,
+          link: '#nothing-here',
+          text: 'Download',
         },
-        {
-          id: 3,
-          img: require('~/assets/images/td-screenshots/3.png'),
-        },
-        {
-          id: 4,
-          img: require('~/assets/images/td-screenshots/4.png'),
-        },
-        {
-          id: 5,
-          img: require('~/assets/images/td-screenshots/5.png'),
-        },
-        {
-          id: 6,
-          img: require('~/assets/images/td-screenshots/6.png'),
-        }
+      ],
+      community: [
+        {title: 'Announcements', link: 'https://t.me/DefishANN'}
       ],
     }
-  },
-  components: {
-    GameMainFrame: () => import('~/components/game-main-frame'),
-    ScreenshotsVideos: () => import ('~/components/screenshots-videos'),
-    Blog: () => import('~/components/blog'),
-    FollowUs: () => import('~/components/follow-us')
-  },
-  async asyncData({ $content }) {
-    const game = await $content('games').where({title: 'Tower Defish'}).fetch()
-    const blogs = await $content('blog').only(['title', 'shot_description', 'image', 'slug']).limit(3).fetch()
-
-    return {
-      game,
-      blogs
-    }
-  },
-
-  head() {
-    return {
-      title: 'Tower Defish',
-    }
-  },
-}
+const cards = [
+      {
+        id: 1,
+        img: screen1,
+      },
+      {
+        id: 2,
+        img: screen2,
+      },
+      {
+        id: 3,
+        img: screen3,
+      },
+      {
+        id: 4,
+        img: screen4,
+      },
+      {
+        id: 5,
+        img: screen5,
+      },
+      {
+        id: 6,
+        img: screen6,
+      }
+    ]
+const title = 'World of Defish'
+const { data: game } = await useAsyncData(
+    'games',
+    () => queryContent('/games').where({title: 'World of Defish'}).findOne()
+);
+const { data: blogs } = await useAsyncData(
+    'blog',
+    () => queryContent('/blog').only(['title', 'shot_description', 'image', '_path']).limit(3).find()
+);
+console.log(blogs)
 </script>
 <style>
 .app-icon {

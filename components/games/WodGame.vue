@@ -1,14 +1,14 @@
 <template>
 <div class="wod-game-section d-flex align-center --posr">
   <div class="bg-container">
-    <img class="bg-left" :src="require('~/assets/images/fishes-left.png')">
-    <img class="bg-right" :src="require('~/assets/images/fishes-horisontal.png')">
+    <img class="bg-left" src="~/assets/images/fishes-left.png">
+    <img class="bg-right" src="~/assets/images/fishes-horisontal.png">
   </div>
   <v-container class="--cnt inside">
     <v-row>
       <v-col md="6" sm="4" cols="12" class="d-flex flex-column justify-center">
         <v-card color="grey" rounded="xl" width="100%">
-          <v-img :src="require('~/assets/images/wod-preview.jpg')" :aspect-ratio="1.5"></v-img>
+          <v-img :src="wodImage" alt="world-of-defish-image" :aspect-ratio="1.5"></v-img>
         </v-card>
       </v-col>
       <v-col offset-sm="1" md="5" sm="7" cols="12" offset="0" class="d-flex flex-column justify-center">
@@ -16,11 +16,11 @@
           {{ data.title }}
         </div>
         <div class="d-flex mb-4">
-          <v-chip small class="mr-2" :key="n" v-for="n in data.tags" color="grey">
+          <v-chip small class="mr-2" :key="n" v-for="n in data.tags" color="gray">
             {{ n }}
           </v-chip>
         </div>
-        <div class="body-1 mb-4">
+        <div class="description mb-4">
           {{ data.short_description }}
         </div>
         <div class="d-flex">
@@ -40,7 +40,6 @@
             x-large color="black">
             learn more
           </v-btn>
-          <!-- asd -->
         </div>
       </v-col>
     </v-row>
@@ -49,12 +48,13 @@
 </div>
 </template>
 
-<script>
-export default {
-  props: {
-    data: {},
-  },
-}
+<script setup>
+import wodImageSrc from "../../assets/images/wod-preview.jpg";
+
+const wodImage = wodImageSrc
+const props =  defineProps(['data'])
+const {data} = props
+
 </script>
 
 <style lang="scss" scoped>
@@ -81,6 +81,8 @@ export default {
       }
     }
   }
-
+  .description {
+    font-size: 18px;
+  }
 }
 </style>

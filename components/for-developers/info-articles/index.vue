@@ -1,7 +1,7 @@
 <template>
   <div class="dev-posts --posr">
       <div class="articles-wrapper">
-        <DevInfo
+        <ForDevelopersInfoArticlesDevInfo
           v-for="(article, i) in articles"
           style="z-index: 2"
           :bg="article.bg"
@@ -10,44 +10,40 @@
           :data="article"
         >
           <img style="position: absolute" :src="article.bgFishes" >
-         </DevInfo>
+         </ForDevelopersInfoArticlesDevInfo>
       </div>
   </div>
 </template>
 
-<script>
-export default {
-  data(){
-    return {
-      articles: [
-        {
-          title: 'authenticate in web3 easly',
-          description: 'Web3 Token is an open-source package to authenticate users in a hybrid Apps using signed messages.',
-          img: require("~/assets/images/for-developers/auth.png"),
-          bg: 'white',
-          bgFishes: require("~/assets/images/for-developers/bg1.png"),
-          links: {
-            github: 'https://github.com/bytesbay/web3-token',
-            medium: ' https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976'
-          }
-        },
-        {
-          title: 'extend your dapp with backend',
-          description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockchain.',
-          img: require("~/assets/images/for-developers/chain.png"),
-          bgFishes: require("~/assets/images/for-developers/bg2.png"),
-          bg: '#F0F0F0',
-          links: {
-            github: 'https://github.com/bytesbay/chain-syncer',
-          }
-        },
-      ]
-    }
-  },
-  components: {
-    DevInfo: () => import('./DevInfo'),
-  },
-}
+<script setup>
+import imgAuth from "~/assets/images/for-developers/auth.png"
+import bgFishesFirst from "~/assets/images/for-developers/bg1.png"
+
+import imgChain from "~/assets/images/for-developers/chain.png"
+import bgFishesSecond from "~/assets/images/for-developers/bg2.png"
+ const articles = [
+   {
+     title: 'authenticate in web3 easly',
+     description: 'Web3 Token is an open-source package to authenticate users in a hybrid Apps using signed messages.',
+     img: imgAuth,
+     bg: 'white',
+     bgFishes: bgFishesFirst,
+     links: {
+       github: 'https://github.com/bytesbay/web3-token',
+       medium: ' https://medium.com/@bytesbay/you-dont-need-jwt-anymore-974aa6196976'
+     }
+   },
+   {
+     title: 'extend your dapp with backend',
+     description: 'Chain Syncer allows you to sychronize your app with any ethereum compatible blockchain.',
+     img: imgChain,
+     bgFishes: bgFishesSecond,
+     bg: '#F0F0F0',
+     links: {
+       github: 'https://github.com/bytesbay/chain-syncer',
+     }
+   },
+ ]
 </script>
 
 <style lang="scss" scoped>

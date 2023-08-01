@@ -7,9 +7,9 @@
           offset-sm="4" offset-md="0"
           class="d-flex flex-column pb-md-0 pb-12 align-center align-sm-start"
         >
-          <img class="logo mb-3" src="~/assets/images/light-logo.png" alt=""></img>
-          <div class="body-1 text-center text-sm-left">
-            Defish Games - entertainment <br>
+          <img class="logo mb-3" src="~/assets/images/light-logo.png" alt=""/>
+          <div style="font-size: 18px" class="body-1 text-center text-sm-left">
+            Defish Games - entertainment <br/>
             economy that you deserve.
           </div>
         </v-col>
@@ -20,7 +20,8 @@
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
                 <a
                   v-for="n in links.terms"
-                  :class="['body-1 my-2 black--text font-head', {_disabled : n.disabled}]"
+
+                  :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
                   :href="n.href"
                 >{{ n.title }}</a>
               </div>
@@ -30,7 +31,7 @@
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
                 <a
                   v-for="n in links.first"
-                  :class="['body-1 my-2 black--text font-head', {_disabled : n.disabled}]"
+                  :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
                   :href="n.href"
                 >{{ n.title }}</a>
               </div>
@@ -40,7 +41,7 @@
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
                 <a
                   v-for="n in links.second"
-                  :class="['body-1 my-2 black--text font-head', {_disabled : n.disabled}]"
+                  :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
                   :href="n.href"
                 >{{ n.title }}</a>
               </div>
@@ -62,7 +63,8 @@
 </template>
 
 <script>
-import DefishLinks from "~/components/common/DefishLinks";
+import DefishLinks from "../common/DefishLinks";
+
 export default {
   components: {
     DefishLinks
@@ -112,6 +114,11 @@ export default {
   .logo {
     height: auto;
     width: 200px;
+  }
+  .footer-link{
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
   }
 }
 

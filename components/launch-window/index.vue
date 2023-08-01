@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0" color="transparent" style="overflow: visible;" tile class="launch-window d-flex">
     <v-container class="py-16 --posr">
-      <v-img contain class="fish-bg" :src="require('~/assets/images/fish-bg-launcher.png')"></v-img>
+      <v-img contain class="fish-bg" src="~/assets/images/fish-bg-launcher.png"></v-img>
       <v-row class="--posr">
         <v-col sm="12" md="5" cols="12" class="--posr">
 

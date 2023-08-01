@@ -3,27 +3,27 @@
 
     <div class="back" ref="back"></div>
 
-    <v-container class="py-4 d-flex align-center --posr">
-      <nuxt-link
+    <v-container class="py-4 d-flex align-center --posr main-con">
+      <router-link
+        style="max-height: 48px"
         tag="img"
-        class="logo"
-        :src="require('~/assets/images/full-logo.png')"
         to="/">
-      </nuxt-link>
+        <img class="logo" src="~/assets/images/full-logo.png" alt="defish-logo">
+      </router-link>
 
 
       <div class="menu-btns d-flex flex-grow-1 px-10">
 
         <v-hover
-          @input="onHoverChange($event, i)"
+          @update:modelValue="onHoverChange($event, i)"
           v-for="(n, i) in menu"
           :key="n.title"
-          v-slot="{ hover }"
         >
-          <div class="drop-container d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
-            <v-btn rounded text :to="n.href" :nuxt="n.is_nuxt">
+          <template v-slot:default="{ isHovering, props }">
+          <div v-bind="props" class="drop-container hovered d-md-flex d-none mr-1 mr-lg-10" :class="`num-${i}-drop`">
+            <v-btn rounded variant="text" :to="n.href">
               {{ n.title }}
-              <svg :class="['arrow ml-1',{ rotate: hover }]" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg :class="['arrow ml-1',{ rotate: isHovering }]" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 1.65017L4.00007 5.5L8 1.65017L6.75113 0.5L4.00007 3.14778L1.24887 0.5L0 1.65017Z" fill="white"/>
               </svg>
             </v-btn>
@@ -34,9 +34,10 @@
               <a v-for="z in n.links" :class="['lnk body-1 mb-2 hover-el', {_disabled : z.disabled}]"  :href="z.href">{{ z.title }}</a>
             </div>
           </div>
+          </template>
         </v-hover>
 
-        <v-btn to="/arts" nuxt rounded class="d-md-flex d-none hover-el" text>
+        <v-btn to="/arts" nuxt rounded class="d-md-flex d-none hover-el" variant="text">
           Art
         </v-btn>
       </div>
@@ -141,14 +142,16 @@ export default {
     },
 
     onHoverChange(hover, title) {
-
+      console.log(hover)
       const pop = async () => {
         const target = document.querySelector('.drop-container.' + `num-${title}-drop .drop-down`);
+        const back = document.querySelector('.back');
+
         if(hover) {
 
           target.classList.add('hovered');
 
-          [ target, this.$refs.back ].forEach(n => {
+          [ target, back ].forEach(n => {
             Anime.remove(n);
           })
 
@@ -159,7 +162,7 @@ export default {
             target.style.opacity = 0;
 
             Anime({
-              targets: this.$refs.back,
+              targets: back,
               height: y,
               duration: 300,
               easing: 'easeInOutQuad',
@@ -214,7 +217,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 10;
-
+  overflow: visible;
   &:before {
     width: 100%;
     height: 0;
@@ -230,11 +233,13 @@ export default {
   }
 
   .hover-el{
+    color: white;
     &:hover{
       color: #76FFE8;
     }
   }
   .drop-container {
+    color: white;
     position: relative;
     .v-btn {
       transition: color 0.3s ease-in-out;
@@ -279,7 +284,8 @@ export default {
   .logo {
     cursor: pointer;
     height: 100%;
-    width: auto;
+    //width: auto;
+    width: 166px;
   }
 
 

@@ -13,7 +13,7 @@
             <v-col
               style="position: relative;"
               v-for="n in sections"
-              :key="n.slug"
+              :key="n._path"
               cols="12"
               sm="6"
               md="2"
@@ -89,7 +89,7 @@ export default {
       ]
 
       const result = per_page.find((item) => {
-        return item.breakpoint >= this.$vuetify.breakpoint.width
+        return item.breakpoint >= this.$vuetify.display.width
       });
 
       return (result || per_page[per_page.length - 1]).per_page;

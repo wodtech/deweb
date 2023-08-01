@@ -2,9 +2,10 @@
   <div class="game-cards">
     <v-container class="py-16">
       <v-row>
-        <v-col v-for="n in games" :key="n.slug" cols="12" md="6">
+        <v-col v-for="n in games" :key="n._path" cols="12" md="6">
           <v-card elevation="10" width="100%" rounded="xl">
             <v-img
+              cover
               :src="getBgByTitle(n.title)"
               :alt="n.title"
               width="100%"
@@ -41,25 +42,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    games: {},
-  },
-  data() {
-    return {
-      bgImgTd: require("~/assets/images/td-bg.png"),
-      bgImgD: require("~/assets/images/defish-bg.png"),
-    }
-  },
-  methods: {
-    getBgByTitle(title) {
-      return title === 'World of Defish' ? this.bgImgD : this.bgImgTd
-    }
-  },
-  computed: {
+<script setup>
+import bgImgTdSrc from "assets/images/td-bg.png"
+import bgImgDSrc from "assets/images/defish-bg.png"
 
-  }
+const props =  defineProps(['games'])
+const games = props.games
+
+const bgImgTd = bgImgTdSrc
+const bgImgD = bgImgDSrc
+
+const getBgByTitle = (title) => {
+  return title === 'World of Defish' ? bgImgD : bgImgTd
 }
 </script>
 

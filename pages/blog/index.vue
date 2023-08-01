@@ -1,31 +1,24 @@
 <template>
   <div class="blog">
     <BlogMain/>
-    <Updates :blog-tabs="blogTabs" :blog="blog" />
+
+      <Updates :blog-tabs="blogTabs" :blog="blog" />
+
   </div>
 </template>
 
-<script>
-export default {
-  components: {
-    BlogMain: () => import('~/components/blog-main'),
-    Updates: () => import('~/components/updates'),
-  },
-  async asyncData({ $content }) {
-    const blog = await $content('blog').only(['title', 'shot_description', 'image', 'tab', 'slug', 'post_type']).fetch()
-    const blogTabs = await $content('blogTabs').fetch()
+<script setup>
 
 
-    return {
-      blog, blogTabs
-    }
-  },
+const { data: blog } = await useAsyncData(
+    'blog',
+    () => queryContent('/blog').only(['title', 'shot_description', 'image','tab', '_path', 'post_type']).find()
+)
 
-  head() {
-    return {
-      title: 'Blog',
-    }
-  },
-}
+const { data: blogTabs } = await useAsyncData(
+    'blogTabs',
+    () => queryContent('/blogtabs').find()
+)
+
 </script>
 

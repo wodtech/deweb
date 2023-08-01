@@ -1,5 +1,5 @@
 <template>
-  <div id="burger" :class="{ 'active' : value }" v-on="$listeners">
+  <div id="burger" :class="{ 'active' : value }" v-bind="$attrs">
     <slot>
       <button type="button" class="burger-button" title="Menu">
         <span class="hidden">Toggle menu</span>

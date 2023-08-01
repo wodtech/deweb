@@ -1,5 +1,6 @@
 <template>
   <v-card dark elevation="0" tile class="main-frame d-flex">
+
     <div class="img-container">
       <video autoplay muted loop class="w-100" id="myVideo">
         <source src="~/assets/video/main.mp4" class="bg-img" type="video/mp4">
@@ -21,7 +22,7 @@
             economics and entertainment. As you deserve.
           </div>
 
-          <v-btn width="170" @click="$emit('scrollTo')" rounded x-large color="primary">
+          <v-btn width="170" size="x-large" @click="$emit('scrollTo')" rounded x-large color="primary">
             EXPLORE NOW
           </v-btn>
         </v-col>
@@ -46,6 +47,7 @@ export default {
   width: 100%;
   position: relative;
   overflow: hidden;
+  color: white;
   .img-container {
     width: 100%;
     height: 100%;

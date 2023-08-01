@@ -1,32 +1,27 @@
 <template>
   <v-app style="background: #F0F0F0 !important;">
-
     <v-main>
-      <Nuxt/>
+      <slot/>
     </v-main>
-    <Sidebar
+    <BurgerMenuSidebar
       :value="drawer"
       @close="drawer=false"
     >
-    </Sidebar>
-    <Header :bg="headerBg" >
+    </BurgerMenuSidebar>
+    <CommonHeader :bg="headerBg" >
       <div class="show-mobile">
-        <burger class="menu-btn" :value="drawer" @click.stop="drawer = !drawer"></burger>
+        <BurgerMenuBurger class="menu-btn" :value="drawer" @click.stop="drawer = !drawer"></BurgerMenuBurger>
       </div>
-    </Header>
+    </CommonHeader>
 
-    <Footer></Footer>
+    <CommonFooter></CommonFooter>
   </v-app>
 </template>
 
 <script>
+
 export default {
-  components: {
-    Header: () => import('~/components/common/Header.vue'),
-    Footer: () => import('~/components/common/Footer.vue'),
-    Burger: () => import('~/components/burger-menu/burger'),
-    Sidebar: () => import('~/components/burger-menu/sidebar')
-  },
+
   data() {
     return {
       clipped: false,

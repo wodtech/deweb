@@ -15,15 +15,15 @@
     </div>
 
     <div class="d-flex flex-column" style="overflow: hidden;">
-      <div class="d-flex flex-column slider">
+      <div class="d-flex flex-column  ">
         <div class="top d-flex mb-8">
-          <v-card style="background: #06101c" elevation="10" :key="n.slug" v-for="n in randArts.slice(0, 20)" rounded="lg" class="mr-8">
+          <v-card style="background: #06101c;min-width: 200px;height: 200px"   :key="n._id" v-for="n in randArts.slice(0, 20)" rounded="lg" class="mr-8">
             <v-img width="200" :src="n.image" :aspect-ratio="1">
             </v-img>
           </v-card>
         </div>
         <div class="bot d-flex" style="transform: translateX(-100px);">
-          <v-card style="background: #06101c" elevation="10" :key="n.slug" v-for="n in randArts.slice(20)" rounded="lg" class="mr-8">
+          <v-card style="background: #06101c;min-width: 200px;height: 200px"   :key="n._id" v-for="n in randArts.slice(20)" rounded="lg" class="mr-8">
             <v-img width="200" :src="n.image" :aspect-ratio="1">
             </v-img>
           </v-card>
@@ -38,35 +38,36 @@
   </v-card>
 </template>
 
-<script>
-export default {
-  props: {
-    arts: {}
-  },
-  data() {
-    return {
-      randArts: []
-    }
-  },
-  created() {
-     this.randArts = this.getRangomArts()
-  },
-  methods: {
-    getRandomInt() {
-      return Math.floor(Math.random() * this.arts.length);
-    },
-    getRangomArts () {
-      let randArr = []
-      while (randArr.length<40) {
-        let art = this.arts[this.getRandomInt(this.arts.length)]
-        if (randArr.every(item=> item.slug !== art.slug)) {
-          randArr.push(art)
-        }
-      }
-      return randArr
+
+<script setup>
+import { ref } from 'vue'
+
+const { data: arts } = await useAsyncData(
+    'arts',
+    async () => await queryContent('/arts').find()
+);
+let randArts = []
+
+randArts = arts ? ref(getRangomArts()) : []
+
+function  getRandomInt() {
+  return Math.floor(Math.random() * arts.value.length);
+}
+
+function  getRangomArts () {
+  let randArr = []
+  while (randArr.length<40) {
+    let art = arts.value[getRandomInt(arts.value.length)]
+    if (randArr.every(item=> {
+      return item._id !== art._id
+    })) {
+
+      randArr.push(art)
     }
   }
+  return randArr
 }
+
 </script>
 
 <style lang="scss" scoped>

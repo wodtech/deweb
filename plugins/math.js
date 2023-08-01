@@ -1,12 +1,8 @@
-import Vue from 'vue';
- import Web3 from 'web3';
-import Axios from 'axios';
+// import Vue from 'vue';
+// import Web3 from 'web3';
+// import Axios from 'axios';
 
-export default () => {
-
-  // WATERMARK
-  // console.log("%c %c %c %c %c %c %c %c %cMade by SHUTTLE SOFTWARE 🚀","padding: 10px 5px; background: #FF2A75; border-radius: 9999px;","padding: 10px 1px; font-size: 2px;","padding: 10px 4px; background: #FF2A75; border-radius: 9999px;","padding: 10px 1px; font-size: 2px;","padding: 10px 3px; background: #FF2A75; border-radius: 9999px;","padding: 10px 1px; font-size: 2px;","padding: 10px 2px; background: #FF2A75; border-radius: 9999px;","padding: 10px 1px; font-size: 2px;","padding: 10px 20px; color: #fff; border-radius: 5px 18px 18px 5px; vertical-align: middle; background: radial-gradient(100% 185.49% at 100% 49.95%, #22033E 0%, #FF2A75 100%); margin-bottom: 20px; margin-top: 20px;");
-
+export default defineNuxtPlugin(() => {
   Number.prototype.map = function(in_min, in_max, out_min, out_max) {
     return ((this - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
@@ -36,12 +32,12 @@ export default () => {
 
     // get colors
     const startRed = parseInt(startColor.substr(0, 2), 16),
-      startGreen = parseInt(startColor.substr(2, 2), 16),
-      startBlue = parseInt(startColor.substr(4, 2), 16);
+        startGreen = parseInt(startColor.substr(2, 2), 16),
+        startBlue = parseInt(startColor.substr(4, 2), 16);
 
     const endRed = parseInt(endColor.substr(0, 2), 16),
-      endGreen = parseInt(endColor.substr(2, 2), 16),
-      endBlue = parseInt(endColor.substr(4, 2), 16);
+        endGreen = parseInt(endColor.substr(2, 2), 16),
+        endBlue = parseInt(endColor.substr(4, 2), 16);
 
     // calculate new color
     let diffRed = endRed - startRed;
@@ -64,31 +60,26 @@ export default () => {
     return '#' + diffRedStr + diffGreenStr + diffBlueStr;
   };
 
-  Vue.prototype.$toWei = function(val) {
-    return Web3.utils.toWei(val.toString(), 'ether')
-  }
-
-  Vue.prototype.$fromWei = function(val) {
-    return Web3.utils.fromWei(val.toString(), 'ether')
-  }
-
-  Vue.prototype.$gevent = function(name) {
-    if (process.browser) {
-      this.$gtag('event', name)
-    }
-  }
-
-  // Vue.prototype.$scrollTo = function(selector) {
-  //   const SmoothScroll = require('smooth-scroll');
-  //   const scroll = new SmoothScroll();
-  //   scroll.animateScroll(
-  //     document.querySelector(selector),
-  //   );
+  // Vue.prototype.$toWei = function(val) {
+  //   return Web3.utils.toWei(val.toString(), 'ether')
   // }
+  //
+  // Vue.prototype.$fromWei = function(val) {
+  //   return Web3.utils.fromWei(val.toString(), 'ether')
+  // }
+  //
+  // Vue.prototype.$gevent = function(name) {
+  //   if (process.browser) {
+  //     this.$gtag('event', name)
+  //   }
+  // }
+  //
+  //
+  // Vue.prototype.$gradient = Math.gradientColors;
+  //
+  // Vue.prototype.$api = Axios.create({
+  //   baseURL: process.env['SERVICE_API_URL'],
+  // })
 
-  Vue.prototype.$gradient = Math.gradientColors;
 
-  Vue.prototype.$api = Axios.create({
-    baseURL: process.env['SERVICE_API_URL'],
-  })
-}
+})

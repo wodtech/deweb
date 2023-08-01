@@ -1,26 +1,19 @@
 <template>
   <div class="updates py-16">
     <v-container>
-      <v-tabs
-        v-model="tab"
-        transition="fade-transition"
-        hide-slider
-        class="d-flex flex-sm-row flex-column flex-wrap v-tabs-el"
-        background-color="transparent"
-      >
-        <v-tab
-          v-for="item in blogTabsFiltered"
-          :key="item.slug"
-          active-class="tab-active"
+      <div class="d-flex align-center justify-around">
+        <v-btn
+            x-large
+            v-for="(item, i) in blogTabsFiltered"
+            @click="tab=i"
+            :class="`font-weight-light rounded-pill tab-btn mx-2 ${i === tab ? 'picked' : ''}`"
         >
-          <v-btn x-large class="font-weight-light rounded-pill tab-btn">
-            {{ item.title }}
-          </v-btn>
-        </v-tab>
-      </v-tabs>
+          {{ item.title }}
+        </v-btn>
+      </div>
       <div class="filter-wrapper pa-4">
         <v-btn
-          :class="['type-filter', filterType === item ? 'chosen' : '']"
+          :class="['type-filter mx-2', filterType === item ? 'chosen' : '']"
           v-for="item in chosenTab.post_types"
           :key="item"
           text
@@ -29,15 +22,16 @@
           {{ item }}
         </v-btn>
       </div>
-      <v-tabs-items v-model="tab" style="background-color: #F0F0F0 !important;">
-        <v-tab-item
-          v-for="(item) in blogTabsFiltered"
-          :key="item.slug"
+      <v-window v-model="tab" style="background-color: #F0F0F0 !important;">
+        <v-window-item
+          v-for="(item, i) in blogTabsFiltered"
+          :key="item._path"
           transition="fade-transition"
           reverse-transition="fade-transition"
+          :value="i"
         >
           <div v-if="blogsByTab.length"  style="min-height: 50vh" class="cards-wrapper pa-4">
-            <div v-for="(card, index) in blogsByTab" :key="card.slug" :class="gridCards(index)" >
+            <div v-for="(card, index) in blogsByTab" :key="card._path" :class="gridCards(index)" >
               <v-hover v-if="index === 0" v-slot="{ hover }">
                 <v-card
                   :elevation="hover ? 5 : 10"
@@ -47,7 +41,7 @@
                   height="100%"
                   width="100%"
                 >
-                  <v-img :src="card.image" class="rounded-xl main-img"></v-img>
+                  <v-img :src="card.image" cover class="rounded-xl main-img"></v-img>
                   <div class="d-flex flex-column flex-grow-1 align-start justify-space-between pa-4">
                     <div>
                       <div class="text-h4 ml-4">
@@ -57,32 +51,28 @@
                         {{ card.shot_description }}
                       </div>
                     </div>
-                    <v-btn  :to="{ name: 'blog-slug', params: {slug: card.slug} }" rounded text class="mt-3 read-btn" nuxt>
+                    <v-btn  :to="{ name: 'blog-slug', params: {slug: card._path} }" rounded text class="mt-3 read-btn" nuxt>
                       read now
                       <v-icon right>mdi-arrow-right</v-icon>
                     </v-btn>
                   </div>
                 </v-card>
               </v-hover>
-              <SmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card.slug" :image="card.image" />
+              <UpdatesSmallCard v-else :title="card.title" :short-description="card.shot_description" :slug="card._path" :image="card.image" />
             </div>
           </div>
           <div style="height: 50vh" v-else>
-            <EmptyData class="pt-5" />
+            <CommonEmptyData class="pt-5" />
           </div>
-        </v-tab-item>
-      </v-tabs-items>
+        </v-window-item>
+      </v-window>
     </v-container>
   </div>
 </template>
 
 <script>
-import EmptyData from "~/components/common/EmptyData";
 export default {
-  components: {
-    SmallCard: () => import('./SmallCard.vue'),
-    EmptyData
-  },
+
   props: {
     blog: {},
     blogTabs: {}
@@ -192,6 +182,8 @@ export default {
   }
 }
 .type-filter {
+  background: transparent;
+  height: 36px!important;
   &.chosen {
     color: #E94485;
   }
@@ -249,9 +241,12 @@ export default {
   }
 }
 .tab-btn {
-  background-color: rgba(220, 220, 220, 1) !important;
-  color: rgba(0, 0, 0, 0.2);
+
   margin: 5px 0;
+  &.picked {
+    background-color: rgba(233, 68, 133, 1);
+    color: white;
+  }
 }
 :v-deep(.v-tab) {
   &:hover::before {

@@ -13,7 +13,9 @@
         >
           <div class="top-text d-flex flex-column pb-4">
             <span class="text-h3 mb-4">{{ firstCard.titleTop }}</span>
-            <span class="first-top-desc body-1" > <nuxt-content :document="game"/></span>
+            <span class="first-top-desc body-1" >
+               <ContentRenderer :value="game" />
+            </span>
           </div>
           <div class="bottom-text d-flex flex-column justify-end">
             <span class="first-bottom-title text-h3 mb-4">{{
@@ -39,7 +41,7 @@
           class="d-flex flex-column flex-grow-1 pa-sm-14 pa-6"
         >
           <span class="text-h3 mb-4">{{ secondCard.titleTop }}</span>
-          <DefishLinks variant="gray" class="flex-grow-1" />
+          <CommonDefishLinks variant="gray" class="flex-grow-1" />
 
           <div class="d-flex flex-wrap w-100">
             <div
@@ -113,93 +115,77 @@
   </v-row>
 </template>
 
-<script>
-import DefishLinks from "~/components/common/DefishLinks";
-export default {
-  components: {
-    DefishLinks
-  },
-  props: {
-    game: {},
-    links: {},
-  },
-  methods: {
-    pinkClass(isPink) {
-      if (isPink) {
-        return 'color: rgba(233, 68, 133, 1)'
-      }
-      return 'color: black'
+<script setup>
+const props =  defineProps(['game', 'links'])
+const {game, links} = props
+
+
+const firstCard = {
+  titleTop: 'game description:',
+  descTop:
+      'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish, crafting, compete and filling your pocket with $WOD doubloons. Welcometo World of Defish, play-to earn gaming universe running on BSC.',
+  titleBottom: 'core features:',
+  descBottom: [
+    'Ranking System',
+    'Guilds System',
+    'Crafting Mechanism',
+    'Marketplace',
+    'NFT',
+    '$WOD Token',
+  ],
+}
+
+const secondCard = {
+  titleTop: 'follow us  there:',
+  btns: [
+    {
+      id: 1,
+      link: 'https://world-of-defish.gitbook.io/world-of-defish/',
+      text: 'Whitepaper',
     },
-  },
-  data() {
-    return {
-      social_links: {
-        twitter: 'https://twitter.com/defishgames',
-        discord: 'https://discord.com/invite/78EfmhUgNJ',
-        tg: 'https://t.me/worldofdefish',
-        linkedin: 'https://www.linkedin.com/company/world-of-defish/mycompany/',
-      },
-      firstCard: {
-        titleTop: 'game desription:',
-        descTop:
-          'Feel a real Storm of the Seven Seas, hunting for mystical NFT Fish, crafting, compete and filling your pocket with $WOD doubloons. Welcometo World of Defish, play-to earn gaming universe running on BSC.',
-        titleBottom: 'core features:',
-        descBottom: [
-          'Ranking System',
-          'Guilds System',
-          'Crafting Mechanism',
-          'Marketplace',
-          'NFT',
-          '$WOD Token',
-        ],
-      },
-      secondCard: {
-        titleTop: 'follow us  there:',
-        btns: [
-          {
-            id: 1,
-            link: 'https://world-of-defish.gitbook.io/world-of-defish/',
-            text: 'Whitepaper',
-          },
-          {
-            id: 2,
-            link: 'https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6',
-            text: 'Buy $WOD',
-          },
-          {
-            id: 3,
-            link: 'https://marketplace.worldofdefish.com/',
-            text: 'Marketplace',
-          },
-          {
-            id: 4,
-            link: 'https://worldofdefish.com/defishboxes/',
-            text: 'Defish Box',
-          },
-        ],
-      },
-      thirdCard: {
-        titleTop: 'information:',
-        list: [
-          {
-            title: 'Developer:',
-            desc: 'Defish Games',
-            isPink: false,
-          },
-          {
-            title: 'Languages:',
-            desc: 'English',
-            isPink: false,
-          },
-        ],
-      },
-    }
-  },
+    {
+      id: 2,
+      link: 'https://pancakeswap.finance/swap?outputCurrency=0x298632d8ea20d321fab1c9b473df5dbda249b2b6',
+      text: 'Buy $WOD',
+    },
+    {
+      id: 3,
+      link: 'https://marketplace.worldofdefish.com/',
+      text: 'Marketplace',
+    },
+    {
+      id: 4,
+      link: 'https://worldofdefish.com/defishboxes/',
+      text: 'Defish Box',
+    },
+  ],
+}
+
+const thirdCard = {
+  titleTop: 'information:',
+  list: [
+    {
+      title: 'Developer:',
+      desc: 'Defish Games',
+      isPink: false,
+    },
+    {
+      title: 'Languages:',
+      desc: 'English',
+      isPink: false,
+    },
+  ],
+}
+
+const pinkClass = (isPink) => {
+  if (isPink) {
+    return 'color: rgba(233, 68, 133, 1)'
+  }
+  return 'color: black'
 }
 </script>
 
 <style scoped lang="scss">
-
 .list-el {
   font-weight: 500;
   font-size: 18px;

@@ -74,7 +74,7 @@ html .v-application {
     }
   }
 
-  .container {
+  .v-container {
     max-width: 73%!important;
     &.wide {
       max-width: 85%!important;
@@ -85,5 +85,9 @@ html .v-application {
     @media (max-width: 1264px) {
       max-width: 1040px !important;
     }
+  }
+  .v-btn{
+    height: 50px;
+    box-shadow: none;
   }
 }
