@@ -5,7 +5,7 @@
     </v-main>
     <BurgerMenuSidebar
       :value="drawer"
-      @close="drawer=false"
+      @close="test"
     >
     </BurgerMenuSidebar>
     <CommonHeader :bg="headerBg" >
@@ -43,6 +43,11 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js',
+    }
+  },
+  methods: {
+    test() {
+      this.drawer=false
     }
   },
   computed: {
