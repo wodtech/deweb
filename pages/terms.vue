@@ -3,42 +3,42 @@
     <div class="header"></div>
     <div class="terms-content">
       <div class="title text-h4">TERMS OF USE</div>
-      <div class="text mt-4">
-        <nuxt-content :document="terms[0]"/>
+      <div class="terms-text mt-4">
+        <ContentRenderer :value="content" />
       </div>
     </div>
     <FollowUs/>
   </div>
 </template>
 
-<script>
-export default {
-  components: {
-    FollowUs: () => import('~/components/follow-us'),
-  },
-  async asyncData({ $content }) {
-    const terms = await $content('content').where({title: 'terms' }).fetch()
-    return { terms }
-  },
+<script setup>
 
-  head() {
-    return {
-      title: 'Terms',
-    }
-  },
-}
+const { data: content } = await useAsyncData(
+    'content',
+    () => queryContent('/content').where({title: 'terms' }).findOne()
+);
+console.log(content.value)
 </script>
-<style lang="scss" scoped>
-.header {
-  background-color: #090F1B;
-  height: 90px;
-  width: 100%;
+<style lang="scss">
+.terms{
+  .header {
+    background-color: #090F1B;
+    height: 90px;
+    width: 100%;
+  }
+  .terms-content {
+    margin: 56px 120px;
+    padding: 60px 80px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+  }
+  .terms-text{
+    h2 > a {
+      pointer-events: none;
+      color: #050D0D;
+    }
+  }
 }
-.terms-content {
-  margin: 56px 120px;
-  padding: 60px 80px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 30px;
-}
+
 </style>

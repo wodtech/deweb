@@ -18,32 +18,31 @@
             <v-col cols="12" sm="3" class="d-flex flex-column align-center pb-12 align-md-start pb-sm-0">
               <div class="text-h5">company</div>
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
-                <a
+                <router-link
                   v-for="n in links.terms"
-
                   :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
-                  :href="n.href"
-                >{{ n.title }}</a>
+                  :to="n.href"
+                >{{ n.title }}</router-link>
               </div>
             </v-col>
             <v-col cols="12" sm="3" class="d-flex flex-column align-center pb-12 align-md-start pb-sm-0">
               <div class="text-h5">about us</div>
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
-                <a
+                <router-link
                   v-for="n in links.first"
                   :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
-                  :href="n.href"
-                >{{ n.title }}</a>
+                  :to="n.href"
+                >{{ n.title }}</router-link>
               </div>
             </v-col>
             <v-col cols="12" sm="3" class="d-flex flex-column align-center pb-12 align-md-start pb-sm-0">
               <div class="text-h5">games</div>
               <div class="links mt-3 d-flex flex-column align-center align-sm-start">
-                <a
+                <router-link
                   v-for="n in links.second"
                   :class="['body-1 my-2 footer-link black--text font-head', {_disabled : n.disabled}]"
-                  :href="n.href"
-                >{{ n.title }}</a>
+                  :to="n.href"
+                >{{ n.title }}</router-link>
               </div>
             </v-col>
             <v-col cols="12" sm="3" class="d-flex flex-column align-center pb-12 align-md-start pb-sm-0">
@@ -51,7 +50,7 @@
               <DefishLinks class="mt-4" />
               <v-spacer></v-spacer>
               <v-btn href="mailto:hello@worldofdefish.com" target="_blank" class="mt-6 mt-md-0" elevation="0" rounded x-large>
-                <v-icon left>mdi-email</v-icon>
+                <v-icon class="mr-1" left>mdi-email</v-icon>
                 send email
               </v-btn>
             </v-col>

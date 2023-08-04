@@ -1,8 +1,8 @@
 <template>
-  <div class="single-blog ">
+  <div class="single-blog">
     <SingleBlogMain :blog="blog" class="text-white"/>
     <v-container class="d-flex flex-column py-16">
-      <ContentRenderer :value="blog" />
+      <ContentRenderer class="single-blog--content" :value="blog" />
       <template v-if="nextBlogs.length">
         <div class="d-flex align-center py-6">
           <div class="text-h3">
@@ -70,31 +70,38 @@ const parseDate = (date) => {
 </script>
 
 <style lang="scss" >
-  .nuxt-content {
-    h1 {
-      font-family: 'Bebas';
-      text-transform: uppercase;
-      color: #E94485;
-      font-style: normal;
-      font-size: 48px;
-      line-height: 50px !important;
-      margin-bottom: 20px;
-    }
-    p {
-      font-family: 'Relaway';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 28px;
-    }
-    img {
-      width: 540px;
-      height: 340px;
-      object-fit: cover;
-      border-radius: 30px;
-      @media screen and (max-width: 600px){
-        width: 100%;
-        height: unset;
+  .single-blog {
+    min-height:650px;
+    &--content {
+      h1 {
+        font-family: 'Bebas';
+        text-transform: uppercase;
+        color: #E94485;
+        font-style: normal;
+        font-size: 48px;
+        line-height: 50px !important;
+        margin-bottom: 20px;
+      }
+      h2 > a {
+        pointer-events: none;
+        color: #050D0D;
+      }
+      p {
+        font-family: 'Relaway';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+      }
+      img {
+        width: 540px;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 30px;
+        @media screen and (max-width: 600px){
+          width: 100%;
+          height: unset;
+        }
       }
     }
   }

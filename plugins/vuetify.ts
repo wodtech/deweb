@@ -1,7 +1,6 @@
 import {createVuetify, ThemeDefinition} from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { defineNuxtConfig } from 'nuxt'
 import '@mdi/font/css/materialdesignicons.css'
 import colors from 'vuetify/lib/util/colors'
 import {defineNuxtPlugin} from "#app/nuxt";

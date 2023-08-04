@@ -5,10 +5,8 @@
 </template>
 
 <script setup>
-import ArtsStripe from '~/components/arts-stripe';
-import {useAsyncData} from "nuxt/app";
 
-  const title = 'Web3 Gaming Studio'
+const title = 'Web3 Gaming Studio'
 
 
 

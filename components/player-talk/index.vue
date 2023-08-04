@@ -19,7 +19,9 @@
                                 size="80"
                                 class="d-flex align-center justify-center mb-4"
                             >
-                              <img
+                              <v-img
+                                  cover
+                                  width="100%"
                                   draggable="false"
                                   v-if="el.img"
                                   :src="el.img"
