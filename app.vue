@@ -4,10 +4,15 @@
   </NuxtLayout>
 </template>
 
-<script setup>
+<script setup lang="ts">
+
+
 
 const title = 'Web3 Gaming Studio'
 
+const store = useExchangeStore()
+const web3Store = useWeb3Store()
+const modalsStore = useModalsStore()
 
 
 function scrollDown() {

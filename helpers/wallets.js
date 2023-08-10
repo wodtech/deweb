@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import WalletConnectProvider from '@walletconnect/web3-provider'
+import EthereumProvider from '@walletconnect/ethereum-provider'
 
 const validNetworkOrFail = async (web3) => {
   const network_id = await web3.eth.net.getId()
@@ -13,33 +13,43 @@ const validNetworkOrFail = async (web3) => {
 
 export const connectWc = async () => {
   //  Create WalletConnect Provider
-  var wc_provider = new WalletConnectProvider({
-    rpc: {
-      [Number(process.env['VUE_APP_NETWORK_ID'])]: process.env['CHAIN_RPC'],
-    },
-    network: 'binance',
-    chainId: Number(process.env['VUE_APP_NETWORK_ID']),
+  const _provider = await EthereumProvider.init({
+    showQrModal: true,
+    projectId: process.env['VUE_APP_WC_PROJECT_ID'],
+    chains: [
+        1
+    ]
   })
 
-  var web3 = new Web3(wc_provider)
+  // var wc_provider = new WalletConnectProvider({
+  //   rpc: {
+  //     [Number(process.env['VUE_APP_NETWORK_ID'])]: process.env['CHAIN_RPC'],
+  //   },
+  //   network: 'binance',
+  //   chainId: Number(process.env['VUE_APP_NETWORK_ID']),
+  // })
+  await _provider.enable();
+
+  var web3 = new Web3(_provider)
+
+
 
   //  Enable session (triggers QR Code modal)
-  await wc_provider.enable()
 
   await validNetworkOrFail(web3)
 
   // Subscribe to accounts change
-  wc_provider.on('accountsChanged', () => {
+  _provider.on('accountsChanged', () => {
     location.reload()
   })
 
   // Subscribe to chainId change
-  wc_provider.on('chainChanged', () => {
+  _provider.on('chainChanged', () => {
     location.reload()
   })
 
   // Subscribe to session disconnection
-  wc_provider.on('disconnect', () => {
+  _provider.on('disconnect', () => {
     location.reload()
   })
 

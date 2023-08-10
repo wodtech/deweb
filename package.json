@@ -23,9 +23,13 @@
     "@nuxt/webpack-builder": "^3.6.2",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@pinia/nuxt": "^0.4.11",
+    "@walletconnect/ethereum-provider": "^2.9.2",
+    "@walletconnect/web3-provider": "^1.8.0",
     "animejs": "^3.2.1",
     "install": "^0.13.0",
     "npm": "^9.8.0",
+    "pinia": "^2.1.6",
     "vite-plugin-vuetify": "^1.0.2",
     "vue-flickity": "^1.2.1",
     "vue-router": "^4.2.4",
@@ -34,5 +38,8 @@
     "vuex": "^4.1.0",
     "web3": "^1.7.0",
     "web3-token": "^1.0.2"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
