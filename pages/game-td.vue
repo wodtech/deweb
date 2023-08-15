@@ -1,6 +1,6 @@
 <template>
   <div class="td-page">
-    <GameMainFrame  :game="game[0]">
+    <GameMainFrame active-link="https://play.google.com/store/apps/details?id=com.DefishStudio.TowerDefish" :game="game[0]">
       <template #additional-links>
         <v-btn class="app-icon mr-4"  icon>
           <v-icon color="#D2C7C7" size="27px">mdi-apple</v-icon>
@@ -49,27 +49,27 @@ export default {
       cards: [
         {
           id: 1,
-          img: require('~/assets/images/td-screenshots/1.png'),
+          img: require('~/assets/images/td-screenshots/1.jpg'),
         },
         {
           id: 2,
-          img: require('~/assets/images/td-screenshots/2.png'),
+          img: require('~/assets/images/td-screenshots/2.jpg'),
         },
         {
           id: 3,
-          img: require('~/assets/images/td-screenshots/3.png'),
+          img: require('~/assets/images/td-screenshots/3.jpg'),
         },
         {
           id: 4,
-          img: require('~/assets/images/td-screenshots/4.png'),
+          img: require('~/assets/images/td-screenshots/4.jpg'),
         },
         {
           id: 5,
-          img: require('~/assets/images/td-screenshots/5.png'),
+          img: require('~/assets/images/td-screenshots/5.jpg'),
         },
         {
           id: 6,
-          img: require('~/assets/images/td-screenshots/6.png'),
+          img: require('~/assets/images/td-screenshots/6.jpg'),
         }
       ],
     }

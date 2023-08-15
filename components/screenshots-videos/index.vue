@@ -20,7 +20,7 @@
               <v-row class="slider-wrapper-inner">
                 <v-col md="4" sm="6" cols="12" v-for="el in chunk" :key="el.id">
                   <v-card elevation="10" class="d-flex flex-column" rounded="xl">
-                    <v-img :src="el.img" :aspect-ratio="1.5"></v-img>
+                    <v-img :src="el.img" :aspect-ratio="1.95"></v-img>
                   </v-card>
                 </v-col>
               </v-row>

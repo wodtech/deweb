@@ -23,7 +23,7 @@
           <div style="z-index: 2">
             <img style="width: 197px;" :src="firstImg" alt="">
           </div>
-          <v-btn :href="btnTextFirst.link" x-large class="follow-btn font-weight-light rounded-pill">
+          <v-btn target="_blank" :href="btnTextFirst.link" x-large class="follow-btn font-weight-light rounded-pill">
             <span>{{btnTextFirst.text}}</span>
           </v-btn>
         </v-col>
@@ -31,7 +31,7 @@
           <div>
             <img style="width: 215px;" :src="secondImg" alt="">
           </div>
-          <v-btn :href="btnTextSecond.link" disabled x-large class="follow-btn font-weight-light rounded-pill">
+          <v-btn target="_blank" :href="btnTextSecond.link" x-large class="follow-btn font-weight-light rounded-pill">
             <span>{{btnTextSecond.text}}</span>
           </v-btn>
         </v-col>
@@ -73,8 +73,8 @@ export default {
         link: 'https://game.worldofdefish.com'
       },
       btnTextSecond: {
-        text: 'coming soon',
-        link: '#'
+        text: 'play now',
+        link: 'https://play.google.com/store/apps/details?id=com.DefishStudio.TowerDefish'
       }
     }
   },
