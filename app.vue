@@ -14,7 +14,6 @@ const store = useExchangeStore()
 const web3Store = useWeb3Store()
 const modalsStore = useModalsStore()
 
-
 function scrollDown() {
   const gamesID = document.getElementById('gamesID')
   const y = gamesID.getBoundingClientRect().top + window.scrollY;

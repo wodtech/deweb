@@ -64,7 +64,7 @@ export const useWeb3Store = defineStore('web3', {
     },
     async getLootboxItems(card) {
       const lootbox_items = await Axios.get(
-          process.env['SERVICE_API_URL'] +
+          this.config.public['SERVICE_API_URL'] +
           '/lootboxes/' +
           card._id +
           '/possible-drops'
@@ -87,19 +87,20 @@ export const useWeb3Store = defineStore('web3', {
 
       const jsons = await Promise.all(
           contracts.map((n) =>
-              Axios.get(process.env['CONTRACTS_URL'] + n.url).then((res) => res.data)
+              Axios.get(this.config.public.CONTRACTS_URL + n.url).then((res) => res.data)
           )
       )
+
 
       for (const i in jsons) {
         const json = jsons[i]
 
-        const network = json.networks[process.env['VUE_APP_NETWORK_ID']]
+        const network = json.networks[this.config.public['VUE_APP_NETWORK_ID']]
+        console.log(network)
         this.setContract({
           name: contracts[i].name,
           inst: new $web3.eth.Contract(json.abi, network.address),
         })
-
         if (contracts[i].name === 'WodCoin') {
           this.setContract({
             name: 'BUSDCoin',
@@ -115,7 +116,7 @@ export const useWeb3Store = defineStore('web3', {
     async init() {
       // Maybe to use
       // ethereum.isConnected(): boolean;
-      var web3 = new Web3(process.env['CHAIN_RPC'])
+      var web3 = new Web3(this.config.public['CHAIN_RPC'])
       this.setInstance(web3)
 
       await this.loadContracts()
@@ -142,7 +143,7 @@ export const useWeb3Store = defineStore('web3', {
 
         console.info('Network ID', network_id)
 
-        if (network_id != Number(process.env['CHAIN_ID'])) {
+        if (network_id != Number(this.configconfig.public['CHAIN_ID'])) {
           throw new Error(`Please change network to BSC Testnet`)
         }
         this.setAcc((await web3.eth.getAccounts())[0])
@@ -166,6 +167,8 @@ export const useWeb3Store = defineStore('web3', {
     networkId: (state) => state.network_id,
     userBalance: (state) => state.balance,
     isConnected: (state) => state.connected,
+    config: (state) => useRuntimeConfig(),
+
 
   }
 })

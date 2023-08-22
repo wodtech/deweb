@@ -29,7 +29,7 @@ export const useExchangeStore = defineStore('exchange', {
         this.inited()
       }
       if (this.isInited) {
-        async function loop() {
+          const loop = async () => {
           // const { data } = await Axios.get(
           //   'https://api.pancakeswap.info/api/v2/tokens/0x298632d8ea20d321fab1c9b473df5dbda249b2b6'
           // )

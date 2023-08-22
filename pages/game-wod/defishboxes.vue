@@ -57,7 +57,7 @@
                           style="z-index: 100"
                         >
                           <div class="d-flex align-center justify-center">
-                            <RarityIcon
+                            <DefishboxesRarityIcon
                               :color="rarityColor(name)"
                               class="mr-1"
                             />
@@ -70,7 +70,7 @@
                         </v-btn>
                       </template>
                       <div class="tooltip-content d-flex align-center">
-                        <CrystalIcon
+                        <DefishboxesCrystalIcon
                           :rarity="rarities[name].name"
                           :size="2"
                           class="mr-1"
@@ -181,116 +181,110 @@
         </v-col>
       </v-row>
     </v-container>
-    <LootboxPopup
+    <DefishboxesLootBoxIcon
       :showed="lootboxPopup"
       :single_card="single_card"
       :card_items="lootbox_items"
     />
-    <LoginPopup :showed_login="loginPopup" />
+    <DefishboxesLoginPopup :showed_login="loginPopup" />
   </div>
 </template>
 
-<script>
+<script setup>
 import Axios from 'axios'
-import { mapGetters } from 'vuex'
-import RarityIcon from '@/components/defishboxes/RarityIcon.vue'
-import CrystalIcon from '@/components/defishboxes/CrystalIcon.vue'
-import FollowScreen from '@/components/defishboxes/FollowScreen.vue'
-import LootboxPopup from '~/components/defishboxes/LootboxPopup.vue'
-import LoginPopup from '~/components/defishboxes/LoginPopup.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-export default {
-  data() {
-    return {
-      rarities: {
-        common: {
-          name: 'Common',
-          color: '#9298A5',
-        },
-        uncommon: {
-          name: 'Uncommon',
-          color: '#839FB7',
-        },
-        rare: {
-          name: 'Rare',
-          color: '#8AE5FD',
-        },
-        epic: {
-          name: 'Epic',
-          color: '#BB5EEA',
-        },
-        legendary: {
-          name: 'Legendary',
-          color: '#F29136',
-        },
-        artifact: {
-          name: 'Artifact',
-          color: '#EE3D3C',
-        },
-      },
-      lootboxes: [],
-      single_card: {},
-    }
+const rarities = {
+  common: {
+    name: 'Common',
+        color: '#9298A5',
   },
-  mounted() {
-    this.initContract()
-    this.getLootboxes()
-    this.$store.dispatch('exchange/init')
+  uncommon: {
+    name: 'Uncommon',
+        color: '#839FB7',
   },
-  destroyed() {
-    this.$store.dispatch('exchange/stopLoop')
+  rare: {
+    name: 'Rare',
+        color: '#8AE5FD',
   },
-  methods: {
-    async openLogin(card) {
-      card.loading = true
-      await this.$store.dispatch('web3/getLootboxItems', card).then(() => {
-        this.single_card = card
-      })
-      if (!this.isConnected) {
-        await this.$store.commit('web3/setLoginPopup', true)
-      } else {
-        await this.$store.commit('web3/setLootboxPopup', true)
-      }
-      card.loading = false
-    },
-
-    rarityColor(name) {
-      return this.rarities[name].color
-    },
-    countPercent(item_left, item_all) {
-      return (100 * (item_all - item_left)) / item_all
-    },
-    async initContract() {
-      await this.$store.dispatch('web3/init').finally(() => {})
-    },
-    async getLootboxes() {
-      const lootboxes = await Axios.get(
-        process.env['SERVICE_API_URL'] + '/lootboxes'
-      )
-      this.lootboxes = lootboxes.data.map((n) => {
-        n.loading = false
-        return n
-      })
-    },
+  epic: {
+    name: 'Epic',
+        color: '#BB5EEA',
   },
-  components: {
-    RarityIcon,
-    FollowScreen,
-    LootboxPopup,
-    CrystalIcon,
-    LoginPopup,
+  legendary: {
+    name: 'Legendary',
+        color: '#F29136',
   },
-  computed: {
-    ...mapGetters({
-      rateInited: 'exchange/inited',
-      rate: 'exchange/rate',
-      isConnected: 'web3/isConnected',
-      lootboxPopup: 'web3/getLootboxPopup',
-      loginPopup: 'web3/getLoginPopup',
-      lootbox_items: 'web3/lootboxItems',
-    }),
+  artifact: {
+    name: 'Artifact',
+        color: '#EE3D3C',
   },
 }
+let lootboxes = ref([])
+let single_card = {}
+
+//init stores
+const exchangeStore = useExchangeStore()
+const web3Store = useWeb3Store()
+
+const isConnected = computed(() => web3Store.isConnected)
+const rateInited = computed(() => exchangeStore.isInited)
+const rate = computed(() => exchangeStore.exchange_rate)
+const lootboxPopup = computed(() => web3Store.lootbox_popup)
+const loginPopup = computed(() => web3Store.login_popup)
+const lootbox_items = computed(() => web3Store.lootbox_items)
+
+const config = useRuntimeConfig();
+
+onMounted(() => {
+  initContract()
+  getLootboxes()
+
+  exchangeStore.init()
+})
+
+onUnmounted(()=>{
+  exchangeStore.stopLoop()
+})
+
+const initContract = async() => {
+  await web3Store.init()
+}
+
+const countPercent = (item_left, item_all) => {
+  return (100 * (item_all - item_left)) / item_all
+
+}
+const rarityColor = (name) => {
+  return rarities[name].color
+}
+
+const getLootboxes = async() => {
+
+  const lootboxesArr = await Axios.get(
+      config.public.SERVICE_API_URL + '/lootboxes'
+  )
+  lootboxes = lootboxesArr.data.map((n) => {
+    n.loading = false
+    return n
+  })
+}
+
+const openLogin = async(card) => {
+  card.loading = true
+  await web3Store.getLootboxItems(card).then(() => {
+    single_card = card
+  })
+  if (!isConnected) {
+    await web3Store.setLoginPopup(true)
+  } else {
+    await web3Store.setLootboxPopup(true)
+  }
+  card.loading = false
+}
+
+
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 export const env = {
   BASE_URL: 'http://defish.games',
-  VUE_APP_NETWORK_ID: 56,
+  VUE_APP_NETWORK_ID: 97, //56
   SERVICE_API_URL: 'https://test-api.worldofdefish.com',
   CHAIN_ID: 0x61,
   CHAIN_RPC: 'https://data-seed-prebsc-1-s1.binance.org:8545/',

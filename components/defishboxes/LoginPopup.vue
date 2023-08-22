@@ -31,54 +31,41 @@
         </v-btn>
         <div class="title mb-2 white--text">Choose your wallet</div>
         <div class="wallets d-flex flex-column align-center">
-          <MetamaskLogin
+          <DefishboxesMetamaskLogin
             @click="loginFlow('metamask')"
             :loading="loading"
             class="mb-3"
           />
-          <WcLogin @click="loginFlow('walletconnect')" :loading="loading" />
+          <DefishboxesWcLogin @click="loginFlow('walletconnect')" :loading="loading" />
         </div>
       </v-card>
     </v-dialog>
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
-import MetamaskLogin from '~/components/defishboxes/MetamaskLogin.vue'
-import WcLogin from '~/components/defishboxes/WcLogin.vue'
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 
-export default {
-  data() {
-    return {
-      loading: false,
-    }
-  },
-  components: {
-    MetamaskLogin,
-    WcLogin,
-  },
-  mounted() {},
-  methods: {
-    async loginFlow(wallet) {
-      await this.$store.dispatch('web3/load', wallet).then(async () => {
-        await this.$store.commit('web3/setLoginPopup', false)
-        await this.$store.commit('web3/setLootboxPopup', true)
-      })
-    },
-    async close() {
-      await this.$store.commit('web3/setLoginPopup', false)
-    },
-  },
-  computed: {
-    ...mapGetters({
-      rate: 'exchange/rate',
-    }),
-  },
-  props: {
-    showed_login: {},
-  },
+let loading = ref(false)
+const web3Store = useWeb3Store()
+const exchangeStore = useExchangeStore()
+
+const rate = computed(() => exchangeStore.exchange_rate)
+const props = defineProps(['showed_login'])
+const {showed_login} = props
+
+const loginFlow = async(wallet) => {
+  await web3Store.load(wallet).then().then( () => {
+     web3Store.setLoginPopup(false)
+     web3Store.setLootboxPopup(true)
+  })
 }
+
+const close = async() => {
+  web3Store.setLoginPopup(false)
+}
+
+
 </script>
 
 <style lang="scss" scoped>
