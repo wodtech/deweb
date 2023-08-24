@@ -21,38 +21,46 @@
 </template>
 
 <script>
+import common from '~/assets/images/icons/icon-1.png'
+import uncommon from '~/assets/images/icons/icon-2.png'
+import rare from '~/assets/images/icons/icon-3.png'
+import epic from '~/assets/images/icons/icon-4.png'
+import legendary from '~/assets/images/icons/icon-5.png'
+import artifact from '~/assets/images/icons/icon-6.png'
+
+
 export default {
   data() {
     return {
       rarities: {
         Common: {
           name: 'Common',
-          image: require('~/assets/images/icons/icon-1.png'),
+          image: common,
           text_color: 'secondary--text',
         },
         Uncommon: {
           name: 'Uncommon',
-          image: require('~/assets/images/icons/icon-2.png'),
+          image: uncommon,
           text_color: 'white--text',
         },
         Rare: {
           name: 'Rare',
-          image: require('~/assets/images/icons/icon-3.png'),
+          image: rare,
           text_color: 'blue--text',
         },
         Epic: {
           name: 'Epic',
-          image: require('~/assets/images/icons/icon-4.png'),
+          image: epic,
           text_color: 'purple--text',
         },
         Legendary: {
           name: 'Legendary',
-          image: require('~/assets/images/icons/icon-5.png'),
+          image: legendary,
           text_color: 'orange--text',
         },
         Artifact: {
           name: 'Artifact',
-          image: require('~/assets/images/icons/icon-6.png'),
+          image: artifact,
           text_color: 'red--text',
         },
       },

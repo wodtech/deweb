@@ -2,20 +2,22 @@ import Web3 from 'web3'
 import EthereumProvider from '@walletconnect/ethereum-provider'
 
 const validNetworkOrFail = async (web3) => {
+  const config = useRuntimeConfig()
   const network_id = await web3.eth.net.getId()
 
   console.info('Network ID', network_id)
-  console.log(process.env['CHAIN_RPC'])
-  if (network_id != process.env['VUE_APP_NETWORK_ID']) {
-    throw new Error('Please change network to ' + process.env['CHAIN_NAME'])
+  console.log(config.public['CHAIN_RPC'])
+  if (network_id != config.public['VUE_APP_NETWORK_ID']) {
+    throw new Error('Please change network to ' + config.public['CHAIN_NAME'])
   }
 }
 
 export const connectWc = async () => {
+  const config = useRuntimeConfig()
   //  Create WalletConnect Provider
   const _provider = await EthereumProvider.init({
     showQrModal: true,
-    projectId: process.env['VUE_APP_WC_PROJECT_ID'],
+    projectId: config.public['VUE_APP_WC_PROJECT_ID'],
     chains: [
         1
     ]
@@ -57,6 +59,7 @@ export const connectWc = async () => {
 }
 
 export const connectMetamask = async () => {
+  const config = useRuntimeConfig()
   if (typeof ethereum === 'undefined') {
     throw new Error('No metamask detected')
   }
@@ -70,7 +73,7 @@ export const connectMetamask = async () => {
       params: [
         {
           chainId:
-            '0x' + Number(process.env['VUE_APP_NETWORK_ID']).toString(16),
+            '0x' + Number(config.public['VUE_APP_NETWORK_ID']).toString(16),
         },
       ],
     })
@@ -82,24 +85,24 @@ export const connectMetamask = async () => {
         params: [
           {
             chainId:
-              '0x' + Number(process.env['VUE_APP_NETWORK_ID']).toString(16),
-            chainName: process.env['CHAIN_NAME'],
+              '0x' + Number(config.public['VUE_APP_NETWORK_ID']).toString(16),
+            chainName: config.public['CHAIN_NAME'],
             nativeCurrency: {
-              name: process.env['CHAIN_CURR_NAME'],
-              symbol: process.env['CHAIN_CURR_SYMBOL'],
-              decimals: Number(process.env['CHAIN_CURR_DECIMALS']),
+              name: config.public['CHAIN_CURR_NAME'],
+              symbol: config.public['CHAIN_CURR_SYMBOL'],
+              decimals: Number(config.public['CHAIN_CURR_DECIMALS']),
             },
-            rpcUrls: [process.env['CHAIN_RPC']],
+            rpcUrls: [config.public['CHAIN_RPC']],
           },
         ],
       })
     } catch (error) {
-      if (/http:\/\//.test(process.env['CHAIN_RPC'])) {
+      if (/http:\/\//.test(config.public['CHAIN_RPC'])) {
         console.error(
           'Local blockchain is not working, add or change yourself.'
         )
       } else {
-        throw new Error('Please change network to ' + process.env['CHAIN_NAME'])
+        throw new Error('Please change network to ' + config.public['CHAIN_NAME'])
       }
     }
   }

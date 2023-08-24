@@ -7,9 +7,9 @@ import { connectMetamask, connectWc } from '~/helpers/wallets'
 export const useWeb3Store = defineStore('web3', {
   state: () => ({
     network_id: 0,
-    loaded: false,
+    is_loaded: false,
     acc: null,
-    connected: false,
+    is_connected: false,
     lootbox_popup: false,
     login_popup: false,
     lootbox_items: {},
@@ -44,15 +44,15 @@ export const useWeb3Store = defineStore('web3', {
       this.lootbox_items = items
     },
     loaded() {
-      this.loaded = true
+      this.is_loaded = true
     },
 
     connected() {
-      this.connected = true
+      this.is_connected = true
     },
 
     set() {
-      this.connected = true
+      this.is_connected = true
     },
 
     setContract({name, inst}) {
@@ -87,7 +87,7 @@ export const useWeb3Store = defineStore('web3', {
 
       const jsons = await Promise.all(
           contracts.map((n) =>
-              Axios.get(this.config.public.CONTRACTS_URL + n.url).then((res) => res.data)
+              Axios.get(this.config.public['CONTRACTS_URL'] + n.url).then((res) => res.data)
           )
       )
 
@@ -95,7 +95,7 @@ export const useWeb3Store = defineStore('web3', {
       for (const i in jsons) {
         const json = jsons[i]
 
-        const network = json.networks[this.config.public['VUE_APP_NETWORK_ID']]
+        const network = json.networks[this.config.public['VUE_APP_NETWORK_ID']!]
         console.log(network)
         this.setContract({
           name: contracts[i].name,
@@ -106,7 +106,7 @@ export const useWeb3Store = defineStore('web3', {
             name: 'BUSDCoin',
             inst: new $web3.eth.Contract(
                 json.abi,
-                process.env['CONTRACT_BUSD_ADDR']
+                this.config.public['CONTRACT_BUSD_ADDR']
             ),
           })
         }
@@ -116,7 +116,7 @@ export const useWeb3Store = defineStore('web3', {
     async init() {
       // Maybe to use
       // ethereum.isConnected(): boolean;
-      var web3 = new Web3(this.config.public['CHAIN_RPC'])
+      var web3 = new Web3(this.config.public['CHAIN_RPC']!)
       this.setInstance(web3)
 
       await this.loadContracts()
@@ -143,7 +143,7 @@ export const useWeb3Store = defineStore('web3', {
 
         console.info('Network ID', network_id)
 
-        if (network_id != Number(this.configconfig.public['CHAIN_ID'])) {
+        if (network_id != Number(this.config.public['CHAIN_ID'])) {
           throw new Error(`Please change network to BSC Testnet`)
         }
         this.setAcc((await web3.eth.getAccounts())[0])
@@ -160,13 +160,13 @@ export const useWeb3Store = defineStore('web3', {
     }
   },
   getters: {
-    isLoaded: (state) => state.loaded,
+    isLoaded: (state) => state.is_loaded,
     inst: (state) => state.instance,
     getCard: (state) => state.current_card,
     lootboxItems: (state) => state.lootbox_items,
     networkId: (state) => state.network_id,
     userBalance: (state) => state.balance,
-    isConnected: (state) => state.connected,
+    isConnected: (state) => state.is_connected,
     config: (state) => useRuntimeConfig(),
 
 

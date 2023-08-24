@@ -145,18 +145,18 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
         public: {
-            siteUrl: env.BASE_URL,
-            VUE_APP_NETWORK_ID: env.VUE_APP_NETWORK_ID,
-            SERVICE_API_URL: env.SERVICE_API_URL,
-            CHAIN_ID: env.CHAIN_ID,
-            CHAIN_RPC: env.CHAIN_RPC,
-            CHAIN_NAME: env.CHAIN_NAME,
-            CHAIN_CURR_NAME: env.CHAIN_CURR_NAME,
-            CHAIN_CURR_SYMBOL: env.CHAIN_CURR_SYMBOL,
-            CHAIN_CURR_DECIMALS: env.CHAIN_CURR_DECIMALS,
-            CONTRACT_BUSD_ADDR: env.CONTRACT_BUSD_ADDR,
-            CONTRACT_USDT_ADDR: env.CONTRACT_USDT_ADDR,
-            CONTRACTS_URL: env.CONTRACTS_URL
+            BASE_URL: process.env.BASE_URL,
+            VUE_APP_NETWORK_ID: process.env.VUE_APP_NETWORK_ID,
+            SERVICE_API_URL: process.env.SERVICE_API_URL,
+            CHAIN_ID: process.env.CHAIN_ID,
+            CHAIN_RPC: process.env.CHAIN_RPC,
+            CHAIN_NAME: process.env.CHAIN_NAME,
+            CHAIN_CURR_NAME: process.env.CHAIN_CURR_NAME,
+            CHAIN_CURR_SYMBOL: process.env.CHAIN_CURR_SYMBOL,
+            CHAIN_CURR_DECIMALS: process.env.CHAIN_CURR_DECIMALS,
+            CONTRACT_BUSD_ADDR: process.env.CONTRACT_BUSD_ADDR,
+            CONTRACT_USDT_ADDR: process.env.CONTRACT_USDT_ADDR,
+            CONTRACTS_URL: process.env.CONTRACTS_URL
         }
     },
   }

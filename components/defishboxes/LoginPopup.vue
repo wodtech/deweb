@@ -3,8 +3,7 @@
     <v-dialog
       dark
       class="d-flex align-center justify-center showed lootbox-popup"
-      @input="close"
-      :value="showed_login"
+      :model-value="showed_login"
       max-width="400px"
     >
       <v-card
@@ -27,9 +26,9 @@
           color="#67E8D3"
           style="position: absolute; right: 15px; top: 15px"
         >
-          <v-icon color="#67E8D3">mdi-window-close</v-icon>
+          <v-icon color="black">mdi-window-close</v-icon>
         </v-btn>
-        <div class="title mb-2 white--text">Choose your wallet</div>
+        <div class="title mb-2 text-white">Choose your wallet</div>
         <div class="wallets d-flex flex-column align-center">
           <DefishboxesMetamaskLogin
             @click="loginFlow('metamask')"
@@ -44,15 +43,17 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
+import { ref, onMounted, onUnmounted, toRefs } from 'vue'
+const value = ref(false)
 let loading = ref(false)
 const web3Store = useWeb3Store()
 const exchangeStore = useExchangeStore()
 
 const rate = computed(() => exchangeStore.exchange_rate)
 const props = defineProps(['showed_login'])
-const {showed_login} = props
+
+const {showed_login} = toRefs(props)
+
 
 const loginFlow = async(wallet) => {
   await web3Store.load(wallet).then().then( () => {

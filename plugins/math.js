@@ -1,5 +1,5 @@
 // import Vue from 'vue';
-// import Web3 from 'web3';
+import Web3 from 'web3';
 // import Axios from 'axios';
 
 export default defineNuxtPlugin(() => {
@@ -60,13 +60,13 @@ export default defineNuxtPlugin(() => {
     return '#' + diffRedStr + diffGreenStr + diffBlueStr;
   };
 
-  // Vue.prototype.$toWei = function(val) {
-  //   return Web3.utils.toWei(val.toString(), 'ether')
-  // }
-  //
-  // Vue.prototype.$fromWei = function(val) {
-  //   return Web3.utils.fromWei(val.toString(), 'ether')
-  // }
+  Math.$toWei = function(val) {
+    return Web3.utils.toWei(val.toString(), 'ether')
+  }
+
+  Math.$fromWei = function(val) {
+    return Web3.utils.fromWei(val.toString(), 'ether')
+  }
   //
   // Vue.prototype.$gevent = function(name) {
   //   if (process.browser) {

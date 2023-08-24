@@ -5,10 +5,10 @@
       style="padding: 150px 0"
     >
       <span
-        class="mb-3 text-h2 text-uppercase font-weight-bold white--text"
+        class="mb-3 text-h2 text-uppercase font-weight-bold text-white"
         >DEFISH BOX IS HERE</span
       >
-      <p class="body-1 text-center mt-4 white--text" style="max-width: 600px">
+      <p class="body-1 text-center mt-4 text-white" style="max-width: 600px">
         Open the Fish Boxes to get equipment for fishing. Each box contains
         <span class="font-weight-bold">4 items</span> of equipment of
         <span class="font-weight-bold">random quality</span>.
@@ -30,8 +30,8 @@
               @click="openLogin(card, i)"
               class="lootbox-image"
               height="270"
-              max-width="336"
-              :src="`${card.pic_url}`"
+              width="100%"
+              :src="card.pic_url"
             >
             </v-img>
             <v-card-title
@@ -45,50 +45,50 @@
               <v-row class="d-flex flex-column">
                 <div class="d-flex flex-wrap rarity-chips py-3">
                   <div v-for="(chance, name) in card.chances" :key="name">
-                    <v-tooltip top rounded="xl" color="#253f48">
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-btn
-                          height="35"
-                          v-on="on"
-                          v-bind="attrs"
-                          x-small
-                          rounded
-                          color="transparent"
-                          style="z-index: 100"
-                        >
-                          <div class="d-flex align-center justify-center">
-                            <DefishboxesRarityIcon
-                              :color="rarityColor(name)"
-                              class="mr-1"
-                            />
-                            <span
-                              :style="{ color: rarityColor(name) }"
-                              style="transform: translateY(2px)"
-                              >{{ chance }}%</span
-                            >
-                          </div>
-                        </v-btn>
-                      </template>
-                      <div class="tooltip-content d-flex align-center">
-                        <DefishboxesCrystalIcon
-                          :rarity="rarities[name].name"
-                          :size="2"
-                          class="mr-1"
-                          style="margin-top: -3px"
+                    <v-btn
+                        height="35"
+                        x-small
+                        rounded
+                        color="transparent"
+                        style="z-index: 100"
+                    >
+                      <div class="d-flex align-center justify-center">
+                        <DefishboxesRarityIcon
+                            :color="rarityColor(name)"
+                            class="mr-1"
                         />
                         <span
-                          style="text-transform: uppercase; font-weight: 600"
-                          :style="{ color: rarityColor(name) }"
-                          >{{ name }}</span
+                            :style="{ color: rarityColor(name) }"
+                            style="transform: translateY(2px)"
+                        >{{ chance }}%</span
                         >
                       </div>
-                    </v-tooltip>
+                    </v-btn>
+<!--                    <v-tooltip top rounded="xl" color="#253f48">-->
+<!--                      <template v-slot:activator="{ on, attrs }">-->
+<!--    -->
+<!--                      </template>-->
+<!--                      <div class="tooltip-content d-flex align-center">-->
+<!--                        <DefishboxesCrystalIcon-->
+<!--                          :rarity="rarities[name].name"-->
+<!--                          :size="2"-->
+<!--                          class="mr-1"-->
+<!--                          style="margin-top: -3px"-->
+<!--                        />-->
+<!--                        <span-->
+<!--                          style="text-transform: uppercase; font-weight: 600"-->
+<!--                          :style="{ color: rarityColor(name) }"-->
+<!--                          >{{ name }}</span-->
+<!--                        >-->
+<!--                      </div>-->
+<!--                    </v-tooltip>-->
                   </div>
                 </div>
                 <v-col class="pa-0">
                   <v-progress-linear
                     rounded
-                    :value="countPercent(card.count, card.limit)"
+                    color="#67e8d3"
+                    :model-value="countPercent(card.count, card.limit)"
                     height="6"
                   ></v-progress-linear>
                 </v-col>
@@ -96,7 +96,7 @@
                   <div style="color: #67e8d3">
                     {{ card.limit - card.count }} left
                   </div>
-                  <div style="margin-left: auto" class="white--text">
+                  <div style="margin-left: auto" class="text-white">
                     {{ card.limit }}
                   </div>
                 </v-col>
@@ -181,7 +181,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <DefishboxesLootBoxIcon
+    <DefishboxesLootboxPopup
       :showed="lootboxPopup"
       :single_card="single_card"
       :card_items="lootbox_items"
@@ -227,12 +227,12 @@ let single_card = {}
 const exchangeStore = useExchangeStore()
 const web3Store = useWeb3Store()
 
-const isConnected = computed(() => web3Store.isConnected)
 const rateInited = computed(() => exchangeStore.isInited)
 const rate = computed(() => exchangeStore.exchange_rate)
 const lootboxPopup = computed(() => web3Store.lootbox_popup)
 const loginPopup = computed(() => web3Store.login_popup)
 const lootbox_items = computed(() => web3Store.lootbox_items)
+const isConnected = computed(() => web3Store.is_connected)
 
 const config = useRuntimeConfig();
 
@@ -260,11 +260,11 @@ const rarityColor = (name) => {
 }
 
 const getLootboxes = async() => {
-
+  console.log(config.public)
   const lootboxesArr = await Axios.get(
       config.public.SERVICE_API_URL + '/lootboxes'
   )
-  lootboxes = lootboxesArr.data.map((n) => {
+  lootboxes.value = lootboxesArr.data.map((n) => {
     n.loading = false
     return n
   })
@@ -275,10 +275,13 @@ const openLogin = async(card) => {
   await web3Store.getLootboxItems(card).then(() => {
     single_card = card
   })
-  if (!isConnected) {
-    await web3Store.setLoginPopup(true)
+
+  if (!isConnected.value) {
+    console.log('setLoginPopup')
+    web3Store.setLoginPopup(true)
   } else {
-    await web3Store.setLootboxPopup(true)
+    console.log('setLootboxPopup')
+     web3Store.setLootboxPopup(true)
   }
   card.loading = false
 }

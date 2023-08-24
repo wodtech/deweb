@@ -3,22 +3,22 @@
     dark
     class="d-flex pa-4 align-center justify-center showed"
     @input="close"
-    :value="showed"
+    :model-value="showed"
     max-width="360px"
   >
     <v-card flat class="vendor-popup-inner rounded-xl" tile>
       <div
         class="heading-line d-flex align-center justify-space-between px-6 pt-6"
       >
-        <div class="notify white--text font-weight-medium">
+        <div class="notify text-white font-weight-medium">
           Congratulations!
         </div>
         <v-btn @click="close" class="close-btn" icon outlined color="#67E8D3">
-          <v-icon color="#67E8D3">mdi-window-close</v-icon>
+          <v-icon color="black">mdi-window-close</v-icon>
         </v-btn>
       </div>
       <div class="d-flex flex-column align-center">
-        <div class="body-2 text-center pa-6 d-flex flex-column">
+        <div class="body-2 text-center pa-6 d-flex flex-column text-white">
           <span class="mb-3">You successfully bought box!</span>
           <span>Soon you will open it on our marketplace</span>
         </div>

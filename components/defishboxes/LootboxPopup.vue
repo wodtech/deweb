@@ -1,18 +1,18 @@
 <template>
   <div>
-    <LootboxNotify :showed="success_popup" @close="success_popup = $event" />
+    <DefishboxesLootboxNotify :showed="success_popup" @close="success_popup = $event" />
 
     <v-dialog
       dark
       class="d-flex align-center justify-center showed lootbox-popup"
       @input="close"
-      :value="showed"
+      :model-value="showed"
       max-width="1100px"
       transition="slide-y-transition"
     >
       <v-card
         flat
-        class="lootbox-popup-inner rounded-xl pa-8 d-flex flex-column"
+        class="lootbox-popup-inner rounded-xl pa-8 d-flex flex-column text-white"
         tile
         style="
           position: relative;
@@ -47,7 +47,7 @@
           color="#67E8D3"
           style="position: absolute; right: 15px; top: 15px"
         >
-          <v-icon color="#67E8D3">mdi-window-close</v-icon>
+          <v-icon color="67e8d3">mdi-window-close</v-icon>
         </v-btn>
         <div class="upper-part d-flex align-center">
           <v-img
@@ -70,8 +70,8 @@
               <v-progress-linear
                 class="mt-1"
                 height="8"
-                :value="countPercent(single_card.count, single_card.limit)"
-                color="primary"
+                :model-value="countPercent(single_card.count, single_card.limit)"
+                color="#67e8d3"
                 rounded
               ></v-progress-linear>
               <div class="number left caption">
@@ -92,22 +92,13 @@
                 >
                   <v-icon small> mdi-minus </v-icon>
                 </v-btn>
-                <v-text-field
-                  class="mx-3"
-                  type="number"
-                  v-model="item_count"
-                  :disabled="
-                    single_card.limit - single_card.count === 0 ||
-                    item_count >= 20 ||
-                    item_count > single_card.limit - single_card.count
-                  "
-                  v-if="rules"
-                  outlined
-                  rounded
-                  dense
-                  required
-                  color="white"
-                ></v-text-field>
+                <div class="mx-3"> {{ item_count }}</div>
+<!--                :disabled="-->
+<!--                single_card.limit - single_card.count === 0 ||-->
+<!--                item_count >= 20 ||-->
+<!--                item_count > single_card.limit - single_card.count-->
+<!--                "-->
+
                 <v-btn
                   icon
                   outlined
@@ -230,7 +221,7 @@
               v-for="(chance, name) in single_card.chances"
               :key="name"
             >
-              <CrystalIcon
+              <DefishboxesCrystalIcon
                 :rarity="rarities[name].name"
                 :size="3"
                 class="mr-1"
@@ -262,7 +253,7 @@
             v-if="card_items[6] && card_items[6].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Artifact'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Artifact'" :size="3" class="mr-1" />
               <div class="body-1">Artifact</div>
             </div>
             <v-row class="items-row">
@@ -285,7 +276,7 @@
             v-if="card_items[5] && card_items[5].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Legendary'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Legendary'" :size="3" class="mr-1" />
               <div class="body-1">Legendary</div>
             </div>
             <v-row class="items-row">
@@ -308,7 +299,7 @@
             v-if="card_items[4] && card_items[4].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Epic'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Epic'" :size="3" class="mr-1" />
               <div class="body-1">Epic</div>
             </div>
             <v-row class="items-row">
@@ -331,7 +322,7 @@
             v-if="card_items[3] && card_items[3].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Rare'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Rare'" :size="3" class="mr-1" />
               <div class="body-1">Rare</div>
             </div>
             <v-row class="items-row">
@@ -354,7 +345,7 @@
             v-if="card_items[2] && card_items[2].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Uncommon'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Uncommon'" :size="3" class="mr-1" />
               <div class="body-1">Uncommon</div>
             </div>
             <v-row class="items-row">
@@ -377,7 +368,7 @@
             v-if="card_items[1] && card_items[1].length > 0"
           >
             <div class="heading-part d-flex align-center mb-2">
-              <CrystalIcon :rarity="'Common'" :size="3" class="mr-1" />
+              <DefishboxesCrystalIcon :rarity="'Common'" :size="3" class="mr-1" />
               <div class="body-1">Common</div>
             </div>
             <v-row class="items-row">
@@ -400,188 +391,183 @@
   </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
-import RarityIcon from '@/components/defishboxes/RarityIcon.vue'
-import LootboxNotify from '@/components/defishboxes/LootboxNotify.vue'
-import CrystalIcon from '@/components/defishboxes/CrystalIcon'
+<script setup>
+import {ref, onMounted, onUnmounted, toRefs} from 'vue'
 
-export default {
-  data() {
-    return {
-      loading: false,
-      success_popup: false,
-      item_count: 1,
-      limit_error: false,
-      rarities: {
-        common: {
-          name: 'Common',
-          color: '#9298A5',
-        },
-        uncommon: {
-          name: 'Uncommon',
-          color: '#839FB7',
-        },
-        rare: {
-          name: 'Rare',
-          color: '#8AE5FD',
-        },
-        epic: {
-          name: 'Epic',
-          color: '#BB5EEA',
-        },
-        legendary: {
-          name: 'Legendary',
-          color: '#F29136',
-        },
-        artifact: {
-          name: 'Artifact',
-          color: '#EE3D3C',
-        },
+let loading = ref(false)
+let success_popup = ref(false)
+const item_count = ref(1)
+let limit_error = ref(false)
+const rarities = {
+      common: {
+        name: 'Common',
+        color: '#9298A5',
       },
-      rules: {
-        check: (value) => {
-          if (!value) {
-            return 'Amount Required'
-          } else if (!value.match(/^[0-9]+$/)) {
-            return 'Invalid amount'
-          } else {
-            return true
-          }
-        },
+      uncommon: {
+        name: 'Uncommon',
+        color: '#839FB7',
+      },
+      rare: {
+        name: 'Rare',
+        color: '#8AE5FD',
+      },
+      epic: {
+        name: 'Epic',
+        color: '#BB5EEA',
+      },
+      legendary: {
+        name: 'Legendary',
+        color: '#F29136',
+      },
+      artifact: {
+        name: 'Artifact',
+        color: '#EE3D3C',
       },
     }
-  },
-  components: {
-    RarityIcon,
-    LootboxNotify,
-    CrystalIcon,
-  },
-  mounted() {},
-  methods: {
-    async close() {
-      await this.$store.commit('web3/setLootboxPopup', false)
-    },
-
-    countPercent(item_left, item_all) {
-      let percent = (100 * (item_all - item_left)) / item_all
-      return percent
-    },
-    async getLootbox() {
-      const pop = async () => {
-        const is_limit_exceeded_for_me = await $contracts['Lootboxes'].methods
-          .isLimitExceeded(
-            $nuxt.$store.getters['web3/acc'],
-            this.single_card._id,
-            this.item_count
-          )
-          .call()
-
-        console.log('Limit', is_limit_exceeded_for_me)
-        if (is_limit_exceeded_for_me) {
-          this.limit_error = this.single_card._id
-          throw new Error('Limit exceeded')
-        }
-
-        await this.getBalance()
-        let curr_contract
-        if (this.single_card.token_name === 'wod') {
-          curr_contract = 'WodCoin'
-        } else {
-          curr_contract = 'BUSDCoin'
-        }
-        // const currentAllowance = await $contracts[curr_contract].methods
-        //     .allowance(this.acc, $contracts["Lootboxes"]._address)
-        //     .call();
-        // const needed = Number(this.single_card.price * this.item_count);
-        // const current = Number(currentAllowance);
-        // if (current < needed) {
-        await this.approve($contracts['Lootboxes']._address)
-        // }
-
-        await $contracts['Lootboxes'].methods
-          .buyLootbox(this.single_card._id, this.item_count)
-          .send({ from: $nuxt.$store.getters['web3/acc'] })
-      }
-
-      this.loading = true
-      pop()
-        .then(() => {
-          this.success_popup = true
-          this.close()
-        })
-        .finally(() => {
-          this.loading = false
-        })
-    },
-    rarityColor(name) {
-      return this.rarities[name].color
-    },
-    async getBalance() {
-      let curr_contract
-      if (this.single_card.token_name === 'wod') {
-        curr_contract = 'WodCoin'
-      } else {
-        curr_contract = 'BUSDCoin'
-      }
-      await this.$store.dispatch('web3/getBalance', curr_contract, this.acc)
-    },
-    async approve(to) {
-      let curr_contract
-      if (this.single_card.token_name === 'wod') {
-        curr_contract = 'WodCoin'
-      } else {
-        curr_contract = 'BUSDCoin'
-      }
-      await $contracts[curr_contract].methods
-        .approve(to, this.$toWei(this.single_card.price * this.item_count))
-        .send({ from: this.$store.getters['web3/acc'] }),
-        await this.waitAllowance(
-          $contracts[curr_contract],
-          this.$store.getters['web3/acc'],
-          to,
-          this.$toWei(this.single_card.price * this.item_count),
-          1000
-        )
-    },
-    async waitAllowance(contract, account, to, allowanceNeeded, timesLeft) {
-      if (timesLeft > 1) {
-        const currentAllowance = await contract.methods
-          .allowance(account, to)
-          .call()
-        console.log(
-          `I want ${allowanceNeeded}, and current is ${currentAllowance} `
-        )
-        const needed = Number(allowanceNeeded)
-        const current = Number(currentAllowance)
-        if (current >= needed) {
-          return
-        }
-        await new Promise((res) => setTimeout(res, 1000))
-        await this.waitAllowance(
-          contract,
-          account,
-          to,
-          allowanceNeeded,
-          timesLeft - 1
-        )
-      }
-      throw new Error('wait allowance failed for many times.')
-    },
-  },
-  computed: {
-    ...mapGetters({
-      rate: 'exchange/rate',
-      acc: 'web3/acc',
-      balance: 'web3/userBalance',
-    }),
-  },
-  props: {
-    showed: {},
-    single_card: {},
-    card_items: {},
+const rules = {
+  check: (value) => {
+    if (!value) {
+      return 'Amount Required'
+    } else if (!value.match(/^[0-9]+$/)) {
+      return 'Invalid amount'
+    } else {
+      return true
+    }
   },
 }
+
+
+const props = defineProps(['showed', 'single_card','card_items'])
+const {showed, single_card, card_items} = toRefs(props)
+
+
+
+const exchangeStore = useExchangeStore()
+const web3Store = useWeb3Store()
+
+
+const rate = computed(() => exchangeStore.exchange_rate)
+const acc = computed(() => web3Store.acc)
+const balance = computed(() => web3Store.userBalance)
+
+
+const close = async () => {
+  web3Store.setLootboxPopup(false)
+}
+const countPercent = (item_left, item_all) => {
+  let percent = (100 * (item_all - item_left)) / item_all
+  return percent
+}
+
+const waitAllowance = async (contract, account, to, allowanceNeeded, timesLeft) => {
+  if (timesLeft > 1) {
+    const currentAllowance = await contract.methods
+        .allowance(account, to)
+        .call()
+    console.log(
+        `I want ${allowanceNeeded}, and current is ${currentAllowance} `
+    )
+    const needed = Number(allowanceNeeded)
+    const current = Number(currentAllowance)
+    if (current >= needed) {
+      return
+    }
+    await new Promise((res) => setTimeout(res, 1000))
+    await this.waitAllowance(
+        contract,
+        account,
+        to,
+        allowanceNeeded,
+        timesLeft - 1
+    )
+  }
+  throw new Error('wait allowance failed for many times.')
+}
+
+const getLootbox = async ()=> {
+  const pop = async () => {
+    console.log(web3Store.acc,single_card.value._id, item_count.value)
+    const is_limit_exceeded_for_me = await $contracts['Lootboxes'].methods
+        .isLimitExceeded(
+            web3Store.acc,
+            single_card.value._id,
+            item_count.value
+        )
+        .call()
+
+    console.log('Limit', is_limit_exceeded_for_me)
+    if (is_limit_exceeded_for_me) {
+      limit_error.value = single_card.value._id
+      throw new Error('Limit exceeded')
+    }
+
+    await getBalance()
+    let curr_contract
+    if (single_card.value.token_name === 'wod') {
+      curr_contract = 'WodCoin'
+    } else {
+      curr_contract = 'BUSDCoin'
+    }
+    // const currentAllowance = await $contracts[curr_contract].methods
+    //     .allowance(this.acc, $contracts["Lootboxes"]._address)
+    //     .call();
+    // const needed = Number(this.single_card.price * this.item_count);
+    // const current = Number(currentAllowance);
+    // if (current < needed) {
+    await approve($contracts['Lootboxes']._address)
+    // }
+
+    await $contracts['Lootboxes'].methods
+        .buyLootbox(single_card.value._id, item_count.value)
+        .send({ from: web3Store.acc })
+  }
+
+  loading.value = true
+  pop()
+      .then(() => {
+        success_popup.value = true
+        close()
+      })
+      .finally(() => {
+        loading.value = false
+      })
+}
+const rarityColor = (name)=> {
+  return rarities[name].color
+}
+const getBalance = async ()=> {
+  let curr_contract
+  if (single_card.value.token_name === 'wod') {
+    curr_contract = 'WodCoin'
+  } else {
+    curr_contract = 'BUSDCoin'
+  }
+  await web3Store.getBalance(curr_contract, acc)
+}
+
+const  approve = async (to) => {
+  let curr_contract
+  if (single_card.value.token_name === 'wod') {
+    curr_contract = 'WodCoin'
+  } else {
+    curr_contract = 'BUSDCoin'
+  }
+  await $contracts[curr_contract].methods
+      .approve(to, Math.$toWei(single_card.value.price * item_count.value))
+      .send({ from: web3Store.acc }),
+      await waitAllowance(
+          $contracts[curr_contract],
+          web3Store.acc,
+          to,
+          Math.$toWei(single_card.value.price * item_count.value),
+          1000
+      )
+}
+
+
+
+
+
 </script>
 
 <style lang="scss" scoped>
