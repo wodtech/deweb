@@ -1,7 +1,7 @@
 <template>
   <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex align-center --posr">
     <div class="bg-container">
-      <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
+      <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"/>
     </div>
     <v-container class="py-16 ">
 
