@@ -2,7 +2,7 @@
   <v-card elevation="0" color="transparent" style="overflow: hidden;" tile class="launch-window d-flex">
     <v-container style="padding:120px 0 " class=" --posr d-flex align-center">
       <div class="bg-container">
-        <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"></img>
+        <img class="bg" :src="require('~/assets/images/fish-bg-launcher.png')"/>
       </div>
       <v-row class="--posr">
         <v-col cols="12" class="--posr d-flex align-center flex-column flex-md-row">
