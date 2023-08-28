@@ -5,7 +5,7 @@
     <v-dialog
       dark
       class="d-flex align-center justify-center showed lootbox-popup"
-      @input="close"
+      @click="close($event)"
       :model-value="showed"
       max-width="1100px"
       transition="slide-y-transition"
@@ -41,7 +41,7 @@
         />
 
         <v-btn
-          @click="close"
+          @click="web3Store.setLootboxPopup(false)"
           class="close-btn"
           icon
           color="#67E8D3"
@@ -438,21 +438,24 @@ const rules = {
 
 
 const props = defineProps(['showed', 'single_card','card_items'])
-const {showed, single_card, card_items} = toRefs(props)
+const {single_card, card_items} = toRefs(props)
 
 
 
 const exchangeStore = useExchangeStore()
 const web3Store = useWeb3Store()
 
-
+const showed = computed(() => web3Store.lootbox_popup)
 const rate = computed(() => exchangeStore.exchange_rate)
 const acc = computed(() => web3Store.acc)
 const balance = computed(() => web3Store.userBalance)
 
 
-const close = async () => {
-  web3Store.setLootboxPopup(false)
+const close = (e) => {
+
+  if (e.target.className === 'v-overlay__scrim'){
+    web3Store.setLootboxPopup(false)
+  }
 }
 const countPercent = (item_left, item_all) => {
   let percent = (100 * (item_all - item_left)) / item_all

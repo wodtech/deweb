@@ -182,7 +182,6 @@
       </v-row>
     </v-container>
     <DefishboxesLootboxPopup
-      :showed="lootboxPopup"
       :single_card="single_card"
       :card_items="lootbox_items"
     />
@@ -229,7 +228,6 @@ const web3Store = useWeb3Store()
 
 const rateInited = computed(() => exchangeStore.isInited)
 const rate = computed(() => exchangeStore.exchange_rate)
-const lootboxPopup = computed(() => web3Store.lootbox_popup)
 const loginPopup = computed(() => web3Store.login_popup)
 const lootbox_items = computed(() => web3Store.lootbox_items)
 const isConnected = computed(() => web3Store.is_connected)
