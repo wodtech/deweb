@@ -26,20 +26,30 @@ export default defineNuxtConfig({
     build: {
         transpile: [
             'vuetify',
-            'flickity',
-            'pinia',
-            '@walletconnect/web3-provider'
+            '@walletconnect/ethereum-provider',
+            '@walletconnect/utils',
+            'lodash',
         ]
     },
     nitro: {
         prerender: {
             routes: [
+
             ]
         },
     },
 
     routeRules: {
-        '/**': { prerender: true },
+        '/arts': { prerender: true },
+        '/for-developers': { prerender: true },
+        '/game-td': { prerender: true },
+        '/': { prerender: true },
+        '/privacy': { prerender: true },
+        '/terms': { prerender: true },
+        '/game-wod': { prerender: true },
+        '/game-wod/defishboxes': { prerender: true },
+        '/careers': { prerender: true },
+        '/blog': { prerender: true },
     },
     app: {
         head: {

@@ -1,12 +1,10 @@
 import Web3 from 'web3'
-import EthereumProvider from '@walletconnect/ethereum-provider'
+import { EthereumProvider } from '@walletconnect/ethereum-provider'
 
 const validNetworkOrFail = async (web3) => {
   const config = useRuntimeConfig()
   const network_id = await web3.eth.net.getId()
 
-  console.info('Network ID', network_id)
-  console.log(config.public['CHAIN_RPC'])
   if (network_id != config.public['VUE_APP_NETWORK_ID']) {
     throw new Error('Please change network to ' + config.public['CHAIN_NAME'])
   }
